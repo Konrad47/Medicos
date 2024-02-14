@@ -6,7 +6,9 @@ const Home = () => {
 
   return (
     <>
-      <h1>{t`home.title`}</h1>
+      <div className="container">
+        <h1>{t`home.title`}</h1>
+      </div>
     </>
   )
 }
