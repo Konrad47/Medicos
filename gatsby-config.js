@@ -9,6 +9,10 @@ module.exports = {
   siteMetadata: {
     title: `GPW Warsaw Passive Investment`,
     author: "Innovations Hub Foundation",
+    author: {
+      name: `Innovations Hub Foundation`,
+      summary: `Strona internetowa GPW Warsaw Passive Investment`,
+    },
     description: `Strona internetowa GPW Warsaw Passive Investment`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
   },
