@@ -106,6 +106,32 @@ const WpiConference = () => {
               {t`wpi-conference.title2`}
             </h3>
           </div>
+          <h1>{t`wpi-conference.title3`}</h1>
+          <div className="wpic-time-container">
+            <div>
+              <div>
+                <p className="p-time">25</p>
+                <p className="p-time-desc">DNI</p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div>
+                  <p className="p-time">25</p>
+                  <p className="p-time-desc">DNI</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div>
+                  <p className="p-time">25</p>
+                  <p className="p-time-desc">DNI</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" className="register-btn wpic-btn ">{t`menu.register`}</a>
         </div>
       </div>
     </>

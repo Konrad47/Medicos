@@ -336,7 +336,7 @@ const Menu = () => {
             className="menu-link"
             href="#previous-editions"
           >{t`menu.previous-editions`}</a>
-          <a className="menu-button-link">{t`menu.register`}</a>
+          <a className="register-btn menu-button-link">{t`menu.register`}</a>
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 .wpic-container {
-  padding-top: 140px;
+  padding-top: 160px;
+  padding-bottom: 110px;
   overflow: hidden;
   background-size: cover !important;
   background-position: center;
@@ -7,9 +8,78 @@
   background: url(../../../images/wpic/wpic-background.png) no-repeat fixed 50%
     0;
   background-attachment: scroll;
+  text-align: center;
 }
 
 .wpic-container .wpic-titles-container {
   display: flex;
   justify-content: center;
+}
+
+.wpic-container .wpic-titles-container h3 {
+  margin: 0 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.wpic-container h1 {
+  font-size: 84px;
+  font-weight: 700;
+  margin: 0;
+  margin-top: 16px;
+}
+
+.wpic-container h1,
+.wpic-container h3 {
+  color: var(--light, #f8f8fc);
+  font-style: normal;
+  line-height: normal;
+}
+
+.wpic-container .wpic-time-container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 24px;
+  width: 588px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wpic-container .wpic-time-container > div {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  height: 150px;
+  border-radius: 16px;
+  background: rgba(248, 248, 252, 0.1);
+}
+
+.wpic-container .wpic-time-container > div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.wpic-container .wpic-time-container > div div .p-time {
+  color: var(--light, #f8f8fc);
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.wpic-container .wpic-time-container > div div .p-time-desc {
+  color: var(--light, #f8f8fc);
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  margin: 0;
 }

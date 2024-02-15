@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   background-color: rgba(18, 14, 37, 0.8);
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
@@ -38,20 +38,6 @@
 
 .menu-container .menu-inside-container .menu-button-link {
   margin-right: 120px;
-  text-decoration: none;
-  color: var(--dark, #120e25);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  padding: 10px 32px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 8px;
-  background: var(--light, #f8f8fc);
-  box-shadow: 4px 4px 8px 0px rgba(57, 19, 55, 0.25);
-  cursor: pointer;
 }
 
 .menu-container .menu-inside-container .menu-button-link:hover {
