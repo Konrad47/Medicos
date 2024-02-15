@@ -1,6 +1,7 @@
 import React from "react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import Menu from "../../components/menu/menu"
+import WpiConference from "./components/wpi-conference"
 
 const Home = () => {
   const { t } = useTranslation()
@@ -8,9 +9,7 @@ const Home = () => {
   return (
     <>
       <Menu />
-      <div className="container">
-        <h1>{t`home.title`}</h1>
-      </div>
+      <WpiConference />
     </>
   )
 }
