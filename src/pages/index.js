@@ -1,6 +1,5 @@
 import Home from "../views/home"
 import { graphql } from "gatsby"
-import "../styles/global.css"
 
 export default Home
 
