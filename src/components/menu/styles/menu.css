@@ -1,0 +1,63 @@
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(18, 14, 37, 0.85);
+  padding: 0px 120px;
+}
+
+.menu-container .menu-inside-container {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.menu-container .gpw-icon {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.menu-container .menu-inside-container .menu-link {
+  text-decoration: none;
+  color: #f8f8fc;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-container .menu-inside-container .menu-button-link {
+  text-decoration: none;
+  color: var(--dark, #120e25);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 10px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--light, #f8f8fc);
+  box-shadow: 4px 4px 8px 0px rgba(57, 19, 55, 0.25);
+  cursor: pointer;
+}
+
+.menu-container .menu-inside-container .menu-button-link:hover {
+  background: var(--navy-light, #dedaf1);
+  color: var(--navy-mid, #312668);
+  transition: all 0.2s ease-out;
+}
+
+.menu-container .menu-inside-container .menu-dot {
+  color: #e58603;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: auto;
+  margin-bottom: auto;
+}
