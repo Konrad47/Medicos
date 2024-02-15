@@ -1,8 +1,15 @@
 .menu-container {
   display: flex;
   justify-content: space-between;
-  background-color: rgba(18, 14, 37, 0.85);
-  padding: 0px 120px;
+  background-color: rgba(18, 14, 37, 0.8);
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.menu-container svg {
+  margin-left: 120px;
 }
 
 .menu-container .menu-inside-container {
@@ -30,6 +37,7 @@
 }
 
 .menu-container .menu-inside-container .menu-button-link {
+  margin-right: 120px;
   text-decoration: none;
   color: var(--dark, #120e25);
   font-size: 20px;
