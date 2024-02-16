@@ -1,3 +1,8 @@
 {
-    "home.title": "Tytuł"
+    "menu.conference": "O konferencji",
+    "menu.speakers": "Prelegenci",
+    "menu.agenda": "Agenda",
+    "menu.partners": "Partnerzy",
+    "menu.previous-editions": "Poprzednie edycje",
+    "menu.register": "Zarejestruj się"
 }
