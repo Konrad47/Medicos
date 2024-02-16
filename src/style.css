@@ -19,14 +19,14 @@ body {
   align-items: center;
   gap: 10px;
   border-radius: 8px;
-  background: var(--light, #f8f8fc);
+  background: var(--light, #fcf8fc);
   box-shadow: 4px 4px 8px 0px rgba(57, 19, 55, 0.25);
   cursor: pointer;
 }
 
 .register-btn:hover {
-  background: var(--navy-light, #dedaf1);
-  color: var(--navy-mid, #312668);
+  background: var(--navy-light, #f7d4f3);
+  color: var(--navy-mid, #961d8a);
   transition: all 0.2s ease-out;
 }
 
