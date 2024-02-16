@@ -8,3 +8,22 @@
   background: url(../../../images/dp/dp-background.png) no-repeat fixed 50% 0;
   background-attachment: scroll;
 }
+
+.dp-container .dp-text {
+  width: 60%;
+}
+
+.dp-container h2 {
+  background: var(
+    --gradient,
+    linear-gradient(90deg, #ce482e 0%, #a84563 47%, #5d1360 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dp-container p {
+  margin-top: 40px;
+  color: var(--dark, #230e25);
+}
