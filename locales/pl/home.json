@@ -4,5 +4,25 @@
     "menu.agenda": "Agenda",
     "menu.partners": "Partnerzy",
     "menu.previous-editions": "Poprzednie edycje",
-    "menu.register": "Zarejestruj się"
+    "menu.register": "Zarejestruj się",
+
+    "wpi-conference.title": "23-24 kwietnia 2024",
+    "wpi-conference.title2": "online + Sala Notowań GPW",
+    "wpi-conference.title3": "Warsaw Passive Investment Conference",
+    "wpi-conference.days": "DNI",
+    "wpi-conference.hours": "GODZIN",
+    "wpi-conference.minutes": "MINUT",
+
+    "organizers.title": "Organizatorzy",
+
+    "discover-potential.title": "Odkryj Potencjał Pasywnego Inwestowania: Konferencja Giełdowa",
+    "discover-potential.p": "Warsaw Passive Investment Conference to najważniejsze w Polsce wydarzenie dla  zarządzających aktywami, inwestorów indywidualnych i instytucjonalnych oraz specjalistów z branży finansowej, poświęcone tematyce inwestowania pasywnego oraz możliwości wykorzystania ETF/ETN i ETC także w aktywnym inwestowaniu.",
+    "discover-potential.p2": "Zapraszamy na 5. edycję Warsaw Passive Investment Conference, która odbędzie się 23 i 24 kwietnia 2024 r. Podczas konferencji dowiesz się więcej o segmencie instrumentów pasywnych, takich jak ETF (Exchange Traded Fund), ETC (Exchange Traded Commodities), czy ETN (Exchange Traded Notes) oraz poznasz globalne trendy i perspektywy na rynku inwestowania pasywnego. Analitycy przedstawią swoją ocenę opłacalności inwestowania w różne klasy aktywów w kolejnych miesiącach.",
+
+    "numbers.number": "+1300",
+    "numbers.number2": "20",
+    "numbers.number3": "+15",
+    "numbers.number-desc": "Uczestników konferencji",
+    "numbers.number-desc2": "Wykładów i paneli o światowych rynkach",
+    "numbers.number-desc3": "Ekspertów z Polski i zagranicy"
 }
