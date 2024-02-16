@@ -1,0 +1,16 @@
+.s-container {
+  padding-top: 80px;
+  padding-bottom: 120px;
+  background: var(--light-bg, #faf0f9);
+  text-align: center;
+}
+
+.s-container h2 {
+  background: var(
+    --gradient,
+    linear-gradient(90deg, #ce482e 0%, #a84563 47%, #5d1360 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
