@@ -21,7 +21,7 @@
   margin-right: 8px;
 }
 
-.wpic-container .wpic-titles-container h3 {
+.wpic-container .wpic-titles-container h4 {
   margin: 0 20px;
   font-size: 24px;
   font-weight: 600;
@@ -30,12 +30,11 @@
 .wpic-container h1 {
   font-size: 84px;
   font-weight: 700;
-  margin: 0;
   margin-top: 16px;
 }
 
 .wpic-container h1,
-.wpic-container h3 {
+.wpic-container h4 {
   color: var(--light, #f8f8fc);
   font-style: normal;
   line-height: normal;

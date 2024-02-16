@@ -1,0 +1,21 @@
+.o-container {
+  text-align: center;
+  padding-top: 33px;
+  padding-bottom: 28px;
+}
+
+.o-container h3 {
+  color: var(--orange-mid, #ba4d30);
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 44.8px */
+  margin-bottom: 24px;
+}
+
+.o-container .o-grid {
+  display: flex;
+  align-items: center;
+  gap: 180px;
+}

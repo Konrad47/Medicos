@@ -30,6 +30,15 @@ body {
   transition: all 0.2s ease-out;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 @media only screen and (max-width: 568px) {
   .container {
     margin: 0 1rem;

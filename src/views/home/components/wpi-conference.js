@@ -10,7 +10,7 @@ const WpiConference = () => {
       <div className="wpic-container">
         <div className="container">
           <div className="wpic-titles-container">
-            <h3>
+            <h4>
               <svg
                 className="wpic-icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,8 +75,8 @@ const WpiConference = () => {
                 </defs>
               </svg>
               {t`wpi-conference.title`}
-            </h3>
-            <h3>
+            </h4>
+            <h4>
               <svg
                 className="wpic-icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ const WpiConference = () => {
                 </defs>
               </svg>
               {t`wpi-conference.title2`}
-            </h3>
+            </h4>
           </div>
           <h1>{t`wpi-conference.title3`}</h1>
           <div className="wpic-time-container">
