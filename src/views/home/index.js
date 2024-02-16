@@ -4,6 +4,7 @@ import Menu from "../../components/menu/menu"
 import WpiConference from "./components/wpi-conference"
 import Organizers from "./components/organizers"
 import DiscoverPotential from "./components/discover-potential"
+import Numbers from "./components/numbers"
 
 const Home = () => {
   const { t } = useTranslation()
@@ -14,6 +15,7 @@ const Home = () => {
       <WpiConference />
       <Organizers />
       <DiscoverPotential />
+      <Numbers />
     </>
   )
 }
