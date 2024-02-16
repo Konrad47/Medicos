@@ -1,9 +1,36 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import "../styles/wpi-conference.css"
 
 const WpiConference = () => {
   const { t } = useTranslation()
+
+  const calculateTimeLeft = () => {
+    const difference = +new Date("2024-06-01") - +new Date()
+    let timeLeft = {}
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+      }
+    }
+
+    return timeLeft
+  }
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft())
+    }, 10000)
+
+    return () => clearTimeout(timer)
+  })
+
+  const { days, hours, minutes } = timeLeft
 
   return (
     <>
@@ -112,23 +139,23 @@ const WpiConference = () => {
           <div className="wpic-time-container">
             <div>
               <div>
-                <p className="p-time">25</p>
-                <p className="p-time-desc">DNI</p>
+                <p className="p-time">{days}</p>
+                <p className="p-time-desc">{t`wpi-conference.days`}</p>
               </div>
             </div>
             <div>
               <div>
                 <div>
-                  <p className="p-time">25</p>
-                  <p className="p-time-desc">DNI</p>
+                  <p className="p-time">{hours}</p>
+                  <p className="p-time-desc">{t`wpi-conference.hours`}</p>
                 </div>
               </div>
             </div>
             <div>
               <div>
                 <div>
-                  <p className="p-time">25</p>
-                  <p className="p-time-desc">DNI</p>
+                  <p className="p-time">{minutes}</p>
+                  <p className="p-time-desc">{t`wpi-conference.minutes`}</p>
                 </div>
               </div>
             </div>
