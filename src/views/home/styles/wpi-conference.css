@@ -16,6 +16,11 @@
   justify-content: center;
 }
 
+.wpic-container .wpic-titles-container .wpic-icon {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
 .wpic-container .wpic-titles-container h3 {
   margin: 0 20px;
   font-size: 24px;
