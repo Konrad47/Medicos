@@ -47,3 +47,19 @@
   align-items: flex-start;
   flex: 1 0 0;
 }
+
+.n-container .n-number-container > div div .p-number {
+  color: var(--light, #fcf8fc);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.n-container .n-number-container > div div .p-number-desc {
+  color: var(--light, #fcf8fc);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
