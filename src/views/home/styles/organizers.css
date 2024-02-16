@@ -11,7 +11,8 @@
 }
 
 .o-container .o-grid {
-  display: flex;
-  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
   gap: 180px;
 }
