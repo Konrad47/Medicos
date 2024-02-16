@@ -1,0 +1,10 @@
+.dp-container {
+  padding-top: 113px;
+  padding-bottom: 113px;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center;
+  width: 100%;
+  background: url(../../../images/dp/dp-background.png) no-repeat fixed 50% 0;
+  background-attachment: scroll;
+}
