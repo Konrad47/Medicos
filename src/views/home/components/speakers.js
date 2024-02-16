@@ -113,10 +113,10 @@ const Speakers = () => {
               </div>
             </Carousel.Item>
             <Carousel.Item interval={60000}>
-              <h1>2</h1>
+              <div className="speakers-container"></div>
             </Carousel.Item>
             <Carousel.Item interval={60000}>
-              <h1>3</h1>
+              <div className="speakers-container"></div>
             </Carousel.Item>
           </Carousel>
         </div>
