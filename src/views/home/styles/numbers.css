@@ -28,6 +28,11 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+.n-container .n-number-container > div:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease-out;
+}
+
 .n-container .n-number-container > div .n-icon {
   display: flex;
   width: 60px;
@@ -55,6 +60,12 @@
   font-weight: 700;
   line-height: normal;
   text-align: left;
+}
+
+.n-container .n-number-container > div:hover div .p-number {
+  font-size: 54px;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease-out;
 }
 
 .n-container .n-number-container > div div .p-number-desc {
