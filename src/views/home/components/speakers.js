@@ -96,7 +96,7 @@ const Speakers = () => {
               {speaker && (
                 <div className="speaker-content">
                   <div>
-                    <h4>{speaker.node.name}</h4>
+                    <h4 className="h4-style">{speaker.node.name}</h4>
                     <p>{speaker.node.role}</p>
                   </div>
                   <p>{t`speakers.read-more`}</p>
@@ -130,7 +130,7 @@ const Speakers = () => {
             image={getImage(currentSpeaker.node.image.gatsbyImageData)}
           />
           <div>
-            <h2>{currentSpeaker.node.name}</h2>
+            <h2 className="h2-style">{currentSpeaker.node.name}</h2>
             <p>{currentSpeaker.node.role}</p>
             <pre>{currentSpeaker.node.description.description}</pre>
             <div>
@@ -199,7 +199,7 @@ const Speakers = () => {
     <>
       <div className="s-container">
         <div className="container">
-          <h2>{t`speakers.title`}</h2>
+          <h2 className="h2-style">{t`speakers.title`}</h2>
           <Carousel>{speakers && renderSpeakerGroups()}</Carousel>
           {currentSpeaker && (
             <SpeakerModal show={modalShow} onHide={() => setModalShow(false)} />

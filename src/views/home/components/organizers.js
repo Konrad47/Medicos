@@ -10,7 +10,7 @@ const Organizers = () => {
     <>
       <div className="o-container">
         <div className="container">
-          <h3>{t`organizers.title`}</h3>
+          <h3 className="h3-style">{t`organizers.title`}</h3>
           <div className="o-grid">
             <StaticImage
               className="o-image"

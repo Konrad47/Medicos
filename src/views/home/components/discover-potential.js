@@ -10,9 +10,9 @@ const DiscoverPotential = () => {
       <div className="dp-container">
         <div className="container">
           <div className="dp-text">
-            <h2>{t`discover-potential.title`}</h2>
-            <p>{t`discover-potential.p`}</p>
-            <p>{t`discover-potential.p2`}</p>
+            <h2 className="h2-style">{t`discover-potential.title`}</h2>
+            <p className="p-style">{t`discover-potential.p`}</p>
+            <p className="p-style">{t`discover-potential.p2`}</p>
           </div>
         </div>
       </div>
