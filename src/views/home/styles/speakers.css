@@ -113,6 +113,10 @@
   height: 200px;
 }
 
+.modal-body h2 {
+  margin: 0;
+}
+
 .s-container .carousel-indicators {
   bottom: -100px;
 }
