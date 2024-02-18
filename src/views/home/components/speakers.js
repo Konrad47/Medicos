@@ -56,24 +56,44 @@ const Speakers = () => {
 
   const renderSpeakerGroups = () => {
     const speakerGroups = []
+
+    // Determine the number of empty divs needed to fill a group
+    const emptyDivsCount = Math.max(0, 10 - (speakers.length % 10))
+    const emptyDivs = Array.from({ length: emptyDivsCount }).map(
+      (_, idx) => idx
+    )
+
+    // Slice the speakers into groups of 10
     for (let i = 0; i < speakers.length; i += 10) {
-      speakerGroups.push(speakers.slice(i, i + 10))
+      const group = speakers.slice(i, i + 10)
+
+      // Append empty divs to fill the group if necessary
+      if (group.length < 10) {
+        group.push(...Array.from({ length: 10 - group.length }))
+      }
+
+      speakerGroups.push(group)
     }
+
     return speakerGroups?.map((group, index) => (
       <Carousel.Item key={index} interval={60000}>
         <div className="speakers-container">
           {group.map((speaker, idx) => (
             <div className="speaker" key={idx}>
-              <div className="speaker-content">
-                <div>
-                  <h4>{speaker.node.name}</h4>
-                  <p>{speaker.node.role}</p>
+              {speaker && (
+                <div className="speaker-content">
+                  <div>
+                    <h4>{speaker.node.name}</h4>
+                    <p>{speaker.node.role}</p>
+                  </div>
+                  <p>{t`speakers.read-more`}</p>
                 </div>
-                <p>{t`speakers.read-more`}</p>
-              </div>
+              )}
               <GatsbyImage
                 className="speaker-image"
-                image={getImage(speaker.node.image.gatsbyImageData)}
+                image={
+                  speaker ? getImage(speaker.node.image.gatsbyImageData) : null
+                }
               />
             </div>
           ))}

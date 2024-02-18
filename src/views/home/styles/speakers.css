@@ -18,13 +18,15 @@
 
 .s-container .speakers-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: auto;
   gap: 60px;
 }
 
 .s-container .speakers-container .speaker {
   position: relative;
+  width: 212.2px;
+  height: 212.2px;
 }
 
 .s-container .speakers-container .speaker-content {
