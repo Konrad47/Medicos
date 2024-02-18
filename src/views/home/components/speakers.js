@@ -7,6 +7,7 @@ import "../../../images/profile-pic.png"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../../components/contentful-translator"
+import Modal from "react-bootstrap/Modal"
 
 const Speakers = () => {
   const { t } = useTranslation()
@@ -41,6 +42,8 @@ const Speakers = () => {
   `)
 
   const [speakers, setSpeakers] = useState()
+  const [modalShow, setModalShow] = useState(false)
+  const [currentSpeaker, setCurrentSpeaker] = useState()
 
   useEffect(() => {
     const getSpeakers = () => {
@@ -75,11 +78,21 @@ const Speakers = () => {
       speakerGroups.push(group)
     }
 
+    const openModal = speaker => {
+      setCurrentSpeaker(speaker)
+      setModalShow(true)
+      console.log(speaker)
+    }
+
     return speakerGroups?.map((group, index) => (
       <Carousel.Item key={index} interval={60000}>
         <div className="speakers-container">
           {group.map((speaker, idx) => (
-            <div className="speaker" key={idx}>
+            <div
+              onClick={() => openModal(speaker)}
+              className="speaker"
+              key={idx}
+            >
               {speaker && (
                 <div className="speaker-content">
                   <div>
@@ -102,12 +115,39 @@ const Speakers = () => {
     ))
   }
 
+  const SpeakerModal = props => {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>
+          <GatsbyImage
+            className="current-speaker-image"
+            image={getImage(currentSpeaker.node.image.gatsbyImageData)}
+          />
+          <div>
+            <h2>{currentSpeaker.node.name}</h2>
+            <p>{currentSpeaker.node.role}</p>
+            <pre>{currentSpeaker.node.description.description}</pre>
+          </div>
+        </Modal.Body>
+      </Modal>
+    )
+  }
+
   return (
     <>
       <div className="s-container">
         <div className="container">
           <h2>{t`speakers.title`}</h2>
           <Carousel>{speakers && renderSpeakerGroups()}</Carousel>
+          {currentSpeaker && (
+            <SpeakerModal show={modalShow} onHide={() => setModalShow(false)} />
+          )}
         </div>
       </div>
     </>

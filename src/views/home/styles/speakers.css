@@ -90,6 +90,29 @@
 }
 .s-container .speakers-container .speaker-image img:hover {
 }
+
+.modal-content {
+  height: 484px;
+}
+
+.modal-header {
+  border-bottom: none !important;
+}
+
+.modal-body {
+  display: flex;
+  padding: 0 48px 48px 48px !important;
+  align-items: flex-start;
+  gap: 60px;
+  flex: 1 0 0 !important;
+  align-self: stretch;
+}
+
+.modal-body .current-speaker-image {
+  width: 200px;
+  height: 200px;
+}
+
 .s-container .carousel-indicators {
   bottom: -100px;
 }
