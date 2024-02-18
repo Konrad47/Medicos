@@ -25,6 +25,12 @@ const Speakers = () => {
               file {
                 url
               }
+              gatsbyImageData(
+                cornerRadius: 16
+                height: 267
+                width: 267
+                quality: 100
+              )
               title
             }
             node_locale
@@ -58,7 +64,17 @@ const Speakers = () => {
         <div className="speakers-container">
           {group.map((speaker, idx) => (
             <div className="speaker" key={idx}>
-              <h1>{speaker.node.name}</h1>
+              <div className="speaker-content">
+                <div>
+                  <h4>{speaker.node.name}</h4>
+                  <p>{speaker.node.role}</p>
+                </div>
+                <p>{t`speakers.read-more`}</p>
+              </div>
+              <GatsbyImage
+                className="speaker-image"
+                image={getImage(speaker.node.image.gatsbyImageData)}
+              />
             </div>
           ))}
         </div>
@@ -68,13 +84,10 @@ const Speakers = () => {
 
   return (
     <>
-      {/* <GatsbyImage
-                      image={getImage()}
-                    /> */}
       <div className="s-container">
         <div className="container">
           <h2>{t`speakers.title`}</h2>
-          <Carousel>{renderSpeakerGroups()}</Carousel>
+          <Carousel>{speakers && renderSpeakerGroups()}</Carousel>
         </div>
       </div>
     </>
