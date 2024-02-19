@@ -81,7 +81,7 @@ const Speakers = () => {
     const openModal = speaker => {
       setCurrentSpeaker(speaker)
       setModalShow(true)
-      console.log(speaker.node.description.description)
+      console.log(speaker)
     }
 
     return speakerGroups?.map((group, index) => (
@@ -135,7 +135,39 @@ const Speakers = () => {
         dialogClassName="modal-xl"
         scrollable
       >
-        <Modal.Header closeButton></Modal.Header>
+        <Modal.Header>
+          <svg
+            onClick={() => setModalShow(false)}
+            className="close-modal-button"
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+          >
+            <g clip-path="url(#clip0_24_504)">
+              <path
+                d="M36 12L12 36"
+                stroke="black"
+                stroke-width="2.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 12L36 36"
+                stroke="black"
+                stroke-width="2.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_24_504">
+                <rect width="48" height="48" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </Modal.Header>
         <Modal.Body>
           <GatsbyImage
             className="current-speaker-image"
