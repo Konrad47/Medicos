@@ -24,5 +24,8 @@
     "numbers.number3": "+15",
     "numbers.number-desc": "Uczestników konferencji",
     "numbers.number-desc2": "Wykładów i paneli o światowych rynkach",
-    "numbers.number-desc3": "Ekspertów z Polski i zagranicy"
+    "numbers.number-desc3": "Ekspertów z Polski i zagranicy",
+
+    "speakers.title": "Prelegenci",
+    "speakers.read-more": "Czytaj więcej →"
 }
