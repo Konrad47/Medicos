@@ -81,7 +81,7 @@ const Speakers = () => {
     const openModal = speaker => {
       setCurrentSpeaker(speaker)
       setModalShow(true)
-      console.log(speaker)
+      console.log(speaker.node.description.description)
     }
 
     return speakerGroups?.map((group, index) => (
@@ -132,6 +132,8 @@ const Speakers = () => {
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
+        dialogClassName="modal-xl"
+        scrollable
       >
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
@@ -139,11 +141,13 @@ const Speakers = () => {
             className="current-speaker-image"
             image={getImage(currentSpeaker.node.image.gatsbyImageData)}
           />
-          <div>
+          <div className="modal-body-content">
             <h2 className="h2-style">{currentSpeaker.node.name}</h2>
             <p>{currentSpeaker.node.role}</p>
-            <pre>{currentSpeaker.node.description.description}</pre>
-            <div>
+            <span className="p-style">
+              {currentSpeaker.node.description.description}
+            </span>
+            <div className="social-icons">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="34"

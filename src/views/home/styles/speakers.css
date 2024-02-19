@@ -110,13 +110,46 @@
   align-self: stretch;
 }
 
+.modal-body .modal-body-content {
+  width: 75%;
+}
+
+.modal-body .modal-body-content .h2-style {
+  background: var(
+    --gradient,
+    linear-gradient(90deg, #ce482e 0%, #a84563 47%, #5d1360 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .modal-body .current-speaker-image {
   width: 200px;
   height: 200px;
 }
 
-.modal-body h2 {
-  margin: 0;
+.modal-body p {
+  margin-bottom: 40px;
+  color: var(--navy-mid, #961d8a);
+  font-family: "Red Hat Display";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+
+.modal-body span {
+  white-space: pre-line;
+  color: var(--dark, #230e25);
+}
+
+.modal-body .social-icons {
+  margin-top: 40px;
+}
+
+.modal-body .social-icons > svg {
+  margin-right: 15px;
 }
 
 .s-container .carousel-indicators {
