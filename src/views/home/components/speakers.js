@@ -3,8 +3,7 @@ import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
 import "../styles/speakers.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Carousel from "react-bootstrap/Carousel"
-import "../../../images/profile-pic.png"
-import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../../components/contentful-translator"
 import Modal from "react-bootstrap/Modal"
@@ -264,7 +263,6 @@ const Speakers = () => {
       </Modal>
     )
   }
-
   return (
     <>
       <div className="s-container">
