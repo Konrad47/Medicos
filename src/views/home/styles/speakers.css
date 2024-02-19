@@ -112,6 +112,14 @@
   z-index: 1;
 }
 
+.modal-header .current-speaker-image {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+  width: 200px;
+  height: 200px;
+}
+
 .modal-body {
   display: flex;
   padding: 48px !important;
@@ -171,8 +179,9 @@
   margin-top: 40px;
 }
 
-.modal-body .social-icons > svg {
+.modal-body .social-icons > a {
   margin-right: 15px;
+  cursor: pointer;
 }
 
 .s-container .carousel-indicators {
