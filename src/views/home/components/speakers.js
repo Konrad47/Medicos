@@ -89,7 +89,12 @@ const Speakers = () => {
         <div className="speakers-container">
           {group.map((speaker, idx) => (
             <div
-              onClick={() => openModal(speaker)}
+              style={{
+                cursor: speaker?.node.description !== null && "pointer",
+              }}
+              onClick={() =>
+                speaker?.node.description !== null && openModal(speaker)
+              }
               className="speaker"
               key={idx}
             >
@@ -102,12 +107,17 @@ const Speakers = () => {
                   <p>{t`speakers.read-more`}</p>
                 </div>
               )}
-              <GatsbyImage
-                className="speaker-image"
-                image={
-                  speaker ? getImage(speaker.node.image.gatsbyImageData) : null
-                }
-              />
+              <div className="speaker-image-wrapper">
+                <GatsbyImage
+                  className="speaker-image"
+                  image={
+                    speaker
+                      ? getImage(speaker.node.image.gatsbyImageData)
+                      : null
+                  }
+                />
+                <div className="color-overlay"></div>
+              </div>
             </div>
           ))}
         </div>
