@@ -28,27 +28,12 @@ const Agenda = () => {
         <div className="container">
           <h2 className="h2-style">{t`agenda.title`}</h2>
           <h4 className="h4-style">{t`agenda.title2`}</h4>
-          {/* <Carousel> */}
           <Carousel
             prevIcon={dayOneButton}
             nextIcon={dayTwoButton}
             interval={null}
             indicators={false}
           >
-            {/* <div>
-              <a
-                class="carousel-control-prev"
-                role="button"
-                tabindex="0"
-                href="#"
-              >
-                <div class="agenda-day-chooser">
-                  <h4 class="h4-style">agenda.title-day2</h4>
-                  <p>agenda.description-day2</p>
-                </div>
-                <span class="visually-hidden">Previous</span>
-              </a>
-            </div> */}
             <Carousel.Item>
               <div className="event-agenda-container">
                 <div className="time-con">
@@ -86,15 +71,15 @@ const Agenda = () => {
             <Carousel.Item>
               <div className="event-agenda-container">
                 <div className="time-con">
-                  <p>08:00 - 10:00</p>
-                  <p>2h 0m</p>
+                  <p className="p-time">08:00 - 10:00</p>
+                  <p className="p-duration">2h 0m</p>
                 </div>
                 <div className="right-con">
                   <div className="description-con">
-                    <h5>
+                    <h5 className="h5-style">
                       The Art of Public Speaking and Effective Communication
                     </h5>
-                    <p>
+                    <p className="p-style">
                       The program provides an overview of the core GRC modules
                       in ServiceNow - Policy and Compliance, Risk, This course
                       consists of hands-on labs that provide a holistic
@@ -103,16 +88,19 @@ const Agenda = () => {
                   </div>
                   <div className="speaker-con">
                     <div className="speaker-desc-con">
-                      <p>Albert Flores</p>
-                      <p>General Electric</p>
+                      <p className="p-speaker-name">Albert Flores</p>
+                      <p className="p-speaker-desc">General Electric</p>
                     </div>
-                    <StaticImage
-                      className="o-image"
-                      src="../../../images/organizers/profile-pic.png"
-                      alt="Beta ETF"
-                      placeholder="none"
-                      loading="lazy"
-                    />
+                    <div className="a-image-container">
+                      <StaticImage
+                        className="a-speaker-image"
+                        src="../../../images/profile-pic.png"
+                        alt="Beta ETF"
+                        placeholder="none"
+                        loading="lazy"
+                      />
+                      <div className="a-speaker-image-border"></div>
+                    </div>
                   </div>
                 </div>
               </div>
