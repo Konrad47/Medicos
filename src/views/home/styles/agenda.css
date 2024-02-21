@@ -1,0 +1,82 @@
+.a-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: url(../../../images/agenda/a-background.png) no-repeat;
+  /* background: var(--light, #fcf8fc); */
+  text-align: center;
+}
+
+.a-container h2 {
+  background: var(
+    --gradient,
+    linear-gradient(90deg, #ce482e 0%, #a84563 47%, #5d1360 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.a-container h4 {
+  color: var(--dark, #230e25);
+  margin-bottom: 60px;
+}
+
+.a-container .carousel {
+  display: grid;
+}
+
+.a-container .carousel > a {
+  order: -1;
+  grid-column: 1;
+}
+
+.a-container .carousel-control-next,
+.a-container .carousel-control-prev {
+  opacity: 1;
+  text-decoration: none;
+  position: relative;
+  color: var(--dark, #230e25);
+  background: var(--navy-light, #f7d4f3);
+  width: 250px;
+  height: 70px;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease-out;
+}
+
+.a-container .carousel-control-next:hover,
+.a-container .carousel-control-prev:hover {
+  background: var(--light, #fcf8fc);
+}
+
+.a-container .carousel-control-prev {
+  left: -9.5%;
+  top: 0;
+  padding: 8px 24px 8px 32px;
+  border-radius: 16px 0 0 16px;
+}
+
+.a-container .carousel-control-next {
+  left: 9.5%;
+  top: -70px;
+  padding: 8px 32px 8px 24px;
+  border-radius: 0 16px 16px 0;
+}
+
+.a-container .agenda-day-chooser h4,
+.a-container .agenda-day-chooser p {
+  margin: 0;
+  color: var(--light, #961d8a);
+}
+
+.a-container .event-agenda-container {
+  display: flex;
+  padding: 24px;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--navy-light, #f7d4f3);
+  background: var(--light, #fcf8fc);
+}

@@ -68,6 +68,13 @@ body {
   line-height: normal;
 }
 
+.h5-style {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
 .p-style {
   font-size: 16px;
   font-style: normal;
