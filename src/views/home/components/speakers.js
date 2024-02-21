@@ -88,7 +88,7 @@ const Speakers = () => {
     }
 
     return speakerGroups?.map((group, index) => (
-      <Carousel.Item key={index} interval={60000}>
+      <Carousel.Item key={index}>
         <div className="speakers-container">
           {group.map((speaker, idx) => (
             <div
@@ -268,7 +268,9 @@ const Speakers = () => {
       <div className="s-container">
         <div className="container">
           <h2 className="h2-style">{t`speakers.title`}</h2>
-          <Carousel>{speakers && renderSpeakerGroups()}</Carousel>
+          <Carousel interval={60000} pause={"hover"}>
+            {speakers && renderSpeakerGroups()}
+          </Carousel>
           {currentSpeaker && (
             <SpeakerModal show={modalShow} onHide={() => setModalShow(false)} />
           )}

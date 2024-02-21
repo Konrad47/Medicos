@@ -59,7 +59,7 @@
   height: 100%;
   background-color: #230e25;
   mix-blend-mode: color;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .s-container .speakers-container .speaker:hover .color-overlay {
