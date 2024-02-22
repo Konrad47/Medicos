@@ -7,6 +7,8 @@ import DiscoverPotential from "./components/discover-potential"
 import Numbers from "./components/numbers"
 import Speakers from "./components/speakers"
 import Agenda from "./components/agenda"
+import Register from "./components/register"
+
 const Home = () => {
   const { t } = useTranslation()
 
@@ -19,6 +21,7 @@ const Home = () => {
       <Numbers />
       <Speakers />
       <Agenda />
+      <Register />
     </>
   )
 }
