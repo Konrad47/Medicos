@@ -8,6 +8,7 @@ import Numbers from "./components/numbers"
 import Speakers from "./components/speakers"
 import Agenda from "./components/agenda"
 import Register from "./components/register"
+import Partners from "./components/partners"
 
 const Home = () => {
   const { t } = useTranslation()
@@ -22,6 +23,7 @@ const Home = () => {
       <Speakers />
       <Agenda />
       <Register />
+      <Partners />
     </>
   )
 }
