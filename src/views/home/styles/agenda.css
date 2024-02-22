@@ -83,6 +83,19 @@
   color: var(--light, #961d8a);
 }
 
+.a-container .agenda-active-day,
+.a-container .agenda-active-day:hover {
+  background: var(--navy-mid, #961d8a);
+}
+
+.a-container .agenda-active-day h4 {
+  color: var(--light, #fcf8fc);
+}
+
+.a-container .agenda-active-day p {
+  color: var(--light, #f7d4f3);
+}
+
 .a-container .event-agenda-container {
   display: flex;
   padding: 24px;
@@ -93,10 +106,11 @@
 }
 
 .a-container .event-agenda-container .time-con {
-  width: 160px;
+  min-width: 160px;
   text-align: left;
   margin-top: auto;
   margin-bottom: auto;
+  flex: 1;
 }
 
 .a-container .event-agenda-container .time-con .p-time,
@@ -118,6 +132,8 @@
 
 .a-container .event-agenda-container .right-con {
   display: flex;
+  justify-content: space-between;
+  flex: 9;
 }
 
 .a-container .event-agenda-container .right-con .description-con {
@@ -191,6 +207,14 @@
   border-radius: 90px;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.a-container .event-agenda-container .right-con .speaker-con .a-break-icon {
+  padding: 21px;
+  border-radius: 90px;
+  background-color: var(--navy-light, #f7d4f3);
+  width: 90px;
+  height: 90px;
 }
 
 .a-container
