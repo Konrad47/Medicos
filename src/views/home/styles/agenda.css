@@ -1,9 +1,21 @@
 .a-container {
   padding-top: 80px;
   padding-bottom: 80px;
-  background: url(../../../images/agenda/a-background.png) no-repeat;
-  /* background: var(--light, #fcf8fc); */
+  background: var(--light, #fcf8fc);
   text-align: center;
+  position: relative;
+}
+
+.a-container .a-image-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.a-container .a-image-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .a-container h2 {
@@ -19,6 +31,7 @@
 .a-container h4 {
   color: var(--dark, #230e25);
   margin-bottom: 60px;
+  font-weight: 500;
 }
 
 .a-container .carousel {
@@ -31,7 +44,7 @@
 }
 
 .a-container .agenda-day-chooser {
-  width: 250px;
+  width: 306px;
   height: 70px;
   background: var(--navy-light, #f7d4f3);
   padding: 8px 24px 8px 32px;
@@ -44,7 +57,7 @@
   text-decoration: none;
   position: relative;
   display: block !important;
-  width: 250px;
+  width: 306px;
   height: 70px;
   margin-bottom: auto;
   margin-top: auto;
@@ -58,7 +71,7 @@
 }
 
 .a-container .carousel-control-prev {
-  left: -9.5%;
+  left: -153px;
   top: 0;
 }
 
@@ -68,7 +81,7 @@
 }
 
 .a-container .carousel-control-next {
-  left: 9.5%;
+  left: 153px;
   top: -70px;
 }
 
@@ -81,6 +94,13 @@
 .a-container .agenda-day-chooser p {
   margin: 0;
   color: var(--light, #961d8a);
+}
+
+.a-container .agenda-day-chooser p {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .a-container .agenda-active-day,
@@ -103,6 +123,10 @@
   gap: 16px;
   border-bottom: 1px solid var(--navy-light, #f7d4f3);
   background: var(--light, #fcf8fc);
+}
+
+.a-container .event-agenda-container:nth-child(even) {
+  background: var(--light-bg, #faf0f9);
 }
 
 .a-container .event-agenda-container .time-con {

@@ -27,5 +27,12 @@
     "numbers.number-desc3": "Ekspertów z Polski i zagranicy",
 
     "speakers.title": "Prelegenci",
-    "speakers.read-more": "Czytaj więcej →"
+    "speakers.read-more": "Czytaj więcej →",
+
+    "agenda.title": "Agenda wydarzenia",
+    "agenda.title2": "zaplanuj swój udział w konferencji",
+    "agenda.title-day1": "Dzień 1",
+    "agenda.title-day2": "Dzień 2",
+    "agenda.description-day1": "23 kwietnia • online",
+    "agenda.description-day2": "24 kwietnia • Sala Notowań GPW"
 }

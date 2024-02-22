@@ -202,6 +202,20 @@ const Agenda = () => {
   return (
     <>
       <div className="a-container">
+        <StaticImage
+          className="a-image-top"
+          src="../../../images/agenda/a-background-top.png"
+          alt="Beta ETF"
+          placeholder="none"
+          loading="lazy"
+        />
+        <StaticImage
+          className="a-image-bottom"
+          src="../../../images/agenda/a-background-bottom.png"
+          alt="Beta ETF"
+          placeholder="none"
+          loading="lazy"
+        />
         <div className="container">
           <h2 className="h2-style">{t`agenda.title`}</h2>
           <h4 className="h4-style">{t`agenda.title2`}</h4>
