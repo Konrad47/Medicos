@@ -138,6 +138,8 @@ const Agenda = () => {
             <div className="a-image-container">
               {!agenda.node.break && agenda.node.speakerImage ? (
                 <GatsbyImage
+                  alt="Speaker"
+                  placeholder="Speaker"
                   className="a-speaker-image"
                   image={getImage(agenda.node?.speakerImage?.gatsbyImageData)}
                 />
@@ -205,15 +207,15 @@ const Agenda = () => {
         <StaticImage
           className="a-image-top"
           src="../../../images/agenda/a-background-top.png"
-          alt="Beta ETF"
-          placeholder="none"
+          alt="Top image"
+          placeholder="Top image"
           loading="lazy"
         />
         <StaticImage
           className="a-image-bottom"
           src="../../../images/agenda/a-background-bottom.png"
-          alt="Beta ETF"
-          placeholder="none"
+          alt="Bottom image"
+          placeholder="Bottom image"
           loading="lazy"
         />
         <div className="container">

@@ -16,21 +16,21 @@ const Organizers = () => {
               className="o-image"
               src="../../../images/organizers/o-beta-etf.png"
               alt="Beta ETF"
-              placeholder="none"
+              placeholder="Beta ETF"
               loading="lazy"
             />
             <StaticImage
               className="o-image"
               src="../../../images/organizers/o-m-bank.png"
               alt="mBank"
-              placeholder="none"
+              placeholder="mBank"
               loading="lazy"
             />
             <StaticImage
               className="o-image"
               src="../../../images/organizers/o-gpw.png"
               alt="GPW"
-              placeholder="none"
+              placeholder="GPW"
               loading="lazy"
             />
           </div>
