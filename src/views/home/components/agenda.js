@@ -138,8 +138,8 @@ const Agenda = () => {
             <div className="a-image-container">
               {!agenda.node.break && agenda.node.speakerImage ? (
                 <GatsbyImage
-                  alt="Speaker"
-                  placeholder="Speaker"
+                  alt={agenda.node.speakerName}
+                  placeholder={agenda.node.speakerName}
                   className="a-speaker-image"
                   image={getImage(agenda.node?.speakerImage?.gatsbyImageData)}
                 />

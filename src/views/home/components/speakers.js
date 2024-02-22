@@ -112,8 +112,8 @@ const Speakers = () => {
               )}
               <div className="speaker-image-wrapper">
                 <GatsbyImage
-                  alt="Speaker"
-                  placeholder="Speaker"
+                  alt={speaker?.node.name}
+                  placeholder={speaker?.node.name}
                   className="speaker-image"
                   image={
                     speaker
@@ -173,8 +173,8 @@ const Speakers = () => {
             </defs>
           </svg>
           <GatsbyImage
-            alt="Speaker"
-            placeholder="Speaker"
+            alt={currentSpeaker.node.name}
+            placeholder={currentSpeaker.node.name}
             className="current-speaker-image"
             image={getImage(currentSpeaker.node.image.gatsbyImageData)}
           />
