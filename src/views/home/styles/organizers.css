@@ -2,6 +2,7 @@
   text-align: center;
   padding-top: 33px;
   padding-bottom: 28px;
+  background: var(--light, #fcf8fc);
 }
 
 .o-container h3 {
