@@ -6,6 +6,20 @@
   position: relative;
 }
 
+.p-container h2 {
+  background: var(
+    --gradient,
+    linear-gradient(90deg, #ce482e 0%, #a84563 47%, #5d1360 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.p-container h3 {
+  color: rgba(186, 77, 48, 1);
+}
+
 .p-container .a-image-top {
   position: absolute;
   top: 0;
