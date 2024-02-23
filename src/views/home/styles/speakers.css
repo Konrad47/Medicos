@@ -1,0 +1,248 @@
+.s-container {
+  padding-top: 80px;
+  padding-bottom: 120px;
+  background: var(--light-bg, #faf0f9);
+  text-align: center;
+}
+
+.s-container h2 {
+  background: var(
+    --gradient,
+    linear-gradient(90deg, #ce482e 0%, #a84563 47%, #5d1360 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+}
+
+.s-container .speakers-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: auto;
+  gap: 60px;
+}
+
+.s-container .speakers-container .speaker {
+  position: relative;
+  width: 212.2px;
+  height: 212.2px;
+}
+
+.s-container .speakers-container .speaker-content {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  gap: 16px;
+  background: var(--navy-mid, #961d8a);
+  text-align: left;
+  border-radius: 0px 0px 8px 8px;
+  transition: height 0.3s ease-out;
+  height: 0;
+  overflow: hidden;
+}
+
+.s-container .speakers-container .speaker:hover .speaker-content {
+  height: 100px;
+}
+
+.s-container .speakers-container .speaker-image-wrapper {
+  position: relative;
+}
+
+.s-container .speakers-container .speaker-image-wrapper .color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #230e25;
+  mix-blend-mode: color;
+  border-radius: 16px;
+}
+
+.s-container .speakers-container .speaker:hover .color-overlay {
+  display: none;
+}
+
+.s-container .speakers-container .speaker-image-wrapper .speaker-image {
+  filter: grayscale(0);
+}
+
+.s-container .speakers-container .speaker-content h4 {
+  margin: 0;
+  padding: 16px 24px 0 24px;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.s-container .speakers-container .speaker-content div {
+  margin-bottom: 10px;
+}
+
+.s-container .speakers-container .speaker-content p {
+  margin: 0;
+  color: var(--navy-light, #f7d4f3);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  padding: 0 24px 0 24px;
+}
+
+.modal-content {
+  height: 484px;
+}
+
+.modal-header {
+  border-bottom: none !important;
+  padding: 0 !important;
+  position: relative;
+}
+
+.modal-header .close-modal-button {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+.modal-header .current-speaker-image {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+  width: 200px;
+  height: 200px;
+}
+
+.modal-body {
+  display: flex;
+  padding: 48px !important;
+  align-items: flex-start;
+  gap: 60px;
+  flex: 1 0 0 !important;
+  align-self: stretch;
+  scrollbar-color: var(--navy-mid, #961d8a) !important;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-body::-webkit-scrollbar-track {
+  background: var(--navy-light, #f7d4f3);
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: var(--navy-mid, #961d8a);
+}
+.modal-body .modal-body-content {
+  width: 75%;
+}
+
+.modal-body .modal-body-content .h2-style {
+  background: var(
+    --gradient,
+    linear-gradient(90deg, #ce482e 0%, #a84563 47%, #5d1360 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal-body .current-speaker-image {
+  width: 200px;
+  height: 200px;
+}
+
+.modal-body p {
+  margin-bottom: 40px;
+  color: var(--navy-mid, #961d8a);
+  font-family: "Red Hat Display";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+
+.modal-body span {
+  white-space: pre-line;
+  color: var(--dark, #230e25);
+}
+
+.modal-body .social-icons {
+  margin-top: 40px;
+}
+
+.modal-body .social-icons > a {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.s-container .carousel-indicators {
+  bottom: -100px;
+}
+.s-container .carousel-indicators button {
+  display: flex;
+  width: 24px;
+  height: 4.8px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 100px;
+  background: var(--navy-light, #f7d4f3);
+  opacity: 1;
+}
+
+.s-container .carousel-indicators .active {
+  width: 44px !important;
+  background: var(--navy-mid, #961d8a);
+}
+
+.s-container .carousel-control-prev,
+.s-container .carousel-control-next {
+  opacity: 1;
+  width: 60px;
+  height: 60px;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+.s-container .carousel-control-prev-icon,
+.s-container .carousel-control-next-icon {
+  z-index: 1;
+  display: inline-flex;
+  transform: rotate(0deg);
+  align-items: flex-start;
+  border-radius: 8px;
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--navy-mid, #961d8a);
+  background: var(--light, #fcf8fc);
+  box-shadow: 4px 4px 8px 0px rgba(57, 19, 55, 0.25);
+}
+
+.s-container .carousel-control-prev-icon:hover,
+.s-container .carousel-control-next-icon:hover {
+  background-color: var(--navy-light, #f7d4f3);
+  transition: all 0.2s ease-out;
+}
+
+.s-container .carousel-control-prev {
+  left: -7%;
+}
+.s-container .carousel-control-next {
+  right: -7%;
+}
+.s-container .carousel-control-prev-icon {
+  background: url("../../../images/speakers/arrow-left.png") no-repeat fixed 50%
+    50%;
+}
+
+.s-container .carousel-control-next-icon {
+  background: url("../../../images/speakers/arrow-right.png") no-repeat fixed
+    50% 50%;
+}

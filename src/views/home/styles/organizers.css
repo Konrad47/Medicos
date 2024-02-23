@@ -1,0 +1,24 @@
+.o-container {
+  text-align: center;
+  padding-top: 33px;
+  padding-bottom: 28px;
+  background: var(--light, #fcf8fc);
+}
+
+.o-container h3 {
+  color: var(--orange-mid, #ba4d30);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.o-container .o-grid {
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 180px;
+}
+
+.o-container .o-grid .o-image {
+  margin-bottom: auto;
+  margin-top: auto;
+}

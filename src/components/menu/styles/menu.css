@@ -1,11 +1,17 @@
 .menu-container {
   display: flex;
   justify-content: space-between;
-  background-color: rgba(18, 14, 37, 0.8);
+  background: rgba(35, 14, 37, 0.9);
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 5;
+  transition: all 0.2s ease-out;
+}
+
+.menu-opaticy {
+  background-color: rgba(18, 14, 37, 0);
 }
 
 .menu-container svg {
@@ -19,8 +25,8 @@
 }
 
 .menu-container .gpw-icon {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .menu-container .menu-inside-container .menu-link {
@@ -36,22 +42,22 @@
   gap: 10px;
 }
 
+.menu-container .menu-inside-container .menu-link:hover {
+  color: var(--orange-mid, #ba4d30);
+  transition: all 0.2s ease-out;
+}
+
 .menu-container .menu-inside-container .menu-button-link {
   margin-right: 120px;
 }
 
-.menu-container .menu-inside-container .menu-button-link:hover {
-  background: var(--navy-light, #dedaf1);
-  color: var(--navy-mid, #312668);
-  transition: all 0.2s ease-out;
-}
-
 .menu-container .menu-inside-container .menu-dot {
-  color: #e58603;
+  color: var(--orange-mid, #ba4d30);
   font-size: 16px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
   margin-top: auto;
   margin-bottom: auto;
+  text-decoration: none;
 }

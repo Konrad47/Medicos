@@ -1,0 +1,128 @@
+.pe-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: var(--light-bg, #faf0f9);
+  text-align: center;
+}
+
+.pe-container h2 {
+  background: var(
+    --gradient,
+    linear-gradient(90deg, #ce482e 0%, #a84563 47%, #5d1360 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pe-container h4 {
+  color: var(--dark, #230e25);
+  font-weight: 500;
+  margin-bottom: 60px;
+}
+
+.pe-container .h4-width {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pe-container .editions-con {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  row-gap: 48px;
+  column-gap: 60px;
+}
+.pe-container .editions-con .edition {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.pe-container .editions-con .edition .edition-image {
+  position: relative;
+}
+
+.pe-container .editions-con .edition .color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(97, 33, 94, 0), rgba(97, 33, 94, 1));
+  mix-blend-mode: color;
+  border-radius: 16px;
+}
+
+.pe-container .editions-con .edition .pe-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-out;
+}
+
+.pe-container .editions-con .edition:hover .pe-circle {
+  opacity: 0;
+}
+
+.pe-container .editions-con .edition h4 {
+  margin-top: 20px;
+  margin-bottom: 0;
+  color: var(--navy-dark, #56104f);
+  font-weight: 700;
+}
+
+.pe-container .editions-con .edition .pe-image {
+  border-radius: 16px;
+  opacity: 0.8;
+}
+
+.pe-container .editions-con .edition .edition-image .edition-image-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  opacity: 0;
+  background: var(--navy-dark, #56104f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-out;
+}
+
+.pe-container .editions-con .edition:hover .edition-image .edition-image-hover {
+  opacity: 0.8;
+}
+
+.pe-container .editions-con .edition .edition-image .edition-image-hover h5 {
+  margin: 0;
+  color: var(--light, #fcf8fc);
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  transition: all 0.2s ease-out;
+}
+
+.pe-container
+  .editions-con
+  .edition
+  .edition-image
+  .edition-image-hover
+  h5
+  span {
+  font-family: Inter;
+}
+.pe-container
+  .editions-con
+  .edition:hover
+  .edition-image
+  .edition-image-hover
+  h5 {
+  margin-top: 20px;
+}

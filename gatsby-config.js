@@ -14,7 +14,7 @@ module.exports = {
       summary: `Strona internetowa GPW Warsaw Passive Investment`,
     },
     description: `Strona internetowa GPW Warsaw Passive Investment`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://master--gpw-warsaw-passive-investment.netlify.app/`,
   },
   plugins: [
     {

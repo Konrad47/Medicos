@@ -19,15 +19,67 @@ body {
   align-items: center;
   gap: 10px;
   border-radius: 8px;
-  background: var(--light, #f8f8fc);
+  background: var(--light, #fcf8fc);
   box-shadow: 4px 4px 8px 0px rgba(57, 19, 55, 0.25);
   cursor: pointer;
 }
 
 .register-btn:hover {
-  background: var(--navy-light, #dedaf1);
-  color: var(--navy-mid, #312668);
+  background: var(--navy-light, #f7d4f3);
+  color: var(--navy-mid, #961d8a);
   transition: all 0.2s ease-out;
+}
+
+.h1-style,
+.h2-style,
+.h3-style,
+.h4-style,
+.h5-style,
+.h6-style,
+.p-style {
+  margin: 0;
+}
+
+.h1-style {
+  font-size: 84px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.h2-style {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.h3-style {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.h4-style {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.h5-style {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.p-style {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
 }
 
 @media only screen and (max-width: 568px) {
