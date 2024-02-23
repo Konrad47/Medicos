@@ -11,7 +11,7 @@ const PreviousEditions = () => {
       <div className="pe-container">
         <div className="container">
           <h2 className="h2-style">{t`previous-editions.title`}</h2>
-          <h4 className="h4-style">{t`previous-editions.title2`}</h4>
+          <h4 className="h4-style h4-width ">{t`previous-editions.title2`}</h4>
           <div className="editions-con">
             <a className="edition" href="#">
               <div className="edition-image">
@@ -39,7 +39,9 @@ const PreviousEditions = () => {
                   />
                 </svg>
                 <div className="edition-image-hover">
-                  <h5>{t`previous-editions.see-wideo`}</h5>
+                  <h5>
+                    {t`previous-editions.see-wideo`} <span>↗</span>
+                  </h5>
                 </div>
               </div>
               <h4 className="h4-style">{t`previous-editions.edition2023`}</h4>
@@ -70,7 +72,9 @@ const PreviousEditions = () => {
                   />
                 </svg>
                 <div className="edition-image-hover">
-                  <h5>{t`previous-editions.see-wideo`}</h5>
+                  <h5>
+                    {t`previous-editions.see-wideo`} <span>↗</span>
+                  </h5>
                 </div>
               </div>
               <h4 className="h4-style">{t`previous-editions.edition2022`}</h4>
@@ -101,7 +105,9 @@ const PreviousEditions = () => {
                   />
                 </svg>
                 <div className="edition-image-hover">
-                  <h5>{t`previous-editions.see-wideo`}</h5>
+                  <h5>
+                    {t`previous-editions.see-wideo`} <span>↗</span>
+                  </h5>
                 </div>
               </div>
               <h4 className="h4-style">{t`previous-editions.edition2021`}</h4>
@@ -132,7 +138,9 @@ const PreviousEditions = () => {
                   />
                 </svg>
                 <div className="edition-image-hover">
-                  <h5>{t`previous-editions.see-wideo`}</h5>
+                  <h5>
+                    {t`previous-editions.see-wideo`} <span>↗</span>
+                  </h5>
                 </div>
               </div>
               <h4 className="h4-style">{t`previous-editions.edition2020`}</h4>

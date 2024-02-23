@@ -21,6 +21,12 @@
   margin-bottom: 60px;
 }
 
+.pe-container .h4-width {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .pe-container .editions-con {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -103,6 +109,15 @@
   transition: all 0.2s ease-out;
 }
 
+.pe-container
+  .editions-con
+  .edition
+  .edition-image
+  .edition-image-hover
+  h5
+  span {
+  font-family: Inter;
+}
 .pe-container
   .editions-con
   .edition:hover
