@@ -14,13 +14,65 @@ const PreviousEditions = () => {
           <h4 className="h4-style">{t`previous-editions.title2`}</h4>
           <div className="editions-con">
             <div className="edition">
+              <div className="edition-image">
+                <StaticImage
+                  className="pe-image"
+                  src="../../../images/previous-editions/pe-2023.png"
+                  alt="2023 edition"
+                  placeholder="2023 edition"
+                  loading="lazy"
+                />
+                <div className="color-overlay"></div>
+                <svg
+                  className="pe-circle"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="150"
+                  height="150"
+                  viewBox="0 0 150 150"
+                  fill="none"
+                >
+                  <circle opacity="0.6" cx="75" cy="75" r="75" fill="white" />
+                  <path
+                    opacity="0.6"
+                    d="M113.5 68.4378C118.167 71.1321 118.167 77.8679 113.5 80.5622L60.25 111.306C55.5833 114 49.75 110.632 49.75 105.244L49.75 43.7561C49.75 38.3675 55.5833 34.9996 60.25 37.6939L113.5 68.4378Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <h4 className="h4-style">{t`previous-editions.edition2023`}</h4>
+            </div>
+            <div className="edition">
               <StaticImage
-                className="a-image-top"
-                src="../../../images/previous-editions/pe-2023.png"
+                className="pe-image"
+                src="../../../images/previous-editions/pe-2022.png"
                 alt="2023 edition"
                 placeholder="2023 edition"
                 loading="lazy"
               />
+              <h4 className="h4-style">{t`previous-editions.edition2022`}</h4>
+              {/* <div className="color-overlay"></div> */}
+            </div>
+            <div className="edition">
+              <StaticImage
+                className="pe-image"
+                src="../../../images/previous-editions/pe-2021.png"
+                alt="2023 edition"
+                placeholder="2023 edition"
+                loading="lazy"
+              />
+              <h4 className="h4-style">{t`previous-editions.edition2021`}</h4>
+              {/* <div className="color-overlay"></div> */}
+            </div>
+            <div className="edition">
+              <StaticImage
+                className="pe-image"
+                src="../../../images/previous-editions/pe-2020.png"
+                alt="2023 edition"
+                placeholder="2023 edition"
+                loading="lazy"
+              />
+              <h4 className="h4-style">{t`previous-editions.edition2020`}</h4>
+              {/* <div className="color-overlay"></div> */}
             </div>
           </div>
         </div>
