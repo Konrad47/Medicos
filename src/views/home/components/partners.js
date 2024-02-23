@@ -9,9 +9,16 @@ const Partners = () => {
   return (
     <>
       <div className="p-container">
+        <StaticImage
+          className="a-image-top"
+          src="../../../images/partners/p-background-top.png"
+          alt="Top image"
+          placeholder="Top image"
+          loading="lazy"
+        />
         <div className="container">
           <div className="main-partners-con">
-            <h3>{t`partners.main-partners`}</h3>
+            <h3 className="h3-style">{t`partners.main-partners`}</h3>
             <div className="main-partners">
               <StaticImage
                 className="partner-image"
@@ -24,7 +31,7 @@ const Partners = () => {
           </div>
           <div className="support-content-partners-con">
             <div className="support-partners">
-              <h3>{t`partners.support-partners`}</h3>
+              <h3 className="h3-style">{t`partners.support-partners`}</h3>
               <StaticImage
                 className="partner-image"
                 src="../../../images/organizers/o-m-bank.png"
@@ -34,7 +41,19 @@ const Partners = () => {
               />
             </div>
             <div className="content-partners">
-              <h3>{t`partners.content-partners`}</h3>
+              <h3 className="h3-style">{t`partners.content-partners`}</h3>
+              <StaticImage
+                className="partner-image"
+                src="../../../images/organizers/o-m-bank.png"
+                alt="Bottom image"
+                placeholder="Bottom image"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div className="partners-con">
+            <h3 className="h3-style">{t`partners.partners`}</h3>
+            <div className="partners">
               <StaticImage
                 className="partner-image"
                 src="../../../images/organizers/o-m-bank.png"
@@ -45,7 +64,7 @@ const Partners = () => {
             </div>
           </div>
           <div className="main-partners-con">
-            <h3>{t`partners.media-partners`}</h3>
+            <h3 className="h3-style">{t`partners.media-partners`}</h3>
             <div className="media-partners">
               <StaticImage
                 className="partner-image"

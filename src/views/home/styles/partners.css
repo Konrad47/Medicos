@@ -1,0 +1,13 @@
+.p-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: var(--light, #fcf8fc);
+  text-align: center;
+  position: relative;
+}
+
+.p-container .a-image-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
