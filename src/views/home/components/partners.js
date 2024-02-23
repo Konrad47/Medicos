@@ -24,7 +24,6 @@ const Partners = () => {
       }
     }
   `)
-  console.log(data)
 
   const [mainPartners, setMainPartners] = useState()
   const [supportPartners, setSupportPartners] = useState()
@@ -63,12 +62,6 @@ const Partners = () => {
       )
     }
     getPartners()
-
-    console.log(mainPartners)
-    console.log(supportPartners)
-    console.log(contentPartners)
-    console.log(partners)
-    console.log(mediaPartners)
   }, [data.allContentfulGpwPartner])
 
   const renderPartners = items => {
