@@ -62,6 +62,10 @@
   gap: 60px;
 }
 
+.p-container .margin48 {
+  margin-top: 48px;
+}
+
 .p-container .support-content-partners-con .support-partners-con,
 .p-container .support-content-partners-con .content-partners-con {
   display: flex;
