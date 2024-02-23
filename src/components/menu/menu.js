@@ -15,7 +15,7 @@ const Menu = () => {
         const fixedElementRect = menu.getBoundingClientRect()
         const triggerElementRect = organizer.getBoundingClientRect()
 
-        if (fixedElementRect.top >= triggerElementRect.top) {
+        if (fixedElementRect.bottom >= triggerElementRect.top) {
           setIsUnderTrigger(true)
         } else {
           setIsUnderTrigger(false)
