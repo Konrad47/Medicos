@@ -21,16 +21,16 @@ const Organizers = () => {
             />
             <StaticImage
               className="o-image"
-              src="../../../images/organizers/o-m-bank.png"
-              alt="mBank"
-              placeholder="mBank"
+              src="../../../images/organizers/o-gpw.png"
+              alt="GPW"
+              placeholder="GPW"
               loading="lazy"
             />
             <StaticImage
               className="o-image"
-              src="../../../images/organizers/o-gpw.png"
-              alt="GPW"
-              placeholder="GPW"
+              src="../../../images/organizers/o-m-bank.png"
+              alt="mBank"
+              placeholder="mBank"
               loading="lazy"
             />
           </div>

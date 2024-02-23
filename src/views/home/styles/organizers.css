@@ -16,3 +16,8 @@
   align-items: flex-start;
   gap: 180px;
 }
+
+.o-container .o-grid .o-image {
+  margin-bottom: auto;
+  margin-top: auto;
+}
