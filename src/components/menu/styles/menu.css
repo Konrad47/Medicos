@@ -1,12 +1,17 @@
 .menu-container {
   display: flex;
   justify-content: space-between;
-  background-color: rgba(18, 14, 37, 0.8);
+  background: rgba(35, 14, 37, 0.9);
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 5;
+  transition: all 0.2s ease-out;
+}
+
+.menu-opaticy {
+  background-color: rgba(18, 14, 37, 0);
 }
 
 .menu-container svg {

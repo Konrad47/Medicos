@@ -18,12 +18,21 @@ const Home = () => {
       <Menu />
       <WpiConference />
       <Organizers />
-      <DiscoverPotential />
+      <div id="conference">
+        <DiscoverPotential />
+      </div>
       <Numbers />
-      <Speakers />
-      <Agenda />
+      <div id="speakers">
+        <Speakers />
+      </div>
+      <div id="agenda">
+        <Agenda />
+      </div>
       <Register />
-      <Partners />
+      <div id="partners">
+        <Partners />
+      </div>
+      <div id="previous-editions"></div>
     </>
   )
 }

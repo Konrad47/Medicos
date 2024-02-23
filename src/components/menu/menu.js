@@ -1,13 +1,43 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import "./styles/menu.css"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
 const Menu = () => {
   const { t } = useTranslation()
 
+  const [isUnderTrigger, setIsUnderTrigger] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const menu = document.getElementById("menu-container")
+      const organizer = document.getElementById("o-container")
+      if (menu && organizer) {
+        const fixedElementRect = menu.getBoundingClientRect()
+        const triggerElementRect = organizer.getBoundingClientRect()
+
+        if (fixedElementRect.top >= triggerElementRect.top) {
+          setIsUnderTrigger(true)
+        } else {
+          setIsUnderTrigger(false)
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
     <>
-      <div className="menu-container">
+      <div
+        id="menu-container"
+        className={
+          isUnderTrigger ? "menu-container" : "menu-container menu-opaticy"
+        }
+      >
         <svg
           className="gpw-icon"
           xmlns="http://www.w3.org/2000/svg"

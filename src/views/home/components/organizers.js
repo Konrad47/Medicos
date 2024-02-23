@@ -8,7 +8,7 @@ const Organizers = () => {
 
   return (
     <>
-      <div className="o-container">
+      <div id="o-container" className="o-container">
         <div className="container">
           <h3 className="h3-style">{t`organizers.title`}</h3>
           <div className="o-grid">
