@@ -22,4 +22,5 @@
 .r2-container h4 {
   color: var(--light, #fcf8fc);
   margin-bottom: 50px;
+  font-weight: 500;
 }
