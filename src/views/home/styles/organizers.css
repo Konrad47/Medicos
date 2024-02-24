@@ -19,6 +19,17 @@
 }
 
 .o-container .o-grid .o-image {
-  margin-bottom: auto;
-  margin-top: auto;
+  margin: auto;
+}
+
+@media screen and (max-width: 780px) {
+  .o-container {
+    padding-top: 58px;
+    padding-bottom: 75px;
+  }
+
+  .o-container .o-grid {
+    display: grid;
+    gap: 40px;
+  }
 }
