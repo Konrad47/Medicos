@@ -152,7 +152,11 @@ const Register = () => {
                 <h2 className="h2-style">{t`register.title`}</h2>
                 <h4 className="h4-style">{t`register.title2`}</h4>
               </div>
-              <a href="#" className="register-btn">{t`menu.register`}</a>
+              <a
+                target="_blank"
+                href="#"
+                className="register-btn"
+              >{t`menu.register`}</a>
             </div>
           </div>
         </div>

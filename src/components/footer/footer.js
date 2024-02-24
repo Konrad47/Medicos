@@ -146,10 +146,10 @@ const Footer = () => {
         </svg>
         <p className="p-styles">
           {t`footer.copyright`}
-          <a href="#">{t`footer.privacy-policy`}</a>
+          <a target="_blank" href="#">{t`footer.privacy-policy`}</a>
         </p>
         <div className="footer-icons">
-          <a href="#">
+          <a target="_blank" href="#">
             <svg
               width="40"
               height="40"
@@ -163,7 +163,7 @@ const Footer = () => {
               />
             </svg>
           </a>
-          <a href="#"></a>
+          <a target="_blank" href="#"></a>
         </div>
       </div>
     </>

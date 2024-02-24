@@ -13,7 +13,7 @@ const PreviousEditions = () => {
           <h2 className="h2-style">{t`previous-editions.title`}</h2>
           <h4 className="h4-style h4-width ">{t`previous-editions.title2`}</h4>
           <div className="editions-con">
-            <a className="edition" href="#">
+            <a target="_blank" className="edition" href="#">
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"
@@ -46,7 +46,7 @@ const PreviousEditions = () => {
               </div>
               <h4 className="h4-style">{t`previous-editions.edition2023`}</h4>
             </a>
-            <a className="edition" href="#">
+            <a target="_blank" className="edition" href="#">
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"
@@ -79,7 +79,7 @@ const PreviousEditions = () => {
               </div>
               <h4 className="h4-style">{t`previous-editions.edition2022`}</h4>
             </a>
-            <a className="edition" href="#">
+            <a target="_blank" className="edition" href="#">
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"
@@ -112,7 +112,7 @@ const PreviousEditions = () => {
               </div>
               <h4 className="h4-style">{t`previous-editions.edition2021`}</h4>
             </a>
-            <a className="edition" href="#">
+            <a target="_blank" className="edition" href="#">
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"

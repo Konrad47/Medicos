@@ -160,7 +160,11 @@ const WpiConference = () => {
               </div>
             </div>
           </div>
-          <a href="#" className="register-btn">{t`menu.register`}</a>
+          <a
+            target="_blank"
+            href="#"
+            className="register-btn"
+          >{t`menu.register`}</a>
         </div>
       </div>
     </>

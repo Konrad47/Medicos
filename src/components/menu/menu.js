@@ -188,7 +188,10 @@ const Menu = () => {
             className="menu-link"
             href="#previous-editions"
           >{t`menu.previous-editions`}</a>
-          <a className="register-btn menu-button-link">{t`menu.register`}</a>
+          <a
+            target="_blank"
+            className="register-btn menu-button-link"
+          >{t`menu.register`}</a>
         </div>
       </div>
     </>

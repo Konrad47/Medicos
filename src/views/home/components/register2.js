@@ -11,7 +11,11 @@ const Register2 = () => {
         <div className="container">
           <h2 className="h2-style">{t`register2.title`}</h2>
           <h4 className="h4-style">{t`register2.title2`}</h4>
-          <a href="#" className="register-btn">{t`menu.register`}</a>
+          <a
+            target="_blank"
+            href="#"
+            className="register-btn"
+          >{t`menu.register`}</a>
         </div>
       </div>
     </>
