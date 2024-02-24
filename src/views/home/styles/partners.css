@@ -123,3 +123,9 @@
   align-items: flex-start;
   gap: 16px;
 }
+
+@media screen and (max-width: 500px) {
+  .p-container .support-content-partners-con {
+    display: grid;
+  }
+}
