@@ -45,6 +45,9 @@ const PreviousEditions = () => {
                 </div>
               </div>
               <h4 className="h4-style">{t`previous-editions.edition2023`}</h4>
+              <h5 className="phone-h5">
+                {t`previous-editions.see-wideo`} <span>↗</span>
+              </h5>
             </a>
             <a target="_blank" className="edition" href="#">
               <div className="edition-image">
@@ -78,6 +81,9 @@ const PreviousEditions = () => {
                 </div>
               </div>
               <h4 className="h4-style">{t`previous-editions.edition2022`}</h4>
+              <h5 className="phone-h5">
+                {t`previous-editions.see-wideo`} <span>↗</span>
+              </h5>
             </a>
             <a target="_blank" className="edition" href="#">
               <div className="edition-image">
@@ -111,6 +117,9 @@ const PreviousEditions = () => {
                 </div>
               </div>
               <h4 className="h4-style">{t`previous-editions.edition2021`}</h4>
+              <h5 className="phone-h5">
+                {t`previous-editions.see-wideo`} <span>↗</span>
+              </h5>
             </a>
             <a target="_blank" className="edition" href="#">
               <div className="edition-image">
@@ -144,6 +153,9 @@ const PreviousEditions = () => {
                 </div>
               </div>
               <h4 className="h4-style">{t`previous-editions.edition2020`}</h4>
+              <h5 className="phone-h5">
+                {t`previous-editions.see-wideo`} <span>↗</span>
+              </h5>
             </a>
           </div>
         </div>
