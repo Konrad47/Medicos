@@ -264,3 +264,50 @@
   .a-speaker-image-border {
   opacity: 1;
 }
+
+@media screen and (max-width: 1000px) {
+  .a-container .event-agenda-container {
+    display: grid;
+  }
+
+  .a-container .event-agenda-container .right-con {
+    display: grid;
+    gap: 16px;
+  }
+
+  .a-container .event-agenda-container .right-con .speaker-con {
+    margin-right: auto;
+    flex-direction: row-reverse;
+  }
+  .a-container
+    .event-agenda-container
+    .right-con
+    .speaker-con
+    .speaker-desc-con {
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  .a-container .carousel-control-prev {
+    left: 0;
+    top: 0;
+  }
+
+  .a-container .carousel-control-prev .agenda-day-chooser {
+    border-radius: 16px 16px 0 0;
+  }
+
+  .a-container .carousel-control-next {
+    left: 0;
+    top: 0;
+  }
+
+  .a-container .carousel-control-next .agenda-day-chooser {
+    border-radius: 0 0 16px 16px;
+  }
+
+  .a-container .event-agenda-container .right-con h5,
+  .a-container .event-agenda-container .right-con .description-con {
+    width: 80%;
+  }
+}
