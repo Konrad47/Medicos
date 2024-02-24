@@ -34,7 +34,7 @@ const WpiConference = () => {
 
   return (
     <>
-      <div className="wpic-container">
+      <div className="wpic-container wpic-background-attachment">
         <div className="container">
           <div className="wpic-titles-container">
             <h4 className="h4-style">
@@ -160,7 +160,11 @@ const WpiConference = () => {
               </div>
             </div>
           </div>
-          <a href="#" className="register-btn">{t`menu.register`}</a>
+          <a
+            target="_blank"
+            href="#"
+            className="register-btn"
+          >{t`menu.register`}</a>
         </div>
       </div>
     </>

@@ -21,12 +21,16 @@
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: auto;
   gap: 60px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .s-container .speakers-container .speaker {
   position: relative;
   width: 212.2px;
   height: 212.2px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .s-container .speakers-container .speaker-content {
@@ -245,4 +249,197 @@
 .s-container .carousel-control-next-icon {
   background: url("../../../images/speakers/arrow-right.png") no-repeat fixed
     50% 50%;
+}
+
+.image-body {
+  display: none;
+}
+
+@media screen and (max-width: 1501px) {
+  .s-container .speakers-container {
+    row-gap: 40px;
+    column-gap: 0;
+  }
+
+  .s-container .carousel-control-prev {
+    left: -3%;
+  }
+  .s-container .carousel-control-next {
+    right: -3%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .s-container .speakers-container .speaker {
+    width: 170px;
+    height: 170px;
+  }
+
+  .s-container .carousel-control-prev {
+    left: -5%;
+  }
+  .s-container .carousel-control-next {
+    right: -5%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .s-container .speakers-container .speaker {
+    width: 170px;
+    height: 170px;
+  }
+
+  .s-container .carousel-control-prev {
+    left: -4%;
+  }
+  .s-container .carousel-control-next {
+    right: -4%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .s-container .speakers-container {
+    row-gap: 15px;
+  }
+
+  .s-container .carousel-control-prev {
+    left: -7%;
+  }
+  .s-container .carousel-control-next {
+    right: -7%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .s-container .speakers-container {
+    width: 800px;
+    row-gap: 10px;
+  }
+  .s-container .speakers-container .speaker {
+    width: 150px;
+    height: 150px;
+  }
+  .s-container .carousel-control-prev {
+    left: -1%;
+  }
+  .s-container .carousel-control-next {
+    right: -1%;
+  }
+}
+
+@media screen and (max-width: 993px) {
+  .s-container .speakers-container {
+    width: 100%;
+    row-gap: 20px;
+  }
+  .s-container .speakers-container .speaker {
+    width: 120px;
+    height: 120px;
+  }
+  .s-container .carousel-control-prev {
+    left: -9%;
+  }
+  .s-container .carousel-control-next {
+    right: -9%;
+  }
+
+  .modal-content {
+    width: 272px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .modal-body .current-speaker-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .modal-body {
+    display: grid;
+    gap: 0;
+    padding: 16px !important;
+  }
+
+  .image-header {
+    display: none;
+  }
+
+  .image-body {
+    display: flex;
+  }
+
+  .modal-body .modal-body-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .s-container {
+    padding-top: 46px;
+    padding-bottom: 26px;
+  }
+  .s-container .speakers-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 314px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .s-container .speakers-container .speaker {
+    width: 148px;
+    height: 220px;
+  }
+
+  .s-container .speakers-container .speaker-content {
+    height: 88px;
+  }
+  .s-container .speakers-container .speaker-content h4 {
+    padding: 8px 16px 0px 16px;
+  }
+
+  .s-container .speakers-container .speaker-content p {
+    padding: 0 16px 0 16px;
+  }
+
+  .s-container .speakers-container .speaker-content .p-role {
+    display: none;
+  }
+
+  .s-container .speakers-container .speaker-content div {
+    margin: 0;
+  }
+
+  .s-container .speakers-container .speaker .color-overlay,
+  .s-container .carousel-indicators {
+    display: none;
+  }
+
+  .s-container .carousel {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
+  }
+
+  .s-container .carousel-inner {
+    grid-row: 1;
+  }
+
+  .s-container .carousel-control-prev,
+  .s-container .carousel-control-next {
+    position: static;
+    margin: auto;
+    position: relative;
+    display: block !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .s-container .carousel-control-prev {
+    left: -40px;
+    top: 24px;
+  }
+  .s-container .carousel-control-next {
+    left: 40px;
+    top: -36px;
+  }
 }

@@ -57,24 +57,18 @@ const Speakers = () => {
       setSpeakers(getSpeakers)
     }
     getSpeakers()
+    console.log(window.innerWidth)
+
     console.log(speakers)
   }, [data.allContentfulSpeaker, language])
 
   const renderSpeakerGroups = () => {
     const speakerGroups = []
 
-    // Determine the number of empty divs needed to fill a group
-    const emptyDivsCount = Math.max(0, 10 - (speakers.length % 10))
-    const emptyDivs = Array.from({ length: emptyDivsCount }).map(
-      (_, idx) => idx
-    )
-
-    // Slice the speakers into groups of 10
     for (let i = 0; i < speakers.length; i += 10) {
       const group = speakers.slice(i, i + 10)
 
-      // Append empty divs to fill the group if necessary
-      if (group.length < 10) {
+      if (group.length < 10 && window.innerWidth > 850) {
         group.push(...Array.from({ length: 10 - group.length }))
       }
 
@@ -105,7 +99,7 @@ const Speakers = () => {
                 <div className="speaker-content">
                   <div>
                     <h4 className="h4-style">{speaker.node.name}</h4>
-                    <p>{speaker.node.role}</p>
+                    <p className="p-role">{speaker.node.role}</p>
                   </div>
                   <p>{t`speakers.read-more`}</p>
                 </div>
@@ -175,15 +169,19 @@ const Speakers = () => {
           <GatsbyImage
             alt={currentSpeaker.node.name}
             placeholder={currentSpeaker.node.name}
-            className="current-speaker-image"
+            className="current-speaker-image image-header"
             image={getImage(currentSpeaker.node.image.gatsbyImageData)}
           />
         </Modal.Header>
         <Modal.Body>
-          <div
-            className="current-speaker-image"
-            // image={getImage(currentSpeaker.node.image.gatsbyImageData)}
-          />
+          <div className="current-speaker-image">
+            <GatsbyImage
+              alt={currentSpeaker.node.name}
+              placeholder={currentSpeaker.node.name}
+              className="current-speaker-image image-body"
+              image={getImage(currentSpeaker.node.image.gatsbyImageData)}
+            />
+          </div>
           <div className="modal-body-content">
             <h2 className="h2-style">{currentSpeaker.node.name}</h2>
             <p>{currentSpeaker.node.role}</p>

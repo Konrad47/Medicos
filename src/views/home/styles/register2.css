@@ -1,0 +1,26 @@
+.r2-container {
+  background: url(../../../images/register2/r2-background.png) no-repeat fixed
+    50% 0;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center;
+  width: 100%;
+  text-align: center;
+}
+
+.r2-background-attachment {
+  background-attachment: scroll !important;
+}
+
+.r2-container h2 {
+  color: var(--light, #fcf8fc);
+  margin-bottom: 8px;
+}
+
+.r2-container h4 {
+  color: var(--light, #fcf8fc);
+  margin-bottom: 50px;
+  font-weight: 500;
+}

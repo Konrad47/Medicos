@@ -6,6 +6,8 @@ const Menu = () => {
   const { t } = useTranslation()
 
   const [isUnderTrigger, setIsUnderTrigger] = useState(false)
+  const [isMenu, setIsMenu] = useState(true)
+  const [isHideMenu, setIsHideMenu] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,10 +25,24 @@ const Menu = () => {
       }
     }
 
+    const handleResize = () => {
+      if (window.innerWidth <= 950) {
+        setIsMenu(false)
+      } else {
+        setIsMenu(true)
+        setIsHideMenu(false)
+      }
+    }
+
+    handleResize()
+
+    window.addEventListener("resize", handleResize)
+
     window.addEventListener("scroll", handleScroll)
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("resize", handleResize)
     }
   }, [])
 
@@ -41,8 +57,8 @@ const Menu = () => {
         <svg
           className="gpw-icon"
           xmlns="http://www.w3.org/2000/svg"
-          width="150"
-          height="85"
+          width={isMenu ? "151" : "101"}
+          height={isMenu ? "85" : "58"}
           viewBox="0 0 150 85"
           fill="none"
         >
@@ -176,21 +192,89 @@ const Menu = () => {
           />
         </svg>
         <div className="menu-inside-container">
-          <a className="menu-link" href="#conference">{t`menu.conference`}</a>
-          <a className="menu-dot">•</a>
+          {isMenu ? (
+            <>
+              <a
+                className="menu-link"
+                href="#conference"
+              >{t`menu.conference`}</a>
+              <a className="menu-dot">•</a>
+              <a className="menu-link" href="#speakers">{t`menu.speakers`}</a>
+              <a className="menu-dot">•</a>
+              <a className="menu-link" href="#agenda">{t`menu.agenda`}</a>
+              <a className="menu-dot">•</a>
+              <a className="menu-link" href="#partners">{t`menu.partners`}</a>
+              <a className="menu-dot">•</a>
+              <a
+                className="menu-link"
+                href="#previous-editions"
+              >{t`menu.previous-editions`}</a>
+              <a
+                target="_blank"
+                href="#"
+                className="register-btn menu-button-link"
+              >{t`menu.register`}</a>
+            </>
+          ) : (
+            <svg
+              onClick={() => setIsHideMenu(!isHideMenu)}
+              className="menu-button"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_2055_5694)">
+                <path d="M4 6H20H4Z" fill="#F7D4F3" />
+                <path
+                  d="M4 6H20"
+                  stroke="#F7D4F3"
+                  stroke-width="2.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M4 12H20H4Z" fill="#F7D4F3" />
+                <path
+                  d="M4 12H20"
+                  stroke="#F7D4F3"
+                  stroke-width="2.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M4 18H20"
+                  stroke="#F7D4F3"
+                  stroke-width="2.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_2055_5694">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          )}
+        </div>
+      </div>
+      {isHideMenu && (
+        <div className="hide-menu">
           <a className="menu-link" href="#speakers">{t`menu.speakers`}</a>
-          <a className="menu-dot">•</a>
           <a className="menu-link" href="#agenda">{t`menu.agenda`}</a>
-          <a className="menu-dot">•</a>
           <a className="menu-link" href="#partners">{t`menu.partners`}</a>
-          <a className="menu-dot">•</a>
           <a
             className="menu-link"
             href="#previous-editions"
           >{t`menu.previous-editions`}</a>
-          <a className="register-btn menu-button-link">{t`menu.register`}</a>
+          <a
+            target="_blank"
+            href="#"
+            className="register-btn menu-button-link"
+          >{t`menu.register`}</a>
         </div>
-      </div>
+      )}
     </>
   )
 }

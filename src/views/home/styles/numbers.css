@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-.n-container {
+.n-background-attachment {
   background-attachment: scroll !important;
 }
 
@@ -78,4 +78,15 @@
   font-weight: 500;
   line-height: normal;
   text-align: left;
+}
+
+@media screen and (max-width: 1201px) {
+  .n-container .n-number-container {
+    display: grid;
+    gap: 16px;
+  }
+
+  .n-container .n-number-container > div {
+    max-width: 100%;
+  }
 }

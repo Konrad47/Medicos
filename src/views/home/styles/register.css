@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-.r-container {
+.r-background-attachment {
   background-attachment: scroll !important;
 }
 
@@ -34,4 +34,17 @@
 
 .r-container .inside-container .a-text-con div h2 {
   max-width: 476px;
+}
+
+@media screen and (max-width: 768px) {
+  .r-container .inside-container {
+    display: grid;
+    gap: 48px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .r-container .inside-container svg {
+    width: 300px;
+  }
 }

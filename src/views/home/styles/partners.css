@@ -123,3 +123,15 @@
   align-items: flex-start;
   gap: 16px;
 }
+
+@media screen and (max-width: 1000px) {
+  .p-container .partner-image {
+    filter: grayscale(0);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .p-container .support-content-partners-con {
+    display: grid;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import "../styles/register.css"
 
@@ -7,7 +7,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="r-container">
+      <div className="r-container r-background-attachment ">
         <div className="container">
           <div className="inside-container">
             <svg
@@ -152,7 +152,11 @@ const Register = () => {
                 <h2 className="h2-style">{t`register.title`}</h2>
                 <h4 className="h4-style">{t`register.title2`}</h4>
               </div>
-              <a href="#" className="register-btn">{t`menu.register`}</a>
+              <a
+                target="_blank"
+                href="#"
+                className="register-btn"
+              >{t`menu.register`}</a>
             </div>
           </div>
         </div>

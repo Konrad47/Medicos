@@ -10,6 +10,8 @@ import Agenda from "./components/agenda"
 import Register from "./components/register"
 import Partners from "./components/partners"
 import PreviousEditions from "./components/previous-editions"
+import Register2 from "./components/register2"
+import Footer from "../../components/footer/footer"
 
 const Home = () => {
   const { t } = useTranslation()
@@ -36,6 +38,8 @@ const Home = () => {
       <div id="previous-editions">
         <PreviousEditions />
       </div>
+      <Register2 />
+      <Footer />
     </>
   )
 }
