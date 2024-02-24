@@ -7,7 +7,7 @@ const Numbers = () => {
 
   return (
     <>
-      <div className="n-container">
+      <div className="n-container n-background-attachment">
         <div className="container">
           <div className="n-number-container">
             <div>

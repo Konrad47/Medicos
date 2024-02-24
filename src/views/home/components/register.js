@@ -7,7 +7,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="r-container">
+      <div className="r-container r-background-attachment ">
         <div className="container">
           <div className="inside-container">
             <svg
