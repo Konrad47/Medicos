@@ -1,7 +1,6 @@
 .r-container {
   background: url(../../../images/register/r-backgroun.png) no-repeat fixed 50%
     0;
-  background-attachment: scroll !important;
   padding-top: 150px;
   padding-bottom: 150px;
   overflow: hidden;
@@ -9,6 +8,10 @@
   background-position: center;
   width: 100%;
   text-align: center;
+}
+
+.r-container {
+  background-attachment: scroll !important;
 }
 
 .r-container .inside-container {

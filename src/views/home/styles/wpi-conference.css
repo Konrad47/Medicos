@@ -1,7 +1,6 @@
 .wpic-container {
   background: url(../../../images/wpic/wpic-background.png) no-repeat fixed 50%
     0;
-  background-attachment: scroll !important;
   padding-top: 160px;
   padding-bottom: 110px;
   overflow: hidden;
@@ -9,6 +8,10 @@
   background-position: center;
   width: 100%;
   text-align: center;
+}
+
+.wpic-container {
+  background-attachment: scroll !important;
 }
 
 .wpic-container .wpic-titles-container {
