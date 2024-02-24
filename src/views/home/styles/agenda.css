@@ -304,10 +304,22 @@
 
   .a-container .carousel-control-next .agenda-day-chooser {
     border-radius: 0 0 16px 16px;
+    padding: 8px 16px 8px 16px;
   }
 
   .a-container .event-agenda-container .right-con h5,
   .a-container .event-agenda-container .right-con .description-con {
     width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .a-container .agenda-day-chooser {
+    width: 250px;
+  }
+
+  .a-container .carousel-control-next,
+  .a-container .carousel-control-prev {
+    width: 250px;
   }
 }

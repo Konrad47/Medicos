@@ -90,3 +90,17 @@
     max-width: 100%;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .n-container .n-number-container > div div .p-number {
+    font-size: 32px;
+  }
+  .n-container .n-number-container > div div .p-number-desc {
+    font-size: 16px;
+  }
+
+  .n-container .n-number-container > div:hover div .p-number {
+    font-size: 32px;
+    margin-bottom: 0;
+  }
+}

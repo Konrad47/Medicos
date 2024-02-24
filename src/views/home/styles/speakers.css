@@ -255,6 +255,11 @@
   display: none;
 }
 
+.image-header {
+  display: flex;
+  opacity: 1;
+}
+
 @media screen and (max-width: 1501px) {
   .s-container .speakers-container {
     row-gap: 40px;
@@ -361,6 +366,7 @@
 
   .image-header {
     display: none;
+    opacity: 0;
   }
 
   .image-body {
@@ -392,6 +398,9 @@
   }
 
   .s-container .speakers-container .speaker-content {
+    height: 88px;
+  }
+  .s-container .speakers-container .speaker:hover .speaker-content {
     height: 88px;
   }
   .s-container .speakers-container .speaker-content h4 {
