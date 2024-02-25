@@ -6,7 +6,7 @@ const Menu = () => {
   const { t } = useTranslation()
 
   const [isUnderTrigger, setIsUnderTrigger] = useState(false)
-  const [isMenu, setIsMenu] = useState(true)
+  const [isMenu, setIsMenu] = useState(false)
   const [isHideMenu, setIsHideMenu] = useState(false)
 
   useEffect(() => {
@@ -26,10 +26,10 @@ const Menu = () => {
     }
 
     const handleResize = () => {
-      if (window.innerWidth <= 950) {
-        setIsMenu(false)
-      } else {
+      if (window.innerWidth > 950) {
         setIsMenu(true)
+      } else {
+        setIsMenu(false)
         setIsHideMenu(false)
       }
     }
