@@ -72,8 +72,10 @@ const Speakers = () => {
 
   const closeModal = () => {
     setModalShow(false)
-    setInterval(2000)
-    console.log(interval)
+    if (window.innerWidth > 500) {
+      setInterval(2000)
+      console.log(interval)
+    }
   }
 
   const renderSpeakerGroups = () => {
@@ -82,7 +84,7 @@ const Speakers = () => {
     for (let i = 0; i < speakers.length; i += 10) {
       const group = speakers.slice(i, i + 10)
 
-      if (group.length < 10) {
+      if (group.length < 10 && window.innerWidth > 500) {
         group.push(...Array.from({ length: 10 - group.length }))
       }
 
@@ -278,7 +280,11 @@ const Speakers = () => {
       <div className="s-container">
         <div className="container">
           <h2 className="h2-style">{t`speakers.title`}</h2>
-          <Carousel interval={interval} pause={"hover"} touch={false}>
+          <Carousel
+            interval={window.innerWidth > 500 ? interval : null}
+            pause={"hover"}
+            touch={false}
+          >
             {speakers && renderSpeakerGroups()}
           </Carousel>
           {currentSpeaker && (
