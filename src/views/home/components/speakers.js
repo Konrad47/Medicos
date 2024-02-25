@@ -82,7 +82,7 @@ const Speakers = () => {
     for (let i = 0; i < speakers.length; i += 10) {
       const group = speakers.slice(i, i + 10)
 
-      if (group.length < 10 && window.innerWidth > 850) {
+      if (group.length < 10) {
         group.push(...Array.from({ length: 10 - group.length }))
       }
 
