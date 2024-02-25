@@ -1,6 +1,6 @@
 body {
   font-family: "Red Hat Display";
-  width: 100%;
+  /* width: 100%; */
 }
 
 .container {
@@ -84,9 +84,9 @@ body {
 }
 
 @media only screen and (max-width: 568px) {
-  body {
+  /* body {
     width: 100vw;
-  }
+  } */
 
   .container {
     margin: 0 1rem;
