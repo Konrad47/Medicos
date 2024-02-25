@@ -58,6 +58,9 @@ const Speakers = () => {
       setSpeakers(getSpeakers)
     }
     getSpeakers()
+    if (window.innerWidth <= 500) {
+      setInterval(null)
+    }
     console.log(window.innerWidth)
 
     console.log(speakers)
@@ -280,11 +283,7 @@ const Speakers = () => {
       <div className="s-container">
         <div className="container">
           <h2 className="h2-style">{t`speakers.title`}</h2>
-          <Carousel
-            interval={window.innerWidth > 500 ? interval : null}
-            pause={"hover"}
-            touch={false}
-          >
+          <Carousel interval={interval} pause={"hover"} touch={false}>
             {speakers && renderSpeakerGroups()}
           </Carousel>
           {currentSpeaker && (
