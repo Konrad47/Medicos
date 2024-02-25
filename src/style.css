@@ -88,6 +88,16 @@ body {
     width: unset;
   }
 }
+@media only screen and (max-width: 951px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+  }
+}
 
 @media only screen and (min-width: 568px) and (max-width: 1123px) {
   .container {
