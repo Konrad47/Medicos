@@ -48,3 +48,9 @@
     width: 300px;
   }
 }
+
+@media screen and (max-width: 350px) {
+  .r-container .inside-container svg {
+    width: 250px;
+  }
+}

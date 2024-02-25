@@ -1,5 +1,7 @@
 body {
   font-family: "Red Hat Display";
+  width: 100%;
+  margin: 0;
 }
 
 .container {

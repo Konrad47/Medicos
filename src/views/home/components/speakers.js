@@ -47,6 +47,7 @@ const Speakers = () => {
   const [speakers, setSpeakers] = useState()
   const [modalShow, setModalShow] = useState(false)
   const [currentSpeaker, setCurrentSpeaker] = useState()
+  const [interval, setInterval] = useState(2000)
 
   useEffect(() => {
     const getSpeakers = () => {
@@ -62,6 +63,19 @@ const Speakers = () => {
     console.log(speakers)
   }, [data.allContentfulSpeaker, language])
 
+  const openModal = speaker => {
+    setCurrentSpeaker(speaker)
+    setModalShow(true)
+    setInterval(null)
+    console.log(interval)
+  }
+
+  const closeModal = () => {
+    setModalShow(false)
+    setInterval(2000)
+    console.log(interval)
+  }
+
   const renderSpeakerGroups = () => {
     const speakerGroups = []
 
@@ -73,12 +87,6 @@ const Speakers = () => {
       }
 
       speakerGroups.push(group)
-    }
-
-    const openModal = speaker => {
-      setCurrentSpeaker(speaker)
-      setModalShow(true)
-      console.log(speaker)
     }
 
     return speakerGroups?.map((group, index) => (
@@ -136,7 +144,7 @@ const Speakers = () => {
       >
         <Modal.Header>
           <svg
-            onClick={() => setModalShow(false)}
+            onClick={() => closeModal()}
             className="close-modal-button"
             xmlns="http://www.w3.org/2000/svg"
             width="48"
@@ -270,11 +278,11 @@ const Speakers = () => {
       <div className="s-container">
         <div className="container">
           <h2 className="h2-style">{t`speakers.title`}</h2>
-          <Carousel interval={60000} pause={"hover"}>
+          <Carousel interval={interval} pause={"hover"} touch={false}>
             {speakers && renderSpeakerGroups()}
           </Carousel>
           {currentSpeaker && (
-            <SpeakerModal show={modalShow} onHide={() => setModalShow(false)} />
+            <SpeakerModal show={modalShow} onHide={() => closeModal()} />
           )}
         </div>
       </div>

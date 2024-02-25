@@ -226,6 +226,7 @@ const Agenda = () => {
             nextIcon={dayTwoButton}
             interval={null}
             indicators={false}
+            touch={false}
           >
             <Carousel.Item>{day1 && renderDay(day1)}</Carousel.Item>
             <Carousel.Item>{day2 && renderDay(day2)}</Carousel.Item>
