@@ -1,5 +1,4 @@
 import React from "react"
-import { useTranslation } from "gatsby-plugin-react-i18next"
 import Menu from "../../components/menu/menu"
 import WpiConference from "./components/wpi-conference"
 import Organizers from "./components/organizers"
@@ -14,8 +13,6 @@ import Register2 from "./components/register2"
 import Footer from "../../components/footer/footer"
 
 const Home = () => {
-  const { t } = useTranslation()
-
   return (
     <>
       <Menu />

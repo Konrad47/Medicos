@@ -105,3 +105,14 @@
     height: 265px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .dp-container {
+    padding-bottom: 300px;
+  }
+
+  .dp-container .dp-con .dp-image {
+    width: 288px;
+    height: 212px;
+  }
+}

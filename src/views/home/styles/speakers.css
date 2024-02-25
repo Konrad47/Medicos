@@ -159,7 +159,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.modal-body .current-speaker-image {
+.modal-body .current-speaker-image-container {
   width: 200px;
   height: 200px;
 }
@@ -251,13 +251,8 @@
     50% 50%;
 }
 
-.image-body {
+.modal-body .image-body {
   display: none;
-}
-
-.image-header {
-  display: flex;
-  opacity: 1;
 }
 
 @media screen and (max-width: 1501px) {
@@ -353,7 +348,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .modal-body .current-speaker-image {
+  .modal-body .current-speaker-image-container {
     width: 180px;
     height: 180px;
   }
@@ -364,12 +359,12 @@
     padding: 16px !important;
   }
 
-  .image-header {
-    display: none;
+  .modal-header .current-speaker-image {
     opacity: 0;
+    display: none;
   }
 
-  .image-body {
+  .modal-body .image-body {
     display: flex;
   }
 
@@ -397,7 +392,7 @@
     height: 220px;
   }
 
-  .s-container .speakers-container .speaker-content {
+  .s-container .speakers-container .speaker .speaker-content {
     height: 88px;
   }
   .s-container .speakers-container .speaker:hover .speaker-content {

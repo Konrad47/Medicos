@@ -295,6 +295,7 @@
 
   .a-container .carousel-control-prev .agenda-day-chooser {
     border-radius: 16px 16px 0 0;
+    padding: 8px 16px 8px 16px;
   }
 
   .a-container .carousel-control-next {
@@ -321,5 +322,38 @@
   .a-container .carousel-control-next,
   .a-container .carousel-control-prev {
     width: 250px;
+  }
+
+  .a-container .event-agenda-container .right-con h5,
+  .a-container .event-agenda-container .right-con .description-con {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .a-container .agenda-day-chooser {
+    width: 200px;
+  }
+
+  .a-container .agenda-day-chooser h4 {
+    font-size: 20px;
+  }
+
+  .a-container .carousel-control-next,
+  .a-container .carousel-control-prev {
+    width: 200px;
+  }
+
+  .a-container .carousel-control-prev .agenda-day-chooser {
+    padding: 10px 2px 2px 2px;
+  }
+
+  .a-container .carousel-control-next .agenda-day-chooser {
+    padding: 2px 2px 2px 2px;
+  }
+
+  .a-container .event-agenda-container .right-con h5,
+  .a-container .event-agenda-container .right-con .description-con {
+    width: 50%;
   }
 }

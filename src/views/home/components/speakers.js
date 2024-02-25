@@ -169,12 +169,12 @@ const Speakers = () => {
           <GatsbyImage
             alt={currentSpeaker.node.name}
             placeholder={currentSpeaker.node.name}
-            className="current-speaker-image image-header"
+            className="current-speaker-image"
             image={getImage(currentSpeaker.node.image.gatsbyImageData)}
           />
         </Modal.Header>
         <Modal.Body>
-          <div className="current-speaker-image">
+          <div className="current-speaker-image-container">
             <GatsbyImage
               alt={currentSpeaker.node.name}
               placeholder={currentSpeaker.node.name}
