@@ -6,7 +6,7 @@ const WpiConference = () => {
   const { t } = useTranslation()
 
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-04-23") - +new Date()
+    const difference = +new Date("2024-04-23 09:30:00") - +new Date()
     let timeLeft = {}
 
     if (difference > 0) {

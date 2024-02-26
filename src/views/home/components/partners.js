@@ -62,7 +62,7 @@ const Partners = () => {
       )
     }
     getPartners()
-  }, [data.allContentfulGpwPartner])
+  }, [data.allContentfulGpwPartner, language])
 
   const renderPartners = items => {
     return items?.map(item => (
@@ -95,34 +95,32 @@ const Partners = () => {
               </div>
             </div>
           )}
-          {supportPartners &&
-          supportPartners.length > 0 &&
+          {supportPartners && supportPartners.length > 0 && (
+            <div className="support-partners-con">
+              <h3 className="h3-style">{t`partners.support-partners`}</h3>
+              <div className="support-partners">
+                {renderPartners(supportPartners)}
+              </div>
+            </div>
+          )}
+          {partners &&
+          partners.length > 0 &&
           contentPartners &&
           contentPartners.length > 0 ? (
-            <div className="support-content-partners-con">
-              <div className="support-partners-con">
-                <h3 className="h3-style">{t`partners.support-partners`}</h3>
-                <div className="support-partners">
-                  {renderPartners(supportPartners)}
-                </div>
-              </div>
+            <div className="partners-content-partners-con">
               <div className="content-partners-con">
                 <h3 className="h3-style">{t`partners.content-partners`}</h3>
                 <div className="content-partners">
                   {renderPartners(contentPartners)}
                 </div>
               </div>
+              <div className="partners-con">
+                <h3 className="h3-style">{t`partners.partners`}</h3>
+                <div className="partners">{renderPartners(partners)}</div>
+              </div>
             </div>
           ) : (
             <>
-              {supportPartners && supportPartners.length > 0 && (
-                <div className="support-partners-con margin48">
-                  <h3 className="h3-style">{t`partners.support-partners`}</h3>
-                  <div className="support-partners">
-                    {renderPartners(supportPartners)}
-                  </div>
-                </div>
-              )}
               {contentPartners && contentPartners.length > 0 && (
                 <div className="content-partners-con margin48">
                   <h3 className="h3-style">{t`partners.content-partners`}</h3>
@@ -131,13 +129,13 @@ const Partners = () => {
                   </div>
                 </div>
               )}
+              {partners && partners.length > 0 && (
+                <div className="partners-con margin48">
+                  <h3 className="h3-style">{t`partners.partners`}</h3>
+                  <div className="partners">{renderPartners(partners)}</div>
+                </div>
+              )}
             </>
-          )}
-          {partners && partners.length > 0 && (
-            <div className="partners-con">
-              <h3 className="h3-style">{t`partners.partners`}</h3>
-              <div className="partners">{renderPartners(partners)}</div>
-            </div>
           )}
           {mediaPartners && mediaPartners.length > 0 && (
             <div className="media-partners-con">

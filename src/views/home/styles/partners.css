@@ -55,7 +55,7 @@
   gap: 16px;
 }
 
-.p-container .support-content-partners-con {
+.p-container .partners-content-partners-con {
   margin-top: 48px;
   display: flex;
   justify-content: center;
@@ -67,20 +67,17 @@
   margin-top: 48px;
 }
 
-.p-container .support-content-partners-con .support-partners-con,
-.p-container .support-content-partners-con .content-partners-con {
+.p-container .partners-content-partners-con .partners-con,
+.p-container .partners-content-partners-con .content-partners-con {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
 }
 
+.p-container .partners-content-partners-con .partners-con .partners,
 .p-container
-  .support-content-partners-con
-  .support-partners-con
-  .support-partners,
-.p-container
-  .support-content-partners-con
+  .partners-content-partners-con
   .content-partners-con
   .content-partners {
   display: flex;
@@ -91,7 +88,7 @@
   gap: 16px;
 }
 
-.p-container .partners-con {
+.p-container .support-partners-con {
   margin-top: 48px;
   display: flex;
   flex-direction: column;
@@ -99,7 +96,7 @@
   gap: 16px;
 }
 
-.p-container .partners-con .partners {
+.p-container .support-partners-con .support-partners {
   display: flex;
   flex-wrap: wrap;
   max-width: 1118px;
@@ -132,7 +129,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .p-container .support-content-partners-con {
+  .p-container .partners-content-partners-con {
     display: grid;
   }
 }
