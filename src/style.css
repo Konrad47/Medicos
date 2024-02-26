@@ -1,5 +1,5 @@
 body {
-  font-family: "Red Hat Display";
+  font-family: "Red Hat Display" !important;
 }
 
 .container {
