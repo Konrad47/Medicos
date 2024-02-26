@@ -1,3 +1,64 @@
 {
-    "home.title": "Title"
+    "menu.conference": "About WPIC",
+    "menu.speakers": "Speakers",
+    "menu.agenda": "Agenda",
+    "menu.partners": "Partners",
+    "menu.previous-editions": "Previous editions",
+    "menu.register": "Registration",
+    "menu.register-link": "https://www.gpw.pl/wpic_registration",
+
+
+    "wpi-conference.title": "23 April, 2024 online",
+    "wpi-conference.title2": "24 April, 2024 online + on-site (GPW, Ksiazeca 4, Warsaw)",
+    "wpi-conference.title3": "Warsaw Passive Investment Conference",
+    "wpi-conference.days": "DAYS",
+    "wpi-conference.hours": "HOURS",
+    "wpi-conference.minutes": "MINS",
+
+    "organizers.title": "Organizers",
+
+    "discover-potential.title": "Explore the potential of passive investing",
+    "discover-potential.p": "The Warsaw Passive Investment Conference is the largest event in Poland for asset managers, institutional and retail investors, financial professionals, and anyone dedicated to passive and active investing through ETFs, ETNs, and ETCs.",
+    "discover-potential.p2": "Join us at the 5th edition of Warsaw Passive Investment Conference, which will take place on 23-24 April 2024. Find out more about exchange traded products, such as ETFs, ETCs and ETNs, as well as learn global trends and passive investment market outlook. Meet and listen to analysts who will present their view on the economics of investing in different asset classes in the next months.",
+
+    "numbers.number": "1300+",
+    "numbers.number2": ">20",
+    "numbers.number3": ">30",
+    "numbers.number-desc": "Participants",
+    "numbers.number-desc2": "Lectures and panel discussions on passive instruments and market",
+    "numbers.number-desc3": "Experts from Poland and abroad",
+
+    "speakers.title": "Speakers",
+    "speakers.read-more": "Read more →",
+
+    "agenda.title": "Event agenda",
+    "agenda.title2": "plan your participation in the conference",
+    "agenda.title-day1": "Day 1",
+    "agenda.title-day2": "Day 2",
+    "agenda.description-day1": "April 23 • online",
+    "agenda.description-day2": "April 24 • WSE Quotation Room",
+
+    "register.title": "Register for free now",
+    "register.title2": "don't miss the conference",
+
+    "partners.title": "Supported by",
+    "partners.main-partners": "Main Partners",
+    "partners.support-partners": "Supporting Partners",
+    "partners.content-partners": "Content Partners",
+    "partners.partners": "Partners",
+    "partners.media-partners": "Media Partners",
+
+    "previous-editions.title": "Previous Editions",
+    "previous-editions.title2": "see recordings of lectures from previous editions of the conference",
+    "previous-editions.edition2023": "2023 Edition",
+    "previous-editions.edition2022": "2022 Edition",
+    "previous-editions.edition2021": "2021 Edition",
+    "previous-editions.edition2020": "2020 Edition",
+    "previous-editions.see-wideo": "SEE VIDEO",
+
+    "register2.title": "Register for free now",
+    "register2.title2": "don't miss the conference",
+
+    "footer.copyright": "Copyright 2023 Warsaw Stock Exchange S.A. | ",
+    "footer.privacy-policy": "Privacy Policy"
 }

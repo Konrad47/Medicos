@@ -24,6 +24,7 @@
 .n-container .n-number-container > div {
   display: flex;
   max-width: 348px;
+  min-width: 270px;
   padding: 16px;
   align-items: flex-start;
   gap: 16px;

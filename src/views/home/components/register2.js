@@ -13,7 +13,7 @@ const Register2 = () => {
           <h4 className="h4-style">{t`register2.title2`}</h4>
           <a
             target="_blank"
-            href="#"
+            href={t`menu.register-link`}
             className="register-btn"
           >{t`menu.register`}</a>
         </div>

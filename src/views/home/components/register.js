@@ -154,7 +154,7 @@ const Register = () => {
               </div>
               <a
                 target="_blank"
-                href="#"
+                href={t`menu.register-link`}
                 className="register-btn"
               >{t`menu.register`}</a>
             </div>

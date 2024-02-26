@@ -211,7 +211,7 @@ const Menu = () => {
               >{t`menu.previous-editions`}</a>
               <a
                 target="_blank"
-                href="#"
+                href={t`menu.register-link`}
                 className="register-btn menu-button-link"
               >{t`menu.register`}</a>
             </>
@@ -261,6 +261,7 @@ const Menu = () => {
       </div>
       {isHideMenu && (
         <div className="hide-menu">
+          <a className="menu-link" href="#conference">{t`menu.conference`}</a>
           <a className="menu-link" href="#speakers">{t`menu.speakers`}</a>
           <a className="menu-link" href="#agenda">{t`menu.agenda`}</a>
           <a className="menu-link" href="#partners">{t`menu.partners`}</a>
