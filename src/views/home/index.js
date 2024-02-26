@@ -11,10 +11,18 @@ import Partners from "./components/partners"
 import PreviousEditions from "./components/previous-editions"
 import Register2 from "./components/register2"
 import Footer from "../../components/footer/footer"
+import Seo from "../../components/seo"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 const Home = () => {
+  const { t } = useTranslation()
+
   return (
     <>
+      <Seo
+        title={t`wpi-conference.title3`}
+        description={t`discover-potential.p`}
+      />
       <Menu />
       <WpiConference />
       <Organizers />
