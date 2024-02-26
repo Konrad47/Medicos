@@ -12,7 +12,7 @@ body {
   color: var(--dark, #120e25);
   font-size: 20px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: normal;
   padding: 10px 32px;
   justify-content: center;
@@ -43,42 +43,42 @@ body {
 .h1-style {
   font-size: 84px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
 }
 
 .h2-style {
   font-size: 40px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 140%;
 }
 
 .h3-style {
   font-size: 32px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 140%;
 }
 
 .h4-style {
   font-size: 24px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: normal;
 }
 
 .h5-style {
   font-size: 20px;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
   line-height: normal;
 }
 
 .p-style {
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 150%;
 }
 

@@ -33,7 +33,7 @@
 .a-container h4 {
   color: var(--dark, #230e25);
   margin-bottom: 60px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .a-container .carousel {
@@ -103,7 +103,7 @@
 .a-container .agenda-day-chooser p {
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
 }
 
@@ -148,7 +148,7 @@
 .a-container .event-agenda-container .time-con .p-duration {
   font-size: 16px;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
   line-height: normal;
 }
 
@@ -206,7 +206,7 @@
   color: var(--dark, #230e25);
   font-size: 16px;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
   line-height: normal;
 }
 
@@ -329,14 +329,14 @@
 }
 
 @media screen and (max-width: 500px) {
-  .a-container .event-agenda-container .time-con p {
+  /* .a-container .event-agenda-container .time-con p {
     font-weight: 600 !important;
   }
 
   .a-container .event-agenda-container .right-con h5,
   .a-container .event-agenda-container .right-con .p-speaker-name {
     font-weight: 600 !important;
-  }
+  } */
 
   .a-container .event-agenda-container .right-con .description-con {
     width: 70%;

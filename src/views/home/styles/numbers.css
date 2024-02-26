@@ -61,7 +61,7 @@
   color: var(--light, #fcf8fc);
   font-size: 48px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
   text-align: left;
 }
@@ -76,7 +76,7 @@
   color: var(--light, #fcf8fc);
   font-size: 24px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
   text-align: left;
 }

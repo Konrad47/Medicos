@@ -80,7 +80,7 @@
   color: #fff;
   font-size: 18px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 140%;
 }
 
@@ -93,7 +93,7 @@
   color: var(--navy-light, #f7d4f3);
   font-size: 12px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 140%;
   padding: 0 24px 0 24px;
 }
