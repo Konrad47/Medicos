@@ -22,6 +22,18 @@
   margin: auto;
 }
 
+@media screen and (max-width: 1200px) {
+  .o-container .o-grid {
+    gap: 80px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .o-container .o-grid {
+    gap: 40px;
+  }
+}
+
 @media screen and (max-width: 780px) {
   .o-container {
     padding-top: 58px;
@@ -31,5 +43,8 @@
   .o-container .o-grid {
     display: grid;
     gap: 40px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
