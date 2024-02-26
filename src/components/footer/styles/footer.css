@@ -20,6 +20,11 @@
   gap: 16px;
 }
 
+.footer-container .footer-icons .footer-icon:hover {
+  transition: all 0.2s ease-out;
+  opacity: 0.7;
+}
+
 @media screen and (max-width: 1250px) {
   .footer-container {
     flex-direction: column;
