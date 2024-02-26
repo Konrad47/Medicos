@@ -47,7 +47,7 @@ const Speakers = () => {
   const [speakers, setSpeakers] = useState()
   const [modalShow, setModalShow] = useState(false)
   const [currentSpeaker, setCurrentSpeaker] = useState()
-  const [interval, setInterval] = useState(2000)
+  const [interval, setInterval] = useState(5000)
 
   useEffect(() => {
     const getSpeakers = () => {
@@ -76,7 +76,7 @@ const Speakers = () => {
   const closeModal = () => {
     setModalShow(false)
     if (window.innerWidth > 850) {
-      setInterval(2000)
+      setInterval(5000)
       console.log(interval)
     }
   }
@@ -278,12 +278,113 @@ const Speakers = () => {
       </Modal>
     )
   }
+
+  const previousButton = (
+    <svg
+      className="icon-button"
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+    >
+      <g clip-path="url(#clip0_2093_3947)">
+        <path d="M31.6667 20H8.33341Z" fill="#961D8A" />
+        <path
+          d="M31.6667 20H8.33341"
+          stroke="#961D8A"
+          stroke-width="2.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path d="M18.3333 30L8.33325 20Z" fill="#961D8A" />
+        <path
+          d="M18.3333 30L8.33325 20"
+          stroke="#961D8A"
+          stroke-width="2.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M18.3333 10L8.33325 20"
+          stroke="#961D8A"
+          stroke-width="2.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_2093_3947">
+          <rect
+            width="40"
+            height="40"
+            fill="white"
+            transform="matrix(0 1 -1 0 40 0)"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+
+  const nextButton = (
+    <svg
+      className="icon-button"
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+    >
+      <g clip-path="url(#clip0_2093_4035)">
+        <path d="M8.3335 20H31.6668Z" fill="#961D8A" />
+        <path
+          d="M8.3335 20H31.6668"
+          stroke="#961D8A"
+          stroke-width="2.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path d="M21.6665 10L31.6665 20Z" fill="#961D8A" />
+        <path
+          d="M21.6665 10L31.6665 20"
+          stroke="#961D8A"
+          stroke-width="2.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M21.6665 30L31.6665 20"
+          stroke="#961D8A"
+          stroke-width="2.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_2093_4035">
+          <rect
+            width="40"
+            height="40"
+            fill="white"
+            transform="matrix(0 -1 1 0 0 40)"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+
   return (
     <>
       <div className="s-container">
         <div className="container">
           <h2 className="h2-style">{t`speakers.title`}</h2>
-          <Carousel interval={interval} pause={"hover"} touch={false}>
+          <Carousel
+            prevIcon={previousButton}
+            nextIcon={nextButton}
+            interval={interval}
+            pause={"hover"}
+            touch={false}
+          >
             {speakers && renderSpeakerGroups()}
           </Carousel>
           {currentSpeaker && (
