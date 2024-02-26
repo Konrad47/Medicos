@@ -146,10 +146,17 @@ const Footer = () => {
         </svg>
         <p className="p-style">
           {t`footer.copyright`}
-          <a target="_blank" href="#">{t`footer.privacy-policy`}</a>
+          <a
+            target="_blank"
+            href={t`footer.privacy-policy-link`}
+          >{t`footer.privacy-policy`}</a>
         </p>
         <div className="footer-icons">
-          <a className="footer-icon" target="_blank" href="#">
+          <a
+            className="footer-icon"
+            target="_blank"
+            href="https://www.linkedin.com/company/warsaw-stock-exchange/"
+          >
             <svg
               width="40"
               height="40"
@@ -163,7 +170,11 @@ const Footer = () => {
               />
             </svg>
           </a>
-          <a className="footer-icon" target="_blank" href="#">
+          <a
+            className="footer-icon"
+            target="_blank"
+            href="https://www.facebook.com/GPW.WSE/"
+          >
             <svg
               width="40"
               height="40"
@@ -177,7 +188,11 @@ const Footer = () => {
               />
             </svg>
           </a>
-          <a className="footer-icon" target="_blank" href="#">
+          <a
+            className="footer-icon"
+            target="_blank"
+            href="https://www.instagram.com/gpw.wse/"
+          >
             <svg
               width="40"
               height="40"
@@ -195,7 +210,11 @@ const Footer = () => {
               />
             </svg>
           </a>
-          <a className="footer-icon" target="_blank" href="#">
+          <a
+            className="footer-icon"
+            target="_blank"
+            href="https://twitter.com/GPW_WSExchange/"
+          >
             <svg
               width="40"
               height="40"

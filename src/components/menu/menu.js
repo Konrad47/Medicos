@@ -271,7 +271,7 @@ const Menu = () => {
           >{t`menu.previous-editions`}</a>
           <a
             target="_blank"
-            href="#"
+            href={t`menu.register-link`}
             className="register-btn menu-button-link"
           >{t`menu.register`}</a>
         </div>

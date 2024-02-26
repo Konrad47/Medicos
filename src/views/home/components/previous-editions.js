@@ -13,7 +13,11 @@ const PreviousEditions = () => {
           <h2 className="h2-style">{t`previous-editions.title`}</h2>
           <h4 className="h4-style h4-width ">{t`previous-editions.title2`}</h4>
           <div className="editions-con">
-            <a target="_blank" className="edition" href="#">
+            <a
+              target="_blank"
+              className="edition"
+              href="https://www.youtube.com/playlist?list=PLlNsb1X4pa0iMj1UCo8qQjzYDkGh3-d4x"
+            >
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"
@@ -49,7 +53,11 @@ const PreviousEditions = () => {
                 {t`previous-editions.see-wideo`} <span>↗</span>
               </h5>
             </a>
-            <a target="_blank" className="edition" href="#">
+            <a
+              target="_blank"
+              className="edition"
+              href="https://www.youtube.com/playlist?list=PLlNsb1X4pa0h4bvzYqilkD1auaBFDN_qE"
+            >
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"
@@ -85,7 +93,11 @@ const PreviousEditions = () => {
                 {t`previous-editions.see-wideo`} <span>↗</span>
               </h5>
             </a>
-            <a target="_blank" className="edition" href="#">
+            <a
+              target="_blank"
+              className="edition"
+              href="https://www.youtube.com/playlist?list=PLlNsb1X4pa0ibJ69tkdiAINcuSjVZWeYI"
+            >
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"
@@ -121,7 +133,11 @@ const PreviousEditions = () => {
                 {t`previous-editions.see-wideo`} <span>↗</span>
               </h5>
             </a>
-            <a target="_blank" className="edition" href="#">
+            <a
+              target="_blank"
+              className="edition"
+              href="https://www.youtube.com/watch?v=UpA7fRTaYf4&t=139s"
+            >
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"

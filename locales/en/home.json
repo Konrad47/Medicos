@@ -60,5 +60,6 @@
     "register2.title2": "don't miss the conference",
 
     "footer.copyright": "Copyright 2023 Warsaw Stock Exchange S.A. | ",
-    "footer.privacy-policy": "Privacy Policy"
+    "footer.privacy-policy": "Privacy Policy",
+    "footer.privacy-policy-link": "https://www.gpw.pl/PRIVACY-POLICY"
 }
