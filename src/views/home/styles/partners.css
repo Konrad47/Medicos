@@ -24,6 +24,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  max-width: 400px;
 }
 
 .p-container .partner-image {

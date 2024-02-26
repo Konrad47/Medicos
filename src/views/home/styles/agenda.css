@@ -10,12 +10,14 @@
   position: absolute;
   top: 0;
   left: 0;
+  max-width: 500px;
 }
 
 .a-container .a-image-bottom {
   position: absolute;
   bottom: 0;
   right: 0;
+  max-width: 500px;
 }
 
 .a-container h2 {
@@ -311,6 +313,14 @@
   .a-container .event-agenda-container .right-con h5,
   .a-container .event-agenda-container .right-con .description-con {
     width: 80%;
+  }
+
+  .a-container
+    .event-agenda-container:hover
+    .right-con
+    .speaker-con
+    .a-speaker-image-border {
+    opacity: 0;
   }
 }
 
