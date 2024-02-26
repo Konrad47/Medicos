@@ -315,7 +315,6 @@
     padding: 8px 16px 8px 16px;
   }
 
-  .a-container .event-agenda-container .right-con h5,
   .a-container .event-agenda-container .right-con .description-con {
     width: 80%;
   }
@@ -330,7 +329,6 @@
 }
 
 @media screen and (max-width: 500px) {
-  .a-container .event-agenda-container .right-con h5,
   .a-container .event-agenda-container .right-con .description-con {
     width: 70%;
   }
@@ -370,7 +368,6 @@
     padding: 2px 2px 2px 2px;
   }
 
-  .a-container .event-agenda-container .right-con h5,
   .a-container .event-agenda-container .right-con .description-con {
     width: 50%;
   }
