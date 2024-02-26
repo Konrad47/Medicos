@@ -329,6 +329,15 @@
 }
 
 @media screen and (max-width: 500px) {
+  .a-container .event-agenda-container .time-con p {
+    font-weight: 600 !important;
+  }
+
+  .a-container .event-agenda-container .right-con h5,
+  .a-container .event-agenda-container .right-con .p-speaker-name {
+    font-weight: 600 !important;
+  }
+
   .a-container .event-agenda-container .right-con .description-con {
     width: 70%;
   }
