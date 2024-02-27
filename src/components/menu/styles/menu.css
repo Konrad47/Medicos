@@ -26,7 +26,7 @@
 
 .hide-menu .menu-link {
   text-align: right;
-  margin-right: 24px;
+  margin-right: 14px;
   padding: 10px;
   text-decoration: none;
   color: #f8f8fc;
@@ -139,5 +139,22 @@
 
   .menu-opaticy {
     background: rgba(35, 14, 37, 0.9);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hide-menu {
+    justify-content: left;
+  }
+
+  .hide-menu .menu-link {
+    text-align: left;
+    margin-left: 14px;
+    margin-right: 0;
+  }
+  .hide-menu .menu-button-link {
+    text-align: left;
+    margin-left: 24px;
+    margin-right: 0;
   }
 }
