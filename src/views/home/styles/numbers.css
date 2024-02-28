@@ -25,6 +25,7 @@
   display: flex;
   max-width: 348px;
   min-width: 270px;
+  min-height: 191.2px;
   padding: 16px;
   align-items: flex-start;
   gap: 10px;
@@ -90,6 +91,7 @@
 
   .n-container .n-number-container > div {
     max-width: 100%;
+    min-height: auto;
   }
 }
 
