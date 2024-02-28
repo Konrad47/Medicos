@@ -21,7 +21,7 @@ const PreviousEditions = () => {
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"
-                  src="../../../images/previous-editions/pe-2023.png"
+                  src="../../../images/previous-editions/pe-2023.webp"
                   alt="2023 edition"
                   placeholder="2023 edition"
                   loading="lazy"
@@ -61,7 +61,7 @@ const PreviousEditions = () => {
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"
-                  src="../../../images/previous-editions/pe-2022.png"
+                  src="../../../images/previous-editions/pe-2022.webp"
                   alt="2023 edition"
                   placeholder="2023 edition"
                   loading="lazy"
@@ -101,7 +101,7 @@ const PreviousEditions = () => {
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"
-                  src="../../../images/previous-editions/pe-2021.png"
+                  src="../../../images/previous-editions/pe-2021.webp"
                   alt="2023 edition"
                   placeholder="2023 edition"
                   loading="lazy"
@@ -141,7 +141,7 @@ const PreviousEditions = () => {
               <div className="edition-image">
                 <StaticImage
                   className="pe-image"
-                  src="../../../images/previous-editions/pe-2020.png"
+                  src="../../../images/previous-editions/pe-2020.webp"
                   alt="2023 edition"
                   placeholder="2023 edition"
                   loading="lazy"
