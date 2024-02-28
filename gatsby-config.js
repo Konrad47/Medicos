@@ -8,20 +8,20 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `GPW Warsaw Passive Investment`,
-    author: "Innovations Hub Foundation",
+    author: "GPW Warsaw Passive Investment",
     author: {
-      name: `Innovations Hub Foundation`,
+      name: `GPW Warsaw Passive Investment`,
       summary: `Strona internetowa GPW Warsaw Passive Investment`,
     },
     description: `Strona internetowa GPW Warsaw Passive Investment`,
-    siteUrl: `https://master--gpw-warsaw-passive-investment.netlify.app/`,
+    siteUrl: `http://wpic-gpw.pl/`,
   },
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: process.env.SPACE_ID,
-        accessToken: process.env.ACCESS_TOKEN,
+        spaceId: process.env.GPW_SPACE_ID,
+        accessToken: process.env.GPW_ACCESS_TOKEN,
       },
     },
     `gatsby-plugin-image`,
