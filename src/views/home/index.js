@@ -1,50 +1,64 @@
-import React from "react"
-import Menu from "../../components/menu/menu"
-import WpiConference from "./components/wpi-conference"
-import Organizers from "./components/organizers"
-import DiscoverPotential from "./components/discover-potential"
-import Numbers from "./components/numbers"
-import Speakers from "./components/speakers"
-import Agenda from "./components/agenda"
-import Register from "./components/register"
-import Partners from "./components/partners"
-import PreviousEditions from "./components/previous-editions"
-import Register2 from "./components/register2"
-import Footer from "../../components/footer/footer"
+import React, { useEffect, useState, useContext } from "react"
 import Seo from "../../components/seo"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+import getCurrentTranslations from "../../components/contentful-translator"
+import { graphql, useStaticQuery } from "gatsby"
+import { richTextRenderOptions } from "../../utils/templateRenderOption"
+import Menu from "../../components/menu/menu"
+import "./styles/home.css"
 
 const Home = () => {
   const { t } = useTranslation()
+  const { language } = useContext(I18nextContext)
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulExampleModel {
+        edges {
+          node {
+            node_locale
+            title
+            description {
+              raw
+              references {
+                ... on ContentfulAsset {
+                  __typename
+                  contentful_id
+                  file {
+                    url
+                  }
+                }
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const [example, setExample] = useState()
+
+  useEffect(() => {
+    const getData = () => {
+      const getExample = getCurrentTranslations(
+        data.allContentfulExampleModel.edges,
+        language
+      )
+      setExample(getExample)
+    }
+    getData()
+  }, [data.allContentfulExampleModel, language])
 
   return (
     <>
-      <Seo
-        title={t`wpi-conference.title3`}
-        description={t`discover-potential.p`}
-      />
+      <Seo title={t`seo.home.title`} description={t`seo.home.description`} />
       <Menu />
-      <WpiConference />
-      <Organizers />
-      <div id="conference">
-        <DiscoverPotential />
+      <div className="home-con">
+        <h1 className="h1-style">Home Page</h1>
+        {example &&
+          renderRichText(example[0].node.description, richTextRenderOptions)}
       </div>
-      <Numbers />
-      <div id="speakers">
-        <Speakers />
-      </div>
-      <div id="agenda">
-        <Agenda />
-      </div>
-      <Register />
-      <div id="partners">
-        <Partners />
-      </div>
-      <div id="previous-editions">
-        <PreviousEditions />
-      </div>
-      <Register2 />
-      <Footer />
     </>
   )
 }

@@ -7,14 +7,14 @@ require("dotenv").config({
  */
 module.exports = {
   siteMetadata: {
-    title: `GPW Warsaw Passive Investment`,
-    author: "GPW Warsaw Passive Investment",
+    title: `Medicos`,
+    author: "Medicos",
     author: {
-      name: `GPW Warsaw Passive Investment`,
-      summary: `Strona internetowa GPW Warsaw Passive Investment`,
+      name: `Medicost`,
+      summary: `Medicos`,
     },
-    description: `Strona internetowa GPW Warsaw Passive Investment`,
-    siteUrl: `http://wpic-gpw.pl/`,
+    description: `Medicos`,
+    siteUrl: `https://github.com/Konrad47`,
   },
   plugins: [
     {
@@ -96,12 +96,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Warsaw Passive Investment Conference`,
-        short_name: `WPIC`,
+        name: `Medicos`,
+        short_name: `Medicos`,
         start_url: `/`,
         background_color: `#faf0f9`,
         display: `standalone`,
-        icon: `src/images/gpw-icon.png`,
+        icon: `src/images/medicos-icon.png`,
       },
     },
   ],

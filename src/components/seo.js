@@ -1,14 +1,10 @@
-/**
- * SEO component that queries for data with
- * Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
 import * as React from "react"
+import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { useI18next } from "gatsby-plugin-react-i18next"
+import defaultOgImage from "../images/medicos-icon.png"
 
-const Seo = ({ description, title, children }) => {
+function Seo({ description, meta = [], title, ogImage }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -16,34 +12,40 @@ const Seo = ({ description, title, children }) => {
           siteMetadata {
             title
             description
-            social {
-              twitter
-            }
           }
         }
       }
     `
   )
 
+  const { language } = useI18next()
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
 
+  const metaOgImage = ogImage === undefined ? defaultOgImage : ogImage
+
   return (
-    <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
-      <meta name="description" content={metaDescription} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:type" content="website" />
-      <meta name="twitter:card" content="summary" />
-      <meta
-        name="twitter:creator"
-        content={site.siteMetadata?.social?.twitter || ``}
-      />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={metaDescription} />
-      {children}
-    </>
+    <Helmet
+      htmlAttributes={{
+        lang: language,
+      }}
+      title={title}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          name: `author`,
+          content: site.siteMetadata.author,
+        },
+        {
+          property: `og:image`,
+          content: metaOgImage,
+        },
+      ].concat(meta)}
+    ></Helmet>
   )
 }
 

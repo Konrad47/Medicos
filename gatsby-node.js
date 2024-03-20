@@ -6,6 +6,28 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
  */
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
+  const { data } = await graphql(`
+    query {
+      allContentfulExampleArticle {
+        edges {
+          node {
+            title
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  data.allContentfulExampleArticle.edges.forEach(({ node }) => {
+    createPage({
+      path: `news/${node.slug}`,
+      component: path.resolve(`./src/templates/news/index.js`),
+      context: {
+        article: node,
+      },
+    })
+  })
 }
 
 /**
