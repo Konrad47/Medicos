@@ -3,7 +3,7 @@ import "./styles/menu.css"
 import { useTranslation, useI18next, Link } from "gatsby-plugin-react-i18next"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Dropdown from "react-bootstrap/Dropdown"
-
+//s
 const Menu = () => {
   const { t } = useTranslation()
   const { language, languages, originalPath } = useI18next()
