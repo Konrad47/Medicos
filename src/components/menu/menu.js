@@ -173,11 +173,7 @@ const Menu = () => {
                 </Dropdown.Menu>
               </Dropdown>
               <a className="menu-link" href="#partners">{t`menu.blog`}</a>
-              <a
-                target="_blank"
-                href={t`menu.contact-link`}
-                className="register-btn menu-button-link"
-              >{t`menu.contact`}</a>
+              <Link className="register-btn menu-button-link">{t`menu.contact`}</Link>
               <svg
                 className="search-icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +196,7 @@ const Menu = () => {
                     className="flag-image"
                     src="../../images/menu/polish.png"
                     alt="Top image"
-                    placeholder="LinkedIn"
+                    placeholder="Flag"
                     loading="lazy"
                   />
                   {language.toLocaleUpperCase()}
