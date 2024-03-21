@@ -184,6 +184,21 @@
   margin-right: 8px;
 }
 
+.menu-container .linkedIn-a {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.menu-container .linkedIn-image {
+  width: 24px;
+  height: 24px;
+  margin: auto 100px auto 18px;
+}
+
+.menu-container .flag-image {
+  margin: auto 4px auto 0;
+}
+
 @media screen and (max-width: 1350px) {
   .menu-container .menu-inside-container .menu-link {
     font-size: 16px;

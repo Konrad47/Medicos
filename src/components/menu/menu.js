@@ -3,6 +3,7 @@ import "./styles/menu.css"
 import { useTranslation, useI18next, Link } from "gatsby-plugin-react-i18next"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Dropdown from "react-bootstrap/Dropdown"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Menu = () => {
   const { t } = useTranslation()
@@ -195,6 +196,13 @@ const Menu = () => {
               </svg>
               <Dropdown className="language-dropdown">
                 <Dropdown.Toggle>
+                  <StaticImage
+                    className="flag-image"
+                    src="../../images/menu/polish.png"
+                    alt="Top image"
+                    placeholder="LinkedIn"
+                    loading="lazy"
+                  />
                   {language.toLocaleUpperCase()}
                   <svg
                     className="icon-arrow"
@@ -223,6 +231,15 @@ const Menu = () => {
                   ))}
                 </Dropdown.Menu>
               </Dropdown>
+              <a href="#" target="_blank" className="linkedIn-a">
+                <StaticImage
+                  className="linkedIn-image"
+                  src="../../images/menu/linkedIn.png"
+                  alt="Top image"
+                  placeholder="LinkedIn"
+                  loading="lazy"
+                />
+              </a>
             </>
           ) : (
             <>
