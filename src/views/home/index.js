@@ -8,6 +8,7 @@ import { richTextRenderOptions } from "../../utils/templateRenderOption"
 import Menu from "../../components/menu/menu"
 import "./styles/home.css"
 import Footer from "../../components/footer/footer"
+import Header from "./components/header"
 
 const Home = () => {
   const { t } = useTranslation()
@@ -55,12 +56,13 @@ const Home = () => {
     <>
       <Seo title={t`seo.home.title`} description={t`seo.home.description`} />
       <Menu />
-      <div className="home-con">
+      {/* <div className="home-con">
         <h1 className="h1-style">Home Page</h1>
         {example &&
           renderRichText(example[0].node.description, richTextRenderOptions)}
         <h1 className="h1-style">Home Page</h1>
-      </div>
+      </div> */}
+      <Header />
       <Footer />
     </>
   )

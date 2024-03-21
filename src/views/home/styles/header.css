@@ -1,0 +1,35 @@
+.h-container {
+  padding-top: 120px;
+  /* padding-bottom: 60px; */
+}
+
+.h-container .h-con {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-auto-rows: auto;
+}
+.h-container .h-con .left-con {
+  margin-right: 16px;
+}
+
+.h-container .h-con .left-con h1 {
+  margin-bottom: 16px;
+}
+
+.h-container .h-con .left-con p {
+  margin-bottom: 52px;
+}
+
+.h-container .h-con .header-image {
+  height: 400px;
+}
+
+@media screen and (max-width: 1000px) {
+  .h-container .h-con {
+    grid-template-columns: 1fr;
+  }
+
+  .h-container .h-con .left-con {
+    margin-bottom: 52px;
+  }
+}
