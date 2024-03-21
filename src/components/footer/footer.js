@@ -193,7 +193,14 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-down">
-          <div></div>
+          <div>
+            <p>{t`footer.medicos`}</p>
+          </div>
+          <div className="right-footer-down">
+            <p>{t`footer.medicos`}</p>
+            <p>{t`footer.medicos`}</p>
+            <p>{t`footer.medicos`}</p>
+          </div>
         </div>
       </div>
     </>

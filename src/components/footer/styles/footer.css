@@ -21,6 +21,20 @@
 .footer-container .footer-down {
   border-top: 1px solid #000;
   padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.footer-container .footer-down .right-footer-down {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer-container .footer-down .right-footer-down p {
+  text-decoration-line: underline;
 }
 
 .footer-container h6 {
