@@ -65,8 +65,8 @@ module.exports = {
         ],
         web: [
           {
-            name: `Red Hat Display`,
-            file: `https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap`,
+            name: `Inter`,
+            file: `https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap`,
           },
         ],
       },
