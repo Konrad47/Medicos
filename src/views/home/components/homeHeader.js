@@ -1,15 +1,15 @@
 import React from "react"
 import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "bootstrap/dist/css/bootstrap.min.css"
-import "../styles/header.css"
+import "../styles/homeHeader.css"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Header = () => {
+const HomeHeader = () => {
   const { t } = useTranslation()
 
   return (
     <>
-      <div className="h-container">
+      <div className="home-h-container">
         <div className="container">
           <div className="h-con">
             <div className="left-con">
@@ -31,4 +31,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default HomeHeader

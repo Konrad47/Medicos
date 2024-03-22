@@ -4,5 +4,20 @@
 
     "home-header.title": "Surowce chemiczne dla producentów i dostawców",
     "home-header.description": "Od kilkunastu lat dostarczamy surowce i składniki aktywne, które  inspirują do tworzenia nowych rozwiązań. Staramy się działać jak  synergiczne ogniwo pomiędzy naszymi dostawcami i klientami, zapewniając  wartość dodaną wszystkim w łańcuchu dostaw.",
-    "home-header.ask": "Zapytaj o surowiec"
+    "home-header.ask": "Zapytaj o surowiec",
+
+    "home-industries.title": "Branże i specjalizacje",
+    "home-industries.description": "Szeroka gama światowej klasy produktów, formuł i specjalistycznych  chemikaliów umożliwia naszym klientom redukcję kosztów, zwiększenie  przychodów i osiągnięcie zrównoważonych rozwiązań. Skontaktuj się z  nami, aby omówić Twoje specyficzne wymagania lub zapoznaj się z naszym  katalogiem produktów.",
+    "home-industries.all-materials": "Wszystkie surowce ->",
+    "home-industries.material": "Zobacz surowce ->",
+    "home-industries.household-chemicals": "Chemia gospodarcza",
+    "home-industries.hc-description": "Szeroka gama światowej klasy produktów, formuł i specjalistycznych  chemikaliów umożliwia naszym klientom redukcję kosztów, zwiększenie  przychodów i osiągnięcie zrównoważonych rozwiązań.",
+    "home-industries.cosmetology": "Kosmetyka",
+    "home-industries.c-description": "Szeroka gama światowej klasy produktów, formuł i specjalistycznych  chemikaliów umożliwia naszym klientom redukcję kosztów, zwiększenie  przychodów i osiągnięcie zrównoważonych rozwiązań.",
+    "home-industries.pharmacy": "Farmacja",
+    "home-industries.p-description": "Szeroka gama światowej klasy produktów, formuł i specjalistycznych  chemikaliów umożliwia naszym klientom redukcję kosztów, zwiększenie  przychodów i osiągnięcie zrównoważonych rozwiązań.",
+    "home-industries.food": "Żywność i suplementy",
+    "home-industries.f-description": "Szeroka gama światowej klasy produktów, formuł i specjalistycznych  chemikaliów umożliwia naszym klientom redukcję kosztów, zwiększenie  przychodów i osiągnięcie zrównoważonych rozwiązań.",
+    "home-industries.other-industries": "Pozostałe branże",
+    "home-industries.oi-description": "Szeroka gama światowej klasy produktów, formuł i specjalistycznych  chemikaliów umożliwia naszym klientom redukcję kosztów, zwiększenie  przychodów i osiągnięcie zrównoważonych rozwiązań."
 }

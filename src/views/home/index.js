@@ -8,7 +8,8 @@ import { richTextRenderOptions } from "../../utils/templateRenderOption"
 import Menu from "../../components/menu/menu"
 import "./styles/home.css"
 import Footer from "../../components/footer/footer"
-import Header from "./components/header"
+import HomeHeader from "./components/homeHeader"
+import HomeIndustries from "./components/homeIndustries"
 
 const Home = () => {
   const { t } = useTranslation()
@@ -62,7 +63,8 @@ const Home = () => {
           renderRichText(example[0].node.description, richTextRenderOptions)}
         <h1 className="h1-style">Home Page</h1>
       </div> */}
-      <Header />
+      <HomeHeader />
+      <HomeIndustries />
       <Footer />
     </>
   )

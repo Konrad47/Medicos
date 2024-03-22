@@ -55,6 +55,7 @@
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
+  height: 35px;
 }
 
 .menu-container .medicos-icon {
