@@ -11,6 +11,7 @@ const Menu = () => {
   const [isUnderTrigger, setIsUnderTrigger] = useState(false)
   const [isMenu, setIsMenu] = useState(false)
   const [isHideMenu, setIsHideMenu] = useState(false)
+  const [isSearch, setIsSearch] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -130,69 +131,108 @@ const Menu = () => {
             </defs>
           </svg>
         </a>
-        <div className="menu-inside-container">
+        <div
+          className={
+            !isSearch
+              ? "menu-inside-container"
+              : "menu-inside-container width100"
+          }
+        >
           {isMenu ? (
             <>
-              <a className="menu-link" href="#conference">{t`menu.about`}</a>
-              <a className="menu-link" href="#speakers">{t`menu.services`}</a>
-              <Dropdown className="rmo-dropdown menu-link">
-                <Dropdown.Toggle>
-                  {t`menu.raw-material-offer`}
+              {!isSearch ? (
+                <>
+                  <Link className="menu-link">{t`menu.about`}</Link>
+                  <Link className="menu-link">{t`menu.services`}</Link>
+                  <Dropdown className="rmo-dropdown menu-link">
+                    <Dropdown.Toggle>
+                      {t`menu.raw-material-offer`}
+                      <svg
+                        className="icon-arrow"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M5.29303 7.29301C5.48056 7.10553 5.73487 7.00022 6.00003 7.00022C6.26519 7.00022 6.5195 7.10553 6.70703 7.29301L10 10.586L13.293 7.29301C13.3853 7.19749 13.4956 7.12131 13.6176 7.0689C13.7396 7.01649 13.8709 6.98891 14.0036 6.98775C14.1364 6.9866 14.2681 7.0119 14.391 7.06218C14.5139 7.11246 14.6255 7.18672 14.7194 7.28061C14.8133 7.3745 14.8876 7.48615 14.9379 7.60905C14.9881 7.73195 15.0134 7.86363 15.0123 7.99641C15.0111 8.12919 14.9835 8.26041 14.9311 8.38241C14.8787 8.50441 14.8025 8.61476 14.707 8.707L10.707 12.707C10.5195 12.8945 10.2652 12.9998 10 12.9998C9.73487 12.9998 9.48056 12.8945 9.29303 12.707L5.29303 8.707C5.10556 8.51948 5.00024 8.26517 5.00024 8C5.00024 7.73484 5.10556 7.48053 5.29303 7.29301Z"
+                        />
+                      </svg>
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item>
+                        <Link>{t`menu.raw-all-materials`}</Link>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <Link>{t`menu.raw-household-chemicals`}</Link>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <Link>{t`menu.raw-cosmetology`}</Link>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <Link>{t`menu.raw-pharmacy`}</Link>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <Link>{t`menu.raw-food`}</Link>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <Link>{t`menu.raw-other-industries`}</Link>
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Link className="menu-link">{t`menu.blog`}</Link>
+                  <Link className="register-btn menu-button-link">{t`menu.contact`}</Link>
                   <svg
-                    className="icon-arrow"
+                    onClick={() => setIsSearch(!isSearch)}
+                    className="search-icon"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 21 20"
                     fill="none"
                   >
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M5.29303 7.29301C5.48056 7.10553 5.73487 7.00022 6.00003 7.00022C6.26519 7.00022 6.5195 7.10553 6.70703 7.29301L10 10.586L13.293 7.29301C13.3853 7.19749 13.4956 7.12131 13.6176 7.0689C13.7396 7.01649 13.8709 6.98891 14.0036 6.98775C14.1364 6.9866 14.2681 7.0119 14.391 7.06218C14.5139 7.11246 14.6255 7.18672 14.7194 7.28061C14.8133 7.3745 14.8876 7.48615 14.9379 7.60905C14.9881 7.73195 15.0134 7.86363 15.0123 7.99641C15.0111 8.12919 14.9835 8.26041 14.9311 8.38241C14.8787 8.50441 14.8025 8.61476 14.707 8.707L10.707 12.707C10.5195 12.8945 10.2652 12.9998 10 12.9998C9.73487 12.9998 9.48056 12.8945 9.29303 12.707L5.29303 8.707C5.10556 8.51948 5.00024 8.26517 5.00024 8C5.00024 7.73484 5.10556 7.48053 5.29303 7.29301Z"
+                      d="M19.4 19L13.4 13M15.4 8C15.4 8.91925 15.219 9.82951 14.8672 10.6788C14.5154 11.5281 13.9998 12.2997 13.3498 12.9497C12.6998 13.5998 11.9281 14.1154 11.0788 14.4672C10.2295 14.8189 9.31928 15 8.40002 15C7.48077 15 6.57052 14.8189 5.72124 14.4672C4.87196 14.1154 4.10029 13.5998 3.45028 12.9497C2.80027 12.2997 2.28465 11.5281 1.93287 10.6788C1.58108 9.82951 1.40002 8.91925 1.40002 8C1.40002 6.14348 2.13752 4.36301 3.45028 3.05025C4.76303 1.7375 6.54351 1 8.40002 1C10.2565 1 12.037 1.7375 13.3498 3.05025C14.6625 4.36301 15.4 6.14348 15.4 8Z"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     />
                   </svg>
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item>
-                    <Link>{t`menu.raw-all-materials`}</Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Link>{t`menu.raw-household-chemicals`}</Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Link>{t`menu.raw-cosmetology`}</Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Link>{t`menu.raw-pharmacy`}</Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Link>{t`menu.raw-food`}</Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Link>{t`menu.raw-other-industries`}</Link>
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <a className="menu-link" href="#partners">{t`menu.blog`}</a>
-              <Link className="register-btn menu-button-link">{t`menu.contact`}</Link>
-              <svg
-                className="search-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 21 20"
-                fill="none"
+                </>
+              ) : (
+                <div className="search-div">
+                  <input
+                    className="search-input"
+                    placeholder={t`menu.search`}
+                  ></input>
+                  <svg
+                    onClick={() => setIsSearch(!isSearch)}
+                    className="search-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 21 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M19.4 19L13.4 13M15.4 8C15.4 8.91925 15.219 9.82951 14.8672 10.6788C14.5154 11.5281 13.9998 12.2997 13.3498 12.9497C12.6998 13.5998 11.9281 14.1154 11.0788 14.4672C10.2295 14.8189 9.31928 15 8.40002 15C7.48077 15 6.57052 14.8189 5.72124 14.4672C4.87196 14.1154 4.10029 13.5998 3.45028 12.9497C2.80027 12.2997 2.28465 11.5281 1.93287 10.6788C1.58108 9.82951 1.40002 8.91925 1.40002 8C1.40002 6.14348 2.13752 4.36301 3.45028 3.05025C4.76303 1.7375 6.54351 1 8.40002 1C10.2565 1 12.037 1.7375 13.3498 3.05025C14.6625 4.36301 15.4 6.14348 15.4 8Z"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              )}
+              <Dropdown
+                className={
+                  !isSearch ? "language-dropdown" : "language-dropdown margin"
+                }
               >
-                <path
-                  d="M19.4 19L13.4 13M15.4 8C15.4 8.91925 15.219 9.82951 14.8672 10.6788C14.5154 11.5281 13.9998 12.2997 13.3498 12.9497C12.6998 13.5998 11.9281 14.1154 11.0788 14.4672C10.2295 14.8189 9.31928 15 8.40002 15C7.48077 15 6.57052 14.8189 5.72124 14.4672C4.87196 14.1154 4.10029 13.5998 3.45028 12.9497C2.80027 12.2997 2.28465 11.5281 1.93287 10.6788C1.58108 9.82951 1.40002 8.91925 1.40002 8C1.40002 6.14348 2.13752 4.36301 3.45028 3.05025C4.76303 1.7375 6.54351 1 8.40002 1C10.2565 1 12.037 1.7375 13.3498 3.05025C14.6625 4.36301 15.4 6.14348 15.4 8Z"
-                  stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <Dropdown className="language-dropdown">
                 <Dropdown.Toggle>
                   {language === "pl" ? (
                     <StaticImage
@@ -251,22 +291,50 @@ const Menu = () => {
             </>
           ) : (
             <>
-              <svg
-                className="search-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 21 20"
-                fill="none"
-              >
-                <path
-                  d="M19.4 19L13.4 13M15.4 8C15.4 8.91925 15.219 9.82951 14.8672 10.6788C14.5154 11.5281 13.9998 12.2997 13.3498 12.9497C12.6998 13.5998 11.9281 14.1154 11.0788 14.4672C10.2295 14.8189 9.31928 15 8.40002 15C7.48077 15 6.57052 14.8189 5.72124 14.4672C4.87196 14.1154 4.10029 13.5998 3.45028 12.9497C2.80027 12.2997 2.28465 11.5281 1.93287 10.6788C1.58108 9.82951 1.40002 8.91925 1.40002 8C1.40002 6.14348 2.13752 4.36301 3.45028 3.05025C4.76303 1.7375 6.54351 1 8.40002 1C10.2565 1 12.037 1.7375 13.3498 3.05025C14.6625 4.36301 15.4 6.14348 15.4 8Z"
-                  stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              {!isSearch ? (
+                <svg
+                  onClick={() => setIsSearch(!isSearch)}
+                  className="search-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 21 20"
+                  fill="none"
+                >
+                  <path
+                    d="M19.4 19L13.4 13M15.4 8C15.4 8.91925 15.219 9.82951 14.8672 10.6788C14.5154 11.5281 13.9998 12.2997 13.3498 12.9497C12.6998 13.5998 11.9281 14.1154 11.0788 14.4672C10.2295 14.8189 9.31928 15 8.40002 15C7.48077 15 6.57052 14.8189 5.72124 14.4672C4.87196 14.1154 4.10029 13.5998 3.45028 12.9497C2.80027 12.2997 2.28465 11.5281 1.93287 10.6788C1.58108 9.82951 1.40002 8.91925 1.40002 8C1.40002 6.14348 2.13752 4.36301 3.45028 3.05025C4.76303 1.7375 6.54351 1 8.40002 1C10.2565 1 12.037 1.7375 13.3498 3.05025C14.6625 4.36301 15.4 6.14348 15.4 8Z"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              ) : (
+                <div className="search-div">
+                  <input
+                    className="search-input"
+                    placeholder={t`menu.search`}
+                  ></input>
+                  <svg
+                    onClick={() => setIsSearch(!isSearch)}
+                    className="search-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 21 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M19.4 19L13.4 13M15.4 8C15.4 8.91925 15.219 9.82951 14.8672 10.6788C14.5154 11.5281 13.9998 12.2997 13.3498 12.9497C12.6998 13.5998 11.9281 14.1154 11.0788 14.4672C10.2295 14.8189 9.31928 15 8.40002 15C7.48077 15 6.57052 14.8189 5.72124 14.4672C4.87196 14.1154 4.10029 13.5998 3.45028 12.9497C2.80027 12.2997 2.28465 11.5281 1.93287 10.6788C1.58108 9.82951 1.40002 8.91925 1.40002 8C1.40002 6.14348 2.13752 4.36301 3.45028 3.05025C4.76303 1.7375 6.54351 1 8.40002 1C10.2565 1 12.037 1.7375 13.3498 3.05025C14.6625 4.36301 15.4 6.14348 15.4 8Z"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              )}
+
               {!isHideMenu ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -308,19 +376,35 @@ const Menu = () => {
       </div>
       {isHideMenu && (
         <div className="hide-menu">
-          <a className="menu-link" href="#conference">{t`menu.conference`}</a>
-          <a className="menu-link" href="#speakers">{t`menu.speakers`}</a>
-          <a className="menu-link" href="#agenda">{t`menu.agenda`}</a>
-          <a className="menu-link" href="#partners">{t`menu.partners`}</a>
-          <a
-            className="menu-link"
-            href="#previous-editions"
-          >{t`menu.previous-editions`}</a>
-          <a
-            target="_blank"
-            href={t`menu.register-link`}
-            className="register-btn menu-button-link"
-          >{t`menu.register`}</a>
+          <Link className="menu-link">{t`menu.about`}</Link>
+          <Link className="menu-link">{t`menu.services`}</Link>
+          <span className="menu-link">
+            {" "}
+            {t`menu.raw-material-offer`}
+            <svg
+              className="icon-arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5.29303 7.29301C5.48056 7.10553 5.73487 7.00022 6.00003 7.00022C6.26519 7.00022 6.5195 7.10553 6.70703 7.29301L10 10.586L13.293 7.29301C13.3853 7.19749 13.4956 7.12131 13.6176 7.0689C13.7396 7.01649 13.8709 6.98891 14.0036 6.98775C14.1364 6.9866 14.2681 7.0119 14.391 7.06218C14.5139 7.11246 14.6255 7.18672 14.7194 7.28061C14.8133 7.3745 14.8876 7.48615 14.9379 7.60905C14.9881 7.73195 15.0134 7.86363 15.0123 7.99641C15.0111 8.12919 14.9835 8.26041 14.9311 8.38241C14.8787 8.50441 14.8025 8.61476 14.707 8.707L10.707 12.707C10.5195 12.8945 10.2652 12.9998 10 12.9998C9.73487 12.9998 9.48056 12.8945 9.29303 12.707L5.29303 8.707C5.10556 8.51948 5.00024 8.26517 5.00024 8C5.00024 7.73484 5.10556 7.48053 5.29303 7.29301Z"
+              />
+            </svg>
+          </span>
+          <div className="hide-menu-materials">
+            <Link className="menu-link">{t`menu.raw-household-chemicals`}</Link>
+            <Link className="menu-link">{t`menu.raw-cosmetology`}</Link>
+            <Link className="menu-link">{t`menu.raw-pharmacy`}</Link>
+            <Link className="menu-link">{t`menu.raw-food`}</Link>
+            <Link className="menu-link">{t`menu.raw-other-industries`}</Link>
+          </div>
+          <Link className="menu-link">{t`menu.blog`}</Link>
+          <Link className="register-btn menu-button-link">{t`menu.contact`}</Link>
         </div>
       )}
     </>

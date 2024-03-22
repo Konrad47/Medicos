@@ -24,28 +24,30 @@
   justify-content: right;
   padding-bottom: 20px;
   transition: all 0.2s ease-out;
+  justify-content: left;
 }
 
 .hide-menu .menu-link {
-  text-align: right;
-  margin-right: 14px;
+  text-align: left;
+  margin-left: 14px;
+  margin-bottom: 8px;
   padding: 10px;
   text-decoration: none;
   color: #f8f8fc;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
 
 .hide-menu .menu-button-link {
-  text-align: right;
-  margin: 10px 24px 10px 0;
+  text-align: center;
+  margin: 10px 0 10px 24px;
 }
 
 .menu-opaticy {
   /* background-color: rgba(18, 14, 37, 0); */
-  background-color: rgba(18, 14, 37, 0.8);
+  background: rgba(35, 14, 37, 0.9);
 }
 
 .menu-container a.medicos-icon {
@@ -57,6 +59,10 @@
   margin-top: auto;
   margin-bottom: auto;
   height: 35px;
+}
+
+.width100 {
+  width: 100%;
 }
 
 .menu-container .medicos-icon {
@@ -128,6 +134,10 @@
 .menu-container .language-dropdown {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.margin {
+  margin-right: 0.5%;
 }
 
 .menu-container .btn-primary,
@@ -205,6 +215,42 @@
   margin: auto 4px auto 0;
 }
 
+.menu-container .search-input {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #000;
+}
+
+.menu-container .search-div {
+  margin-right: 8px;
+  margin-left: 16px;
+  width: 90%;
+  justify-content: left;
+  height: 35px;
+  position: relative;
+}
+
+.menu-container .search-div .search-icon {
+  position: absolute;
+  right: -8px;
+  top: 0;
+}
+
+.hide-menu .icon-arrow {
+  fill: #f8f8fc;
+  transition: all 0.2s ease-out;
+}
+
+.hide-menu span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hide-menu .hide-menu-materials {
+  display: grid;
+  margin-left: 24px;
+}
+
 @media screen and (max-width: 1350px) {
   .menu-container .menu-inside-container .menu-link {
     font-size: 16px;
@@ -222,10 +268,13 @@
   .menu-container .dropdown {
     margin-right: 24px;
   }
+  .menu-container a.medicos-icon {
+    margin-left: 16px;
+  }
 }
 
 @media screen and (max-width: 500px) {
-  .hide-menu {
+  /* .hide-menu {
     justify-content: left;
   }
 
@@ -242,5 +291,5 @@
 
   .menu-container .btn-primary:hover {
     color: #f8f8fc;
-  }
+  } */
 }
