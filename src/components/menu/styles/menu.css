@@ -16,7 +16,7 @@
   background: rgba(35, 14, 37, 0.9);
   position: fixed;
   width: 100%;
-  top: 80px;
+  top: 72px;
   left: 0;
   z-index: 5;
   transition: all 0.2s ease-out;
@@ -44,7 +44,8 @@
 }
 
 .menu-opaticy {
-  background-color: rgba(18, 14, 37, 0);
+  /* background-color: rgba(18, 14, 37, 0); */
+  background-color: rgba(18, 14, 37, 0.8);
 }
 
 .menu-container a.medicos-icon {
@@ -90,19 +91,23 @@
 }
 
 .menu-container .menu-inside-container .menu-button {
-  margin-right: 16px;
+  /* margin-right: 16px;
   border-radius: 8px;
   border: 1px solid var(--navy-light, #f7d4f3);
   background: var(--navy-dark, #56104f);
   display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0; */
   width: 44px;
   height: 44px;
   padding: 10px;
-  align-items: flex-start;
-  gap: 10px;
-  flex-shrink: 0;
+  /* margin-top: auto; */
+  /* margin-bottom: auto; */
   cursor: pointer;
+  margin-right: 16px;
 }
+
 .menu-container .rmo-dropdown button,
 .menu-container .language-dropdown button,
 .menu-container .dropdown-item {
@@ -207,24 +212,12 @@
     justify-content: center;
     align-items: center;
   }
-
-  .menu-container svg {
-    margin-left: 24px;
-  }
-
-  .menu-container .menu-inside-container .menu-button-link {
-    margin-right: 24px;
-  }
 }
 
-@media screen and (max-width: 1040px) {
-  .menu-container {
-    height: 80px;
-  }
-
-  .menu-opaticy {
+@media screen and (max-width: 1080px) {
+  /* .menu-opaticy {
     background: rgba(35, 14, 37, 0.9);
-  }
+  } */
 
   .menu-container .dropdown {
     margin-right: 24px;

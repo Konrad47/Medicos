@@ -29,7 +29,7 @@ const Menu = () => {
     }
 
     const handleResize = () => {
-      if (window.innerWidth > 1040) {
+      if (window.innerWidth > 1080) {
         setIsMenu(true)
       } else {
         setIsMenu(false)
@@ -48,6 +48,8 @@ const Menu = () => {
       window.removeEventListener("resize", handleResize)
     }
   }, [])
+
+  console.log(language)
 
   return (
     <>
@@ -192,13 +194,23 @@ const Menu = () => {
               </svg>
               <Dropdown className="language-dropdown">
                 <Dropdown.Toggle>
-                  <StaticImage
-                    className="flag-image"
-                    src="../../images/menu/polish.png"
-                    alt="Top image"
-                    placeholder="Flag"
-                    loading="lazy"
-                  />
+                  {language === "pl" ? (
+                    <StaticImage
+                      className="flag-image"
+                      src="../../images/menu/polish.png"
+                      alt="Flag"
+                      placeholder="Flag"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <StaticImage
+                      className="flag-image"
+                      src="../../images/menu/english.png"
+                      alt="Flag"
+                      placeholder="Flag"
+                      loading="lazy"
+                    />
+                  )}
                   {language.toLocaleUpperCase()}
                   <svg
                     className="icon-arrow"
@@ -240,61 +252,56 @@ const Menu = () => {
           ) : (
             <>
               <svg
-                onClick={() => setIsHideMenu(!isHideMenu)}
-                className="menu-button"
+                className="search-icon"
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                viewBox="0 0 21 20"
                 fill="none"
               >
-                <g clip-path="url(#clip0_2055_5694)">
-                  <path d="M4 6H20H4Z" fill="#F7D4F3" />
-                  <path
-                    d="M4 6H20"
-                    stroke="#F7D4F3"
-                    stroke-width="2.75"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path d="M4 12H20H4Z" fill="#F7D4F3" />
-                  <path
-                    d="M4 12H20"
-                    stroke="#F7D4F3"
-                    stroke-width="2.75"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M4 18H20"
-                    stroke="#F7D4F3"
-                    stroke-width="2.75"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_2055_5694">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
+                <path
+                  d="M19.4 19L13.4 13M15.4 8C15.4 8.91925 15.219 9.82951 14.8672 10.6788C14.5154 11.5281 13.9998 12.2997 13.3498 12.9497C12.6998 13.5998 11.9281 14.1154 11.0788 14.4672C10.2295 14.8189 9.31928 15 8.40002 15C7.48077 15 6.57052 14.8189 5.72124 14.4672C4.87196 14.1154 4.10029 13.5998 3.45028 12.9497C2.80027 12.2997 2.28465 11.5281 1.93287 10.6788C1.58108 9.82951 1.40002 8.91925 1.40002 8C1.40002 6.14348 2.13752 4.36301 3.45028 3.05025C4.76303 1.7375 6.54351 1 8.40002 1C10.2565 1 12.037 1.7375 13.3498 3.05025C14.6625 4.36301 15.4 6.14348 15.4 8Z"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
-              <Dropdown>
-                <Dropdown.Toggle>
-                  {language.toLocaleUpperCase()}
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {languages.map(lang => (
-                    <div key={lang}>
-                      <Dropdown.Item>
-                        <Link to={originalPath} language={lang}>
-                          {lang.toUpperCase()}
-                        </Link>
-                      </Dropdown.Item>
-                    </div>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
+              {!isHideMenu ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="12"
+                  viewBox="0 0 14 12"
+                  fill="none"
+                  onClick={() => setIsHideMenu(!isHideMenu)}
+                  className="menu-button"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0 1C0 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0H13C13.2652 0 13.5196 0.105357 13.7071 0.292893C13.8946 0.48043 14 0.734784 14 1C14 1.26522 13.8946 1.51957 13.7071 1.70711C13.5196 1.89464 13.2652 2 13 2H1C0.734784 2 0.48043 1.89464 0.292893 1.70711C0.105357 1.51957 0 1.26522 0 1ZM0 6C0 5.73478 0.105357 5.48043 0.292893 5.29289C0.48043 5.10536 0.734784 5 1 5H13C13.2652 5 13.5196 5.10536 13.7071 5.29289C13.8946 5.48043 14 5.73478 14 6C14 6.26522 13.8946 6.51957 13.7071 6.70711C13.5196 6.89464 13.2652 7 13 7H1C0.734784 7 0.48043 6.89464 0.292893 6.70711C0.105357 6.51957 0 6.26522 0 6ZM0 11C0 10.7348 0.105357 10.4804 0.292893 10.2929C0.48043 10.1054 0.734784 10 1 10H13C13.2652 10 13.5196 10.1054 13.7071 10.2929C13.8946 10.4804 14 10.7348 14 11C14 11.2652 13.8946 11.5196 13.7071 11.7071C13.5196 11.8946 13.2652 12 13 12H1C0.734784 12 0.48043 11.8946 0.292893 11.7071C0.105357 11.5196 0 11.2652 0 11Z"
+                    fill="black"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  onClick={() => setIsHideMenu(!isHideMenu)}
+                  className="menu-button"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.29303 4.29308C4.48056 4.10561 4.73487 4.00029 5.00003 4.00029C5.26519 4.00029 5.5195 4.10561 5.70703 4.29308L10 8.58608L14.293 4.29308C14.3853 4.19757 14.4956 4.12139 14.6176 4.06898C14.7396 4.01657 14.8709 3.98898 15.0036 3.98783C15.1364 3.98668 15.2681 4.01198 15.391 4.06226C15.5139 4.11254 15.6255 4.18679 15.7194 4.28069C15.8133 4.37458 15.8876 4.48623 15.9379 4.60913C15.9881 4.73202 16.0134 4.8637 16.0123 4.99648C16.0111 5.12926 15.9835 5.26048 15.9311 5.38249C15.8787 5.50449 15.8025 5.61483 15.707 5.70708L11.414 10.0001L15.707 14.2931C15.8892 14.4817 15.99 14.7343 15.9877 14.9965C15.9854 15.2587 15.8803 15.5095 15.6948 15.6949C15.5094 15.8803 15.2586 15.9855 14.9964 15.9878C14.7342 15.99 14.4816 15.8892 14.293 15.7071L10 11.4141L5.70703 15.7071C5.51843 15.8892 5.26583 15.99 5.00363 15.9878C4.74143 15.9855 4.49062 15.8803 4.30521 15.6949C4.1198 15.5095 4.01463 15.2587 4.01236 14.9965C4.01008 14.7343 4.11087 14.4817 4.29303 14.2931L8.58603 10.0001L4.29303 5.70708C4.10556 5.51955 4.00024 5.26525 4.00024 5.00008C4.00024 4.73492 4.10556 4.48061 4.29303 4.29308Z"
+                    fill="black"
+                  />
+                </svg>
+              )}
             </>
           )}
         </div>
