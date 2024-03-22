@@ -63,7 +63,7 @@ const Menu = () => {
           isUnderTrigger ? "menu-container" : "menu-container menu-opaticy"
         }
       >
-        <a className="medicos-icon" href="#">
+        <Link className="medicos-icon" to="/">
           {" "}
           {/* <svg
             className="gpw-icon"
@@ -133,7 +133,7 @@ const Menu = () => {
               </clipPath>
             </defs>
           </svg>
-        </a>
+        </Link>
         <div
           className={
             !isSearch
