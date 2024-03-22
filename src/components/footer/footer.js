@@ -98,7 +98,7 @@ const Footer = () => {
             </Link>
           </div>
           <div>
-            <h6>{t`footer.medicos-sp.zoo`}</h6>
+            <h6>{t`footer.about`}</h6>
             <Link>
               <p>{t`footer.mission`}</p>
             </Link>
@@ -197,9 +197,9 @@ const Footer = () => {
             <p>{t`footer.medicos`}</p>
           </div>
           <div className="right-footer-down">
-            <p>{t`footer.medicos`}</p>
-            <p>{t`footer.medicos`}</p>
-            <p>{t`footer.medicos`}</p>
+            <p>{t`footer.cookies`}</p>
+            <p>{t`footer.rodo`}</p>
+            <p>{t`footer.privacy-policy`}</p>
           </div>
         </div>
       </div>
