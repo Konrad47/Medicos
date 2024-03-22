@@ -4,6 +4,7 @@ import { useTranslation, useI18next, Link } from "gatsby-plugin-react-i18next"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Dropdown from "react-bootstrap/Dropdown"
 import { StaticImage } from "gatsby-plugin-image"
+import { navigate } from "gatsby"
 
 const Menu = () => {
   const { t } = useTranslation()
@@ -16,6 +17,11 @@ const Menu = () => {
 
   const handleSearchChange = event => {
     setSearch(event.target.value)
+  }
+
+  const goToSearch = () => {
+    navigate(`/search?query=${search}`)
+    setIsSearch(!isSearch)
   }
 
   useEffect(() => {
@@ -218,9 +224,14 @@ const Menu = () => {
                     type="text"
                     value={search}
                     onChange={handleSearchChange}
+                    onKeyDown={event => {
+                      if (event.key === "Enter") {
+                        goToSearch()
+                      }
+                    }}
                   ></input>
                   <svg
-                    onClick={() => setIsSearch(!isSearch)}
+                    onClick={() => goToSearch()}
                     className="search-icon"
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"

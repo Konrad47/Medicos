@@ -198,6 +198,7 @@
   height: 41px;
   padding: 3px 16px;
   margin-right: 8px;
+  cursor: pointer;
 }
 
 .menu-container .linkedIn-a {
