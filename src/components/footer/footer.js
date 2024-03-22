@@ -110,7 +110,10 @@ const Footer = () => {
             </Link>
           </div>
           <div>
-            <Link className="register-btn footer-button-link">{t`menu.contact`}</Link>
+            <Link
+              className="register-btn footer-button-link"
+              to="/contact"
+            >{t`menu.contact`}</Link>
             <a href="#" target="_blank">
               <p className="contact-a bottom">
                 <svg

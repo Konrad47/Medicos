@@ -5,11 +5,10 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import getCurrentTranslations from "../../components/contentful-translator"
 import { graphql, useStaticQuery } from "gatsby"
 import { richTextRenderOptions } from "../../utils/templateRenderOption"
-import Menu from "../../components/menu/menu"
 import "./styles/home.css"
-import Footer from "../../components/footer/footer"
 import HomeHeader from "./components/homeHeader"
 import HomeIndustries from "./components/homeIndustries"
+import Layout from "../../components/layout"
 
 const Home = () => {
   const { t } = useTranslation()
@@ -54,9 +53,8 @@ const Home = () => {
   }, [data.allContentfulExampleModel, language])
 
   return (
-    <>
+    <Layout>
       <Seo title={t`seo.home.title`} description={t`seo.home.description`} />
-      <Menu />
       {/* <div className="home-con">
         <h1 className="h1-style">Home Page</h1>
         {example &&
@@ -65,8 +63,7 @@ const Home = () => {
       </div> */}
       <HomeHeader />
       <HomeIndustries />
-      <Footer />
-    </>
+    </Layout>
   )
 }
 export default Home

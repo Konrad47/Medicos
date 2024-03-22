@@ -12,6 +12,11 @@ const Menu = () => {
   const [isMenu, setIsMenu] = useState(false)
   const [isHideMenu, setIsHideMenu] = useState(false)
   const [isSearch, setIsSearch] = useState(false)
+  const [search, setSearch] = useState("")
+
+  const handleSearchChange = event => {
+    setSearch(event.target.value)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,8 +54,6 @@ const Menu = () => {
       window.removeEventListener("resize", handleResize)
     }
   }, [])
-
-  console.log(language)
 
   return (
     <>
@@ -184,7 +187,10 @@ const Menu = () => {
                     </Dropdown.Menu>
                   </Dropdown>
                   <Link className="menu-link">{t`menu.blog`}</Link>
-                  <Link className="register-btn menu-button-link">{t`menu.contact`}</Link>
+                  <Link
+                    className="register-btn menu-button-link"
+                    to="/contact"
+                  >{t`menu.contact`}</Link>
                   <svg
                     onClick={() => setIsSearch(!isSearch)}
                     className="search-icon"
@@ -207,7 +213,11 @@ const Menu = () => {
                 <div className="search-div">
                   <input
                     className="search-input"
+                    id="search-input"
                     placeholder={t`menu.search`}
+                    type="text"
+                    value={search}
+                    onChange={handleSearchChange}
                   ></input>
                   <svg
                     onClick={() => setIsSearch(!isSearch)}
@@ -313,7 +323,11 @@ const Menu = () => {
                 <div className="search-div">
                   <input
                     className="search-input"
+                    id="search-input"
                     placeholder={t`menu.search`}
+                    type="text"
+                    value={search}
+                    onChange={handleSearchChange}
                   ></input>
                   <svg
                     onClick={() => setIsSearch(!isSearch)}
