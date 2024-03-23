@@ -20,7 +20,8 @@ const Menu = () => {
   }
 
   const goToSearch = () => {
-    navigate(`/search?query=${search}`)
+    const encodedSearchQuery = encodeURIComponent(search)
+    navigate(`/search?query=${encodedSearchQuery}`)
     setIsSearch(!isSearch)
   }
 

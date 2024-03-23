@@ -1,15 +1,51 @@
-import React from "react"
+import React, { useEffect, useState, useContext } from "react"
 import Seo from "../../components/seo"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
 import Layout from "../../components/layout"
 import SearchHeader from "./components/searchHeader"
 import { useLocation } from "@reach/router"
+import { graphql, useStaticQuery } from "gatsby"
+import getCurrentTranslations from "../../components/contentful-translator"
 
 const Search = () => {
   const { t } = useTranslation()
   const location = useLocation()
   const searchParams = new URLSearchParams(location.search)
-  const searchQuery = searchParams.get("query") || ""
+  const searchQuery = searchParams.get("query")
+    ? decodeURIComponent(searchParams.get("query"))
+    : ""
+
+  const { language } = useContext(I18nextContext)
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulExampleArticle {
+        edges {
+          node {
+            title
+            node_locale
+          }
+        }
+      }
+    }
+  `)
+
+  const [searchedData, setSearchedData] = useState([])
+
+  useEffect(() => {
+    const getData = () => {
+      const getArticles = getCurrentTranslations(
+        data.allContentfulExampleArticle.edges,
+        language
+      )
+      const filteredArticles = getArticles.filter(article =>
+        article.node.title.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+      setSearchedData(filteredArticles)
+      console.log(filteredArticles)
+    }
+    getData()
+  }, [data.allContentfulExampleArticle, language, searchQuery])
+
   return (
     <Layout>
       <Seo
