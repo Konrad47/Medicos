@@ -1,5 +1,5 @@
 import React from "react"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/searchContent.css"
 
 const SearchContent = ({ searchContent }) => {
@@ -14,7 +14,7 @@ const SearchContent = ({ searchContent }) => {
               <h1>Hi</h1>
             </>
           ) : (
-            <>
+            <div className="empty-content-con">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="44"
@@ -30,7 +30,13 @@ const SearchContent = ({ searchContent }) => {
                   stroke-linejoin="round"
                 />
               </svg>
-            </>
+              <h3 className="h3-style">{t`search-content.title`}</h3>
+              <p className="p-style">{t`search-content.description`}</p>
+              <Link
+                className="register-btn search-content-button"
+                to="/"
+              >{t`search-content.home`}</Link>
+            </div>
           )}
         </div>
       </div>

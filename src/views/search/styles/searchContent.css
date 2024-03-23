@@ -1,0 +1,20 @@
+.search-c-container .empty-content-con {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #f1f1f1;
+}
+
+.search-c-container .empty-content-con svg {
+  margin-bottom: 24px;
+}
+
+.search-c-container .empty-content-con p {
+  margin-bottom: 32px;
+}
+
+.search-c-container .empty-content-con .search-content-button {
+  padding: 8px 16px;
+}

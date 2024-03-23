@@ -40,7 +40,7 @@ const Search = () => {
       )
       const filteredArticles = getArticles.filter(
         article =>
-          searchQuery != "" &&
+          searchQuery !== "" &&
           article.node.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
       setSearchedData(filteredArticles)
