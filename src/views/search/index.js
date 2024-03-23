@@ -6,6 +6,7 @@ import SearchHeader from "./components/searchHeader"
 import { useLocation } from "@reach/router"
 import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../components/contentful-translator"
+import SearchContent from "./components/searchContent"
 
 const Search = () => {
   const { t } = useTranslation()
@@ -37,8 +38,10 @@ const Search = () => {
         data.allContentfulExampleArticle.edges,
         language
       )
-      const filteredArticles = getArticles.filter(article =>
-        article.node.title.toLowerCase().includes(searchQuery.toLowerCase())
+      const filteredArticles = getArticles.filter(
+        article =>
+          searchQuery != "" &&
+          article.node.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
       setSearchedData(filteredArticles)
       console.log(filteredArticles)
@@ -53,6 +56,7 @@ const Search = () => {
         description={t`seo.search.description`}
       />
       <SearchHeader searchData={searchQuery} />
+      {searchedData && <SearchContent searchContent={searchedData} />}
     </Layout>
   )
 }
