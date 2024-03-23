@@ -12,6 +12,7 @@ const SearchContent = ({ searchContent }) => {
           {searchContent && searchContent.length > 0 ? (
             <>
               <h1>Hi</h1>
+              <h1>Hi</h1>
             </>
           ) : (
             <div className="empty-content-con">
