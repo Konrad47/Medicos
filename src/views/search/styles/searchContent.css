@@ -2,8 +2,7 @@
   text-align: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding: 60px 24px;
   background: #f1f1f1;
 }
 
@@ -13,8 +12,21 @@
 
 .search-c-container .empty-content-con p {
   margin-bottom: 32px;
+  max-width: 712px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .search-c-container .empty-content-con .search-content-button {
   padding: 8px 16px;
+}
+
+@media screen and (max-width: 550px) {
+  .search-c-container .empty-content-con {
+    padding: 40px 24px;
+  }
+  .search-c-container .empty-content-con .search-content-button {
+    display: flex;
+    width: 100%;
+  }
 }
