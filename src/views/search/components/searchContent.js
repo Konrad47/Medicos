@@ -5,15 +5,38 @@ import "../styles/searchContent.css"
 const SearchContent = ({ searchContent }) => {
   const { t } = useTranslation()
 
+  const renderContent = content => {
+    return content.map((con, index) => (
+      <div className="result" key={index}>
+        <h4 className="h4-style">{con.title}</h4>
+        <p className="p-style">{con.description}</p>
+        <div className="category">
+          <p className="p-style">{con.category}</p>
+        </div>
+        {(con.category === "Artykuł" || con.category === "Article") && (
+          <Link to={`/news/${con.slug}`}>{t`search-content.go-to-page`}</Link>
+        )}
+      </div>
+    ))
+  }
+
   return (
     <>
       <div className="search-c-container">
         <div className="container">
           {searchContent && searchContent.length > 0 ? (
-            <>
-              <h1>Hi</h1>
-              <h1>Hi</h1>
-            </>
+            <div className="content-con">
+              {searchContent.length > 1 ? (
+                <p className="p-style">
+                  {searchContent.length} {t`search-content.results`}
+                </p>
+              ) : (
+                <p className="p-style">
+                  {searchContent.length} {t`search-content.result`}
+                </p>
+              )}
+              <div className="results-con">{renderContent(searchContent)}</div>
+            </div>
           ) : (
             <div className="empty-content-con">
               <svg

@@ -23,6 +23,10 @@ const Search = () => {
         edges {
           node {
             title
+            slug
+            description {
+              raw
+            }
             node_locale
           }
         }
@@ -43,7 +47,16 @@ const Search = () => {
           searchQuery !== "" &&
           article.node.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
-      setSearchedData(filteredArticles)
+
+      const mappedArticles = filteredArticles.map(article => ({
+        title: article.node.title,
+        description: article.node.description.raw,
+        category: `${t`search.article`}`,
+        slug: article.node.slug,
+      }))
+
+      setSearchedData(mappedArticles)
+      console.log(mappedArticles)
       console.log(filteredArticles)
     }
     getData()

@@ -21,6 +21,29 @@
   padding: 8px 16px;
 }
 
+.search-c-container .content-con {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.search-c-container .content-con .results-con {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-c-container .content-con .results-con .result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
 @media screen and (max-width: 550px) {
   .search-c-container .empty-content-con {
     padding: 40px 24px;
