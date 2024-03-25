@@ -9,7 +9,7 @@ const SearchContent = ({ searchContent, searchData }) => {
   const { t } = useTranslation()
 
   const [currentPage, setCurrentPage] = useState(1)
-  const pageSize = 3
+  const pageSize = 9
 
   useEffect(() => {
     setCurrentPage(1)
