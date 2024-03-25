@@ -26,6 +26,10 @@
   margin-bottom: 30px;
 }
 
+.search-c-container .pagination {
+  justify-content: center;
+}
+
 .search-c-container .content-con .results-con {
   margin-top: 16px;
   display: grid;

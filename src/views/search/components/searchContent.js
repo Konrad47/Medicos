@@ -1,11 +1,24 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/searchContent.css"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { richTextRenderOptions } from "../../../utils/templateRenderOption"
+import CustomPagination from "../../../components/pagination/pagination"
 
 const SearchContent = ({ searchContent, searchData }) => {
   const { t } = useTranslation()
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const pageSize = 3
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [])
+
+  const paginatedData = searchContent.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  )
 
   const renderContent = content => {
     const highlightText = (text, query) => {
@@ -42,18 +55,29 @@ const SearchContent = ({ searchContent, searchData }) => {
       <div className="search-c-container">
         <div className="container">
           {searchContent && searchContent.length > 0 ? (
-            <div className="content-con">
-              {searchContent.length > 1 ? (
-                <p className="p-style">
-                  {searchContent.length} {t`search-content.results`}
-                </p>
-              ) : (
-                <p className="p-style">
-                  {searchContent.length} {t`search-content.result`}
-                </p>
-              )}
-              <div className="results-con">{renderContent(searchContent)}</div>
-            </div>
+            <>
+              <div className="content-con">
+                {searchContent.length > 1 ? (
+                  <p className="p-style">
+                    {searchContent.length} {t`search-content.results`}
+                  </p>
+                ) : (
+                  <p className="p-style">
+                    {searchContent.length} {t`search-content.result`}
+                  </p>
+                )}
+                <div className="results-con">
+                  {renderContent(paginatedData)}
+                </div>
+              </div>
+              <CustomPagination
+                itemsCount={searchContent.length}
+                itemsPerPage={pageSize}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                alwaysShown={true}
+              />
+            </>
           ) : (
             <div className="empty-content-con">
               <svg
