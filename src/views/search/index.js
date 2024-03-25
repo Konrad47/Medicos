@@ -52,65 +52,68 @@ const Search = () => {
         data.allContentfulExampleArticle.edges,
         language
       )
-      const mappedArticles = getArticles
-        .filter(article => {
-          const descriptionContent = JSON.parse(
-            article.node.description.raw
-          ).content
-          const descriptionText = descriptionContent
-            .filter(node => node?.content[0]?.nodeType === "text")
-            .map(paragraph =>
-              paragraph.content.map(({ value }) => value).join("")
+      if (searchQuery && searchQuery !== "" && searchQuery.trim() !== "") {
+        const mappedArticles = getArticles
+          .filter(article => {
+            const descriptionContent = JSON.parse(
+              article.node.description.raw
+            ).content
+            const descriptionText = descriptionContent
+              .filter(node => node?.content[0]?.nodeType === "text")
+              .map(paragraph =>
+                paragraph.content.map(({ value }) => value).join("")
+              )
+              .join(" ")
+            return (
+              (searchQuery &&
+                searchQuery.trim() !== "" &&
+                article.node.title
+                  .toLowerCase()
+                  .includes(searchQuery.toLowerCase())) ||
+              descriptionText.toLowerCase().includes(searchQuery.toLowerCase())
             )
-            .join(" ")
-          return (
-            (searchQuery !== "" &&
-              article.node.title
-                .toLowerCase()
-                .includes(searchQuery.toLowerCase())) ||
-            descriptionText.toLowerCase().includes(searchQuery.toLowerCase())
-          )
-        })
-        .map(article => {
-          const descriptionContent = JSON.parse(
-            article.node.description.raw
-          ).content
-          const descriptionText = descriptionContent
-            .filter(node => node?.content[0]?.nodeType === "text")
-            .map(paragraph =>
-              paragraph.content.map(({ value }) => value).join("")
-            )
-            .join(" ")
+          })
+          .map(article => {
+            const descriptionContent = JSON.parse(
+              article.node.description.raw
+            ).content
+            const descriptionText = descriptionContent
+              .filter(node => node?.content[0]?.nodeType === "text")
+              .map(paragraph =>
+                paragraph.content.map(({ value }) => value).join("")
+              )
+              .join(" ")
 
-          let firstSentenceContainingQuery = descriptionText.slice(0, 100)
+            let firstSentenceContainingQuery = descriptionText.slice(0, 100)
 
-          let startIndex = 0
-          let endIndex = descriptionText.length - 1
+            let startIndex = 0
+            let endIndex = descriptionText.length - 1
 
-          const queryIndex = descriptionText
-            .toLowerCase()
-            .indexOf(searchQuery.toLowerCase())
-          if (queryIndex !== -1) {
-            const queryLength = searchQuery.length
-            startIndex = Math.max(0, queryIndex - 50)
-            endIndex = Math.min(
-              descriptionText.length - 1,
-              queryIndex + queryLength + 50
-            )
-            firstSentenceContainingQuery =
-              "..." + descriptionText.slice(startIndex, endIndex)
-          }
+            const queryIndex = descriptionText
+              .toLowerCase()
+              .indexOf(searchQuery.toLowerCase())
+            if (queryIndex !== -1) {
+              const queryLength = searchQuery.length
+              startIndex = Math.max(0, queryIndex - 50)
+              endIndex = Math.min(
+                descriptionText.length - 1,
+                queryIndex + queryLength + 50
+              )
+              firstSentenceContainingQuery =
+                "..." + descriptionText.slice(startIndex, endIndex)
+            }
 
-          console.log(firstSentenceContainingQuery)
-          return {
-            title: article.node.title,
-            description: firstSentenceContainingQuery + "...",
-            category: `${t`search.article`}`,
-            slug: article.node.slug,
-          }
-        })
+            console.log(firstSentenceContainingQuery)
+            return {
+              title: article.node.title,
+              description: firstSentenceContainingQuery + "...",
+              category: `${t`search.article`}`,
+              slug: article.node.slug,
+            }
+          })
 
-      setSearchedData(mappedArticles)
+        setSearchedData(mappedArticles)
+      }
     }
     getData()
   }, [data.allContentfulExampleArticle, language, searchQuery])
