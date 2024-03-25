@@ -82,28 +82,29 @@ const Search = () => {
             )
             .join(" ")
 
-          const sentences = descriptionText.split(".")
-          let firstSentenceContainingQuery = sentences.find(sentence =>
-            sentence.toLowerCase().includes(searchQuery.toLowerCase())
-          )
+          let firstSentenceContainingQuery = descriptionText.slice(0, 100)
 
-          if (
-            firstSentenceContainingQuery &&
-            firstSentenceContainingQuery.length > 100
-          ) {
-            firstSentenceContainingQuery = firstSentenceContainingQuery.slice(
-              0,
-              100
+          let startIndex = 0
+          let endIndex = descriptionText.length - 1
+
+          const queryIndex = descriptionText
+            .toLowerCase()
+            .indexOf(searchQuery.toLowerCase())
+          if (queryIndex !== -1) {
+            const queryLength = searchQuery.length
+            startIndex = Math.max(0, queryIndex - 50)
+            endIndex = Math.min(
+              descriptionText.length - 1,
+              queryIndex + queryLength + 50
             )
+            firstSentenceContainingQuery =
+              "..." + descriptionText.slice(startIndex, endIndex)
           }
 
-          const description =
-            firstSentenceContainingQuery ||
-            (sentences[0] ? sentences[0].slice(0, 100) : "")
-
+          console.log(firstSentenceContainingQuery)
           return {
             title: article.node.title,
-            description,
+            description: firstSentenceContainingQuery + "...",
             category: `${t`search.article`}`,
             slug: article.node.slug,
           }
@@ -121,7 +122,9 @@ const Search = () => {
         description={t`seo.search.description`}
       />
       <SearchHeader searchData={searchQuery} />
-      {searchedData && <SearchContent searchContent={searchedData} />}
+      {searchedData && (
+        <SearchContent searchContent={searchedData} searchData={searchQuery} />
+      )}
     </Layout>
   )
 }

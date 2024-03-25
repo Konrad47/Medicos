@@ -40,8 +40,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 16px;
   gap: 16px;
   flex-shrink: 0;
+  border: 1px solid #000;
+  background: #fff;
+}
+
+.search-c-container .highlighted {
+  color: red;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 550px) {

@@ -4,15 +4,29 @@ import "../styles/searchContent.css"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { richTextRenderOptions } from "../../../utils/templateRenderOption"
 
-const SearchContent = ({ searchContent }) => {
+const SearchContent = ({ searchContent, searchData }) => {
   const { t } = useTranslation()
 
   const renderContent = content => {
+    const highlightText = (text, query) => {
+      const regex = new RegExp(`(${query})`, "gi")
+      return text.replace(regex, '<span class="highlighted">$1</span>')
+    }
+
     return content.map((con, index) => (
       <div className="result" key={index}>
-        <h4 className="h4-style">{con.title}</h4>
-        {/* <p className="p-style">{renderRichText(con.description)}</p> */}
-        <p className="p-style">{con.description}...</p>
+        <h4
+          className="h4-style"
+          dangerouslySetInnerHTML={{
+            __html: highlightText(con.title, searchData),
+          }}
+        />
+        <p
+          className="p-style"
+          dangerouslySetInnerHTML={{
+            __html: highlightText(con.description, searchData),
+          }}
+        />
         <div className="category">
           <p className="p-style">{con.category}</p>
         </div>
