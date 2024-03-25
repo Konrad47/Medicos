@@ -47,6 +47,29 @@
   background: #fff;
 }
 
+.search-c-container .content-con .results-con .result p {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.search-c-container .content-con .results-con .result a {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.search-c-container .content-con .results-con .result .category p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.search-c-container .content-con .results-con .result .category {
+  background: #dfdfdf;
+  padding: 4px 8px;
+}
+
 .search-c-container .highlighted {
   color: red;
   font-weight: bold;
