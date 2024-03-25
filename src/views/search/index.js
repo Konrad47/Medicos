@@ -26,6 +26,16 @@ const Search = () => {
             slug
             description {
               raw
+              references {
+                ... on ContentfulAsset {
+                  __typename
+                  contentful_id
+                  file {
+                    url
+                  }
+                }
+                title
+              }
             }
             node_locale
           }
@@ -42,22 +52,64 @@ const Search = () => {
         data.allContentfulExampleArticle.edges,
         language
       )
-      const filteredArticles = getArticles.filter(
-        article =>
-          searchQuery !== "" &&
-          article.node.title.toLowerCase().includes(searchQuery.toLowerCase())
-      )
+      const mappedArticles = getArticles
+        .filter(article => {
+          const descriptionContent = JSON.parse(
+            article.node.description.raw
+          ).content
+          const descriptionText = descriptionContent
+            .filter(node => node?.content[0]?.nodeType === "text")
+            .map(paragraph =>
+              paragraph.content.map(({ value }) => value).join("")
+            )
+            .join(" ")
+          return (
+            (searchQuery !== "" &&
+              article.node.title
+                .toLowerCase()
+                .includes(searchQuery.toLowerCase())) ||
+            descriptionText.toLowerCase().includes(searchQuery.toLowerCase())
+          )
+        })
+        .map(article => {
+          const descriptionContent = JSON.parse(
+            article.node.description.raw
+          ).content
+          const descriptionText = descriptionContent
+            .filter(node => node?.content[0]?.nodeType === "text")
+            .map(paragraph =>
+              paragraph.content.map(({ value }) => value).join("")
+            )
+            .join(" ")
 
-      const mappedArticles = filteredArticles.map(article => ({
-        title: article.node.title,
-        description: article.node.description.raw,
-        category: `${t`search.article`}`,
-        slug: article.node.slug,
-      }))
+          const sentences = descriptionText.split(".")
+          let firstSentenceContainingQuery = sentences.find(sentence =>
+            sentence.toLowerCase().includes(searchQuery.toLowerCase())
+          )
+
+          if (
+            firstSentenceContainingQuery &&
+            firstSentenceContainingQuery.length > 100
+          ) {
+            firstSentenceContainingQuery = firstSentenceContainingQuery.slice(
+              0,
+              100
+            )
+          }
+
+          const description =
+            firstSentenceContainingQuery ||
+            (sentences[0] ? sentences[0].slice(0, 100) : "")
+
+          return {
+            title: article.node.title,
+            description,
+            category: `${t`search.article`}`,
+            slug: article.node.slug,
+          }
+        })
 
       setSearchedData(mappedArticles)
-      console.log(mappedArticles)
-      console.log(filteredArticles)
     }
     getData()
   }, [data.allContentfulExampleArticle, language, searchQuery])

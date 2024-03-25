@@ -1,6 +1,8 @@
 import React from "react"
 import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/searchContent.css"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { richTextRenderOptions } from "../../../utils/templateRenderOption"
 
 const SearchContent = ({ searchContent }) => {
   const { t } = useTranslation()
@@ -9,7 +11,8 @@ const SearchContent = ({ searchContent }) => {
     return content.map((con, index) => (
       <div className="result" key={index}>
         <h4 className="h4-style">{con.title}</h4>
-        <p className="p-style">{con.description}</p>
+        {/* <p className="p-style">{renderRichText(con.description)}</p> */}
+        <p className="p-style">{con.description}...</p>
         <div className="category">
           <p className="p-style">{con.category}</p>
         </div>
