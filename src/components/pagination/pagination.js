@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import Pagination from "react-bootstrap/Pagination"
 import PropTypes from "prop-types"
+import "./styles/pagination.css"
 
 const CustomPagination = ({
   itemsCount,

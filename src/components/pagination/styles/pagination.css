@@ -1,0 +1,29 @@
+.pagination {
+  gap: 8px;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  --bs-pagination-focus-box-shadow: none;
+  margin-bottom: 60px;
+}
+
+.pagination .page-item {
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+}
+.pagination .page-link {
+  border-radius: 8px;
+  border: 1px solid var(--neutral-light-black, #333);
+  color: var(--neutral-light-black, #333);
+  width: 35px;
+  height: 35px;
+}
+
+.pagination .active .page-link {
+  background: var(--neutral-light-black, #333);
+  color: var(--neutral-white, #fff);
+}
