@@ -174,7 +174,7 @@ const Menu = () => {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item>
-                        <Link>{t`menu.raw-all-materials`}</Link>
+                        <Link to="/materials">{t`menu.raw-all-materials`}</Link>
                       </Dropdown.Item>
                       <Dropdown.Item>
                         <Link>{t`menu.raw-household-chemicals`}</Link>
