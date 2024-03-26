@@ -26,6 +26,13 @@ const Materials = () => {
     setSelectedSort(value)
     console.log(selectedSort)
   }
+
+  const resetFilters = () => {
+    setSearchMaterial("")
+    setSelectedIndustry("")
+    setSelectedSort("name-up")
+  }
+
   return (
     <Layout>
       <Seo
@@ -40,6 +47,7 @@ const Materials = () => {
         searchMaterial={searchMaterial}
         selectedIndustry={selectedIndustry}
         selectedSort={selectedSort}
+        resetFilters={resetFilters}
       />
     </Layout>
   )
