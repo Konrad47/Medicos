@@ -1,7 +1,7 @@
-import Industries from "../views/industries"
+import Materials from "../views/materials"
 import { graphql } from "gatsby"
 
-export default Industries
+export default Materials
 
 export const query = graphql`
   query ($language: String!) {

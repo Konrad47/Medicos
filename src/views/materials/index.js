@@ -2,17 +2,17 @@ import React from "react"
 import Seo from "../../components/seo"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
-const Industries = () => {
+const Materials = () => {
   const { t } = useTranslation()
 
   return (
     <>
       <Seo
-        title={t`seo.industries.title`}
-        description={t`seo.industries.description`}
+        title={t`seo.materials.title`}
+        description={t`seo.materials.description`}
       />
-      <h1>Industries Page</h1>
+      <h1>Materials Page</h1>
     </>
   )
 }
-export default Industries
+export default Materials
