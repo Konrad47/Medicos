@@ -16,6 +16,8 @@
     "materials-filter.name-down": "Nazwa malejąco (od Z do A)",
     "materials-filter.inci-up": "INCI rosnąco (od A do Z)",
     "materials-filter.inci-down": "INCI malejąco (od Z do A)",
-    "materials-filter.clean-filters": "x Wyczyść filtry"
+    "materials-filter.clean-filters": "x Wyczyść filtry",
 
+    "materials-content.title": "Brak surowców o podanych kryteriach",
+    "materials-content.description": "Chwilowo nie posiadamy surowców spełniających podane kryteria. Wyczyść filtry i zobacz pełną ofertę."
 }

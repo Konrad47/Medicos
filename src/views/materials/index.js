@@ -6,6 +6,7 @@ import Layout from "../../components/layout"
 import MaterialsFilter from "./components/materialsFilter"
 import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../components/contentful-translator"
+import MaterialsContent from "./components/materialsContent"
 
 const Materials = () => {
   const { t } = useTranslation()
@@ -124,6 +125,10 @@ const Materials = () => {
         searchMaterial={searchMaterial}
         selectedIndustry={selectedIndustry}
         selectedSort={selectedSort}
+        resetFilters={resetFilters}
+      />
+      <MaterialsContent
+        materialsContent={searchedData}
         resetFilters={resetFilters}
       />
     </Layout>

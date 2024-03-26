@@ -1,0 +1,58 @@
+.materials-c-container .empty-content-con {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 60px 24px;
+  background: #f1f1f1;
+}
+
+.materials-c-container .empty-content-con svg {
+  margin-bottom: 24px;
+}
+
+.materials-c-container .empty-content-con p {
+  margin-bottom: 24px;
+  max-width: 712px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.materials-c-container .empty-content-con .clear-filter-p {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+  cursor: pointer;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.materials-c-container .content-con {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.materials-c-container .content-con .results-con {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 550px) {
+  .materials-c-container .empty-content-con {
+    padding: 40px 24px;
+  }
+  .materials-c-container .empty-content-con .materials-content-button {
+    display: flex;
+    width: 100%;
+  }
+  .materials-c-container .content-con .results-con {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
