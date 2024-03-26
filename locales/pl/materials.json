@@ -1,0 +1,21 @@
+{
+    "materials-header.title": "Oferta surowców",
+    "materials-header.description": "Bez względu na to, czy szukasz kolejnej doskonałej koncepcji, czy też  sposobu na poprawę wydajności produktu, jesteśmy w stanie Ci pomóc.  Każdego dnia wspieramy klientów, dostarczając im wyjątkową wiedzę  techniczną i logistyczną.",
+
+    "materials-content.search-material": "Wyszukaj surowiec",
+    "materials-content.search": "Wyszukaj surowiec po nazwie, INCI lub numerze CAS...",
+    "materials-content.industry": "Branża",
+    "materials-content.all-industries": "Wszystkie branże",
+    "materials-content.household-chemicals": "Chemia gospodarcza",
+    "materials-content.cosmetology": "Kosmetyka",
+    "materials-content.pharmacy": "Farmacja",
+    "materials-content.food": "Żywność i suplementy diety",
+    "materials-content.other-industries": "Pozostałe branże",
+    "materials-content.sort": "Sortuj po",
+    "materials-content.name-up": "Nazwa rosnąco (od A do Z)",
+    "materials-content.name-down": "Nazwa malejąco (od Z do A)",
+    "materials-content.inci-up": "INCI rosnąco (od A do Z)",
+    "materials-content.inci-down": "INCI malejąco (od Z do A)",
+    "materials-content.clean-filters": "x Wyczyść filtry"
+
+}
