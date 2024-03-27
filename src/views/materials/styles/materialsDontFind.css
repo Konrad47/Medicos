@@ -1,0 +1,23 @@
+.materials-df-container {
+  text-align: center;
+  padding: 60px 24px;
+  background: #f1f1f1;
+}
+
+.materials-df-container p {
+  margin-bottom: 32px;
+  max-width: 864px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.materials-df-container .materials-dont-find-button {
+  padding: 12px 24px;
+}
+
+@media screen and (max-width: 550px) {
+  .materials-df-container .materials-dont-find-button {
+    display: flex;
+    width: 100%;
+  }
+}

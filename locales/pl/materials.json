@@ -22,5 +22,9 @@
     "materials-content.description": "Chwilowo nie posiadamy surowców spełniających podane kryteria. Wyczyść filtry i zobacz pełną ofertę.",
     "materials-content.inci": "Nazwa INCI:",
     "materials-content.cas": "Numer CAS:",
-    "materials-content.details": "Szczegóły ->"
+    "materials-content.details": "Szczegóły ->",
+
+    "materials-dont-find.title": "Nie znalazłeś surowca?",
+    "materials-dont-find.description": "Poniżej przedstawiamy oferowane przez nas produkty. Jeśli nie możesz znaleźć produktu, który Cię interesuje prosimy o kontakt przez formularz kontaktowy.",
+    "materials-dont-find.contact": "Skontaktuj się"
 }

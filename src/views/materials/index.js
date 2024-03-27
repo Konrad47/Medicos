@@ -7,6 +7,7 @@ import MaterialsFilter from "./components/materialsFilter"
 import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../components/contentful-translator"
 import MaterialsContent from "./components/materialsContent"
+import MaterialsDontFind from "./components/materialsDontFind"
 
 const Materials = () => {
   const { t } = useTranslation()
@@ -131,6 +132,7 @@ const Materials = () => {
         materialsContent={searchedData}
         resetFilters={resetFilters}
       />
+      <MaterialsDontFind />
     </Layout>
   )
 }

@@ -94,14 +94,17 @@
   font-weight: 400;
 }
 
+@media screen and (max-width: 1000px) {
+  .materials-c-container .content-con .results-con {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (max-width: 550px) {
   .materials-c-container .empty-content-con {
     padding: 40px 24px;
   }
-  .materials-c-container .empty-content-con .materials-content-button {
-    display: flex;
-    width: 100%;
-  }
+
   .materials-c-container .content-con .results-con {
     grid-template-columns: repeat(1, 1fr);
   }
