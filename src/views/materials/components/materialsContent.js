@@ -17,6 +17,28 @@ const MaterialsContent = ({ materialsContent, resetFilters }) => {
     currentPage * pageSize
   )
 
+  const renderContent = content => {
+    return content.map((con, index) => (
+      <div className="result" key={index}>
+        <h4 className="h4-style">{con.node.title}</h4>
+        <div className="categories">
+          {con.node.category.map((cat, index) => (
+            <div className="category" key={index}>
+              <p className="p-style">{cat}</p>
+            </div>
+          ))}
+        </div>
+        <p className="p-style">
+          {t`materials-content.inci`} <span>{con.node.inci}</span>
+        </p>
+        <p className="p-style">
+          {t`materials-content.cas`} <span>{con.node.cas}</span>
+        </p>
+        <p className="p-style details">{t`materials-content.details`}</p>
+      </div>
+    ))
+  }
+
   return (
     <>
       <div className="materials-c-container">
@@ -24,7 +46,9 @@ const MaterialsContent = ({ materialsContent, resetFilters }) => {
           {materialsContent && materialsContent.length > 0 ? (
             <>
               <div className="content-con">
-                <div className="results-con"></div>
+                <div className="results-con">
+                  {renderContent(materialsContent)}
+                </div>
               </div>
               <CustomPagination
                 itemsCount={materialsContent.length}

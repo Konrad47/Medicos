@@ -22,7 +22,7 @@ const Materials = () => {
             pH
             slug
             title
-            inic
+            inci
             cas
             form
             generalInformation {
@@ -52,7 +52,7 @@ const Materials = () => {
         const titleMatches = material.node.title
           .toLowerCase()
           .includes(searchMaterial.toLowerCase())
-        const inicMatches = material.node.inic
+        const inciMatches = material.node.inci
           .toLowerCase()
           .includes(searchMaterial.toLowerCase())
         const casMatches = material.node.cas
@@ -62,7 +62,7 @@ const Materials = () => {
           category.toLowerCase().includes(selectedIndustry.toLowerCase())
         )
 
-        return (titleMatches || inicMatches || casMatches) && categoryMatches
+        return (titleMatches || inciMatches || casMatches) && categoryMatches
       })
 
       const sortedMaterials = filteredMaterials.sort((a, b) => {
@@ -71,9 +71,9 @@ const Materials = () => {
         } else if (selectedSort === "name-down") {
           return b.node.title.localeCompare(a.node.title)
         } else if (selectedSort === "inci-up") {
-          return a.node.inic.localeCompare(b.node.inic)
+          return a.node.inci.localeCompare(b.node.inci)
         } else if (selectedSort === "inci-down") {
-          return b.node.inic.localeCompare(a.node.inic)
+          return b.node.inci.localeCompare(a.node.inci)
         }
       })
 
