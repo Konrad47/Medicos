@@ -41,31 +41,33 @@ body {
 }
 
 .h1-style {
+  font-family: REM;
   font-size: 52px;
   font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  font-weight: 500;
+  line-height: 120%; /* 62.4px */
 }
 
 .h2-style {
   font-size: 40px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 140%;
+  font-weight: 500;
+  line-height: 130%; /* 52px */
 }
 
 .h3-style {
   font-size: 32px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 140%;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .h4-style {
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
-  line-height: normal;
+  line-height: 130%; /* 31.2px */
+  letter-spacing: 0.48px;
 }
 
 .h5-style {
