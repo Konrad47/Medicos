@@ -15,7 +15,10 @@ const HomeAbout = () => {
             <div className="left-con">
               <h1 className="h1-style">{t`home-about.title`}</h1>
               <p className="p-style">{t`home-about.description`}</p>
-              <Link className="register-btn about-button">{t`home-about.more`}</Link>
+              <Link
+                to="/about"
+                className="register-btn about-button"
+              >{t`home-about.more`}</Link>
             </div>
             <StaticImage
               className="about-image"
