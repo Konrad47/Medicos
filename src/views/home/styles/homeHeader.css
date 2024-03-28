@@ -41,11 +41,20 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .home-h-container .h-con .header-image {
-    display: none;
-  }
   .home-h-container .h-con {
     width: 100%;
+  }
+  .home-h-container {
+    padding-bottom: 500px;
+  }
+  .home-h-container .h-con .header-image {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .home-h-container {
+    padding-bottom: 300px;
   }
 }
 
@@ -53,5 +62,8 @@
   .home-h-container .header-button {
     display: flex;
     width: 100%;
+  }
+  .home-h-container .h-con .header-image {
+    width: 570px;
   }
 }

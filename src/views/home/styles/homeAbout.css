@@ -56,10 +56,13 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .home-a-container .a-con .about-image {
-    display: none;
-  }
   .home-a-container .a-con {
+    width: 100%;
+  }
+  .home-a-container {
+    padding-bottom: 500px;
+  }
+  .home-a-container .a-con .about-image {
     width: 100%;
   }
 }
@@ -68,5 +71,20 @@
   .home-a-container .about-button {
     display: flex;
     width: 100%;
+  }
+  .home-a-container {
+    padding-bottom: 400px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home-a-container {
+    padding-bottom: 350px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .home-a-container {
+    padding-bottom: 300px;
   }
 }
