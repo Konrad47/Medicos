@@ -1,6 +1,6 @@
 .home-h-container {
-  background: url(../../../images/home/home-header-background.png) no-repeat
-    fixed 50% 0;
+  background: url(../../../images/home/header/home-header-background.png)
+    no-repeat fixed 50% 0;
   padding-top: 150px;
   padding-bottom: 90px;
   overflow: hidden;

@@ -21,7 +21,7 @@ const HomeHeader = () => {
             </div>
             <StaticImage
               className="header-image"
-              src="../../../images/home/home-header-person.png"
+              src="../../../images/home/header/home-header-person.png"
               alt="Top image"
               placeholder="LinkedIn"
               loading="lazy"
