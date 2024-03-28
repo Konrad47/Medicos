@@ -10,6 +10,7 @@ import HomeHeader from "./components/homeHeader"
 import HomeIndustries from "./components/homeIndustries"
 import Layout from "../../components/layout"
 import HomeAbout from "./components/homeAbout"
+import HomeServices from "./components/homeServices"
 
 const Home = () => {
   const { t } = useTranslation()
@@ -65,6 +66,7 @@ const Home = () => {
       <HomeHeader />
       <HomeIndustries />
       <HomeAbout />
+      <HomeServices />
     </Layout>
   )
 }

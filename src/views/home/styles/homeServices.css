@@ -1,0 +1,87 @@
+.home-s-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.home-s-container h2 {
+  color: var(--Button-primary-bg, #144487);
+  margin-bottom: 8px;
+}
+
+.home-s-container p {
+  color: var(--main-text, #0a2243);
+  margin-bottom: 40px;
+}
+
+.home-s-container .services-con {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.home-s-container .services-con .service {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  border-radius: 16px;
+  background: #fff;
+
+  box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
+}
+
+.home-s-container .services-con .service .service-up {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.home-s-container .services-con .service .service-up svg {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--active-bg, #d4e5f7);
+}
+
+.home-s-container .services-con .service .service-up h4 {
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.home-s-container .services-con .service p {
+  text-align: left;
+}
+
+.home-s-container .services-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--Button-secondary-border, #d3e2f8);
+  background: var(--light-bg, #fbfcfe);
+}
+
+@media screen and (max-width: 1000px) {
+  .home-s-container .services-con {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .home-s-container .services-button {
+    display: flex;
+    width: 100%;
+  }
+}

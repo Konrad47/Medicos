@@ -19,6 +19,13 @@
   justify-content: space-between; */
 }
 
+.home-a-container .about-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--Button-secondary-border, #d3e2f8);
+  background: var(--light-bg, #fbfcfe);
+}
+
 .home-a-container .a-con .left-con {
   margin-top: auto;
   margin-bottom: auto;
