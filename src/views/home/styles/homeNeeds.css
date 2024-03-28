@@ -1,0 +1,30 @@
+.home-n-container {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  text-align: center;
+  background: url(../../../images/home/needs/home-needs-background.png)
+    no-repeat fixed 50% 0;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.home-n-container {
+  background-attachment: scroll !important;
+}
+
+.home-n-container h1 {
+  margin-bottom: 44px;
+  color: var(--color-basics-white, #fff);
+}
+
+.home-n-container h1 span {
+  color: var(--color-basics-white, #80d9ff);
+}
+
+@media screen and (max-width: 550px) {
+  .home-n-container .needs-button {
+    display: flex;
+    width: 100%;
+  }
+}

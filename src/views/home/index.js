@@ -11,6 +11,7 @@ import HomeIndustries from "./components/homeIndustries"
 import Layout from "../../components/layout"
 import HomeAbout from "./components/homeAbout"
 import HomeServices from "./components/homeServices"
+import HomeNeeds from "./components/homeNeeds"
 
 const Home = () => {
   const { t } = useTranslation()
@@ -67,6 +68,7 @@ const Home = () => {
       <HomeIndustries />
       <HomeAbout />
       <HomeServices />
+      <HomeNeeds />
     </Layout>
   )
 }
