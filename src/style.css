@@ -8,25 +8,25 @@ body {
 }
 
 .register-btn {
-  text-decoration: none;
-  color: var(--dark, #120e25);
-  font-size: 16px;
+  color: var(--Button-primary-bg, #144487);
+  text-align: center;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: normal;
+  letter-spacing: 0.36px;
+  text-decoration: none;
   padding: 12px 24px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  border-radius: 8px;
-  background: var(--light, #fcf8fc);
-  box-shadow: 4px 4px 8px 0px rgba(57, 19, 55, 0.25);
+  border-radius: 12px;
+  background: var(--light-bg, #fbfcfe);
   cursor: pointer;
 }
 
 .register-btn:hover {
-  background: var(--navy-light, #f7d4f3);
-  color: var(--navy-mid, #961d8a);
+  background: var(--hover-bg, #e9f2fb);
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
   transition: all 0.2s ease-out;
 }
 
