@@ -71,6 +71,64 @@
   background: var(--Button-primary-hover-bg, #0d2d59);
 }
 
+.hide-menu .up-hide-menu {
+  display: flex;
+  gap: 16px;
+  margin-left: 24px;
+  height: 42.4px;
+  margin-bottom: 16px;
+}
+
+.hide-menu .up-hide-menu .languages {
+  display: flex;
+  vertical-align: middle;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 8px;
+  border: 1px solid var(--active-bg, #d4e5f7);
+  background: var(--light-bg, #fbfcfe);
+}
+
+.hide-menu .up-hide-menu .languages .language {
+  padding: 9.2px 16px;
+  /* background: var(--Button-primary-bg, #144487); */
+}
+
+.hide-menu .up-hide-menu .languages .language a {
+  text-decoration: none;
+  color: var(--primary, #144487);
+}
+
+.hide-menu .up-hide-menu .languages .pl {
+  border-radius: 8px 0 0 8px;
+}
+
+.hide-menu .up-hide-menu .languages .en {
+  border-radius: 0 8px 8px 0;
+}
+
+.hide-menu .up-hide-menu .languages .flag-image {
+  margin: 3px 4px 0 0;
+  width: 27px;
+}
+
+.hide-menu .up-hide-menu .linkedIn-a {
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 8px;
+  border: 1px solid var(--active-bg, #d4e5f7);
+}
+
+.hide-menu .up-hide-menu .linkedIn-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  margin: 8.8px;
+  border-radius: 4px;
+}
+
 .menu-opaticy {
   background: rgba(251, 252, 254, 0.98);
 }

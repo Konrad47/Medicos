@@ -569,6 +569,51 @@ const Menu = () => {
       </div>
       {isHideMenu && (
         <div className="hide-menu">
+          <div className="up-hide-menu">
+            <div className="languages">
+              {languages.map(lang => (
+                <div
+                  key={lang}
+                  className={lang === "pl" ? "language pl" : "language en"}
+                  style={language === lang ? { background: "#144487" } : null}
+                >
+                  <Link
+                    style={language === lang ? { color: "#FBFCFE" } : null}
+                    to={originalPath}
+                    language={lang}
+                  >
+                    {lang === "pl" ? (
+                      <StaticImage
+                        className="flag-image"
+                        src="../../images/menu/polish.png"
+                        alt="Flag"
+                        placeholder="Flag"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <StaticImage
+                        className="flag-image"
+                        src="../../images/menu/english.png"
+                        alt="Flag"
+                        placeholder="Flag"
+                        loading="lazy"
+                      />
+                    )}{" "}
+                    {lang.toUpperCase()}
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <a href="#" target="_blank" className="linkedIn-a">
+              <StaticImage
+                className="linkedIn-image"
+                src="../../images/menu/linkedIn.png"
+                alt="LinkedIn"
+                placeholder="LinkedIn"
+                loading="lazy"
+              />
+            </a>
+          </div>
           <Link className="menu-link">{t`menu.about`}</Link>
           <Link className="menu-link">{t`menu.services`}</Link>
           <span
@@ -606,7 +651,10 @@ const Menu = () => {
             </div>
           )}
           <Link className="menu-link">{t`menu.blog`}</Link>
-          <Link className="register-btn menu-button-link">{t`menu.contact`}</Link>
+          <Link
+            className="register-btn menu-button-link"
+            to="/contact"
+          >{t`menu.contact`}</Link>
         </div>
       )}
     </>
