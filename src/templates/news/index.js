@@ -13,19 +13,19 @@ const NewsPage = ({ data, pageContext }) => {
   useEffect(() => {
     const getData = () => {
       const getArticle = getCurrentTranslations(
-        data.allContentfulExampleArticle.edges,
+        data.allContentfulArticle.edges,
         language
       )
-      console.log(data.allContentfulExampleArticle.edges)
+      console.log(data.allContentfulArticle.edges)
       console.log(getArticle)
 
       setArticle(getArticle)
     }
     getData()
-  }, [data.allContentfulExampleArticle, pageContext, language])
+  }, [data.allContentfulArticle, pageContext, language])
 
   const renderArticle = data => {
-    return <h1 className="h1-style">{data.node.title}</h1>
+    return <h1 className="h1-style">{data.title}</h1>
   }
 
   return (
@@ -35,7 +35,9 @@ const NewsPage = ({ data, pageContext }) => {
         description={t`seo.news-page.description`}
       />
       <div className="single-article-container">
-        <div className="container">{article && renderArticle(article[0])}</div>
+        <div className="container">
+          {pageContext && renderArticle(pageContext.article)}
+        </div>
       </div>
     </>
   )
@@ -53,7 +55,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulExampleArticle {
+    allContentfulArticle {
       edges {
         node {
           title

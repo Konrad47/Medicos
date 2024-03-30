@@ -19,7 +19,7 @@ const Search = () => {
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
     query {
-      allContentfulExampleArticle {
+      allContentfulArticle {
         edges {
           node {
             title
@@ -49,7 +49,7 @@ const Search = () => {
   useEffect(() => {
     const getData = () => {
       const getArticles = getCurrentTranslations(
-        data.allContentfulExampleArticle.edges,
+        data.allContentfulArticle.edges,
         language
       )
       if (searchQuery && searchQuery !== "" && searchQuery.trim() !== "") {
@@ -116,7 +116,7 @@ const Search = () => {
       }
     }
     getData()
-  }, [data.allContentfulExampleArticle, language, searchQuery])
+  }, [data.allContentfulArticle, language, searchQuery])
 
   return (
     <Layout>

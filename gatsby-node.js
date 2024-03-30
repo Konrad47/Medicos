@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const { data } = await graphql(`
     query {
-      allContentfulExampleArticle {
+      allContentfulArticle {
         edges {
           node {
             title
@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `)
 
-  data.allContentfulExampleArticle.edges.forEach(({ node }) => {
+  data.allContentfulArticle.edges.forEach(({ node }) => {
     createPage({
       path: `news/${node.slug}`,
       component: path.resolve(`./src/templates/news/index.js`),
