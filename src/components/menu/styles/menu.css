@@ -17,7 +17,7 @@
   background: rgba(251, 252, 254, 0.98);
   position: fixed;
   width: 100%;
-  top: 72px;
+  top: 80px;
   left: 0;
   z-index: 5;
   transition: all 0.2s ease-out;
@@ -40,6 +40,17 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+.hide-menu .menu-link:hover {
+  border-radius: 8px;
+  background: var(--hover-bg, #e9f2fb);
+  transition: all 0.2s ease-out;
+}
+
+.hide-menu .showMaterials {
+  width: 260.25px;
+  cursor: pointer;
 }
 
 .hide-menu .menu-button-link {
@@ -75,14 +86,14 @@
   text-decoration: none;
   color: var(--main-text, #0a2243);
 
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   padding: 8px 16px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  margin-right: 16px;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -135,7 +146,7 @@
 .menu-container .rmo-dropdown button,
 .menu-container .language-dropdown button,
 .menu-container .dropdown-item {
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -151,7 +162,7 @@
 }
 
 .menu-container .dropdown-item {
-  padding: 8px 16px 8px 16px;
+  padding: 10px 8px 10px 8px;
 }
 
 .menu-container .language-dropdown {
@@ -190,26 +201,29 @@
 }
 
 .menu-container .dropdown-menu {
-  background: var(--light, #fcf8fc);
+  background: #fff;
   text-decoration: none;
-  color: var(--dark, #120e25);
   min-width: 10px;
-  border-radius: 0;
-}
-
-.menu-container .dropdown-menu.show {
-  padding: 0;
+  border-radius: 8px;
+  box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
+  padding: 8px;
 }
 
 .menu-container .dropdown-menu a {
+  overflow: hidden;
+  color: var(--main-text, #0a2243);
+  text-overflow: ellipsis;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
   text-decoration: none;
-  color: var(--dark, #120e25);
+  transition: all 0.2s ease-out;
 }
 
 .menu-container .dropdown-menu a:hover {
-  background: var(--navy-light, #f7d4f3);
-  color: var(--navy-mid, #961d8a);
-  transition: all 0.2s ease-out;
+  border-radius: 8px;
+  background: var(--hover-bg, #e9f2fb);
 }
 
 .menu-container .hide-menu-button {
@@ -223,7 +237,7 @@
   width: 54px;
   height: 41px;
   padding: 3px 16px;
-  margin-left: 60px;
+  margin-left: 44px;
   cursor: pointer;
 }
 

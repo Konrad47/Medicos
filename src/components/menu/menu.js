@@ -14,6 +14,7 @@ const Menu = () => {
   const [isHideMenu, setIsHideMenu] = useState(false)
   const [isSearch, setIsSearch] = useState(false)
   const [search, setSearch] = useState("")
+  const [showMaterials, setShowMaterials] = useState(true)
 
   const handleSearchChange = event => {
     setSearch(event.target.value)
@@ -570,7 +571,10 @@ const Menu = () => {
         <div className="hide-menu">
           <Link className="menu-link">{t`menu.about`}</Link>
           <Link className="menu-link">{t`menu.services`}</Link>
-          <span className="menu-link">
+          <span
+            onClick={() => setShowMaterials(!showMaterials)}
+            className="menu-link showMaterials"
+          >
             {" "}
             {t`menu.raw-material-offer`}
             <svg
@@ -588,13 +592,15 @@ const Menu = () => {
               />
             </svg>
           </span>
-          <div className="hide-menu-materials">
-            <Link className="menu-link">{t`menu.raw-household-chemicals`}</Link>
-            <Link className="menu-link">{t`menu.raw-cosmetology`}</Link>
-            <Link className="menu-link">{t`menu.raw-pharmacy`}</Link>
-            <Link className="menu-link">{t`menu.raw-food`}</Link>
-            <Link className="menu-link">{t`menu.raw-other-industries`}</Link>
-          </div>
+          {showMaterials && (
+            <div className="hide-menu-materials">
+              <Link className="menu-link">{t`menu.raw-household-chemicals`}</Link>
+              <Link className="menu-link">{t`menu.raw-cosmetology`}</Link>
+              <Link className="menu-link">{t`menu.raw-pharmacy`}</Link>
+              <Link className="menu-link">{t`menu.raw-food`}</Link>
+              <Link className="menu-link">{t`menu.raw-other-industries`}</Link>
+            </div>
+          )}
           <Link className="menu-link">{t`menu.blog`}</Link>
           <Link className="register-btn menu-button-link">{t`menu.contact`}</Link>
         </div>
