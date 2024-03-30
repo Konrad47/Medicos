@@ -100,7 +100,7 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 568px) {
   .materials-c-container .empty-content-con {
     padding: 40px 24px;
   }

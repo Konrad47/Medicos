@@ -155,7 +155,7 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 568px) {
   .home-i-container .i-con .down-con {
     grid-template-columns: repeat(1, 1fr);
   }

@@ -79,7 +79,7 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 568px) {
   .home-s-container .services-button {
     display: flex;
     width: 100%;

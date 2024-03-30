@@ -14,7 +14,7 @@ const Menu = () => {
   const [isHideMenu, setIsHideMenu] = useState(false)
   const [isSearch, setIsSearch] = useState(false)
   const [search, setSearch] = useState("")
-  const [showMaterials, setShowMaterials] = useState(true)
+  const [showMaterials, setShowMaterials] = useState(false)
 
   const handleSearchChange = event => {
     setSearch(event.target.value)
@@ -43,7 +43,7 @@ const Menu = () => {
     }
 
     const handleResize = () => {
-      if (window.innerWidth > 1080) {
+      if (window.innerWidth > 1271) {
         setIsMenu(true)
       } else {
         setIsMenu(false)
@@ -594,6 +594,10 @@ const Menu = () => {
           </span>
           {showMaterials && (
             <div className="hide-menu-materials">
+              <Link
+                className="menu-link"
+                to="/materials"
+              >{t`menu.raw-all-materials`}</Link>
               <Link className="menu-link">{t`menu.raw-household-chemicals`}</Link>
               <Link className="menu-link">{t`menu.raw-cosmetology`}</Link>
               <Link className="menu-link">{t`menu.raw-pharmacy`}</Link>

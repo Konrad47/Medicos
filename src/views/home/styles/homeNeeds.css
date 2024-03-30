@@ -22,7 +22,7 @@
   color: var(--color-basics-white, #80d9ff);
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 568px) {
   .home-n-container .needs-button {
     display: flex;
     width: 100%;

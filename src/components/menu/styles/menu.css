@@ -40,12 +40,12 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  transition: all 0.2s ease-out;
 }
 
 .hide-menu .menu-link:hover {
   border-radius: 8px;
   background: var(--hover-bg, #e9f2fb);
-  transition: all 0.2s ease-out;
 }
 
 .hide-menu .showMaterials {
@@ -54,8 +54,21 @@
 }
 
 .hide-menu .menu-button-link {
-  text-align: center;
   margin: 10px 0 10px 24px;
+  border-radius: 12px;
+  background: var(--Button-primary-bg, #144487);
+  color: var(--neutral-white, var(--color-basics-white, #fff));
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  transition: all 0.2s ease-out;
+}
+
+.hide-menu .menu-button-link:hover {
+  background: var(--Button-primary-hover-bg, #0d2d59);
 }
 
 .menu-opaticy {
@@ -117,6 +130,7 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.32px;
+  transition: all 0.2s ease-out;
 }
 
 .menu-container .menu-inside-container .menu-button-link:hover {
@@ -314,20 +328,7 @@
   margin-left: 24px;
 }
 
-@media screen and (max-width: 1350px) {
-  .menu-container .menu-inside-container .menu-link {
-    font-size: 16px;
-    padding: 4px 8px;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-@media screen and (max-width: 1080px) {
-  /* .menu-opaticy {
-    background: rgba(35, 14, 37, 0.9);
-  } */
-
+@media screen and (max-width: 1271px) {
   .menu-container .dropdown {
     margin-right: 24px;
   }
@@ -336,23 +337,11 @@
   }
 }
 
-@media screen and (max-width: 500px) {
-  /* .hide-menu {
-    justify-content: left;
+@media screen and (max-width: 568px) {
+  .hide-menu .menu-link:hover {
+    background: rgba(251, 252, 254, 0.98);
   }
-
-  .hide-menu .menu-link {
-    text-align: left;
-    margin-left: 14px;
-    margin-right: 0;
+  .hide-menu .menu-button-link:hover {
+    background: var(--Button-primary-bg, #144487);
   }
-  .hide-menu .menu-button-link {
-    text-align: left;
-    margin-left: 24px;
-    margin-right: 0;
-  }
-
-  .menu-container .btn-primary:hover {
-    color: #f8f8fc;
-  } */
 }
