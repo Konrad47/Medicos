@@ -45,6 +45,7 @@
   flex-shrink: 0;
   border: 1px solid #000;
   background: #fff;
+  flex: 1;
 }
 
 .search-c-container .content-con .results-con .result p {
@@ -68,6 +69,7 @@
 .search-c-container .content-con .results-con .result .category {
   background: #dfdfdf;
   padding: 4px 8px;
+  margin-top: auto;
 }
 
 .search-c-container .highlighted {
