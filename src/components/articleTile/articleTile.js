@@ -3,8 +3,15 @@ import "./styles/articleTile.css"
 import { navigate } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const ArticleTile = ({ article }) => {
-  const { t } = useTranslation()
+const ArticleTile = ({ article, t }) => {
+  const description = JSON.parse(article.node.description.raw).content.filter(
+    node => node?.content[0]?.nodeType === "text"
+  )[0].content[0].value
+
+  const truncatedDescription =
+    description.length > 100
+      ? description.substring(0, 100) + "..."
+      : description
 
   return (
     <div
@@ -19,7 +26,7 @@ const ArticleTile = ({ article }) => {
       />
       <div className="tile-text">
         <p className="p-style tile-title">{article.node.title}</p>
-        <p className="p-style tile-description">{article.node.description}</p>
+        <p className="p-style tile-description">{truncatedDescription}</p>
         <div className="tile-text-down">
           <p className="p-style date">{article.node.createdAt}</p>
           <p className="p-style ">{t`home.read-more`}</p>
