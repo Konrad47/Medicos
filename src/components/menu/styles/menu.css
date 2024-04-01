@@ -20,9 +20,7 @@
   top: 80px;
   left: 0;
   z-index: 5;
-  transition: all 0.2s ease-out;
   display: grid;
-  justify-content: right;
   padding-bottom: 20px;
   transition: all 0.2s ease-out;
   justify-content: left;

@@ -26,6 +26,11 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  transition: all 0.2s ease-out;
+}
+
+.tile .tile-text:hover {
+  background: var(--hover-bg, #e9f2fb);
 }
 
 .tile .tile-text .tile-title {
@@ -48,4 +53,25 @@
   display: flex;
   justify-content: space-between;
   margin-top: auto;
+}
+
+.tile .tile-text .tile-text-down .date {
+  color: var(--mid-blue, #4d8ce5);
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.tile .tile-text .tile-text-down .read-more {
+  color: var(--primary, #144487);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.tile .tile-text:hover .tile-text-down .read-more {
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
+  text-decoration: underline;
 }
