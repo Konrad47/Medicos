@@ -66,6 +66,10 @@ const HomeBlog = () => {
         <div className="container">
           <h2 className="h2-style">{t`home-blog.title`}</h2>
           <div className="articles">{articles && renderArticles(articles)}</div>
+          <Link
+            to="/news"
+            className="register-btn blog-button"
+          >{t`home-blog.news`}</Link>
         </div>
       </div>
     </>
