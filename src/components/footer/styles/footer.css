@@ -1,6 +1,7 @@
 .footer-container {
-  background: var(--navy-dark, #f8f8fc);
-  /* display: flex; */
+  border-top: 1px solid var(--active-bg, #d4e5f7);
+  border-bottom: 1px solid var(--active-bg, #d4e5f7);
+  background: var(--light-bg, #fbfcfe);
   padding: 40px 180px 16px 180px;
   justify-content: center;
   align-items: center;
@@ -19,12 +20,16 @@
 }
 
 .footer-container .footer-down {
-  border-top: 1px solid #000;
-  padding: 16px 0;
+  border-top: 1px solid var(--active-bg, #d4e5f7);
+  padding: 16px 0px 8px 0px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   align-self: stretch;
+}
+
+.footer-container .footer-down div p {
+  color: var(--mid-blue, #4d8ce5);
 }
 
 .footer-container .footer-down .right-footer-down {
@@ -34,11 +39,11 @@
 }
 
 .footer-container .footer-down .right-footer-down p {
-  text-decoration-line: underline;
+  color: var(--Button-primary-bg, #144487);
 }
 
 .footer-container h6 {
-  color: #000;
+  color: var(--mid-blue, #4d8ce5);
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -47,20 +52,54 @@
 }
 
 .footer-container p {
-  color: #000;
+  color: var(--Button-primary-bg, #144487);
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
   line-height: 160%; /* 22.4px */
   margin-bottom: 4px;
 }
 
+.footer-container .address {
+  font-weight: 300 !important;
+}
+
 .footer-container .footer-button-link {
   padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--Button-primary-bg, #144487);
+  color: var(--neutral-white, var(--color-basics-white, #fff));
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  transition: all 0.2s ease-out;
+}
+
+.footer-container .footer-button-link:hover {
+  background: var(--Button-primary-hover-bg, #0d2d59);
 }
 
 .footer-container .contact-a {
   margin-top: 20px;
+}
+
+.footer-container .contact-con {
+  display: grid;
+}
+
+.footer-container .linkedIn-a {
+  border-radius: 8px;
+  border: 1px solid var(--active-bg, #d4e5f7);
+  width: 35px;
+  height: 35px;
+}
+
+.footer-container .linkedIn-image {
+  width: 24px;
+  height: 24px;
+  margin: 4.5px;
+  border-radius: 4px;
 }
 
 .bottom {
