@@ -125,31 +125,31 @@ const Footer = () => {
             </div>
             <div>
               <h6>{t`footer.industries`}</h6>
-              <Link>
+              <Link to="/household-chemicals">
                 <p>{t`footer.household-chemicals`}</p>
               </Link>
-              <Link>
+              <Link to="/cosmetology">
                 <p>{t`footer.cosmetology`}</p>
               </Link>
-              <Link>
+              <Link to="/pharmacy">
                 <p>{t`footer.pharmacy`}</p>
               </Link>
-              <Link>
+              <Link to="/food-and-supplements">
                 <p>{t`footer.food`}</p>
               </Link>
-              <Link>
+              <Link to="/other-industries">
                 <p>{t`footer.other`}</p>
               </Link>
             </div>
             <div>
               <h6>{t`footer.about`}</h6>
-              <Link>
+              <Link to="/about">
                 <p>{t`footer.mission`}</p>
               </Link>
-              <Link>
+              <Link to="/services">
                 <p>{t`footer.services`}</p>
               </Link>
-              <Link>
+              <Link to="/blog">
                 <p>{t`footer.blog`}</p>
               </Link>
             </div>

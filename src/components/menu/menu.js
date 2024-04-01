@@ -210,8 +210,11 @@ const Menu = () => {
             <>
               {!isSearch ? (
                 <>
-                  <Link className="menu-link">{t`menu.about`}</Link>
-                  <Link className="menu-link">{t`menu.services`}</Link>
+                  <Link className="menu-link" to="/about">{t`menu.about`}</Link>
+                  <Link
+                    className="menu-link"
+                    to="/services"
+                  >{t`menu.services`}</Link>
                   <Dropdown className="rmo-dropdown menu-link">
                     <Dropdown.Toggle>
                       {t`menu.raw-material-offer`}
@@ -235,23 +238,23 @@ const Menu = () => {
                         <Link to="/materials">{t`menu.raw-all-materials`}</Link>
                       </Dropdown.Item>
                       <Dropdown.Item>
-                        <Link>{t`menu.raw-household-chemicals`}</Link>
+                        <Link to="/household-chemicals">{t`menu.raw-household-chemicals`}</Link>
                       </Dropdown.Item>
                       <Dropdown.Item>
-                        <Link>{t`menu.raw-cosmetology`}</Link>
+                        <Link to="/cosmetology">{t`menu.raw-cosmetology`}</Link>
                       </Dropdown.Item>
                       <Dropdown.Item>
-                        <Link>{t`menu.raw-pharmacy`}</Link>
+                        <Link to="/pharmacy">{t`menu.raw-pharmacy`}</Link>
                       </Dropdown.Item>
                       <Dropdown.Item>
-                        <Link>{t`menu.raw-food`}</Link>
+                        <Link to="/food-and-supplements">{t`menu.raw-food`}</Link>
                       </Dropdown.Item>
                       <Dropdown.Item>
-                        <Link>{t`menu.raw-other-industries`}</Link>
+                        <Link to="/other-industries">{t`menu.raw-other-industries`}</Link>
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
-                  <Link className="menu-link">{t`menu.blog`}</Link>
+                  <Link className="menu-link" to="/news">{t`menu.blog`}</Link>
                   <svg
                     onClick={() => setIsSearch(!isSearch)}
                     className="search-icon"
@@ -614,8 +617,8 @@ const Menu = () => {
               />
             </a>
           </div>
-          <Link className="menu-link">{t`menu.about`}</Link>
-          <Link className="menu-link">{t`menu.services`}</Link>
+          <Link className="menu-link" to="/about">{t`menu.about`}</Link>
+          <Link className="menu-link" to="services">{t`menu.services`}</Link>
           <span
             onClick={() => setShowMaterials(!showMaterials)}
             className="menu-link showMaterials"
@@ -643,14 +646,29 @@ const Menu = () => {
                 className="menu-link"
                 to="/materials"
               >{t`menu.raw-all-materials`}</Link>
-              <Link className="menu-link">{t`menu.raw-household-chemicals`}</Link>
-              <Link className="menu-link">{t`menu.raw-cosmetology`}</Link>
-              <Link className="menu-link">{t`menu.raw-pharmacy`}</Link>
-              <Link className="menu-link">{t`menu.raw-food`}</Link>
-              <Link className="menu-link">{t`menu.raw-other-industries`}</Link>
+              <Link
+                className="menu-link"
+                to="/household-chemicals"
+              >{t`menu.raw-household-chemicals`}</Link>
+              <Link
+                className="menu-link"
+                to="/cosmetology"
+              >{t`menu.raw-cosmetology`}</Link>
+              <Link
+                className="menu-link"
+                to="/pharmacy"
+              >{t`menu.raw-pharmacy`}</Link>
+              <Link
+                className="menu-link"
+                to="/food-and-supplements"
+              >{t`menu.raw-food`}</Link>
+              <Link
+                className="menu-link"
+                to="/other-industries"
+              >{t`menu.raw-other-industries`}</Link>
             </div>
           )}
-          <Link className="menu-link">{t`menu.blog`}</Link>
+          <Link className="menu-link" to="/news">{t`menu.blog`}</Link>
           <Link
             className="register-btn menu-button-link"
             to="/contact"
