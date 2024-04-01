@@ -29,7 +29,7 @@ const ArticleTile = ({ article, t }) => {
         <p className="p-style tile-description">{truncatedDescription}</p>
         <div className="tile-text-down">
           <p className="p-style date">{article.node.createdAt}</p>
-          <p className="p-style read-more">{t`home.read-more`}</p>
+          <p className="p-style read-more">{t`article-tile.read-more`}</p>
         </div>
       </div>
     </div>
