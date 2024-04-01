@@ -1,11 +1,38 @@
-import React from "react"
-import { useTranslation, Link } from "gatsby-plugin-react-i18next"
-import "bootstrap/dist/css/bootstrap.min.css"
+import React, { useEffect, useState, useContext } from "react"
+import {
+  useTranslation,
+  I18nextContext,
+  Link,
+} from "gatsby-plugin-react-i18next"
 import "../styles/homeBlog.css"
+import { graphql, useStaticQuery } from "gatsby"
 
 const HomeBlog = () => {
   const { t } = useTranslation()
-
+  const { language } = useContext(I18nextContext)
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulArticle(sort: { createdAt: ASC }) {
+        edges {
+          node {
+            author
+            createdAt(formatString: "DD/MM/YYYY HH:MM")
+            description {
+              raw
+              references {
+                id
+              }
+            }
+            image {
+              gatsbyImageData(quality: 100)
+            }
+            slug
+            title
+          }
+        }
+      }
+    }
+  `)
   return (
     <>
       <div className="home-b-container">

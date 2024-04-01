@@ -1,6 +1,5 @@
 import React from "react"
 import { useTranslation, Link } from "gatsby-plugin-react-i18next"
-import "bootstrap/dist/css/bootstrap.min.css"
 import "../styles/homeIndustries.css"
 import { navigate } from "gatsby"
 
