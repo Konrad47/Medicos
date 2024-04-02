@@ -29,7 +29,7 @@
 
 .about-p-container .policy-con .policy {
   display: flex;
-  padding: 24px;
+  padding: 16px;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
