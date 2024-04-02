@@ -9,6 +9,7 @@ body {
 
 .register-btn {
   color: var(--Button-primary-bg, #144487);
+  background: var(--light-bg, #fbfcfe);
   text-align: center;
   font-size: 18px;
   font-style: normal;
@@ -20,14 +21,37 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  background: var(--light-bg, #fbfcfe);
   cursor: pointer;
+  transition: all 0.2s ease-out;
 }
 
 .register-btn:hover {
   background: var(--hover-bg, #e9f2fb);
   color: var(--Button-secondary-hover-txt, #4d8ce5);
+}
+
+.bright-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--Button-secondary-border, #d3e2f8);
+  color: var(--Button-primary-bg, #144487);
+  background: var(--light-bg, #fbfcfe);
+  cursor: pointer;
   transition: all 0.2s ease-out;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-decoration: none;
+}
+
+.bright-button:hover {
+  background: var(--hover-bg, #e9f2fb);
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
 }
 
 .h1-style,
@@ -93,6 +117,14 @@ body {
   }
   .h1-style {
     font-size: 40px;
+  }
+  .bright-button:hover {
+    color: var(--Button-primary-bg, #144487);
+    background: var(--light-bg, #fbfcfe);
+  }
+  .register-btn:hover {
+    color: var(--Button-primary-bg, #144487);
+    background: var(--light-bg, #fbfcfe);
   }
 }
 @media only screen and (max-width: 951px) {

@@ -1,5 +1,5 @@
 import React from "react"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/aboutFirm.css"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -39,13 +39,22 @@ const AboutFirm = () => {
                 />
               </div>
             </div>
-            <StaticImage
-              className="right-image"
-              src="../../../images/about/right-image.png"
-              alt="Right image"
-              placeholder="Right image"
-              loading="lazy"
-            />
+            <div className="image-con">
+              <StaticImage
+                className="right-image"
+                src="../../../images/about/right-image.png"
+                alt="Right image"
+                placeholder="Right image"
+                loading="lazy"
+              />
+              <div className="image-con-div">
+                <h4 className="h4-style">{t`about-firm.image-con-title`}</h4>
+                <Link
+                  to="/services"
+                  className="bright-button"
+                >{t`home-services.more`}</Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
