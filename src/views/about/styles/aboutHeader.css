@@ -1,0 +1,17 @@
+.about-h-container {
+  padding-top: 125px;
+  padding-bottom: 45px;
+  background: url(../../../images/menu/header-background.png) no-repeat fixed
+    50% 0;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.about-h-container {
+  background-attachment: scroll !important;
+}
+
+.about-h-container h1 {
+  color: var(--color-basics-white, #fff);
+}
