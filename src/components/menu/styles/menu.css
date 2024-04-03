@@ -343,7 +343,7 @@
   border-radius: 12px;
   border: 1px solid var(--Button-secondary-border, #d3e2f8);
   background: #fff;
-  color: var(--Input-Placeholder, #b0c7e8);
+  color: var(--main-text, #0a2243);
 }
 
 .menu-container .search-input::placeholder {

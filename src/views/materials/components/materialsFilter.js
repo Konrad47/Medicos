@@ -39,10 +39,14 @@ const MaterialsFilter = ({
                 <input
                   className="material-input"
                   id="material"
-                  placeholder={t`materials-filter.search`}
+                  placeholder={
+                    window.innerWidth > 568
+                      ? `${t`materials-filter.search`}`
+                      : `${t`materials-filter.search`}`.slice(0, 30) + "..."
+                  }
                   value={searchMaterial}
                   onChange={handleSearchMaterialChange}
-                ></input>
+                />
               </div>
               <div>
                 <label for="industries">{t`materials-filter.industry`}</label>
@@ -75,7 +79,10 @@ const MaterialsFilter = ({
                 </select>
               </div>
             </div>
-            <p onClick={resetFilters}>{t`materials-filter.clean-filters`}</p>
+            <p
+              onClick={resetFilters}
+              className="p-style"
+            >{t`materials-filter.clean-filters`}</p>
           </div>
         </div>
       </div>
