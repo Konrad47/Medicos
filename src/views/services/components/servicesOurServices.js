@@ -2,7 +2,7 @@ import React from "react"
 import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/servicesOurServices.css"
 import { StaticImage } from "gatsby-plugin-image"
-// import "../../../images/i"
+import { navigate } from "gatsby"
 
 const ServicesOurServices = () => {
   const { t } = useTranslation()
@@ -12,7 +12,7 @@ const ServicesOurServices = () => {
       <div className="services-os-container">
         <div className="container">
           <div className="services-con">
-            <div className="service">
+            <div onClick={() => navigate("/contact")} className="service">
               <StaticImage
                 className="service-image"
                 src="../../../images/services/our-services/service-image-1.png"
@@ -29,7 +29,7 @@ const ServicesOurServices = () => {
                 >{t`services-our-services.contact`}</Link>
               </div>
             </div>
-            <div className="service">
+            <div onClick={() => navigate("/contact")} className="service">
               <StaticImage
                 className="service-image"
                 src="../../../images/services/our-services/service-image-2.png"
@@ -46,7 +46,7 @@ const ServicesOurServices = () => {
                 >{t`services-our-services.contact`}</Link>
               </div>
             </div>
-            <div className="service">
+            <div onClick={() => navigate("/contact")} className="service">
               <StaticImage
                 className="service-image"
                 src="../../../images/services/our-services/service-image-3.png"

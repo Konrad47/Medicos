@@ -6,6 +6,7 @@
   background: #fff;
   box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
   cursor: pointer;
+  transition: all 0.2s ease-out;
 }
 
 .tile .tile-image {
@@ -26,10 +27,9 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  transition: all 0.2s ease-out;
 }
 
-.tile .tile-text:hover {
+.tile:hover {
   background: var(--hover-bg, #e9f2fb);
 }
 
