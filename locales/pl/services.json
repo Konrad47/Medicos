@@ -1,4 +1,12 @@
 {
     "services-header.title": "Nasze usługi",
-    "services-header.description": "Świadczymy klientom szeroką gamę usług, zapewniając im kompleksowe  wsparcie podczas zakupu surowców chemicznych."
+    "services-header.description": "Świadczymy klientom szeroką gamę usług, zapewniając im kompleksowe  wsparcie podczas zakupu surowców chemicznych.",
+
+    "services-our-services.title-1": "Doradztwo techniczne",
+    "services-our-services.description-1": "Doradztwo techniczne jest integralną częścią naszej obsługi klienta.  Wspieramy rozwój Twoich produktów w zakresie doboru i wykorzystania  surowców i współpracujemy z Tobą w celu znalezienia najlepszych  rozwiązań dla Twojego konkretnego zadania.",
+    "services-our-services.contact": "Skontaktuj się",
+    "services-our-services.title-2": "Wyszukiwanie substancji",
+    "services-our-services.description-2": "Na Państwa zapotrzebowanie wyszukujemy na całym świecie substancje  dopasowane do potrzeb danego projektu. Aktywnie pomagamy nie tylko w  wyszukiwaniu substancji do nowych projektów na poziomie  badawczo-rozwojowym, ale również wspieramy w znalezieniu alternatywnych  dostawców do wdrożonych projektów.",
+    "services-our-services.title-3": "Analiza rynku dostawców",
+    "services-our-services.description-3": "Na bieżąco analizujemy rynek dostawców, jakość oferowanych substancji,  dostępność, warunki wytwarzania, wdrożone systemy kontroli jakości oraz  poziom cenowy"
 }
