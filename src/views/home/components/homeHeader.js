@@ -19,13 +19,13 @@ const HomeHeader = () => {
               <p className="p-style">{t`home-header.description`}</p>
               <Link className="register-btn header-button">{t`home-header.ask`}</Link>
             </div>
-            <StaticImage
+            {/* <StaticImage
               className="header-image"
               src="../../../images/home/header/home-header-person.png"
               alt="Header image"
               placeholder="Header image"
               loading="lazy"
-            />
+            /> */}
           </div>
         </div>
       </div>

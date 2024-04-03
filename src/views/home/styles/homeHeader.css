@@ -15,7 +15,7 @@
 }
 
 .home-h-container .h-con {
-  width: 60%;
+  width: 80%;
 }
 
 .home-h-container .h-con .left-con h1 {
@@ -32,13 +32,13 @@
   margin-bottom: 52px;
 }
 
-.home-h-container .h-con .header-image {
+/* .home-h-container .h-con .header-image {
   position: absolute;
   bottom: 0;
   right: 0;
   flex-shrink: 0;
   max-width: 1030px;
-}
+} */
 
 @media screen and (max-width: 1200px) {
   .home-h-container .h-con {
@@ -47,9 +47,9 @@
   .home-h-container {
     padding-bottom: 500px;
   }
-  .home-h-container .h-con .header-image {
+  /* .home-h-container .h-con .header-image {
     width: 100%;
-  }
+  } */
 }
 
 @media screen and (max-width: 800px) {
@@ -63,7 +63,7 @@
     display: flex;
     width: 100%;
   }
-  .home-h-container .h-con .header-image {
+  /* .home-h-container .h-con .header-image {
     width: 570px;
-  }
+  } */
 }
