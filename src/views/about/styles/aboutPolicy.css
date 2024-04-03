@@ -93,6 +93,9 @@
   .about-p-container .policy-con {
     grid-template-columns: repeat(1, 1fr);
   }
+  .about-p-container p {
+    width: 100%;
+  }
   /* .about-p-container .policy-con .policy:hover {
     background: #fff;
   } */
