@@ -47,13 +47,6 @@ const AboutFirm = () => {
                 placeholder="Right image"
                 loading="lazy"
               />
-              <div className="image-con-div">
-                <h4 className="h4-style">{t`about-firm.image-con-title`}</h4>
-                <Link
-                  to="/services"
-                  className="bright-button"
-                >{t`home-services.more`}</Link>
-              </div>
             </div>
           </div>
         </div>
