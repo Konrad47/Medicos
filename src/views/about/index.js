@@ -6,6 +6,7 @@ import AboutHeader from "./components/aboutHeader"
 import AboutFirm from "./components/aboutFirm"
 import AboutMission from "./components/aboutMission"
 import AboutPolicy from "./components/aboutPolicy"
+import AboutPeople from "./components/aboutPeople"
 
 const About = () => {
   const { t } = useTranslation()
@@ -17,6 +18,7 @@ const About = () => {
       <AboutFirm />
       <AboutMission />
       <AboutPolicy />
+      <AboutPeople />
     </Layout>
   )
 }
