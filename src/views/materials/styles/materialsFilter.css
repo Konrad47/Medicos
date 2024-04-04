@@ -1,6 +1,10 @@
+.materials-f-container {
+  background: var(--light-bg, #fbfcfe);
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
 .materials-f-container .filter-con {
-  margin-top: 24px;
-  margin-bottom: 24px;
   padding: 16px;
   border-radius: 16px;
   background: var(--hover-bg, #e9f2fb);
