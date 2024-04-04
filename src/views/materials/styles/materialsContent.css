@@ -57,6 +57,12 @@
   border-radius: 16px;
   background: #fff;
   box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.materials-c-container .content-con .results-con .result:hover {
+  background: var(--hover-bg, #e9f2fb);
 }
 
 .materials-c-container .content-con .results-con .result h4 {
@@ -161,6 +167,12 @@
   cursor: pointer;
   line-height: 160%; /* 22.4px */
   padding: 0 16px 16px 16px;
+  transition: all 0.2s ease-out;
+}
+
+.materials-c-container .content-con .results-con .result:hover .details {
+  text-decoration: underline;
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
 }
 
 @media screen and (max-width: 1000px) {
