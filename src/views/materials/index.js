@@ -1,6 +1,10 @@
 import React, { useEffect, useState, useContext } from "react"
 import Seo from "../../components/seo"
-import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
+import {
+  useTranslation,
+  I18nextContext,
+  Link,
+} from "gatsby-plugin-react-i18next"
 import MaterialsHeader from "./components/materialsHeader"
 import Layout from "../../components/layout"
 import MaterialsFilter from "./components/materialsFilter"
@@ -8,6 +12,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../components/contentful-translator"
 import MaterialsContent from "./components/materialsContent"
 import MaterialsDontFind from "./components/materialsDontFind"
+import "bootstrap/dist/css/bootstrap.min.css"
+import Dropdown from "react-bootstrap/Dropdown"
 
 const Materials = () => {
   const { t } = useTranslation()
@@ -38,7 +44,13 @@ const Materials = () => {
     }
   `)
   const [searchMaterial, setSearchMaterial] = useState("")
-  const [selectedIndustry, setSelectedIndustry] = useState("")
+  const [selectedIndustry, setSelectedIndustry] = useState([
+    "Chemia gospodarcza",
+    "Kosmetyka",
+    "Farmacja",
+    "Żywność i suplementy diety",
+    "Pozostałe branże",
+  ])
   const [selectedSort, setSelectedSort] = useState("name-up")
   const [searchedData, setSearchedData] = useState([])
 
@@ -60,7 +72,9 @@ const Materials = () => {
           .toLowerCase()
           .includes(searchMaterial.toLowerCase())
         const categoryMatches = material.node.category.some(category =>
-          category.toLowerCase().includes(selectedIndustry.toLowerCase())
+          selectedIndustry.some(industry =>
+            category.toLowerCase().includes(industry.toLowerCase())
+          )
         )
 
         return (titleMatches || inciMatches || casMatches) && categoryMatches
@@ -80,6 +94,7 @@ const Materials = () => {
 
       setSearchedData(sortedMaterials)
       console.log(sortedMaterials)
+      console.log(selectedIndustry)
     }
 
     getData()
@@ -108,7 +123,13 @@ const Materials = () => {
 
   const resetFilters = () => {
     setSearchMaterial("")
-    setSelectedIndustry("")
+    setSelectedIndustry([
+      "Chemia gospodarcza",
+      "Kosmetyka",
+      "Farmacja",
+      "Żywność i suplementy diety",
+      "Pozostałe branże",
+    ])
     setSelectedSort("name-up")
   }
 
