@@ -73,7 +73,7 @@ const MaterialsContent = ({ materialsContent, resetFilters }) => {
             <>
               <div className="content-con">
                 <div className="results-con">
-                  {renderContent(materialsContent)}
+                  {renderContent(paginatedData)}
                 </div>
               </div>
               <CustomPagination

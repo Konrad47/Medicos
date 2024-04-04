@@ -86,13 +86,98 @@ const CustomPagination = ({
             className={isCurrentPageFirst ? "disable" : ""}
             onClick={onPreviousPageClick}
             disabled={isCurrentPageFirst}
-          />
+          >
+            {" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_579_1225)">
+                <path
+                  d="M5.5 12.5H19.5"
+                  stroke="#144487"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.5 12.5L11.5 18.5"
+                  stroke="#144487"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.5 12.5L11.5 6.5"
+                  stroke="#144487"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_579_1225">
+                  <rect
+                    width="24"
+                    height="24"
+                    fill="white"
+                    transform="translate(0.5 0.5)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+          </Pagination.Prev>
           {pageNumbers}
           <Pagination.Next
             onClick={onNextPageClick}
             disabled={isCurrentPageLast}
             className={isCurrentPageLast ? "disable" : ""}
-          />
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_579_4084)">
+                <path
+                  d="M19.5 12.5L5.5 12.5"
+                  stroke="#144487"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M19.5 12.5L13.5 6.5"
+                  stroke="#144487"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M19.5 12.5L13.5 18.5"
+                  stroke="#144487"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_579_4084">
+                  <rect
+                    width="24"
+                    height="24"
+                    fill="white"
+                    transform="translate(0.5 0.5)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>{" "}
+          </Pagination.Next>
         </Pagination>
       )}
     </>
