@@ -6,31 +6,41 @@
   text-align: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  padding: 60px 24px;
-  background: #f1f1f1;
+  padding: 60px 0px;
+  border-radius: 16px;
+  background: var(--hover-bg, #e9f2fb);
 }
 
 .materials-c-container .empty-content-con svg {
   margin-bottom: 24px;
 }
 
+.materials-c-container .empty-content-con h3 {
+  color: var(--Button-primary-bg, #144487);
+}
+
 .materials-c-container .empty-content-con p {
+  color: var(--main-text, #0a2243);
   margin-bottom: 24px;
-  max-width: 712px;
+  max-width: 612px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .materials-c-container .empty-content-con .clear-filter-p {
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
+  color: var(--primary, #144487);
+  font-size: 16px;
   line-height: normal;
-  text-decoration-line: underline;
+  letter-spacing: 0.32px;
   cursor: pointer;
   margin: 0;
   margin-left: auto;
   margin-right: auto;
+  transition: all 0.2s ease-out;
+}
+
+.materials-c-container .empty-content-con .clear-filter-p:hover {
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
 }
 
 .materials-c-container .content-con {
@@ -188,5 +198,8 @@
 
   .materials-c-container .content-con .results-con {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .materials-c-container .empty-content-con .clear-filter-p:hover {
+    color: var(--primary, #144487);
   }
 }
