@@ -96,50 +96,50 @@ const MaterialModal = ({
       <Modal.Body>
         <div className="left-body">
           <div className="left-body-up">
-            <p className="p-style">{t`material-tile.form`}</p>
+            <p className="p-style">{t`material-modal.form`}</p>
             <Link
               className="register-btn"
               to="/contact"
-            >{t`material-tile.ask`}</Link>
+            >{t`material-modal.ask`}</Link>
           </div>
           <div className="left-body-down">
             <div>
-              <p className="p-style p-name">{t`material-tile.inci`}</p>
+              <p className="p-style p-name">{t`material-modal.inci`}</p>
               <p className="p-style p-description">
                 {currentMaterial.node.inci}
               </p>
             </div>
             <div>
-              <p className="p-style p-name">{t`material-tile.cas`}</p>
+              <p className="p-style p-name">{t`material-modal.cas`}</p>
               <p className="p-style p-description">
                 {currentMaterial.node.cas}
               </p>
             </div>
             <div>
-              <p className="p-style p-name">{t`material-tile.form2`}</p>
+              <p className="p-style p-name">{t`material-modal.form2`}</p>
               <p className="p-style p-description">
                 {currentMaterial.node.form}
               </p>
             </div>
             <div>
-              <p className="p-style p-name">{t`material-tile.color`}</p>
+              <p className="p-style p-name">{t`material-modal.color`}</p>
               <p className="p-style p-description">
                 {currentMaterial.node.color}
               </p>
             </div>
             <div>
-              <p className="p-style p-name">{t`material-tile.ph`}</p>
+              <p className="p-style p-name">{t`material-modal.ph`}</p>
               <p className="p-style p-description">{currentMaterial.node.pH}</p>
             </div>
           </div>
         </div>
         <div className="right-body">
           <div className="title-right-body">
-            <p className="p-style p-name">{t`material-tile.name`}</p>
+            <p className="p-style p-name">{t`material-modal.name`}</p>
             <h4 className="h4-style">{currentMaterial.node.title}</h4>
           </div>
           <div className="con-right-body">
-            <h4 className="h4-style">{t`material-tile.info`}</h4>
+            <h4 className="h4-style">{t`material-modal.info`}</h4>
             <div>
               {renderRichText(
                 currentMaterial.node.generalInformation,
@@ -148,7 +148,7 @@ const MaterialModal = ({
             </div>
           </div>
           <div className="con-right-body">
-            <h4 className="h4-style">{t`material-tile.application`}</h4>
+            <h4 className="h4-style">{t`material-modal.application`}</h4>
             <div>
               {renderRichText(
                 currentMaterial.node.application,
@@ -157,10 +157,10 @@ const MaterialModal = ({
             </div>
           </div>
           <div className="con-right-body">
-            <h4 className="h4-style">{t`material-tile.more-info`}</h4>
+            <h4 className="h4-style">{t`material-modal.more-info`}</h4>
             <p>
-              {t`material-tile.more-info-description`}{" "}
-              <a>{t`material-tile.more-info-email`}</a>
+              {t`material-modal.more-info-description`}{" "}
+              <a>{t`material-modal.more-info-email`}</a>
             </p>
           </div>
         </div>

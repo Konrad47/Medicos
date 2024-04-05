@@ -6,11 +6,11 @@ const MaterialTile = ({ material, openModal, t }) => {
     <div className="material-tile" onClick={openModal}>
       <h4 className="h4-style">{material.node.title}</h4>
       <div className="up-text">
-        <p className="p-style">{t`materials-content.inci`}</p>
+        <p className="p-style">{t`materials-tile.inci`}</p>
         <span className="p-style">{material.node.inci}</span>
       </div>
       <div className="down-text">
-        <p className="p-style">{t`materials-content.cas`}</p>
+        <p className="p-style">{t`materials-tile.cas`}</p>
         <span className="p-style">{material.node.cas}</span>
       </div>
       <div className="categories">
@@ -44,7 +44,7 @@ const MaterialTile = ({ material, openModal, t }) => {
           </div>
         ))}
       </div>
-      <p className="p-style details">{t`materials-content.details`}</p>
+      <p className="p-style details">{t`materials-tile.details`}</p>
     </div>
   )
 }
