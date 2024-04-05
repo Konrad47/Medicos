@@ -12,7 +12,7 @@ const MaterialModal = ({
   props,
   t,
 }) => {
-  console.log(currentMaterial.node.generalInformation)
+  console.log(currentMaterial)
   return (
     <Modal
       show={showModal}
@@ -139,11 +139,29 @@ const MaterialModal = ({
             <h4 className="h4-style">{currentMaterial.node.title}</h4>
           </div>
           <div className="con-right-body">
-            <p className="p-style p-name">{t`material-tile.info`}</p>
-            {renderRichText(
-              currentMaterial.node.generalInformation,
-              richTextRenderOptions
-            )}
+            <h4 className="h4-style">{t`material-tile.info`}</h4>
+            <div>
+              {renderRichText(
+                currentMaterial.node.generalInformation,
+                richTextRenderOptions
+              )}
+            </div>
+          </div>
+          <div className="con-right-body">
+            <h4 className="h4-style">{t`material-tile.application`}</h4>
+            <div>
+              {renderRichText(
+                currentMaterial.node.application,
+                richTextRenderOptions
+              )}
+            </div>
+          </div>
+          <div className="con-right-body">
+            <h4 className="h4-style">{t`material-tile.more-info`}</h4>
+            <p>
+              {t`material-tile.more-info-description`}{" "}
+              <a>{t`material-tile.more-info-email`}</a>
+            </p>
           </div>
         </div>
       </Modal.Body>

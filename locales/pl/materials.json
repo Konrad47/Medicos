@@ -36,5 +36,10 @@
     "material-tile.cas": "Numer CAS",
     "material-tile.form2": "Forma",
     "material-tile.color": "Kolor",
-    "material-tile.ph": "pH"
+    "material-tile.ph": "pH",
+    "material-tile.info": "Informacje ogólne",
+    "material-tile.application": "Zastosowanie",
+    "material-tile.more-info": "Więcej informacji",
+    "material-tile.more-info-description": "Więcej informacji dostępnych w specyfikacji techniczej produktu oraz w karcie charakterystyki dostępnej pod tym adresem (e-mail):",
+    "material-tile.more-info-email": "adresemail@mail.com"
 }
