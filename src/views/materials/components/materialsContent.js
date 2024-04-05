@@ -3,6 +3,7 @@ import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/materialsContent.css"
 import CustomPagination from "../../../components/pagination/pagination"
 import MaterialTile from "../../../components/materialTile/materialTile"
+import MaterialModal from "../../../components/materialModal/materialModal"
 
 const MaterialsContent = ({ materialsContent, resetFilters }) => {
   const { t } = useTranslation()
@@ -20,8 +21,27 @@ const MaterialsContent = ({ materialsContent, resetFilters }) => {
 
   const renderMaterials = value => {
     return value.map((val, index) => (
-      <MaterialTile key={index} material={val} t={t} />
+      <MaterialTile
+        openModal={() => openModal(val)}
+        key={index}
+        material={val}
+        t={t}
+      />
     ))
+  }
+
+  const [showModal, setShowModal] = useState(false)
+  const [currentMaterial, setCurrentMaterial] = useState()
+
+  const openModal = material => {
+    console.log(material)
+    setCurrentMaterial(material)
+    setShowModal(true)
+  }
+
+  const closeModal = () => {
+    console.log(showModal)
+    setShowModal(false)
   }
 
   return (
@@ -42,6 +62,14 @@ const MaterialsContent = ({ materialsContent, resetFilters }) => {
                 setCurrentPage={setCurrentPage}
                 alwaysShown={true}
               />
+              {currentMaterial && (
+                <MaterialModal
+                  showModal={showModal}
+                  currentMaterial={currentMaterial}
+                  closeModal={closeModal}
+                  t={t}
+                />
+              )}
             </>
           ) : (
             <div className="empty-content-con">

@@ -1,11 +1,9 @@
 import React from "react"
 import "./styles/materialTile.css"
 
-const MaterialTile = ({ material, t }) => {
-  console.log(material)
-
+const MaterialTile = ({ material, openModal, t }) => {
   return (
-    <div className="material-tile">
+    <div className="material-tile" onClick={openModal}>
       <h4 className="h4-style">{material.node.title}</h4>
       <div className="up-text">
         <p className="p-style">{t`materials-content.inci`}</p>

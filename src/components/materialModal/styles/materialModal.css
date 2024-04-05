@@ -1,0 +1,86 @@
+.material-modal .modal-content {
+  border-radius: 16px;
+  background: var(--light-bg, #fbfcfe);
+  box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
+}
+
+.material-modal .modal-header {
+  display: flex;
+  padding: 24px;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.material-modal .modal-header .left-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1 0 0;
+}
+
+.material-modal .modal-header .left-header h3 {
+  color: var(--Button-primary-bg, #144487);
+}
+
+.material-modal .modal-header .left-header .categories {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.material-modal .modal-header .left-header .categories .category {
+  display: flex;
+  height: 24px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+}
+
+.material-modal .modal-header .left-header .categories .hc-background {
+  background: #e7d9b6;
+  color: #735d26;
+}
+
+.material-modal .modal-header .left-header .categories .food-background {
+  background: #b6e7be;
+  color: #267332;
+}
+
+.material-modal .modal-header .left-header .categories .far-background {
+  background: #b6c6e7;
+  color: #264073;
+}
+
+.material-modal .modal-header .left-header .categories .oi-background {
+  background: #b6e7db;
+  color: #267361;
+}
+
+.material-modal .modal-header .left-header .categories .cos-background {
+  background: #d7b6e7;
+  color: #5a2673;
+}
+
+.material-modal .modal-header .left-header .categories .category p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.material-modal .modal-header svg {
+  display: flex;
+  width: 35px;
+  height: 35px;
+  padding: 4px 4px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #d3e2f8;
+  margin-bottom: auto;
+  cursor: pointer;
+}
