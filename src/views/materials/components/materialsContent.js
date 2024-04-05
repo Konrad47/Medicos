@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/materialsContent.css"
 import CustomPagination from "../../../components/pagination/pagination"
+import MaterialTile from "../../../components/materialTile/materialTile"
 
 const MaterialsContent = ({ materialsContent, resetFilters }) => {
   const { t } = useTranslation()
@@ -17,51 +18,9 @@ const MaterialsContent = ({ materialsContent, resetFilters }) => {
     currentPage * pageSize
   )
 
-  const renderContent = content => {
-    return content.map((con, index) => (
-      <div className="result" key={index}>
-        <h4 className="h4-style">{con.node.title}</h4>
-        <div className="up-text">
-          <p className="p-style">{t`materials-content.inci`}</p>
-          <span className="p-style">{con.node.inci}</span>
-        </div>
-        <div className="down-text">
-          <p className="p-style">{t`materials-content.cas`}</p>
-          <span className="p-style">{con.node.cas}</span>
-        </div>
-        <div className="categories">
-          {con.node.category.map((cat, index) => (
-            <div key={index}>
-              {cat === "Chemia gospodarcza" && (
-                <div className="category hc-background">
-                  <p className="p-style ">{t`materials-filter.household-chemicals`}</p>
-                </div>
-              )}
-              {cat === "Kosmetyka" && (
-                <div className="category cos-background">
-                  <p className="p-style ">{t`materials-filter.cosmetology`}</p>
-                </div>
-              )}
-              {cat === "Farmacja" && (
-                <div className="category far-background">
-                  <p className="p-style ">{t`materials-filter.pharmacy`}</p>
-                </div>
-              )}
-              {cat === "Żywność i suplementy diety" && (
-                <div className="category food-background">
-                  <p className="p-style ">{t`materials-filter.food`}</p>
-                </div>
-              )}
-              {cat === "Pozostałe branże" && (
-                <div className="category oi-background">
-                  <p className="p-style ">{t`materials-filter.other-industries`}</p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        <p className="p-style details">{t`materials-content.details`}</p>
-      </div>
+  const renderMaterials = value => {
+    return value.map((val, index) => (
+      <MaterialTile key={index} material={val} t={t} />
     ))
   }
 
@@ -73,7 +32,7 @@ const MaterialsContent = ({ materialsContent, resetFilters }) => {
             <>
               <div className="content-con">
                 <div className="results-con">
-                  {renderContent(paginatedData)}
+                  {renderMaterials(paginatedData)}
                 </div>
               </div>
               <CustomPagination

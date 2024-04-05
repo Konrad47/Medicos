@@ -75,3 +75,14 @@
   color: var(--Button-secondary-hover-txt, #4d8ce5);
   text-decoration: underline;
 }
+
+@media screen and (max-width: 568px) {
+  .tile:hover {
+    background: #fff;
+  }
+
+  .tile .tile-text:hover .tile-text-down .read-more {
+    text-decoration: none;
+    color: var(--Button-primary-bg, #144487);
+  }
+}
