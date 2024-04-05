@@ -9,6 +9,7 @@
   padding: 24px;
   align-items: flex-end;
   gap: 24px;
+  border-bottom: 1px solid var(--active-bg, #d4e5f7);
 }
 
 .material-modal .modal-header .left-header {
@@ -92,6 +93,13 @@
   padding: 0;
 }
 
+.material-modal .modal-body .left-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
 .material-modal .modal-body .left-body-up {
   display: flex;
   width: 300px;
@@ -116,6 +124,29 @@
 
 .material-modal .modal-body .left-body-up .register-btn:hover {
   background: var(--Button-primary-hover-bg, #0d2d59);
+}
+
+.material-modal .modal-body .left-body-down {
+  display: flex;
+  width: 300px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1 0 0;
+  border-right: 1px solid var(--active-bg, #d4e5f7);
+  background: var(--hover-bg, #e9f2fb);
+}
+
+.material-modal .modal-body .left-body-down .p-name {
+  font-size: 14px;
+  color: var(--Button-primary-bg, #144487);
+}
+
+.material-modal .modal-body .left-body-down .p-description {
+  color: var(--main-text, #0a2243);
+  font-weight: 500;
+  line-height: 150%; /* 27px */
 }
 
 @media screen and (max-width: 568px) {

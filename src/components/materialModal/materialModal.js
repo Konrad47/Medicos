@@ -101,7 +101,36 @@ const MaterialModal = ({
               to="/contact"
             >{t`material-tile.ask`}</Link>
           </div>
-          <div className="left-body-down"></div>
+          <div className="left-body-down">
+            <div>
+              <p className="p-style p-name">{t`material-tile.inci`}</p>
+              <p className="p-style p-description">
+                {currentMaterial.node.inci}
+              </p>
+            </div>
+            <div>
+              <p className="p-style p-name">{t`material-tile.cas`}</p>
+              <p className="p-style p-description">
+                {currentMaterial.node.cas}
+              </p>
+            </div>
+            <div>
+              <p className="p-style p-name">{t`material-tile.form2`}</p>
+              <p className="p-style p-description">
+                {currentMaterial.node.form}
+              </p>
+            </div>
+            <div>
+              <p className="p-style p-name">{t`material-tile.color`}</p>
+              <p className="p-style p-description">
+                {currentMaterial.node.color}
+              </p>
+            </div>
+            <div>
+              <p className="p-style p-name">{t`material-tile.ph`}</p>
+              <p className="p-style p-description">{currentMaterial.node.pH}</p>
+            </div>
+          </div>
         </div>
         <div className="right-body"></div>
       </Modal.Body>

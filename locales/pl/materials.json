@@ -31,5 +31,10 @@
     "materials-dont-find.contact": "Skontaktuj się",
 
     "material-tile.form": "Skorzystaj z formularza kontaktowego, aby zapytać o surowiec",
-    "material-tile.ask": "Zapytaj o dostępność"
+    "material-tile.ask": "Zapytaj o dostępność",
+    "material-tile.inci": "INCI",
+    "material-tile.cas": "Numer CAS",
+    "material-tile.form2": "Forma",
+    "material-tile.color": "Kolor",
+    "material-tile.ph": "pH"
 }
