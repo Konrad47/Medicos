@@ -115,6 +115,11 @@
   margin-bottom: auto;
   border-radius: 8px;
   border: 1px solid var(--active-bg, #d4e5f7);
+  transition: all 0.2s ease-out;
+}
+
+.hide-menu .up-hide-menu .linkedIn-a:hover {
+  background: #e9f2fb;
 }
 
 .hide-menu .up-hide-menu .linkedIn-image {
@@ -320,6 +325,11 @@
   background: var(--light-bg, #fbfcfe);
   margin-right: 8px;
   margin-left: 8px;
+  transition: all 0.2s ease-out;
+}
+
+.menu-container .linkedIn-a:hover {
+  background: #e9f2fb;
 }
 
 .menu-container .linkedIn-image {
@@ -400,5 +410,8 @@
   }
   .hide-menu .menu-button-link:hover {
     background: var(--Button-primary-bg, #144487);
+  }
+  .hide-menu .up-hide-menu .linkedIn-a:hover {
+    background: var(--light-bg, #fbfcfe);
   }
 }

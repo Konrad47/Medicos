@@ -88,6 +88,11 @@
   border: 1px solid #d3e2f8;
   margin-bottom: auto;
   cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.material-modal .modal-header svg:hover {
+  background: #e9f2fb;
 }
 
 .material-modal .modal-body {

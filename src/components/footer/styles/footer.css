@@ -95,6 +95,11 @@
   border: 1px solid var(--active-bg, #d4e5f7);
   width: 35px;
   height: 35px;
+  transition: all 0.2s ease-out;
+}
+
+.footer-container .linkedIn-a:hover {
+  background: #e9f2fb;
 }
 
 .footer-container .linkedIn-image {
@@ -127,5 +132,9 @@
 
   .footer-container .footer-down {
     display: grid;
+  }
+
+  .footer-container .linkedIn-a:hover {
+    background: var(--light-bg, #fbfcfe);
   }
 }
