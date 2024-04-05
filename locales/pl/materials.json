@@ -28,5 +28,8 @@
 
     "materials-dont-find.title": "Nie znalazłeś surowca?",
     "materials-dont-find.description": "Jeśli nie możesz znaleźć produktu, który Cię interesuje prosimy o kontakt przez formularz kontaktowy.",
-    "materials-dont-find.contact": "Skontaktuj się"
+    "materials-dont-find.contact": "Skontaktuj się",
+
+    "material-tile.form": "Skorzystaj z formularza kontaktowego, aby zapytać o surowiec",
+    "material-tile.ask": "Zapytaj o dostępność"
 }

@@ -2,6 +2,7 @@ import React from "react"
 import "./styles/materialModal.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Modal from "react-bootstrap/Modal"
+import { Link } from "gatsby-plugin-react-i18next"
 
 const MaterialModal = ({
   currentMaterial,
@@ -91,7 +92,19 @@ const MaterialModal = ({
           </defs>
         </svg>
       </Modal.Header>
-      <Modal.Body>body</Modal.Body>
+      <Modal.Body>
+        <div className="left-body">
+          <div className="left-body-up">
+            <p className="p-style">{t`material-tile.form`}</p>
+            <Link
+              className="register-btn"
+              to="/contact"
+            >{t`material-tile.ask`}</Link>
+          </div>
+          <div className="left-body-down"></div>
+        </div>
+        <div className="right-body"></div>
+      </Modal.Body>
     </Modal>
   )
 }
