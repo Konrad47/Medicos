@@ -3,7 +3,8 @@ import "./styles/materialModal.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Modal from "react-bootstrap/Modal"
 import { Link } from "gatsby-plugin-react-i18next"
-
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { richTextRenderOptions } from "../../utils/templateRenderOption"
 const MaterialModal = ({
   currentMaterial,
   showModal,
@@ -11,7 +12,7 @@ const MaterialModal = ({
   props,
   t,
 }) => {
-  console.log(currentMaterial)
+  console.log(currentMaterial.node.generalInformation)
   return (
     <Modal
       show={showModal}
@@ -132,7 +133,19 @@ const MaterialModal = ({
             </div>
           </div>
         </div>
-        <div className="right-body"></div>
+        <div className="right-body">
+          <div className="title-right-body">
+            <p className="p-style p-name">{t`material-tile.name`}</p>
+            <h4 className="h4-style">{currentMaterial.node.title}</h4>
+          </div>
+          <div className="con-right-body">
+            <p className="p-style p-name">{t`material-tile.info`}</p>
+            {renderRichText(
+              currentMaterial.node.generalInformation,
+              richTextRenderOptions
+            )}
+          </div>
+        </div>
       </Modal.Body>
     </Modal>
   )

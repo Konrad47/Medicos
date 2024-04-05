@@ -108,6 +108,10 @@ body {
   line-height: 170%; /* 30.6px */
 }
 
+b {
+  font-weight: 600 !important;
+}
+
 @media only screen and (max-width: 568px) {
   .container {
     margin: 0 1rem;
