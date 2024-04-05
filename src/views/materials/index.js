@@ -13,7 +13,6 @@ import getCurrentTranslations from "../../components/contentful-translator"
 import MaterialsContent from "./components/materialsContent"
 import MaterialsDontFind from "./components/materialsDontFind"
 import "bootstrap/dist/css/bootstrap.min.css"
-import Dropdown from "react-bootstrap/Dropdown"
 
 const Materials = () => {
   const { t } = useTranslation()

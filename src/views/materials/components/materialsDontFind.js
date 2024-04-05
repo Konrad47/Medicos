@@ -9,8 +9,9 @@ const MaterialsDontFind = () => {
     <>
       <div className="materials-df-container">
         <div className="container">
-          <h1 className="h1-style">{t`materials-dont-find.title`}</h1>
+          <h2 className="h2-style">{t`materials-dont-find.title`}</h2>
           <p className="p-style">{t`materials-dont-find.description`}</p>
+          {/* Tutaj przenosi do Kontakt z wybranym tematem Chcę zapytać o dostępność surowca */}
           <Link
             className="register-btn materials-dont-find-button"
             to="/contact"
