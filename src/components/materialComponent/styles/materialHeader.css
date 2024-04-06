@@ -42,11 +42,11 @@
 
 .material-h-container p {
   color: var(--color-basics-white, #fff);
-  width: 60%;
+  /* width: 60%; */
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
   .material-h-container p {
     width: 100%;
   }
-}
+} */
