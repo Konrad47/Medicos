@@ -41,5 +41,7 @@
     "material-modal.application": "Zastosowanie",
     "material-modal.more-info": "Więcej informacji",
     "material-modal.more-info-description": "Więcej informacji dostępnych w specyfikacji techniczej produktu oraz w karcie charakterystyki dostępnej pod tym adresem (e-mail):",
-    "material-modal.more-info-email": "adresemail@mail.com"
+    "material-modal.more-info-email": "adresemail@mail.com",
+
+    "materials.more-materials": "Więcej surowców"
 }

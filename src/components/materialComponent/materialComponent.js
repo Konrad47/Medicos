@@ -1,6 +1,7 @@
 import React from "react"
 import MaterialHeader from "./components/materialHeader"
 import MaterialApplication from "./components/materialApplication"
+import MaterialDiscover from "./components/materialDiscover"
 
 const MaterialComponent = ({
   backgroundHeader,
@@ -9,6 +10,10 @@ const MaterialComponent = ({
   imageApplication,
   titleApplication,
   descriptionApplication,
+  materialDiscover,
+  titleDiscover,
+  descriptionDiscover,
+  t,
 }) => {
   return (
     <>
@@ -22,6 +27,14 @@ const MaterialComponent = ({
         titleApplication={titleApplication}
         descriptionApplication={descriptionApplication}
       />
+      {materialDiscover && (
+        <MaterialDiscover
+          materialDiscover={materialDiscover}
+          titleDiscover={titleDiscover}
+          descriptionDiscover={descriptionDiscover}
+          t={t}
+        />
+      )}
     </>
   )
 }
