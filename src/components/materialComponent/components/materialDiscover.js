@@ -3,14 +3,15 @@ import { Link } from "gatsby-plugin-react-i18next"
 import "../styles/materialDiscover.css"
 import MaterialTile from "../../../components/materialTile/materialTile"
 import MaterialModal from "../../../components/materialModal/materialModal"
+import { navigate } from "gatsby"
 
 const MaterialDiscover = ({
   materialDiscover,
   titleDiscover,
   descriptionDiscover,
   t,
+  materialQuery,
 }) => {
-  //   const { t } = useTranslation()
   const renderMaterials = value => {
     return value.map((val, index) => (
       <MaterialTile
@@ -34,6 +35,11 @@ const MaterialDiscover = ({
   const closeModal = () => {
     console.log(showModal)
     setShowModal(false)
+  }
+
+  const goToMaterials = () => {
+    const encodedSearchQuery = encodeURIComponent(materialQuery)
+    navigate(`/materials?query=${encodedSearchQuery}`)
   }
 
   return (
@@ -61,10 +67,10 @@ const MaterialDiscover = ({
               )}
             </>
           )}
-          <Link
-            to="/materials"
+          <button
+            onClick={goToMaterials}
             className="bright-button"
-          >{t`materials.more-materials`}</Link>
+          >{t`materials.more-materials`}</button>
         </div>
       </div>
     </>

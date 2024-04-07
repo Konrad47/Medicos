@@ -13,10 +13,17 @@ import getCurrentTranslations from "../../components/contentful-translator"
 import MaterialsContent from "./components/materialsContent"
 import MaterialsDontFind from "./components/materialsDontFind"
 import "bootstrap/dist/css/bootstrap.min.css"
+import { useLocation } from "@reach/router"
 
 const Materials = () => {
   const { t } = useTranslation()
   const { language } = useContext(I18nextContext)
+  const location = useLocation()
+  const searchParams = new URLSearchParams(location.search)
+  const searchQuery = searchParams.get("query")
+    ? decodeURIComponent(searchParams.get("query"))
+    : ""
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulMaterials {
@@ -52,6 +59,26 @@ const Materials = () => {
   ])
   const [selectedSort, setSelectedSort] = useState("name-up")
   const [searchedData, setSearchedData] = useState([])
+
+  useEffect(() => {
+    if (searchQuery && searchQuery !== "" && searchQuery.trim() !== "") {
+      if (searchQuery === "household-chemicals") {
+        setSelectedIndustry(["Chemia gospodarcza"])
+      }
+      if (searchQuery === "cosmetology") {
+        setSelectedIndustry(["Kosmetyka"])
+      }
+      if (searchQuery === "pharmacy") {
+        setSelectedIndustry(["Farmacja"])
+      }
+      if (searchQuery === "food-and-supplements") {
+        setSelectedIndustry(["Żywność i suplementy diety"])
+      }
+      if (searchQuery === "other-industries") {
+        setSelectedIndustry(["Pozostałe branże"])
+      }
+    }
+  }, [])
 
   useEffect(() => {
     const getData = () => {

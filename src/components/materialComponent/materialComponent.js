@@ -14,6 +14,7 @@ const MaterialComponent = ({
   titleDiscover,
   descriptionDiscover,
   t,
+  materialQuery,
 }) => {
   return (
     <>
@@ -32,6 +33,7 @@ const MaterialComponent = ({
           materialDiscover={materialDiscover}
           titleDiscover={titleDiscover}
           descriptionDiscover={descriptionDiscover}
+          materialQuery={materialQuery}
           t={t}
         />
       )}

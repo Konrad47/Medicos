@@ -72,6 +72,7 @@ const HouseholdChemicals = () => {
 
   const titleDiscover = `${t`household-chemicals.discover.title`}`
   const descriptionDiscover = `${t`household-chemicals.discover.description`}`
+  const materialQuery = "household-chemicals"
 
   return (
     <Layout>
@@ -90,6 +91,7 @@ const HouseholdChemicals = () => {
         titleDiscover={titleDiscover}
         descriptionDiscover={descriptionDiscover}
         t={t}
+        materialQuery={materialQuery}
       />
     </Layout>
   )
