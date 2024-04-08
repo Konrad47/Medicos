@@ -52,4 +52,8 @@
   .material-d-container .content-con .results-con {
     grid-template-columns: repeat(1, 1fr);
   }
+  .material-d-container .text {
+    width: 100%;
+    text-align: center;
+  }
 }

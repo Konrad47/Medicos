@@ -113,7 +113,7 @@
 
 .material-modal .modal-body .left-body-up {
   display: flex;
-  width: 300px;
+  width: 100%;
   padding: 32px 24px;
   flex-direction: column;
   justify-content: flex-end;
@@ -139,7 +139,7 @@
 
 .material-modal .modal-body .left-body-down {
   display: flex;
-  width: 300px;
+  width: 100%;
   padding: 24px;
   flex-direction: column;
   align-items: flex-start;
@@ -220,7 +220,26 @@
   background: var(--Button-primary-bg, #144487);
 }
 
+.modal-backdrop.fade {
+  --bs-backdrop-opacity: 0.3;
+  background: var(--main-text, #0a2243);
+}
+
+.fade.modal.show {
+  padding-right: 0 !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .material-modal .modal-body {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 568px) {
+  .material-modal .modal-body .left-body-up .register-btn {
+    display: flex;
+    width: 100%;
+  }
   .material-modal .modal-body .left-body-up .register-btn:hover {
     background: var(--Button-primary-bg, #144487);
   }
