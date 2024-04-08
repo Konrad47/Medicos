@@ -28,10 +28,9 @@
   color: var(--main-text, #0a2243);
 }
 
-/* .material-d-container .content-con {
-  padding-top: 30px;
-  padding-bottom: 30px;
-} */
+.material-d-container .content-con {
+  width: 100%;
+}
 
 .material-d-container .content-con .results-con {
   /* margin-top: 16px; */
