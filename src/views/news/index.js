@@ -25,7 +25,14 @@ const News = () => {
             description {
               raw
               references {
-                id
+                ... on ContentfulAsset {
+                  __typename
+                  contentful_id
+                  file {
+                    url
+                  }
+                }
+                title
               }
             }
             image {

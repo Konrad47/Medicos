@@ -11,8 +11,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allContentfulArticle {
         edges {
           node {
-            title
+            node_locale
+            author
+            createdAt(formatString: "DD/MM/YYYY HH:MM")
+            description {
+              raw
+              references {
+                ... on ContentfulAsset {
+                  __typename
+                  contentful_id
+                  file {
+                    url
+                  }
+                }
+                title
+              }
+            }
+            image {
+              gatsbyImageData(quality: 100)
+            }
             slug
+            title
           }
         }
       }

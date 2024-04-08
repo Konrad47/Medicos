@@ -4,6 +4,7 @@ import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 export const richTextRenderOptions = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: node => {
+      // console.log(node)
       if (node.data.target.file === undefined) return
       return (
         <img

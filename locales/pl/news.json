@@ -1,4 +1,6 @@
 {
     "news-header.title": "Blog",
-    "news-header.description": "Informacje ze świata surowców chemicznych"
+    "news-header.description": "Informacje ze świata surowców chemicznych",
+
+    "news.article.return": "Powrót do Bloga"
 }

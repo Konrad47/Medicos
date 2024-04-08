@@ -3,6 +3,8 @@ import Seo from "../../components/seo"
 import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
 import getCurrentTranslations from "../../components/contentful-translator"
+import Layout from "../../components/layout"
+import NewsContent from "./components/newsContent"
 
 const NewsPage = ({ data, pageContext }) => {
   const { t } = useTranslation()
@@ -12,34 +14,27 @@ const NewsPage = ({ data, pageContext }) => {
 
   useEffect(() => {
     const getData = () => {
-      const getArticle = getCurrentTranslations(
+      const getArticles = getCurrentTranslations(
         data.allContentfulArticle.edges,
         language
       )
-      console.log(data.allContentfulArticle.edges)
-      console.log(getArticle)
 
-      setArticle(getArticle)
+      const singleArticle = getArticles.find(article => {
+        return article.node.title === pageContext.article.title
+      })
+      setArticle(singleArticle)
     }
     getData()
   }, [data.allContentfulArticle, pageContext, language])
 
-  const renderArticle = data => {
-    return <h1 className="h1-style">{data.title}</h1>
-  }
-
   return (
-    <>
+    <Layout>
       <Seo
         title={t`seo.news-page.title`}
         description={t`seo.news-page.description`}
       />
-      <div className="single-article-container">
-        <div className="container">
-          {pageContext && renderArticle(pageContext.article)}
-        </div>
-      </div>
-    </>
+      {article && <NewsContent article={article} />}
+    </Layout>
   )
 }
 export default NewsPage
@@ -58,9 +53,27 @@ export const query = graphql`
     allContentfulArticle {
       edges {
         node {
-          title
-          slug
           node_locale
+          author
+          createdAt(formatString: "DD/MM/YYYY HH:MM")
+          description {
+            raw
+            references {
+              ... on ContentfulAsset {
+                __typename
+                contentful_id
+                file {
+                  url
+                }
+              }
+              title
+            }
+          }
+          image {
+            gatsbyImageData(quality: 100)
+          }
+          slug
+          title
         }
       }
     }
