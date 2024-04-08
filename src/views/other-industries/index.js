@@ -29,7 +29,11 @@ const OtherIndustries = () => {
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
     query {
-      allContentfulMaterials(filter: { category: { eq: "Pozostałe branże" } }) {
+      allContentfulMaterials(
+        filter: { category: { eq: "Pozostałe branże" } }
+        sort: { createdAt: ASC }
+        limit: 6
+      ) {
         edges {
           node {
             category

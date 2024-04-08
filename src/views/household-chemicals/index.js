@@ -31,6 +31,8 @@ const HouseholdChemicals = () => {
     query {
       allContentfulMaterials(
         filter: { category: { eq: "Chemia gospodarcza" } }
+        sort: { createdAt: ASC }
+        limit: 6
       ) {
         edges {
           node {

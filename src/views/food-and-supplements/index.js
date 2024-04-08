@@ -31,6 +31,8 @@ const Food = () => {
     query {
       allContentfulMaterials(
         filter: { category: { eq: "Żywność i suplementy diety" } }
+        sort: { createdAt: ASC }
+        limit: 6
       ) {
         edges {
           node {

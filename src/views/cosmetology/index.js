@@ -29,7 +29,11 @@ const Cosmetology = () => {
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
     query {
-      allContentfulMaterials(filter: { category: { eq: "Kosmetyka" } }) {
+      allContentfulMaterials(
+        filter: { category: { eq: "Kosmetyka" } }
+        sort: { createdAt: ASC }
+        limit: 6
+      ) {
         edges {
           node {
             category
