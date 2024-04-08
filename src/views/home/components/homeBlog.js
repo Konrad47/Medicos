@@ -14,7 +14,7 @@ const HomeBlog = () => {
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
     query {
-      allContentfulArticle(sort: { createdAt: ASC }) {
+      allContentfulArticle(sort: { createdAt: ASC }, limit: 3) {
         edges {
           node {
             node_locale
