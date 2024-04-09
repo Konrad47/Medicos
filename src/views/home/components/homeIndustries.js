@@ -65,7 +65,10 @@ const HomeIndustries = () => {
                   className="register-btn industry-button"
                 >{t`home-industries.material`}</Link>
               </div>
-              <div onClick={() => navigate("/food")} className="industry food">
+              <div
+                onClick={() => navigate("/food-and-supplements")}
+                className="industry food"
+              >
                 <div className="industry-con">
                   <div className="h4-con">
                     <h4>{t`home-industries.food`}</h4>
