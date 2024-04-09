@@ -12,8 +12,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: auto;
-  /* gap: 40px; */
-  /* padding-bottom: 16px; */
 }
 
 .contact-c-container .contact-con .left-con {
@@ -30,6 +28,15 @@
   align-items: flex-start;
   gap: 24px;
   align-self: stretch;
+}
+
+.contact-c-container .contact-con .left-con .title-con h2 {
+  color: var(--main-text, #0a2243);
+}
+
+.contact-c-container .contact-con .left-con .title-con p {
+  color: var(--main-text, #0a2243);
+  font-size: 16px;
 }
 
 .contact-c-container .contact-con .left-con .contact-info-con {
@@ -59,6 +66,34 @@
   background: var(--active-bg, #d4e5f7);
 }
 
+.contact-c-container .contact-con .left-con .contact-info-con .info .info-text {
+  width: 80%;
+}
+
+.contact-c-container
+  .contact-con
+  .left-con
+  .contact-info-con
+  .info
+  .info-text
+  .title {
+  color: var(--Button-primary-bg, #144487);
+  font-size: 14px;
+}
+
+.contact-c-container
+  .contact-con
+  .left-con
+  .contact-info-con
+  .info
+  .info-text
+  .info {
+  color: var(--main-text, #0a2243);
+  font-size: 16px;
+  line-height: 130%; /* 23.4px */
+  letter-spacing: 0.36px;
+}
+
 .contact-c-container .contact-con .right-con {
   display: flex;
   padding-left: 60px;
@@ -72,4 +107,22 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+  .contact-c-container .contact-con {
+    grid-template-columns: 1fr;
+  }
+  .contact-c-container {
+    background: var(--light-bg, #fbfcfe);
+  }
+  .contact-c-container .contact-con .left-con {
+    padding-bottom: 40px;
+  }
+  .contact-c-container .contact-con .right-con {
+    background: var(--hover-bg, #e9f2fb);
+    border-radius: 16px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
