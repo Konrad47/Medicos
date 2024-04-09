@@ -5,12 +5,14 @@ import { graphql } from "gatsby"
 import getCurrentTranslations from "../../components/contentful-translator"
 import Layout from "../../components/layout"
 import NewsContent from "./components/newsContent"
+import NewsReadMore from "./components/newsReadMore"
 
 const NewsPage = ({ data, pageContext }) => {
   const { t } = useTranslation()
   const { language } = useContext(I18nextContext)
 
   const [article, setArticle] = useState()
+  const [readMoreArticles, setReadMoreArticles] = useState()
 
   useEffect(() => {
     const getData = () => {
@@ -23,6 +25,14 @@ const NewsPage = ({ data, pageContext }) => {
         return article.node.title === pageContext.article.title
       })
       setArticle(singleArticle)
+
+      const lastThreeArticles = getArticles
+        .filter(article => {
+          return article.node.title !== pageContext.article.title
+        })
+        .slice(0, 3)
+
+      setReadMoreArticles(lastThreeArticles)
     }
     getData()
   }, [data.allContentfulArticle, pageContext, language])
@@ -34,6 +44,7 @@ const NewsPage = ({ data, pageContext }) => {
         description={t`seo.news-page.description`}
       />
       {article && <NewsContent article={article} />}
+      {readMoreArticles && <NewsReadMore articles={readMoreArticles} />}
     </Layout>
   )
 }
@@ -50,7 +61,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulArticle {
+    allContentfulArticle(sort: { createdAt: DESC }) {
       edges {
         node {
           node_locale
