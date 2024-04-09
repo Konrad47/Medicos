@@ -13,7 +13,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node {
             node_locale
             author
-            createdAt(formatString: "DD/MM/YYYY HH:MM")
+            createdAt
             description {
               raw
               references {

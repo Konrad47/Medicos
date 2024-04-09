@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import "./styles/articleTile.css"
 import { navigate } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import moment from "moment"
 
 const ArticleTile = ({ article, t }) => {
   const description = JSON.parse(article.node.description.raw).content.filter(
@@ -28,7 +29,9 @@ const ArticleTile = ({ article, t }) => {
         <p className="p-style tile-title">{article.node.title}</p>
         <p className="p-style tile-description">{truncatedDescription}</p>
         <div className="tile-text-down">
-          <p className="p-style date">{article.node.createdAt}</p>
+          <p className="p-style date">
+            {moment(article.node.createdAt).format("DD/MM/YYYY HH:MM")}
+          </p>
           <p className="p-style read-more">{t`article-tile.read-more`}</p>
         </div>
       </div>

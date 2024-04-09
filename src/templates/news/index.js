@@ -55,7 +55,7 @@ export const query = graphql`
         node {
           node_locale
           author
-          createdAt(formatString: "DD/MM/YYYY HH:MM")
+          createdAt
           description {
             raw
             references {

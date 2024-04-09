@@ -4,6 +4,7 @@ import "../styles/newsContent.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { articleTextRenderOptions } from "../../../utils/articleRenderOption"
+import moment from "moment"
 
 const NewsContent = ({ article }) => {
   const { t } = useTranslation()
@@ -20,7 +21,9 @@ const NewsContent = ({ article }) => {
               >{t`news.article.return`}</Link>
               <div className="down-left-text">
                 <div className="date-and-name">
-                  <p className="p-style">{article.node.createdAt}</p>
+                  <p className="p-style">
+                    {moment(article.node.createdAt).format("DD/MM/YYYY HH:MM")}
+                  </p>
                   <p className="p-style">{article.node.author}</p>
                 </div>
                 <h2 className="h2-style">{article.node.title}</h2>

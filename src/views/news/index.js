@@ -16,12 +16,12 @@ const News = () => {
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
     query {
-      allContentfulArticle(sort: { createdAt: ASC }) {
+      allContentfulArticle(sort: { createdAt: DESC }) {
         edges {
           node {
             node_locale
             author
-            createdAt(formatString: "DD/MM/YYYY HH:MM")
+            createdAt
             description {
               raw
               references {
