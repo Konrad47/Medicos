@@ -23,5 +23,9 @@
     "contact-component.email-placeholder": "adres@email.pl",
     "contact-component.firmName-placeholder": "Wpisz nazwę firmy...",
     "contact-component.phoneNumber-placeholder": "+48 000 000 000",
-    "contact-component.message-placeholder": "Wpisz treść wiadomości..."
+    "contact-component.message-placeholder": "Wpisz treść wiadomości...",
+    "contact-component.personalData-a": "Zgadzam  się na przetwarzanie moich danych osobowych przez firmę Medicos, NIP:  7381806412 w celu wysyłania mi e-mailem newslettera, czyli informacji o  produktach, usługach, promocjach lub nowościach dostępnych na stronie  https://medicos.com.pl oraz zgodnie z",
+    "contact-component.personalData-b": "polityką prywatności",
+    "contact-component.personalData-c": "i regulaminem strony.",
+    "contact-component.personalData-d": "Wiem, że zgodę tę mogę w każdej chwili cofnąć."
 }

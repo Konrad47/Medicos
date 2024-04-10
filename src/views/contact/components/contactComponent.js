@@ -122,6 +122,15 @@ const ContactComponent = () => {
     }))
   }
 
+  const handlePersonalDataChange = event => {
+    const value = event.target.checked
+
+    setMessage(prevMessage => ({
+      ...prevMessage,
+      personalData: value,
+    }))
+  }
+
   return (
     <>
       <div className="contact-c-container">
@@ -497,6 +506,21 @@ const ContactComponent = () => {
                     value={message.message}
                     onChange={handleMessageChange}
                   />
+                </div>
+                <div className="personal-data-div">
+                  <input
+                    type="checkbox"
+                    id="personalData"
+                    value={message.personalData}
+                    checked={message.personalData === true}
+                    onChange={handlePersonalDataChange}
+                  />
+                  <label htmlFor="personalData">
+                    {t`contact-component.personalData-a`}{" "}
+                    <Link to="/privacy-policy">{t`contact-component.personalData-b`}</Link>{" "}
+                    <Link to="/website-regulations">{t`contact-component.personalData-c`}</Link>{" "}
+                    {t`contact-component.personalData-c`}
+                  </label>
                 </div>
               </div>
             </div>

@@ -286,6 +286,66 @@
   height: 134px;
 }
 
+.contact-c-container .contact-con .right-con .form-con .personal-data-div {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .personal-data-div
+  label {
+  width: 95.5%;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .personal-data-div
+  label
+  a {
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .personal-data-div
+  label
+  a:hover {
+  color: var(--main-text, #0a2243);
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .personal-data-div
+  input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #003b6f;
+  border-radius: 3px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .personal-data-div
+  input[type="checkbox"] {
+  accent-color: #003b6f;
+}
+
 @media screen and (max-width: 1000px) {
   .contact-c-container .contact-con {
     grid-template-columns: 1fr;
