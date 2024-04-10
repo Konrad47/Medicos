@@ -7,6 +7,8 @@ import {
 import "../styles/contactComponent.css"
 import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../../components/contentful-translator"
+import "bootstrap/dist/css/bootstrap.min.css"
+import Dropdown from "react-bootstrap/Dropdown"
 
 const ContactComponent = () => {
   const { t } = useTranslation()
@@ -47,6 +49,78 @@ const ContactComponent = () => {
     }
     getData()
   }, [data.allContentfulContact, language])
+
+  const [message, setMessage] = useState({
+    subject: "",
+    name: "",
+    surname: "",
+    email: "",
+    firmName: "",
+    phoneNumber: "",
+    message: "",
+    personalData: false,
+  })
+
+  const handleSubjectChange = value => {
+    setMessage(prevMessage => ({
+      ...prevMessage,
+      subject: value,
+    }))
+  }
+
+  const handleNameChange = event => {
+    const value = event.target.value
+
+    setMessage(prevMessage => ({
+      ...prevMessage,
+      name: value,
+    }))
+  }
+
+  const handleSurnameChange = event => {
+    const value = event.target.value
+
+    setMessage(prevMessage => ({
+      ...prevMessage,
+      surname: value,
+    }))
+  }
+
+  const handleEmailChange = event => {
+    const value = event.target.value
+
+    setMessage(prevMessage => ({
+      ...prevMessage,
+      email: value,
+    }))
+  }
+
+  const handleFirmNameChange = event => {
+    const value = event.target.value
+
+    setMessage(prevMessage => ({
+      ...prevMessage,
+      firmName: value,
+    }))
+  }
+
+  const handlePhoneNumberChange = event => {
+    const value = event.target.value
+
+    setMessage(prevMessage => ({
+      ...prevMessage,
+      phoneNumber: value,
+    }))
+  }
+
+  const handleMessageChange = event => {
+    const value = event.target.value
+
+    setMessage(prevMessage => ({
+      ...prevMessage,
+      message: value,
+    }))
+  }
 
   return (
     <>
@@ -274,6 +348,156 @@ const ContactComponent = () => {
               <div className="title-con">
                 <h2 className="h2-style">{t`contact-component.message-title`}</h2>
                 <p className="p-style">{t`contact-component.message-description`}</p>
+              </div>
+              <div className="form-con">
+                <div className="subject-div">
+                  <label htmlFor="subject">{t`contact-component.subject`}</label>
+                  <Dropdown id="subject">
+                    <Dropdown.Toggle
+                      id="down-centered"
+                      style={{
+                        color: message.subject === "" ? "#B0C7E8" : "inherit",
+                      }}
+                    >
+                      {message.subject === "" &&
+                        `${t`contact-component.subject-placeholder`}`}
+                      {message.subject === "Chcę kupić surowiec" &&
+                        `${t`contact-component.subject-buy-material`}`}
+                      {message.subject ===
+                        "Chcę zapytać o dostępność surowca" &&
+                        `${t`contact-component.subject-avaliable-material`}`}
+                      {message.subject ===
+                        "Chcę zamówić doradztwo techniczne" &&
+                        `${t`contact-component.subject-technic`}`}
+                      {message.subject ===
+                        "Chcę zamówić analizę rynku dostawców" &&
+                        `${t`contact-component.subject-analysis`}`}
+                      {message.subject ===
+                        "Chcę zamówić wyszukiwanie substancji" &&
+                        `${t`contact-component.subject-search-material`}`}
+                      {message.subject === "Inny temat" &&
+                        `${t`contact-component.subject-other`}`}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item>
+                        <p
+                          onClick={() =>
+                            handleSubjectChange("Chcę kupić surowiec")
+                          }
+                        >{t`contact-component.subject-buy-material`}</p>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <p
+                          onClick={() =>
+                            handleSubjectChange(
+                              "Chcę zapytać o dostępność surowca"
+                            )
+                          }
+                        >{t`contact-component.subject-avaliable-material`}</p>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <p
+                          onClick={() =>
+                            handleSubjectChange(
+                              "Chcę zamówić doradztwo techniczne"
+                            )
+                          }
+                        >{t`contact-component.subject-technic`}</p>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <p
+                          onClick={() =>
+                            handleSubjectChange(
+                              "Chcę zamówić analizę rynku dostawców"
+                            )
+                          }
+                        >{t`contact-component.subject-analysis`}</p>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <p
+                          onClick={() =>
+                            handleSubjectChange(
+                              "Chcę zamówić wyszukiwanie substancji"
+                            )
+                          }
+                        >{t`contact-component.subject-search-material`}</p>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <p
+                          onClick={() => handleSubjectChange("Inny temat")}
+                        >{t`contact-component.subject-other`}</p>
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+                <div className="name-div">
+                  <div className="subject-div">
+                    <label htmlFor="name">{t`contact-component.name`}</label>
+                    <input
+                      className="message-input"
+                      id="name"
+                      placeholder={`${t`contact-component.name-placeholder`}`}
+                      value={message.name}
+                      onChange={handleNameChange}
+                    />
+                  </div>
+                  <div className="subject-div">
+                    <label htmlFor="surname">{t`contact-component.surname`}</label>
+                    <input
+                      className="message-input"
+                      id="surname"
+                      placeholder={`${t`contact-component.surname-placeholder`}`}
+                      value={message.surname}
+                      onChange={handleSurnameChange}
+                    />
+                  </div>
+                </div>
+                <div className="subject-div">
+                  <label htmlFor="email">{t`contact-component.email`}</label>
+                  <input
+                    className="message-input"
+                    id="email"
+                    placeholder={`${t`contact-component.email-placeholder`}`}
+                    value={message.email}
+                    onChange={handleEmailChange}
+                  />
+                </div>
+                <div className="subject-div">
+                  <label htmlFor="firmName">
+                    {t`contact-component.firmName`}{" "}
+                    {t`contact-component.optional`}
+                  </label>
+                  <input
+                    className="message-input"
+                    id="firmName"
+                    placeholder={`${t`contact-component.firmName-placeholder`}`}
+                    value={message.firmName}
+                    onChange={handleFirmNameChange}
+                  />
+                </div>
+                <div className="subject-div">
+                  <label htmlFor="phoneNumber">
+                    {t`contact-component.phoneNumber`}{" "}
+                    {t`contact-component.optional`}
+                  </label>
+                  <input
+                    className="message-input"
+                    id="phoneNumber"
+                    placeholder={`${t`contact-component.phoneNumber-placeholder`}`}
+                    value={message.phoneNumber}
+                    onChange={handlePhoneNumberChange}
+                  />
+                </div>
+                <div className="subject-div">
+                  <label htmlFor="message">{t`contact-component.message`}</label>
+                  <textarea
+                    className="message-input message-textarea"
+                    id="message"
+                    placeholder={`${t`contact-component.message-placeholder`}`}
+                    value={message.message}
+                    onChange={handleMessageChange}
+                  />
+                </div>
               </div>
             </div>
           </div>
