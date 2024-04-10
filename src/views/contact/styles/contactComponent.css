@@ -299,7 +299,6 @@
   .contact-c-container .contact-con .right-con {
     background: var(--hover-bg, #e9f2fb);
     border-radius: 16px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 24px;
   }
 }
