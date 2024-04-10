@@ -4,6 +4,10 @@
     "contact-component.contact-email": "Mail kontaktowy",
 
     "contact-component.message-title": "Wyślij wiadomość",
-    "contact-component.message-description": "Skontaktuj się z nami jeszcze wygodniej, wyślij zapytanie poprzez formularz"
+    "contact-component.message-description": "Skontaktuj się z nami jeszcze wygodniej, wyślij zapytanie poprzez formularz",
+    "contact-component.sales-number": "Dział sprzedaży",
+    "contact-component.purchase-number": "Dział zakupów",
+    "contact-component.firm-address": "Adres firmy",
+    "contact-component.firm-data": "Dane firmy"
 
 }
