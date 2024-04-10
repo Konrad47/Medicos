@@ -2,12 +2,26 @@
     "contact-component.contact-title": "Kontakt",
     "contact-component.contact-description": "Współpraca z nami w zakresie zaopatrzenia w surowce chemiczne nie może być prostsza. Skontaktuj się z naszym zespołem, a my z przyjemnością podejmiemy współpracę z Tobą w celu zaspokojenia Twoich potrzeb w zakresie dostaw surowców, niezależnie od tego, czy jest to zaplanowane partnerstwo, czy jednorazowa dostawa.",
     "contact-component.contact-email": "Mail kontaktowy",
-
-    "contact-component.message-title": "Wyślij wiadomość",
-    "contact-component.message-description": "Skontaktuj się z nami jeszcze wygodniej, wyślij zapytanie poprzez formularz",
     "contact-component.sales-number": "Dział sprzedaży",
     "contact-component.purchase-number": "Dział zakupów",
     "contact-component.firm-address": "Adres firmy",
-    "contact-component.firm-data": "Dane firmy"
+    "contact-component.firm-data": "Dane firmy",
 
+    "contact-component.message-title": "Wyślij wiadomość",
+    "contact-component.message-description": "Skontaktuj się z nami jeszcze wygodniej, wyślij zapytanie poprzez formularz",
+    "contact-component.subject": "Temat",
+    "contact-component.name": "Imię",
+    "contact-component.surname": "Nazwisko",
+    "contact-component.email": "Mail kontaktowy",
+    "contact-component.firmName": "Nazwa firmy",
+    "contact-component.phoneNumber": "Numer telefonu",
+    "contact-component.optional": "(opcjonalnie)",
+    "contact-component.message": "Wiadomość",
+    "contact-component.subject-placeholder": "Wybierz temat",
+    "contact-component.name-placeholder": "Podaj imię...",
+    "contact-component.surname-placeholder": "Podaj nazwisko...",
+    "contact-component.email-placeholder": "adres@email.pl",
+    "contact-component.firmName-placeholder": "Wpisz nazwę firmy...",
+    "contact-component.phoneNumber-placeholder": "+48 000 000 000",
+    "contact-component.message-placeholder": "Wpisz treść wiadomości..."
 }
