@@ -65,8 +65,8 @@ module.exports = {
         ],
         web: [
           {
-            name: `Inter`,
-            file: `https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap`,
+            name: `REM`,
+            file: `https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap`,
           },
         ],
       },

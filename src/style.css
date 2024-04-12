@@ -1,5 +1,5 @@
 body {
-  font-family: "Inter" !important;
+  font-family: "REM" !important;
 }
 
 .container {
@@ -8,26 +8,50 @@ body {
 }
 
 .register-btn {
-  text-decoration: none;
-  color: var(--dark, #120e25);
-  font-size: 16px;
+  color: var(--Button-primary-bg, #144487);
+  background: var(--light-bg, #fbfcfe);
+  text-align: center;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: normal;
+  letter-spacing: 0.36px;
+  text-decoration: none;
   padding: 12px 24px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  border-radius: 8px;
-  background: var(--light, #fcf8fc);
-  box-shadow: 4px 4px 8px 0px rgba(57, 19, 55, 0.25);
+  border-radius: 12px;
   cursor: pointer;
+  transition: all 0.2s ease-out;
 }
 
 .register-btn:hover {
-  background: var(--navy-light, #f7d4f3);
-  color: var(--navy-mid, #961d8a);
+  background: var(--hover-bg, #e9f2fb);
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
+}
+
+.bright-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--Button-secondary-border, #d3e2f8);
+  color: var(--Button-primary-bg, #144487);
+  background: var(--light-bg, #fbfcfe);
+  cursor: pointer;
   transition: all 0.2s ease-out;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-decoration: none;
+}
+
+.bright-button:hover {
+  background: var(--hover-bg, #e9f2fb);
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
 }
 
 .h1-style,
@@ -41,31 +65,33 @@ body {
 }
 
 .h1-style {
+  font-family: REM;
   font-size: 52px;
   font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  font-weight: 500;
+  line-height: 120%; /* 62.4px */
 }
 
 .h2-style {
   font-size: 40px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 140%;
+  font-weight: 500;
+  line-height: 130%; /* 52px */
 }
 
 .h3-style {
   font-size: 32px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 140%;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .h4-style {
   font-size: 24px;
   font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  font-weight: 600;
+  line-height: 130%; /* 31.2px */
+  letter-spacing: 0.48px;
 }
 
 .h5-style {
@@ -82,12 +108,31 @@ body {
   line-height: 170%; /* 30.6px */
 }
 
+b {
+  font-weight: 600 !important;
+}
+
+input {
+  outline: none;
+}
+
 @media only screen and (max-width: 568px) {
   .container {
     margin: 0 1rem;
     width: unset;
     padding-right: 20px !important;
     padding-left: 20px !important;
+  }
+  .h1-style {
+    font-size: 40px;
+  }
+  .bright-button:hover {
+    color: var(--Button-primary-bg, #144487);
+    background: var(--light-bg, #fbfcfe);
+  }
+  .register-btn:hover {
+    color: var(--Button-primary-bg, #144487);
+    background: var(--light-bg, #fbfcfe);
   }
 }
 @media only screen and (max-width: 951px) {

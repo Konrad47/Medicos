@@ -1,0 +1,52 @@
+.material-h-container {
+  padding-top: 125px;
+  padding-bottom: 45px;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.hc-background {
+  background: url(../../../images/household-chemicals/header/material-hc-header-background.png)
+    no-repeat fixed 50% 0;
+}
+
+.c-background {
+  background: url(../../../images/cosmetology/header/material-c-header-background.png)
+    no-repeat fixed 50% 0;
+}
+
+.p-background {
+  background: url(../../../images/pharmacy/header/material-p-header-background.png)
+    no-repeat fixed 50% 0;
+}
+
+.f-background {
+  background: url(../../../images/food/header/material-f-header-background.png)
+    no-repeat fixed 50% 0;
+}
+
+.oi-background {
+  background: url(../../../images/other-industries/header/material-oi-header-background.png)
+    no-repeat fixed 50% 0;
+}
+
+.material-h-container {
+  background-attachment: scroll !important;
+}
+
+.material-h-container h1 {
+  color: var(--color-basics-white, #fff);
+  margin-bottom: 16px;
+}
+
+.material-h-container p {
+  color: var(--color-basics-white, #fff);
+  /* width: 60%; */
+}
+
+/* @media screen and (max-width: 1000px) {
+  .material-h-container p {
+    width: 100%;
+  }
+} */

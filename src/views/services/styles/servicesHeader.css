@@ -1,0 +1,28 @@
+.services-h-container {
+  padding-top: 125px;
+  padding-bottom: 45px;
+  background: url(../../../images/header-background.png) no-repeat fixed 50% 0;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.services-h-container {
+  background-attachment: scroll !important;
+}
+
+.services-h-container h1 {
+  color: var(--color-basics-white, #fff);
+  margin-bottom: 16px;
+}
+
+.services-h-container p {
+  color: var(--color-basics-white, #fff);
+  width: 60%;
+}
+
+@media screen and (max-width: 1000px) {
+  .services-h-container p {
+    width: 100%;
+  }
+}

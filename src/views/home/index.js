@@ -5,10 +5,13 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import getCurrentTranslations from "../../components/contentful-translator"
 import { graphql, useStaticQuery } from "gatsby"
 import { richTextRenderOptions } from "../../utils/templateRenderOption"
-import "./styles/home.css"
 import HomeHeader from "./components/homeHeader"
 import HomeIndustries from "./components/homeIndustries"
 import Layout from "../../components/layout"
+import HomeAbout from "./components/homeAbout"
+import HomeServices from "./components/homeServices"
+import HomeNeeds from "./components/homeNeeds"
+import HomeBlog from "./components/homeBlog"
 
 const Home = () => {
   const { t } = useTranslation()
@@ -63,6 +66,10 @@ const Home = () => {
       </div> */}
       <HomeHeader />
       <HomeIndustries />
+      <HomeAbout />
+      <HomeServices />
+      <HomeNeeds />
+      <HomeBlog />
     </Layout>
   )
 }

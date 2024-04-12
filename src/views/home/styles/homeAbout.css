@@ -1,0 +1,90 @@
+.home-a-container {
+  background: var(--hover-bg, #e9f2fb);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center;
+  width: 100%;
+  position: relative;
+}
+
+.home-a-container {
+  background-attachment: scroll !important;
+}
+
+.home-a-container .a-con {
+  width: 55%;
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+.home-a-container .about-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--Button-secondary-border, #d3e2f8);
+  background: var(--light-bg, #fbfcfe);
+}
+
+.home-a-container .a-con .left-con {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.home-a-container .a-con .left-con h1 {
+  color: var(--Button-primary-bg, #144487);
+  margin-bottom: 16px;
+}
+
+.home-a-container .a-con .left-con p {
+  color: var(--main-text, #0a2243);
+  margin-bottom: 52px;
+}
+
+.home-a-container .a-con .about-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  flex-shrink: 0;
+  max-width: 700px;
+}
+
+@media screen and (max-width: 1401px) {
+  .home-a-container .a-con .about-image {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .home-a-container .a-con {
+    width: 100%;
+  }
+  .home-a-container {
+    padding-bottom: 500px;
+  }
+  .home-a-container .a-con .about-image {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .home-a-container .about-button {
+    display: flex;
+    width: 100%;
+  }
+  .home-a-container {
+    padding-bottom: 400px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home-a-container {
+    padding-bottom: 350px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .home-a-container {
+    padding-bottom: 300px;
+  }
+}

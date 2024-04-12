@@ -19,10 +19,24 @@ const Search = () => {
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
     query {
-      allContentfulExampleArticle {
+      allContentfulArticle {
         edges {
           node {
             title
+            slug
+            description {
+              raw
+              references {
+                ... on ContentfulAsset {
+                  __typename
+                  contentful_id
+                  file {
+                    url
+                  }
+                }
+                title
+              }
+            }
             node_locale
           }
         }
@@ -35,19 +49,74 @@ const Search = () => {
   useEffect(() => {
     const getData = () => {
       const getArticles = getCurrentTranslations(
-        data.allContentfulExampleArticle.edges,
+        data.allContentfulArticle.edges,
         language
       )
-      const filteredArticles = getArticles.filter(
-        article =>
-          searchQuery !== "" &&
-          article.node.title.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-      setSearchedData(filteredArticles)
-      console.log(filteredArticles)
+      if (searchQuery && searchQuery !== "" && searchQuery.trim() !== "") {
+        const mappedArticles = getArticles
+          .filter(article => {
+            const descriptionContent = JSON.parse(
+              article.node.description.raw
+            ).content
+            const descriptionText = descriptionContent
+              .filter(node => node?.content[0]?.nodeType === "text")
+              .map(paragraph =>
+                paragraph.content.map(({ value }) => value).join("")
+              )
+              .join(" ")
+            return (
+              (searchQuery &&
+                searchQuery.trim() !== "" &&
+                article.node.title
+                  .toLowerCase()
+                  .includes(searchQuery.toLowerCase())) ||
+              descriptionText.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+          })
+          .map(article => {
+            const descriptionContent = JSON.parse(
+              article.node.description.raw
+            ).content
+            const descriptionText = descriptionContent
+              .filter(node => node?.content[0]?.nodeType === "text")
+              .map(paragraph =>
+                paragraph.content.map(({ value }) => value).join("")
+              )
+              .join(" ")
+
+            let firstSentenceContainingQuery = descriptionText.slice(0, 100)
+
+            let startIndex = 0
+            let endIndex = descriptionText.length - 1
+
+            const queryIndex = descriptionText
+              .toLowerCase()
+              .indexOf(searchQuery.toLowerCase())
+            if (queryIndex !== -1) {
+              const queryLength = searchQuery.length
+              startIndex = Math.max(0, queryIndex - 50)
+              endIndex = Math.min(
+                descriptionText.length - 1,
+                queryIndex + queryLength + 50
+              )
+              firstSentenceContainingQuery =
+                "..." + descriptionText.slice(startIndex, endIndex)
+            }
+
+            console.log(firstSentenceContainingQuery)
+            return {
+              title: article.node.title,
+              description: firstSentenceContainingQuery + "...",
+              category: `${t`search.article`}`,
+              slug: article.node.slug,
+            }
+          })
+
+        setSearchedData(mappedArticles)
+      }
     }
     getData()
-  }, [data.allContentfulExampleArticle, language, searchQuery])
+  }, [data.allContentfulArticle, language, searchQuery])
 
   return (
     <Layout>
@@ -56,7 +125,9 @@ const Search = () => {
         description={t`seo.search.description`}
       />
       <SearchHeader searchData={searchQuery} />
-      {searchedData && <SearchContent searchContent={searchedData} />}
+      {searchedData && (
+        <SearchContent searchContent={searchedData} searchData={searchQuery} />
+      )}
     </Layout>
   )
 }

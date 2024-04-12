@@ -1,0 +1,47 @@
+{
+    "materials-header.title": "Oferta surowców",
+    "materials-header.description": "Bez względu na to, czy szukasz kolejnej doskonałej koncepcji, czy też  sposobu na poprawę wydajności produktu, jesteśmy w stanie Ci pomóc.  Każdego dnia wspieramy klientów, dostarczając im wyjątkową wiedzę  techniczną i logistyczną.",
+
+    "materials-filter.search-material": "Wyszukaj surowiec",
+    "materials-filter.search": "Wyszukaj surowiec po nazwie, INCI lub numerze CAS...",
+    "materials-filter.industry": "Branża",
+    "materials-filter.all-industries": "Wszystkie branże",
+    "materials-filter.household-chemicals": "Chemia gospodarcza",
+    "materials-filter.cosmetology": "Kosmetyka",
+    "materials-filter.pharmacy": "Farmacja",
+    "materials-filter.food": "Żywność i suplementy diety",
+    "materials-filter.other-industries": "Pozostałe branże",
+    "materials-filter.sort": "Sortuj po",
+    "materials-filter.name-up": "Nazwa rosnąco (od A do Z)",
+    "materials-filter.name-down": "Nazwa malejąco (od Z do A)",
+    "materials-filter.inci-up": "INCI rosnąco (od A do Z)",
+    "materials-filter.inci-down": "INCI malejąco (od Z do A)",
+    "materials-filter.clean-filters": "x Wyczyść filtry",
+    "materials-filter.checked": " wybrane",
+    "materials-filter.none-checked": "Nie wybrano",
+
+    "materials-content.title": "Brak surowców o podanych kryteriach",
+    "materials-content.description": "Chwilowo nie posiadamy surowców spełniających podane kryteria. Wyczyść filtry i zobacz pełną ofertę.",
+    "materials-tile.inci": "Nazwa INCI:",
+    "materials-tile.cas": "Numer CAS:",
+    "materials-tile.details": "Szczegóły",
+
+    "materials-dont-find.title": "Nie znalazłeś surowca?",
+    "materials-dont-find.description": "Jeśli nie możesz znaleźć produktu, który Cię interesuje prosimy o kontakt przez formularz kontaktowy.",
+    "materials-dont-find.contact": "Skontaktuj się",
+
+    "material-modal.form": "Skorzystaj z formularza kontaktowego, aby zapytać o surowiec",
+    "material-modal.ask": "Zapytaj o dostępność",
+    "material-modal.inci": "INCI",
+    "material-modal.cas": "Numer CAS",
+    "material-modal.form2": "Forma",
+    "material-modal.color": "Kolor",
+    "material-modal.ph": "pH",
+    "material-modal.info": "Informacje ogólne",
+    "material-modal.application": "Zastosowanie",
+    "material-modal.more-info": "Więcej informacji",
+    "material-modal.more-info-description": "Więcej informacji dostępnych w specyfikacji techniczej produktu oraz w karcie charakterystyki dostępnej pod tym adresem (e-mail):",
+    "material-modal.more-info-email": "adresemail@mail.com",
+
+    "materials.more-materials": "Więcej surowców"
+}

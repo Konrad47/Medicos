@@ -1,0 +1,97 @@
+.services-os-container {
+  background: var(--light-bg, #fbfcfe);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.services-os-container .services-con {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.services-os-container .services-con .service {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
+  width: 100%;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.services-os-container .services-con .service:hover {
+  background: var(--hover-bg, #e9f2fb);
+}
+
+.services-os-container .services-con .service:hover .bright-button {
+  background: var(--hover-bg, #e9f2fb);
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
+}
+
+.services-os-container .services-con .service .right-text {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 50%;
+}
+
+.services-os-container .services-con .service .right-text h3 {
+  color: var(--Button-primary-bg, #144487);
+}
+
+.services-os-container .services-con .service .right-text p {
+  color: var(--main-text, #0a2243);
+}
+
+.services-os-container .services-con .service .service-image {
+  flex: 1;
+  border-radius: 16px 0 0 16px;
+}
+
+@media screen and (max-width: 1400px) {
+  .services-os-container .services-con .service .right-text {
+    flex: 30%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .services-os-container .services-con .service .right-text {
+    flex: 10%;
+  }
+}
+
+@media screen and (max-width: 993px) {
+  .services-os-container .services-con .service {
+    flex-direction: column;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services-os-container .services-con .service .service-image {
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .services-os-container .services-con .service {
+    width: 100%;
+  }
+  .services-os-container .services-con .service .bright-button {
+    display: flex;
+    width: 100%;
+  }
+  .services-os-container .services-con .service:hover {
+    background: #fff;
+  }
+
+  .services-os-container .services-con .service:hover .bright-button {
+    color: var(--Button-primary-bg, #144487);
+    background: var(--light-bg, #fbfcfe);
+  }
+}

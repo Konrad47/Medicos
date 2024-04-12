@@ -1,0 +1,88 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.tile .tile-image {
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+  height: 160px;
+}
+
+.tile .tile-image img {
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+  height: 160px;
+}
+
+.tile .tile-text {
+  padding: 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tile:hover {
+  background: var(--hover-bg, #e9f2fb);
+}
+
+.tile .tile-text .tile-title {
+  color: var(--main-text, #0a2243);
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+
+.tile .tile-text .tile-description {
+  color: var(--Button-primary-bg, #144487);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%; /* 21px */
+  margin-bottom: 16px;
+}
+
+.tile .tile-text .tile-text-down {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.tile .tile-text .tile-text-down .date {
+  color: var(--mid-blue, #4d8ce5);
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.tile .tile-text .tile-text-down .read-more {
+  color: var(--primary, #144487);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.tile .tile-text:hover .tile-text-down .read-more {
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 568px) {
+  .tile:hover {
+    background: #fff;
+  }
+
+  .tile .tile-text:hover .tile-text-down .read-more {
+    text-decoration: none;
+    color: var(--Button-primary-bg, #144487);
+  }
+}

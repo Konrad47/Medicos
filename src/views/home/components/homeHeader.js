@@ -13,17 +13,19 @@ const HomeHeader = () => {
         <div className="container">
           <div className="h-con">
             <div className="left-con">
-              <h1 className="h1-style">{t`home-header.title`}</h1>
+              <h1 className="h1-style">
+                {t`home-header.title-a`} <span>{t`home-header.title-b`}</span>
+              </h1>
               <p className="p-style">{t`home-header.description`}</p>
               <Link className="register-btn header-button">{t`home-header.ask`}</Link>
             </div>
-            <StaticImage
+            {/* <StaticImage
               className="header-image"
-              src="../../../images/menu/linkedIn.png"
-              alt="Top image"
-              placeholder="LinkedIn"
+              src="../../../images/home/header/home-header-person.png"
+              alt="Header image"
+              placeholder="Header image"
               loading="lazy"
-            />
+            /> */}
           </div>
         </div>
       </div>

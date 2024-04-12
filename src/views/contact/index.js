@@ -2,6 +2,7 @@ import React from "react"
 import Seo from "../../components/seo"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import Layout from "../../components/layout"
+import ContactComponent from "./components/contactComponent"
 
 const Contact = () => {
   const { t } = useTranslation()
@@ -12,7 +13,7 @@ const Contact = () => {
         title={t`seo.contact.title`}
         description={t`seo.contact.description`}
       />
-      <h1>Contact Page</h1>
+      <ContactComponent />
     </Layout>
   )
 }

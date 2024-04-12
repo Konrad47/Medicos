@@ -1,0 +1,399 @@
+.contact-c-container {
+  padding-top: 140px;
+  padding-bottom: 60px;
+  background: linear-gradient(
+    to right,
+    var(--light-bg, #fbfcfe) 50%,
+    var(--hover-bg, #e9f2fb) 50%
+  );
+}
+
+.contact-c-container .contact-con {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+}
+
+.contact-c-container .contact-con .left-con {
+  display: flex;
+  padding-right: 60px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.contact-c-container .contact-con .left-con .title-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+
+.contact-c-container .contact-con .left-con .title-con h2 {
+  color: var(--main-text, #0a2243);
+}
+
+.contact-c-container .contact-con .left-con .title-con p {
+  color: var(--main-text, #0a2243);
+  font-size: 16px;
+}
+
+.contact-c-container .contact-con .left-con .contact-info-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  align-self: stretch;
+}
+
+.contact-c-container .contact-con .left-con .contact-info-con .info {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.contact-c-container .contact-con .left-con .contact-info-con .info svg {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--active-bg, #d4e5f7);
+}
+
+.contact-c-container .contact-con .left-con .contact-info-con .info .info-text {
+  width: 80%;
+}
+
+.contact-c-container
+  .contact-con
+  .left-con
+  .contact-info-con
+  .info
+  .info-text
+  .title {
+  color: var(--Button-primary-bg, #144487);
+  font-size: 14px;
+}
+
+.contact-c-container
+  .contact-con
+  .left-con
+  .contact-info-con
+  .info
+  .info-text
+  .info {
+  color: var(--main-text, #0a2243);
+  font-size: 16px;
+  line-height: 130%; /* 23.4px */
+  letter-spacing: 0.36px;
+}
+
+.contact-c-container .contact-con .right-con {
+  display: flex;
+  padding-left: 60px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.contact-c-container .contact-con .right-con .title-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-c-container .contact-con .right-con .form-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.contact-c-container .contact-con .right-con .form-con label {
+  color: var(--Input-Label, #144487);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.contact-c-container .contact-con .right-con .form-con .subject-div {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.contact-c-container .contact-con .right-con .form-con .subject-div .dropdown {
+  height: 44px;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .subject-div
+  .dropdown
+  button {
+  height: 44px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: var(--main-text, #0a2243);
+  border: 1px solid var(--Input-Border, #d3e2f8);
+  background: #ffffff;
+  width: 100%;
+  text-align: left;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"%3E%3Cg clip-path="url(%23clip0_550_5966)"%3E%3Cpath d="M6 9L12 15L18 9" stroke="%234D8CE5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /%3E%3C/g%3E%3Cdefs%3E%3CclipPath id="clip0_550_5966"%3E%3Crect width="24" height="24" fill="white" /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position-x: 97.5%;
+  background-position-y: 50%;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .subject-div
+  .dropdown-menu {
+  background: #fff;
+  text-decoration: none;
+  width: 100%;
+  min-width: 10px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
+  padding: 8px;
+  margin: 0;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .subject-div
+  .dropdown-item {
+  padding: 8px;
+  transition: all 0.2s ease-out;
+  cursor: auto;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .subject-div
+  .dropdown-item:hover {
+  border-radius: 8px;
+  background: var(--hover-bg, #e9f2fb);
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .subject-div
+  .btn-primary::after {
+  display: none;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .subject-div
+  .dropdown-item
+  label {
+  margin: 0;
+  margin-left: 6px;
+  color: var(--main-text, #0a2243);
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  vertical-align: middle;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .subject-div
+  .dropdown-item
+  p {
+  margin: 0;
+  color: var(--main-text, #0a2243);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.contact-c-container .contact-con .right-con .form-con .name-div {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.contact-c-container .contact-con .right-con .form-con .name-div .subject-div {
+  width: 100%;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .subject-div
+  .message-input {
+  height: 44px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: var(--main-text, #0a2243);
+  border: 1px solid var(--Input-Border, #d3e2f8);
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .subject-div
+  .message-input::placeholder {
+  color: var(--Input-Placeholder, #b0c7e8);
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .subject-div
+  .message-textarea {
+  height: 134px;
+  resize: none;
+}
+
+.contact-c-container .contact-con .right-con .form-con .personal-data-div {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .personal-data-div
+  label {
+  width: 95.5%;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .personal-data-div
+  label
+  a {
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .personal-data-div
+  label
+  a:hover {
+  color: var(--main-text, #0a2243);
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .personal-data-div
+  input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #003b6f;
+  border-radius: 3px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .personal-data-div
+  input[type="checkbox"] {
+  accent-color: #003b6f;
+}
+
+.contact-c-container .contact-con .right-con .form-con .bright-button {
+  display: flex;
+  height: 48px;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 12px;
+  background: var(--Button-primary-bg, #144487);
+  color: var(--neutral-white, var(--color-basics-white, #fff));
+}
+
+.contact-c-container .contact-con .right-con .form-con .bright-button:hover {
+  background: var(--Button-primary-hover-bg, #0d2d59);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .bright-button
+  .rotating {
+  animation: rotate 2s linear infinite;
+}
+
+@media screen and (max-width: 1000px) {
+  .contact-c-container .contact-con {
+    grid-template-columns: 1fr;
+  }
+  .contact-c-container {
+    background: var(--light-bg, #fbfcfe);
+  }
+  .contact-c-container .contact-con .left-con {
+    padding-bottom: 40px;
+  }
+  .contact-c-container .contact-con .right-con {
+    background: var(--hover-bg, #e9f2fb);
+    border-radius: 16px;
+    padding: 24px;
+  }
+}

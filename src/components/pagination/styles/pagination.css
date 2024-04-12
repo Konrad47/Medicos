@@ -1,0 +1,40 @@
+.pagination {
+  gap: 8px;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  --bs-pagination-focus-box-shadow: none;
+  padding-bottom: 60px;
+  margin: 0;
+}
+
+.pagination .page-item {
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+}
+.pagination .page-link {
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+  color: var(--primary, #144487);
+  border: 1px solid var(--Button-secondary-border, #d3e2f8);
+  background: var(--light-bg, #fbfcfe);
+}
+
+.pagination .active .page-link {
+  background: var(--Button-primary-bg, #144487);
+  color: var(--neutral-white, var(--color-basics-white, #fff));
+  border: 1px solid var(--Button-primary-bg, #144487);
+  position: relative;
+}
+
+.pagination .page-link svg {
+  position: absolute;
+  right: 3.5px;
+  top: 4px;
+}

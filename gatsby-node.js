@@ -8,18 +8,37 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const { data } = await graphql(`
     query {
-      allContentfulExampleArticle {
+      allContentfulArticle {
         edges {
           node {
-            title
+            node_locale
+            author
+            createdAt
+            description {
+              raw
+              references {
+                ... on ContentfulAsset {
+                  __typename
+                  contentful_id
+                  file {
+                    url
+                  }
+                }
+                title
+              }
+            }
+            image {
+              gatsbyImageData(quality: 100)
+            }
             slug
+            title
           }
         }
       }
     }
   `)
 
-  data.allContentfulExampleArticle.edges.forEach(({ node }) => {
+  data.allContentfulArticle.edges.forEach(({ node }) => {
     createPage({
       path: `news/${node.slug}`,
       component: path.resolve(`./src/templates/news/index.js`),
