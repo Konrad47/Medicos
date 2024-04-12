@@ -284,6 +284,7 @@
   .subject-div
   .message-textarea {
   height: 134px;
+  resize: none;
 }
 
 .contact-c-container .contact-con .right-con .form-con .personal-data-div {

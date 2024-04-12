@@ -61,7 +61,9 @@ const ContactComponent = () => {
     personalData: false,
   })
 
-  const handleSubjectChange = value => {
+  const handleSubjectChange = event => {
+    const value = event.target.value
+
     setMessage(prevMessage => ({
       ...prevMessage,
       subject: value,
