@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import "../styles/materialsFilter.css"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -14,7 +14,17 @@ const MaterialsFilter = ({
   resetFilters,
 }) => {
   const { t } = useTranslation()
-  const [isOpen, setIsOpen] = useState(false)
+  const [materialPlaceholder, setMaterialPlaceholder] = useState(
+    `${t`materials-filter.search`}`
+  )
+
+  useEffect(() => {
+    if (window.innerWidth < 568) {
+      setMaterialPlaceholder(
+        `${t`materials-filter.search`}`.slice(0, 30) + "..."
+      )
+    }
+  }, [])
 
   const handleSearchMaterialChange = event => {
     const value = event.target.value
@@ -75,11 +85,7 @@ const MaterialsFilter = ({
                 <input
                   className="material-input"
                   id="material"
-                  placeholder={
-                    window.innerWidth > 568
-                      ? `${t`materials-filter.search`}`
-                      : `${t`materials-filter.search`}`.slice(0, 30) + "..."
-                  }
+                  placeholder={materialPlaceholder}
                   value={searchMaterial}
                   onChange={handleSearchMaterialChange}
                 />
