@@ -51,14 +51,14 @@ const ContactComponent = () => {
   }, [data.allContentfulContact, language])
 
   const [message, setMessage] = useState({
-    subject: "",
+    // subject: "",
     name: "",
-    surname: "",
+    // surname: "",
     email: "",
-    firmName: "",
-    phoneNumber: "",
+    // firmName: "",
+    // phoneNumber: "",
     message: "",
-    personalData: false,
+    // personalData: false,
   })
 
   const handleChange = event => {
@@ -341,7 +341,7 @@ const ContactComponent = () => {
                 data-netlify-honeypot="bot-field"
               >
                 <input type="hidden" name="form-name" value="contact" />
-                <div className="subject-div">
+                {/* <div className="subject-div">
                   <label htmlFor="subject">{t`contact-component.subject`}</label>
                   <Dropdown id="subject">
                     <Dropdown.Toggle
@@ -420,7 +420,7 @@ const ContactComponent = () => {
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
-                </div>
+                </div> */}
                 <div className="name-div">
                   <div className="subject-div">
                     <label htmlFor="name">{t`contact-component.name`}</label>
@@ -445,7 +445,7 @@ const ContactComponent = () => {
                     />
                   </div>
                 </div>
-                <div className="subject-div">
+                {/* <div className="subject-div">
                   <label htmlFor="email">{t`contact-component.email`}</label>
                   <input
                     className="message-input"
@@ -455,8 +455,8 @@ const ContactComponent = () => {
                     value={message.email}
                     onChange={handleChange}
                   />
-                </div>
-                <div className="subject-div">
+                </div> */}
+                {/* <div className="subject-div">
                   <label htmlFor="firmName">
                     {t`contact-component.firmName`}{" "}
                     {t`contact-component.optional`}
@@ -469,8 +469,8 @@ const ContactComponent = () => {
                     value={message.firmName}
                     onChange={handleChange}
                   />
-                </div>
-                <div className="subject-div">
+                </div> */}
+                {/* <div className="subject-div">
                   <label htmlFor="phoneNumber">
                     {t`contact-component.phoneNumber`}{" "}
                     {t`contact-component.optional`}
@@ -483,7 +483,7 @@ const ContactComponent = () => {
                     value={message.phoneNumber}
                     onChange={handleChange}
                   />
-                </div>
+                </div> */}
                 <div className="subject-div">
                   <label htmlFor="message">{t`contact-component.message`}</label>
                   <textarea
@@ -495,7 +495,7 @@ const ContactComponent = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <div className="personal-data-div">
+                {/* <div className="personal-data-div">
                   <input
                     type="checkbox"
                     id="personalData"
@@ -510,48 +510,48 @@ const ContactComponent = () => {
                     <Link to="/website-regulations">{t`contact-component.personalData-c`}</Link>{" "}
                     {t`contact-component.personalData-c`}
                   </label>
-                </div>
-                {!sending ? (
-                  <button type="submit" className="bright-button">
-                    {t`contact-component.send-message`}{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_709_1893)">
-                        <path
-                          d="M19 12L5 12"
-                          stroke="#4D8CE5"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M19 12L13 6"
-                          stroke="#4D8CE5"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M19 12L13 18"
-                          stroke="#4D8CE5"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_709_1893">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </button>
-                ) : (
+                </div> */}
+                {/* {!sending ? ( */}
+                <button type="submit" className="bright-button">
+                  {t`contact-component.send-message`}{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_709_1893)">
+                      <path
+                        d="M19 12L5 12"
+                        stroke="#4D8CE5"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M19 12L13 6"
+                        stroke="#4D8CE5"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M19 12L13 18"
+                        stroke="#4D8CE5"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_709_1893">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+                {/* ) : (
                   <button className="bright-button">
                     {t`contact-component.sending-message`}{" "}
                     <svg
@@ -632,7 +632,7 @@ const ContactComponent = () => {
                       </defs>
                     </svg>
                   </button>
-                )}
+                )} */}
               </form>
             </div>
           </div>
