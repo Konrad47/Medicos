@@ -61,65 +61,12 @@ const ContactComponent = () => {
     personalData: false,
   })
 
-  const handleSubjectChange = value => {
-    setMessage(prevMessage => ({
-      ...prevMessage,
-      subject: value,
-    }))
-  }
-
-  const handleNameChange = event => {
-    const value = event.target.value
-
-    setMessage(prevMessage => ({
-      ...prevMessage,
-      name: value,
-    }))
-  }
-
-  const handleSurnameChange = event => {
-    const value = event.target.value
-
-    setMessage(prevMessage => ({
-      ...prevMessage,
-      surname: value,
-    }))
-  }
-
-  const handleEmailChange = event => {
-    const value = event.target.value
-
-    setMessage(prevMessage => ({
-      ...prevMessage,
-      email: value,
-    }))
-  }
-
-  const handleFirmNameChange = event => {
-    const value = event.target.value
-
-    setMessage(prevMessage => ({
-      ...prevMessage,
-      firmName: value,
-    }))
-  }
-
-  const handlePhoneNumberChange = event => {
-    const value = event.target.value
-
-    setMessage(prevMessage => ({
-      ...prevMessage,
-      phoneNumber: value,
-    }))
-  }
-
-  const handleMessageChange = event => {
-    const value = event.target.value
-
-    setMessage(prevMessage => ({
-      ...prevMessage,
-      message: value,
-    }))
+  const handleChange = event => {
+    setMessage({
+      ...message,
+      [event.target.name]: event.target.value,
+    })
+    console.log(message)
   }
 
   const handlePersonalDataChange = event => {
@@ -131,11 +78,31 @@ const ContactComponent = () => {
     }))
   }
 
+  const handleSubjectChange = value => {
+    setMessage(prevMessage => ({
+      ...prevMessage,
+      subject: value,
+    }))
+  }
+
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
   const [sending, setSending] = useState(false)
 
-  const sendMessage = () => {
-    console.log(message)
-    setSending(true)
+  const handleSubmit = event => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...message }),
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error))
+
+    event.preventDefault()
   }
 
   return (
@@ -365,7 +332,15 @@ const ContactComponent = () => {
                 <h2 className="h2-style">{t`contact-component.message-title`}</h2>
                 <p className="p-style">{t`contact-component.message-description`}</p>
               </div>
-              <form className="form-con">
+              <form
+                onSubmit={handleSubmit}
+                className="form-con"
+                name="contact"
+                method="post"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+              >
+                <input type="hidden" name="form-name" value="contact" />
                 <div className="subject-div">
                   <label htmlFor="subject">{t`contact-component.subject`}</label>
                   <Dropdown id="subject">
@@ -452,9 +427,10 @@ const ContactComponent = () => {
                     <input
                       className="message-input"
                       id="name"
+                      name="name"
                       placeholder={`${t`contact-component.name-placeholder`}`}
                       value={message.name}
-                      onChange={handleNameChange}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="subject-div">
@@ -462,9 +438,10 @@ const ContactComponent = () => {
                     <input
                       className="message-input"
                       id="surname"
+                      name="surname"
                       placeholder={`${t`contact-component.surname-placeholder`}`}
                       value={message.surname}
-                      onChange={handleSurnameChange}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -473,9 +450,10 @@ const ContactComponent = () => {
                   <input
                     className="message-input"
                     id="email"
+                    name="email"
                     placeholder={`${t`contact-component.email-placeholder`}`}
                     value={message.email}
-                    onChange={handleEmailChange}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="subject-div">
@@ -486,9 +464,10 @@ const ContactComponent = () => {
                   <input
                     className="message-input"
                     id="firmName"
+                    name="firmName"
                     placeholder={`${t`contact-component.firmName-placeholder`}`}
                     value={message.firmName}
-                    onChange={handleFirmNameChange}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="subject-div">
@@ -499,9 +478,10 @@ const ContactComponent = () => {
                   <input
                     className="message-input"
                     id="phoneNumber"
+                    name="phoneNumber"
                     placeholder={`${t`contact-component.phoneNumber-placeholder`}`}
                     value={message.phoneNumber}
-                    onChange={handlePhoneNumberChange}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="subject-div">
@@ -509,15 +489,17 @@ const ContactComponent = () => {
                   <textarea
                     className="message-input message-textarea"
                     id="message"
+                    name="message"
                     placeholder={`${t`contact-component.message-placeholder`}`}
                     value={message.message}
-                    onChange={handleMessageChange}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="personal-data-div">
                   <input
                     type="checkbox"
                     id="personalData"
+                    name="personalData"
                     value={message.personalData}
                     checked={message.personalData === true}
                     onChange={handlePersonalDataChange}
@@ -530,10 +512,7 @@ const ContactComponent = () => {
                   </label>
                 </div>
                 {!sending ? (
-                  <button
-                    onClick={() => sendMessage()}
-                    className="bright-button"
-                  >
+                  <button type="submit" className="bright-button">
                     {t`contact-component.send-message`}{" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -573,10 +552,7 @@ const ContactComponent = () => {
                     </svg>
                   </button>
                 ) : (
-                  <button
-                    onClick={() => sendMessage()}
-                    className="bright-button"
-                  >
+                  <button className="bright-button">
                     {t`contact-component.sending-message`}{" "}
                     <svg
                       className="rotating"
