@@ -18,6 +18,13 @@
     "contact-component.optional": "(opcjonalnie)",
     "contact-component.message": "Wiadomość",
     "contact-component.subject-placeholder": "Wybierz temat",
+    "contact-component.subject-buy-material": "Chcę kupić surowiec",
+    "contact-component.subject-avaliable-material": "Chcę zapytać o dostępność surowca",
+    "contact-component.subject-technic": "Chcę zamówić doradztwo techniczne",
+    "contact-component.subject-analysis": "Chcę zamówić analizę rynku dostawców",
+    "contact-component.subject-search-material": "Chcę zamówić wyszukiwanie substancji",
+    "contact-component.subject-other": "Inny temat",
+
     "contact-component.name-placeholder": "Podaj imię...",
     "contact-component.surname-placeholder": "Podaj nazwisko...",
     "contact-component.email-placeholder": "adres@email.pl",

@@ -61,9 +61,7 @@ const ContactComponent = () => {
     personalData: false,
   })
 
-  const handleSubjectChange = event => {
-    const value = event.target.value
-
+  const handleSubjectChange = value => {
     setMessage(prevMessage => ({
       ...prevMessage,
       subject: value,
@@ -367,7 +365,7 @@ const ContactComponent = () => {
                 <h2 className="h2-style">{t`contact-component.message-title`}</h2>
                 <p className="p-style">{t`contact-component.message-description`}</p>
               </div>
-              <div className="form-con">
+              <form className="form-con">
                 <div className="subject-div">
                   <label htmlFor="subject">{t`contact-component.subject`}</label>
                   <Dropdown id="subject">
@@ -659,7 +657,7 @@ const ContactComponent = () => {
                     </svg>
                   </button>
                 )}
-              </div>
+              </form>
             </div>
           </div>
         </div>

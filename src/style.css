@@ -112,6 +112,10 @@ b {
   font-weight: 600 !important;
 }
 
+input {
+  outline: none;
+}
+
 @media only screen and (max-width: 568px) {
   .container {
     margin: 0 1rem;
