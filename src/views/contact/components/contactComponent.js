@@ -133,6 +133,13 @@ const ContactComponent = () => {
     }))
   }
 
+  const [sending, setSending] = useState(false)
+
+  const sendMessage = () => {
+    console.log(message)
+    setSending(true)
+  }
+
   return (
     <>
       <div className="contact-c-container">
@@ -524,6 +531,134 @@ const ContactComponent = () => {
                     {t`contact-component.personalData-c`}
                   </label>
                 </div>
+                {!sending ? (
+                  <button
+                    onClick={() => sendMessage()}
+                    className="bright-button"
+                  >
+                    {t`contact-component.send-message`}{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_709_1893)">
+                        <path
+                          d="M19 12L5 12"
+                          stroke="#4D8CE5"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M19 12L13 6"
+                          stroke="#4D8CE5"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M19 12L13 18"
+                          stroke="#4D8CE5"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_709_1893">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => sendMessage()}
+                    className="bright-button"
+                  >
+                    {t`contact-component.sending-message`}{" "}
+                    <svg
+                      className="rotating"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="24"
+                      viewBox="0 0 25 24"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_709_1135)">
+                        <path
+                          d="M9.05965 3.69C7.96773 4.14199 6.97552 4.8046 6.13965 5.64"
+                          stroke="#0EDACE"
+                          stroke-width="2.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M4.19 8.56C3.73656 9.6503 3.5021 10.8192 3.5 12"
+                          stroke="#0EDACE"
+                          stroke-width="2.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M4.19043 15.44C4.64242 16.5319 5.30502 17.5241 6.14043 18.36"
+                          stroke="#0EDACE"
+                          stroke-width="2.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9.05957 20.31C10.1499 20.7634 11.3187 20.9979 12.4996 21"
+                          stroke="#0EDACE"
+                          stroke-width="2.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M15.9404 20.31C17.0323 19.858 18.0246 19.1954 18.8604 18.36"
+                          stroke="#0EDACE"
+                          stroke-width="2.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M20.8096 15.44C21.263 14.3497 21.4975 13.1808 21.4996 12"
+                          stroke="#0EDACE"
+                          stroke-width="2.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M20.8104 8.56002C20.3584 7.4681 19.6958 6.47588 18.8604 5.64001"
+                          stroke="#0EDACE"
+                          stroke-width="2.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M15.94 3.69C14.8497 3.23656 13.6808 3.0021 12.5 3"
+                          stroke="#0EDACE"
+                          stroke-width="2.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_709_1135">
+                          <rect
+                            width="24"
+                            height="24"
+                            fill="white"
+                            transform="translate(0.5)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                )}
               </div>
             </div>
           </div>

@@ -347,6 +347,40 @@
   accent-color: #003b6f;
 }
 
+.contact-c-container .contact-con .right-con .form-con .bright-button {
+  display: flex;
+  height: 48px;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 12px;
+  background: var(--Button-primary-bg, #144487);
+  color: var(--neutral-white, var(--color-basics-white, #fff));
+}
+
+.contact-c-container .contact-con .right-con .form-con .bright-button:hover {
+  background: var(--Button-primary-hover-bg, #0d2d59);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-c-container
+  .contact-con
+  .right-con
+  .form-con
+  .bright-button
+  .rotating {
+  animation: rotate 2s linear infinite;
+}
+
 @media screen and (max-width: 1000px) {
   .contact-c-container .contact-con {
     grid-template-columns: 1fr;
