@@ -433,7 +433,7 @@ const ContactComponent = () => {
                       onChange={handleChange}
                     />
                   </div>
-                  <div className="subject-div">
+                  {/* <div className="subject-div">
                     <label htmlFor="surname">{t`contact-component.surname`}</label>
                     <input
                       className="message-input"
@@ -443,9 +443,9 @@ const ContactComponent = () => {
                       value={message.surname}
                       onChange={handleChange}
                     />
-                  </div>
+                  </div> */}
                 </div>
-                {/* <div className="subject-div">
+                <div className="subject-div">
                   <label htmlFor="email">{t`contact-component.email`}</label>
                   <input
                     className="message-input"
@@ -455,7 +455,7 @@ const ContactComponent = () => {
                     value={message.email}
                     onChange={handleChange}
                   />
-                </div> */}
+                </div>
                 {/* <div className="subject-div">
                   <label htmlFor="firmName">
                     {t`contact-component.firmName`}{" "}
