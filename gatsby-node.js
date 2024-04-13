@@ -87,3 +87,15 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
   `)
 }
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  const { setWebpackConfig } = actions
+  setWebpackConfig({
+    resolve: {
+      fallback: {
+        fs: false, // or require.resolve("path-browserify")
+        path: false,
+      },
+    },
+  })
+}
