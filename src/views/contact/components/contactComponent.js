@@ -97,7 +97,7 @@ const ContactComponent = () => {
     }
 
     try {
-      const response = await fetch("/.netlify/functions/sendmail", {
+      const response = await fetch("./.netlify/functions/sendmail", {
         method: "POST",
         body: JSON.stringify(to_send),
       })
