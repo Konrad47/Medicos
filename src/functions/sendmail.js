@@ -1,7 +1,7 @@
-const sgMail = require("@sendgrid/mail")
-sgMail.setApiKey(process.env.NETLIFY_EMAILS_PROVIDER_API_KEY)
+import { setApiKey, send } from "@sendgrid/mail"
+setApiKey(process.env.NETLIFY_EMAILS_PROVIDER_API_KEY)
 
-exports.handler = async (event, context, callback) => {
+export async function handler(event, context, callback) {
   const data = JSON.parse(event.body)
   const { email, subject } = data
   console.log(data)
@@ -20,7 +20,7 @@ exports.handler = async (event, context, callback) => {
   }
 
   try {
-    await sgMail.send(mail_to_send)
+    await send(mail_to_send)
 
     return {
       statusCode: 200,
