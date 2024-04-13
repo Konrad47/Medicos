@@ -89,43 +89,44 @@ const ContactComponent = () => {
 
   const handleSubmit = async event => {
     event.preventDefault()
-
-    const sgMail = require("@sendgrid/mail")
-    sgMail.setApiKey(process.env.NETLIFY_EMAILS_PROVIDER_API_KEY)
-
-    const send_message = {
-      to: "kplichta@innovationshub.pl",
-      from: message.email,
+    const to_send = {
+      name: message.name + " " + message.surname,
+      email: message.email,
       subject: message.subject,
-      text: message.message,
+      message: message.message,
     }
 
-    sgMail
-      .send(send_message)
-      .then(response => console.log("Email send..."))
-      .catch(error => console.log(error.message))
-    // const to_send = {
-    //   name: message.name + " " + message.surname,
-    //   email: message.email,
-    //   subject: message.subject,
-    //   message: message.message,
-    // }
+    try {
+      const response = await fetch("/.netlify/functions/sendmail", {
+        method: "POST",
+        body: JSON.stringify(to_send),
+      })
 
-    // try {
-    //   const response = await fetch("../../../functions/sendmail", {
-    //     method: "POST",
-    //     body: JSON.stringify(to_send),
-    //   })
-
-    //   if (!response.ok) {
-    //     //Do something when request fails
-    //     return
-    //   }
-    //   //Do something when request is successful
-    // } catch (e) {
-    //   console.log(e)
-    // }
+      if (!response.ok) {
+        return
+      }
+    } catch (e) {
+      console.log(e)
+    }
   }
+
+  // const encode = data => {
+  //   return Object.keys(data)
+  //     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+  //     .join("&")
+  // }
+
+  // const handleSubmit = event => {
+  //   fetch("/", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //     body: encode({ "form-name": "contact", ...message }),
+  //   })
+  //     .then(() => alert("Success!"))
+  //     .catch(error => alert(error))
+
+  //   event.preventDefault()
+  // }
 
   return (
     <>
