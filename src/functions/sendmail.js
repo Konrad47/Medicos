@@ -4,6 +4,7 @@ sgMail.setApiKey(process.env.NETLIFY_EMAILS_PROVIDER_API_KEY)
 exports.handler = async (event, context, callback) => {
   const data = JSON.parse(event.body)
   const { email, subject } = data
+  console.log(data)
 
   const body = Object.keys(data)
     .map(k => {
