@@ -112,7 +112,8 @@ b {
   font-weight: 600 !important;
 }
 
-input {
+input,
+textarea {
   outline: none;
 }
 
