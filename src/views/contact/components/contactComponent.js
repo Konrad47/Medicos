@@ -95,7 +95,7 @@ const ContactComponent = () => {
       subject: message.subject,
       message: message.message,
     }
-
+    //https://medicos-site.netlify.app/
     try {
       const response = await fetch(
         "https://medicos-site.netlify.app/.netlify/functions/sendmail",
