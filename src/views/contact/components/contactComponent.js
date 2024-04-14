@@ -91,6 +91,8 @@ const ContactComponent = () => {
     event.preventDefault()
     const to_send = {
       name: message.name + " " + message.surname,
+      firmName: message.firmName,
+      phoneNumber: message.phoneNumber,
       email: message.email,
       subject: message.subject,
       message: message.message,
@@ -112,24 +114,6 @@ const ContactComponent = () => {
       console.log(e)
     }
   }
-
-  // const encode = data => {
-  //   return Object.keys(data)
-  //     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-  //     .join("&")
-  // }
-
-  // const handleSubmit = event => {
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: encode({ "form-name": "contact", ...message }),
-  //   })
-  //     .then(() => alert("Success!"))
-  //     .catch(error => alert(error))
-
-  //   event.preventDefault()
-  // }
 
   return (
     <>

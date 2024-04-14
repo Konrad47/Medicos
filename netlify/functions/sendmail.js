@@ -8,7 +8,21 @@ exports.handler = async (event, context, callback) => {
 
   const body = Object.keys(data)
     .map(k => {
-      return `${k}: ${data[k]}`
+      if (k === "name") {
+        return `<h2><strong>Imię i nazwisko: </strong> ${data[k]}</h2>`
+      } else if (k === "firmName") {
+        return `<div><strong>Firma: </strong> ${data[k]}</div>`
+      } else if (k === "phoneNumber") {
+        return `<div><strong>Numer telefonu: </strong> ${data[k]}</div>`
+      } else if (k === "email") {
+        return `<div><strong>Email: </strong> ${data[k]}</div>`
+      } else if (k === "subject") {
+        return `<div><strong>Temat: </strong> ${data[k]}</div>`
+      } else if (k === "message") {
+        return `<div><strong>Wiadomość: </strong> ${data[k]}</div>`
+      } else {
+        return `<div><strong>${k}:</strong> ${data[k]}</div>`
+      }
     })
     .join("<br><br>")
 
