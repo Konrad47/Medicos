@@ -66,7 +66,16 @@ const ContactComponent = () => {
       ...message,
       [event.target.name]: event.target.value,
     })
-    console.log(message)
+    if (
+      message.name !== "" &&
+      message.surname !== "" &&
+      message.subject !== "" &&
+      message.email !== "" &&
+      message.message !== "" &&
+      message.personalData == true
+    ) {
+      setIsRequiredFieldsError(false)
+    }
   }
 
   const handlePersonalDataChange = event => {
@@ -76,6 +85,17 @@ const ContactComponent = () => {
       ...prevMessage,
       personalData: value,
     }))
+
+    if (
+      message.name !== "" &&
+      message.surname !== "" &&
+      message.subject !== "" &&
+      message.email !== "" &&
+      message.message !== "" &&
+      message.personalData == true
+    ) {
+      setIsRequiredFieldsError(false)
+    }
   }
 
   const handleSubjectChange = value => {
@@ -83,14 +103,75 @@ const ContactComponent = () => {
       ...prevMessage,
       subject: value,
     }))
+
+    if (
+      message.name !== "" &&
+      message.surname !== "" &&
+      message.subject !== "" &&
+      message.email !== "" &&
+      message.message !== "" &&
+      message.personalData == true
+    ) {
+      setIsRequiredFieldsError(false)
+    }
   }
 
   const [sending, setSending] = useState(false)
+  const [sent, setSent] = useState(false)
+
+  const [emialError, setEmailError] = useState(false)
+
+  const [phoneNumberError, setPhoneNumberError] = useState(false)
+
+  const [isRequiredFields, setIsRequiredFieldsError] = useState(false)
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+  const phoneNumberWithCountryCodeRegex = /^\+\d{2}\s?\d{3}\s?\d{3}\s?\d{3}$/
+
+  const phoneNumberWithoutCountryCodeRegex = /^\d{3}\s?\d{3}\s?\d{3}$/
 
   const handleSubmit = async event => {
     event.preventDefault()
+
+    setSending(false)
+    setSent(false)
+
+    setIsRequiredFieldsError(false)
+    setPhoneNumberError(false)
+    setEmailError(false)
+
+    console.log(!emailRegex.test(message.email))
+    if (
+      message.name === "" ||
+      message.surname === "" ||
+      message.subject === "" ||
+      message.email === "" ||
+      message.message === "" ||
+      message.personalData === false
+    ) {
+      setIsRequiredFieldsError(true)
+      return
+    }
+    if (
+      message.phoneNumber !== "" &&
+      !phoneNumberWithCountryCodeRegex.test(message.phoneNumber) &&
+      !phoneNumberWithoutCountryCodeRegex.test(message.phoneNumber)
+    ) {
+      setPhoneNumberError(true)
+      return
+    }
+    if (!emailRegex.test(message.email)) {
+      setEmailError(true)
+      return
+    }
+
+    setSending(true)
+
     const to_send = {
       name: message.name + " " + message.surname,
+      firmName: message.firmName,
+      phoneNumber: message.phoneNumber,
       email: message.email,
       subject: message.subject,
       message: message.message,
@@ -105,31 +186,21 @@ const ContactComponent = () => {
         }
       )
 
+      if (response.ok) {
+        setSending(false)
+        setSent(true)
+        return
+      }
+
       if (!response.ok) {
+        setSending(false)
         return
       }
     } catch (e) {
+      setSending(false)
       console.log(e)
     }
   }
-
-  // const encode = data => {
-  //   return Object.keys(data)
-  //     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-  //     .join("&")
-  // }
-
-  // const handleSubmit = event => {
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: encode({ "form-name": "contact", ...message }),
-  //   })
-  //     .then(() => alert("Success!"))
-  //     .catch(error => alert(error))
-
-  //   event.preventDefault()
-  // }
 
   return (
     <>
@@ -368,12 +439,19 @@ const ContactComponent = () => {
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <div className="subject-div">
-                  <label htmlFor="subject">{t`contact-component.subject`}</label>
+                  <label htmlFor="subject">
+                    {t`contact-component.subject`}{" "}
+                    {t`contact-component.required`}
+                  </label>
                   <Dropdown id="subject">
                     <Dropdown.Toggle
                       id="down-centered"
                       style={{
                         color: message.subject === "" ? "#B0C7E8" : "inherit",
+                        border:
+                          message.subject === "" && isRequiredFields
+                            ? "1px solid #B21A1A"
+                            : "",
                       }}
                     >
                       {message.subject === "" &&
@@ -449,7 +527,10 @@ const ContactComponent = () => {
                 </div>
                 <div className="name-div">
                   <div className="subject-div">
-                    <label htmlFor="name">{t`contact-component.name`}</label>
+                    <label htmlFor="name">
+                      {t`contact-component.name`}{" "}
+                      {t`contact-component.required`}
+                    </label>
                     <input
                       className="message-input"
                       id="name"
@@ -457,10 +538,19 @@ const ContactComponent = () => {
                       placeholder={`${t`contact-component.name-placeholder`}`}
                       value={message.name}
                       onChange={handleChange}
+                      style={{
+                        border:
+                          message.name === "" && isRequiredFields
+                            ? "1px solid #B21A1A"
+                            : "",
+                      }}
                     />
                   </div>
                   <div className="subject-div">
-                    <label htmlFor="surname">{t`contact-component.surname`}</label>
+                    <label htmlFor="surname">
+                      {t`contact-component.surname`}{" "}
+                      {t`contact-component.required`}
+                    </label>
                     <input
                       className="message-input"
                       id="surname"
@@ -468,11 +558,19 @@ const ContactComponent = () => {
                       placeholder={`${t`contact-component.surname-placeholder`}`}
                       value={message.surname}
                       onChange={handleChange}
+                      style={{
+                        border:
+                          message.surname === "" && isRequiredFields
+                            ? "1px solid #B21A1A"
+                            : "",
+                      }}
                     />
                   </div>
                 </div>
                 <div className="subject-div">
-                  <label htmlFor="email">{t`contact-component.email`}</label>
+                  <label htmlFor="email">
+                    {t`contact-component.email`} {t`contact-component.required`}
+                  </label>
                   <input
                     className="message-input"
                     id="email"
@@ -480,7 +578,16 @@ const ContactComponent = () => {
                     placeholder={`${t`contact-component.email-placeholder`}`}
                     value={message.email}
                     onChange={handleChange}
+                    style={{
+                      border:
+                        (message.email === "" && isRequiredFields) || emialError
+                          ? "1px solid #B21A1A"
+                          : "",
+                    }}
                   />
+                  {emialError && (
+                    <p className="p-style p-error">{t`contact-component.email-error`}</p>
+                  )}
                 </div>
                 <div className="subject-div">
                   <label htmlFor="firmName">
@@ -508,10 +615,24 @@ const ContactComponent = () => {
                     placeholder={`${t`contact-component.phoneNumber-placeholder`}`}
                     value={message.phoneNumber}
                     onChange={handleChange}
+                    style={{
+                      border:
+                        message.phoneNumber !== "" && phoneNumberError
+                          ? "1px solid #B21A1A"
+                          : "",
+                    }}
                   />
+                  {phoneNumberError &&
+                    message.phoneNumber !==
+                      ""(
+                        <p className="p-style p-error">{t`contact-component.phoneNumber-error`}</p>
+                      )}
                 </div>
                 <div className="subject-div">
-                  <label htmlFor="message">{t`contact-component.message`}</label>
+                  <label htmlFor="message">
+                    {t`contact-component.message`}{" "}
+                    {t`contact-component.required`}
+                  </label>
                   <textarea
                     className="message-input message-textarea"
                     id="message"
@@ -519,146 +640,196 @@ const ContactComponent = () => {
                     placeholder={`${t`contact-component.message-placeholder`}`}
                     value={message.message}
                     onChange={handleChange}
+                    style={{
+                      border:
+                        message.message === "" && isRequiredFields
+                          ? "1px solid #B21A1A"
+                          : "",
+                    }}
                   />
                 </div>
-                <div className="personal-data-div">
-                  <input
-                    type="checkbox"
-                    id="personalData"
-                    name="personalData"
-                    value={message.personalData}
-                    checked={message.personalData === true}
-                    onChange={handlePersonalDataChange}
-                  />
-                  <label htmlFor="personalData">
-                    {t`contact-component.personalData-a`}{" "}
-                    <Link to="/privacy-policy">{t`contact-component.personalData-b`}</Link>{" "}
-                    <Link to="/website-regulations">{t`contact-component.personalData-c`}</Link>{" "}
-                    {t`contact-component.personalData-c`}
-                  </label>
+                <div>
+                  <div className="personal-data-div">
+                    <input
+                      type="checkbox"
+                      id="personalData"
+                      name="personalData"
+                      value={message.personalData}
+                      checked={message.personalData === true}
+                      onChange={handlePersonalDataChange}
+                    />
+                    <label
+                      htmlFor="personalData"
+                      style={{
+                        color:
+                          message.personalData === false && isRequiredFields
+                            ? "#B21A1A"
+                            : "",
+                      }}
+                    >
+                      {t`contact-component.personalData-a`}{" "}
+                      <Link to="/privacy-policy">{t`contact-component.personalData-b`}</Link>{" "}
+                      <Link to="/website-regulations">{t`contact-component.personalData-c`}</Link>{" "}
+                      {t`contact-component.personalData-c`}{" "}
+                      {t`contact-component.required`}
+                    </label>
+                  </div>
                 </div>
-                {!sending ? (
-                  <button type="submit" className="bright-button">
-                    {t`contact-component.send-message`}{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_709_1893)">
-                        <path
-                          d="M19 12L5 12"
-                          stroke="#4D8CE5"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M19 12L13 6"
-                          stroke="#4D8CE5"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M19 12L13 18"
-                          stroke="#4D8CE5"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_709_1893">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </button>
-                ) : (
-                  <button className="bright-button">
-                    {t`contact-component.sending-message`}{" "}
-                    <svg
-                      className="rotating"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="25"
-                      height="24"
-                      viewBox="0 0 25 24"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_709_1135)">
-                        <path
-                          d="M9.05965 3.69C7.96773 4.14199 6.97552 4.8046 6.13965 5.64"
-                          stroke="#0EDACE"
-                          stroke-width="2.75"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M4.19 8.56C3.73656 9.6503 3.5021 10.8192 3.5 12"
-                          stroke="#0EDACE"
-                          stroke-width="2.75"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M4.19043 15.44C4.64242 16.5319 5.30502 17.5241 6.14043 18.36"
-                          stroke="#0EDACE"
-                          stroke-width="2.75"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9.05957 20.31C10.1499 20.7634 11.3187 20.9979 12.4996 21"
-                          stroke="#0EDACE"
-                          stroke-width="2.75"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M15.9404 20.31C17.0323 19.858 18.0246 19.1954 18.8604 18.36"
-                          stroke="#0EDACE"
-                          stroke-width="2.75"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M20.8096 15.44C21.263 14.3497 21.4975 13.1808 21.4996 12"
-                          stroke="#0EDACE"
-                          stroke-width="2.75"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M20.8104 8.56002C20.3584 7.4681 19.6958 6.47588 18.8604 5.64001"
-                          stroke="#0EDACE"
-                          stroke-width="2.75"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M15.94 3.69C14.8497 3.23656 13.6808 3.0021 12.5 3"
-                          stroke="#0EDACE"
-                          stroke-width="2.75"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_709_1135">
-                          <rect
-                            width="24"
-                            height="24"
-                            fill="white"
-                            transform="translate(0.5)"
+                <div>
+                  {!sending && !sent && (
+                    <button type="submit" className="bright-button">
+                      {t`contact-component.send-message`}{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <g clip-path="url(#clip0_709_1893)">
+                          <path
+                            d="M19 12L5 12"
+                            stroke="#4D8CE5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
                           />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </button>
-                )}
+                          <path
+                            d="M19 12L13 6"
+                            stroke="#4D8CE5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M19 12L13 18"
+                            stroke="#4D8CE5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_709_1893">
+                            <rect width="24" height="24" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </button>
+                  )}
+                  {sending && !sent && (
+                    <button className="bright-button">
+                      {t`contact-component.sending-message`}{" "}
+                      <svg
+                        className="rotating"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="24"
+                        viewBox="0 0 25 24"
+                        fill="none"
+                      >
+                        <g clip-path="url(#clip0_709_1135)">
+                          <path
+                            d="M9.05965 3.69C7.96773 4.14199 6.97552 4.8046 6.13965 5.64"
+                            stroke="#0EDACE"
+                            stroke-width="2.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M4.19 8.56C3.73656 9.6503 3.5021 10.8192 3.5 12"
+                            stroke="#0EDACE"
+                            stroke-width="2.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M4.19043 15.44C4.64242 16.5319 5.30502 17.5241 6.14043 18.36"
+                            stroke="#0EDACE"
+                            stroke-width="2.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9.05957 20.31C10.1499 20.7634 11.3187 20.9979 12.4996 21"
+                            stroke="#0EDACE"
+                            stroke-width="2.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M15.9404 20.31C17.0323 19.858 18.0246 19.1954 18.8604 18.36"
+                            stroke="#0EDACE"
+                            stroke-width="2.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M20.8096 15.44C21.263 14.3497 21.4975 13.1808 21.4996 12"
+                            stroke="#0EDACE"
+                            stroke-width="2.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M20.8104 8.56002C20.3584 7.4681 19.6958 6.47588 18.8604 5.64001"
+                            stroke="#0EDACE"
+                            stroke-width="2.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M15.94 3.69C14.8497 3.23656 13.6808 3.0021 12.5 3"
+                            stroke="#0EDACE"
+                            stroke-width="2.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_709_1135">
+                            <rect
+                              width="24"
+                              height="24"
+                              fill="white"
+                              transform="translate(0.5)"
+                            />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </button>
+                  )}
+                  {!sending && sent && (
+                    <button className="bright-button">
+                      {t`contact-component.sending-message`}{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <g clip-path="url(#clip0_721_4216)">
+                          <path
+                            d="M5 12L10 17L20 7"
+                            stroke="#0EDACE"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_721_4216">
+                            <rect width="24" height="24" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </button>
+                  )}
+                  {isRequiredFields && (
+                    <p className="p-style p-error">{t`contact-component.required-fields`}</p>
+                  )}
+                </div>
               </form>
             </div>
           </div>

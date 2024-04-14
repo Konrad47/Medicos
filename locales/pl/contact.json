@@ -15,7 +15,8 @@
     "contact-component.email": "Mail kontaktowy",
     "contact-component.firmName": "Nazwa firmy",
     "contact-component.phoneNumber": "Numer telefonu",
-    "contact-component.optional": "(opcjonalnie)",
+    "contact-component.optional": "(opcjonalne)",
+    "contact-component.required": "(wymagane)",
     "contact-component.message": "Wiadomość",
     "contact-component.subject-placeholder": "Wybierz temat",
     "contact-component.subject-buy-material": "Chcę kupić surowiec",
@@ -36,5 +37,8 @@
     "contact-component.personalData-c": "i regulaminem strony.",
     "contact-component.personalData-d": "Wiem, że zgodę tę mogę w każdej chwili cofnąć.",
     "contact-component.send-message": "Wyślij wiadomość",
-    "contact-component.sending-message": "Wysyłanie..."
+    "contact-component.sending-message": "Wysyłanie...",
+    "contact-component.required-fields": "Uzupełnij wymagane pola",
+    "contact-component.email-error": "Nieprawidłowy format e-mail",
+    "contact-component.phoneNumber-error": "Nieprawidłowy format numeru telefonu"
 }

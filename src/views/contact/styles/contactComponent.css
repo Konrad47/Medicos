@@ -381,6 +381,12 @@
   animation: rotate 2s linear infinite;
 }
 
+.contact-c-container .p-error {
+  color: var(--Functional-Error, #b21a1a);
+  font-size: 14px;
+  line-height: normal;
+}
+
 @media screen and (max-width: 1000px) {
   .contact-c-container .contact-con {
     grid-template-columns: 1fr;
