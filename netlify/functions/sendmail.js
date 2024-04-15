@@ -3,28 +3,50 @@ sgMail.setApiKey(process.env.NETLIFY_EMAILS_PROVIDER_API_KEY)
 
 exports.handler = async (event, context, callback) => {
   const data = JSON.parse(event.body)
-  const { email, subject } = data
+  const { name, firmName, phoneNumber, email, subject, message } = data
   console.log(data)
 
-  const body = Object.keys(data)
-    .map(k => {
-      if (k === "name") {
-        return `<h2><strong>Imię i nazwisko: </strong> ${data[k]}</h2>`
-      } else if (k === "firmName") {
-        return `<div><strong>Firma: </strong> ${data[k]}</div>`
-      } else if (k === "phoneNumber") {
-        return `<div><strong>Numer telefonu: </strong> ${data[k]}</div>`
-      } else if (k === "email") {
-        return `<div><strong>Email: </strong> ${data[k]}</div>`
-      } else if (k === "subject") {
-        return `<div><strong>Temat: </strong> ${data[k]}</div>`
-      } else if (k === "message") {
-        return `<div><strong>Wiadomość: </strong> ${data[k]}</div>`
-      } else {
-        return `<div><strong>${k}:</strong> ${data[k]}</div>`
-      }
-    })
-    .join("<br><br>")
+  if (name === "" || subject === "" || email === "" || message === "") {
+    return {
+      statusCode: 500,
+      body: "Empty data",
+    }
+  }
+
+  // const body = Object.keys(data)
+  //   .map(k => {
+  //     console.log(k)
+  //     if (k === "name") {
+  //       return `<h2><strong>Imię i nazwisko: </strong> ${data[k]}</h2>`
+  //     } else if (k === "firmName") {
+  //       return `<h2><strong>Firma: </strong> ${data[k]}</h2>`
+  //     } else if (k === "phoneNumber") {
+  //       return `<h2><strong>Numer telefonu: </strong> ${data[k]}</h2>`
+  //     } else if (k === "email") {
+  //       return `<h2><strong>Email: </strong> ${data[k]}</h2>`
+  //     } else if (k === "subject") {
+  //       return `<h2><strong>Temat: </strong> ${data[k]}</h2>`
+  //     } else if (k === "message") {
+  //       return `<h2><strong>Wiadomość: </strong> ${data[k]}</h2>`
+  //     } else {
+  //       return `<h2><strong>${k}:</strong> ${data[k]}</h2>`
+  //     }
+  //   })
+  //   .join("<br><br>")
+
+  const body = `<h4>Imię i nazwisko: ${name}<h4>
+      <br><br>
+      <h4>Email: ${email}<h4>
+      <br><br>
+      <h4>Firma: ${firmName !== "" ? firmName : "Nie podano"}<h4>
+      <br><br>
+      <h4>Numer telefonu: ${phoneNumber !== "" ? phoneNumber : "Nie podano"}<h4>
+      <br><br>
+      <h4>Temat: ${subject}<h4>
+      <br><br>
+      <h4>Wiadomość: ${message}<h4>
+      <br><br>
+  `
 
   const mail_to_send = {
     to: "kplichta@innovationshub.pl",
