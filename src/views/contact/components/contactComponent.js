@@ -177,6 +177,7 @@ const ContactComponent = () => {
       message: message.message,
     }
     //https://medicos-site.netlify.app/
+    //http://localhost:8888/
     try {
       const response = await fetch(
         "https://medicos-site.netlify.app/.netlify/functions/sendmail",
@@ -801,7 +802,7 @@ const ContactComponent = () => {
                   )}
                   {!sending && sent && (
                     <button className="bright-button">
-                      {t`contact-component.sending-message`}{" "}
+                      {t`contact-component.sent-message`}{" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
