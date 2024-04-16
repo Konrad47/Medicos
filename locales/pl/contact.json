@@ -41,5 +41,6 @@
     "contact-component.sent-message": "Wysłano",
     "contact-component.required-fields": "Uzupełnij wymagane pola",
     "contact-component.email-error": "Nieprawidłowy format e-mail",
-    "contact-component.phoneNumber-error": "Nieprawidłowy format numeru telefonu"
+    "contact-component.phoneNumber-error": "Nieprawidłowy format numeru telefonu",
+    "contact-component.someError": "Coś poszło nie tak. Spróbuj ponownie później!"
 }

@@ -125,6 +125,8 @@ const ContactComponent = () => {
 
   const [isRequiredFields, setIsRequiredFieldsError] = useState(false)
 
+  const [someError, setSomeError] = useState(false)
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
   const phoneNumberWithCountryCodeRegex = /^\+\d{2}\s?\d{3}\s?\d{3}\s?\d{3}$/
@@ -140,6 +142,7 @@ const ContactComponent = () => {
     setIsRequiredFieldsError(false)
     setPhoneNumberError(false)
     setEmailError(false)
+    setSomeError(false)
 
     console.log(!emailRegex.test(message.email))
     if (
@@ -190,15 +193,27 @@ const ContactComponent = () => {
       if (response.ok) {
         setSending(false)
         setSent(true)
+        setMessage({
+          subject: "",
+          name: "",
+          surname: "",
+          email: "",
+          firmName: "",
+          phoneNumber: "",
+          message: "",
+          personalData: false,
+        })
         return
       }
 
       if (!response.ok) {
         setSending(false)
+        setSomeError(true)
         return
       }
     } catch (e) {
       setSending(false)
+      setSomeError(true)
       console.log(e)
     }
   }
@@ -676,7 +691,7 @@ const ContactComponent = () => {
                     </label>
                   </div>
                 </div>
-                <div>
+                <div className="button-container">
                   {!sending && !sent && (
                     <button type="submit" className="bright-button">
                       {t`contact-component.send-message`}{" "}
@@ -719,7 +734,7 @@ const ContactComponent = () => {
                     </button>
                   )}
                   {sending && !sent && (
-                    <button className="bright-button">
+                    <button className="bright-button sent">
                       {t`contact-component.sending-message`}{" "}
                       <svg
                         className="rotating"
@@ -801,7 +816,7 @@ const ContactComponent = () => {
                     </button>
                   )}
                   {!sending && sent && (
-                    <button className="bright-button">
+                    <button className="bright-button sent">
                       {t`contact-component.sent-message`}{" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -829,6 +844,9 @@ const ContactComponent = () => {
                   )}
                   {isRequiredFields && (
                     <p className="p-style p-error">{t`contact-component.required-fields`}</p>
+                  )}
+                  {someError && (
+                    <p className="p-style p-error">{t`contact-component.someError`}</p>
                   )}
                 </div>
               </form>
