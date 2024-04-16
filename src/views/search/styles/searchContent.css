@@ -3,14 +3,20 @@
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 60px 24px;
-  background: #f1f1f1;
+  border-radius: 16px;
+  background: var(--hover-bg, #e9f2fb);
 }
 
 .search-c-container .empty-content-con svg {
   margin-bottom: 24px;
 }
 
+.search-c-container .empty-content-con h3 {
+  color: var(--Button-primary-bg, #144487);
+}
+
 .search-c-container .empty-content-con p {
+  color: var(--main-text, #0a2243);
   margin-bottom: 32px;
   max-width: 712px;
   margin-left: auto;
