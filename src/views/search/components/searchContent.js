@@ -40,12 +40,14 @@ const SearchContent = ({ searchContent, searchData }) => {
             __html: highlightText(con.description, searchData),
           }}
         />
-        <div className="category">
-          <p className="p-style">{con.category}</p>
+        <div className="bottom-result">
+          <div className="category">
+            <p className="p-style">{con.category}</p>
+          </div>
+          {(con.category === "Artykuł" || con.category === "Article") && (
+            <Link to={`/news/${con.slug}`}>{t`search-content.go-to-page`}</Link>
+          )}
         </div>
-        {(con.category === "Artykuł" || con.category === "Article") && (
-          <Link to={`/news/${con.slug}`}>{t`search-content.go-to-page`}</Link>
-        )}
       </div>
     ))
   }
