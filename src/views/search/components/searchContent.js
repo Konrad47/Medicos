@@ -35,7 +35,7 @@ const SearchContent = ({ searchContent, searchData }) => {
           }}
         />
         <p
-          className="p-style"
+          className="p-style top-p"
           dangerouslySetInnerHTML={{
             __html: highlightText(con.description, searchData),
           }}
