@@ -10,7 +10,7 @@ import getCurrentTranslations from "../../../components/contentful-translator"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Dropdown from "react-bootstrap/Dropdown"
 
-const ContactComponent = () => {
+const ContactComponent = ({ searchQuery }) => {
   const { t } = useTranslation()
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
@@ -49,6 +49,15 @@ const ContactComponent = () => {
     }
     getData()
   }, [data.allContentfulContact, language])
+
+  useEffect(() => {
+    if (searchQuery && searchQuery !== "" && searchQuery.trim() !== "") {
+      setMessage(prevMessage => ({
+        ...prevMessage,
+        subject: searchQuery,
+      }))
+    }
+  }, [searchQuery])
 
   const [message, setMessage] = useState({
     subject: "",

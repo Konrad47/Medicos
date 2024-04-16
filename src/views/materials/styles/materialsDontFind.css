@@ -28,6 +28,7 @@
 
 .materials-df-container .materials-dont-find-button {
   padding: 12px 24px;
+  border: 1px solid var(--Button-secondary-border, #d3e2f8);
 }
 
 @media screen and (max-width: 568px) {

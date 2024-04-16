@@ -7,12 +7,33 @@ import { navigate } from "gatsby"
 const ServicesOurServices = () => {
   const { t } = useTranslation()
 
+  const goToContactTech = () => {
+    const encodedSearchQuery = encodeURIComponent(
+      "Chcę zamówić doradztwo techniczne"
+    )
+    navigate(`/contact?query=${encodedSearchQuery}`)
+  }
+
+  const goToContactSub = () => {
+    const encodedSearchQuery = encodeURIComponent(
+      "Chcę zamówić wyszukiwanie substancji"
+    )
+    navigate(`/contact?query=${encodedSearchQuery}`)
+  }
+
+  const goToContactAn = () => {
+    const encodedSearchQuery = encodeURIComponent(
+      "Chcę zamówić analizę rynku dostawców"
+    )
+    navigate(`/contact?query=${encodedSearchQuery}`)
+  }
+
   return (
     <>
       <div className="services-os-container">
         <div className="container">
           <div className="services-con">
-            <div onClick={() => navigate("/contact")} className="service">
+            <div onClick={goToContactTech} className="service">
               <StaticImage
                 className="service-image"
                 src="../../../images/services/our-services/service-image-1.png"
@@ -29,7 +50,7 @@ const ServicesOurServices = () => {
                 >{t`services-our-services.contact`}</Link>
               </div>
             </div>
-            <div onClick={() => navigate("/contact")} className="service">
+            <div onClick={goToContactSub} className="service">
               <StaticImage
                 className="service-image"
                 src="../../../images/services/our-services/service-image-2.png"
@@ -46,7 +67,7 @@ const ServicesOurServices = () => {
                 >{t`services-our-services.contact`}</Link>
               </div>
             </div>
-            <div onClick={() => navigate("/contact")} className="service">
+            <div onClick={goToContactAn} className="service">
               <StaticImage
                 className="service-image"
                 src="../../../images/services/our-services/service-image-3.png"

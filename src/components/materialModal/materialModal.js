@@ -5,6 +5,8 @@ import Modal from "react-bootstrap/Modal"
 import { Link } from "gatsby-plugin-react-i18next"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { richTextRenderOptions } from "../../utils/templateRenderOption"
+import { navigate } from "gatsby"
+
 const MaterialModal = ({
   currentMaterial,
   showModal,
@@ -12,7 +14,12 @@ const MaterialModal = ({
   props,
   t,
 }) => {
-  console.log(currentMaterial)
+  const goToContact = () => {
+    const encodedSearchQuery = encodeURIComponent(
+      "Chcę zapytać o dostępność surowca"
+    )
+    navigate(`/contact?query=${encodedSearchQuery}`)
+  }
   return (
     <Modal
       show={showModal}
@@ -97,10 +104,11 @@ const MaterialModal = ({
         <div className="left-body">
           <div className="left-body-up">
             <p className="p-style">{t`material-modal.form`}</p>
-            <Link
+            <button
+              onClick={goToContact}
               className="register-btn"
               to="/contact"
-            >{t`material-modal.ask`}</Link>
+            >{t`material-modal.ask`}</button>
           </div>
           <div className="left-body-down">
             <div>
