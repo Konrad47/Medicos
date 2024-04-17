@@ -22,8 +22,12 @@ const Menu = () => {
   }
 
   const goToSearch = () => {
-    QueryNavigate(search, "search", language)
-    setIsSearch(!isSearch)
+    if (search !== "") {
+      QueryNavigate(search, "search", language)
+      setIsSearch(!isSearch)
+    } else {
+      setIsSearch(!isSearch)
+    }
   }
 
   useEffect(() => {
