@@ -158,7 +158,7 @@ const Footer = () => {
                 className="register-btn footer-button-link"
                 to="/contact"
               >{t`menu.contact`}</Link>
-              <a href="#" target="_blank">
+              <a href={`mailto:${contact.email}`} target="_blank">
                 <p className="contact-a bottom">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -197,7 +197,7 @@ const Footer = () => {
                   {contact.email}
                 </p>
               </a>
-              <a href="#" target="_blank">
+              <a href={`tel: ${contact.salesNumber}`} target="_blank">
                 <p className="bottom">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

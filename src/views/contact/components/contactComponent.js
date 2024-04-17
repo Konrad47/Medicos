@@ -271,7 +271,13 @@ const ContactComponent = ({ searchQuery }) => {
                     </svg>
                     <div className="info-text">
                       <p className="p-style title">{t`contact-component.contact-email`}</p>
-                      <p className="p-style info">{contact.email}</p>
+                      <a
+                        href={`mailto:${contact.email}`}
+                        target="_blank"
+                        className="p-style info"
+                      >
+                        {contact.email}
+                      </a>
                     </div>
                   </div>
                   <div className="info">
@@ -299,7 +305,13 @@ const ContactComponent = ({ searchQuery }) => {
                     </svg>
                     <div className="info-text">
                       <p className="p-style title">{t`contact-component.sales-number`}</p>
-                      <p className="p-style info">{contact.salesNumber}</p>
+                      <a
+                        href={`tel:${contact.salesNumber}`}
+                        target="_blank"
+                        className="p-style info"
+                      >
+                        {contact.salesNumber}
+                      </a>
                     </div>
                   </div>
                   <div className="info">
@@ -327,7 +339,13 @@ const ContactComponent = ({ searchQuery }) => {
                     </svg>
                     <div className="info-text">
                       <p className="p-style title">{t`contact-component.purchase-number`}</p>
-                      <p className="p-style info">{contact.purchaseNumber}</p>
+                      <a
+                        href={`tel:${contact.purchaseNumber}`}
+                        target="_blank"
+                        className="p-style info"
+                      >
+                        {contact.purchaseNumber}
+                      </a>
                     </div>
                   </div>
                   <div className="info">
