@@ -1,11 +1,21 @@
-import React from "react"
-import { useTranslation, Link } from "gatsby-plugin-react-i18next"
+import React, { useContext } from "react"
+import {
+  useTranslation,
+  Link,
+  I18nextContext,
+} from "gatsby-plugin-react-i18next"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../styles/homeHeader.css"
 import { StaticImage } from "gatsby-plugin-image"
+import QueryNavigate from "../../../hooks/queryNavigate"
 
 const HomeHeader = () => {
   const { t } = useTranslation()
+  const { language } = useContext(I18nextContext)
+
+  const goToContact = () => {
+    QueryNavigate("Chcę zapytać o dostępność surowca", "contact", language)
+  }
 
   return (
     <>
@@ -17,7 +27,10 @@ const HomeHeader = () => {
                 {t`home-header.title-a`} <span>{t`home-header.title-b`}</span>
               </h1>
               <p className="p-style">{t`home-header.description`}</p>
-              <Link className="register-btn header-button">{t`home-header.ask`}</Link>
+              <button
+                onClick={() => goToContact()}
+                className="register-btn header-button"
+              >{t`home-header.ask`}</button>
             </div>
             {/* <StaticImage
               className="header-image"
