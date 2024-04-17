@@ -1,16 +1,18 @@
-import React from "react"
-import { useTranslation, Link } from "gatsby-plugin-react-i18next"
+import React, { useContext } from "react"
+import {
+  useTranslation,
+  Link,
+  I18nextContext,
+} from "gatsby-plugin-react-i18next"
 import "../styles/materialsDontFind.css"
-import { navigate } from "gatsby"
+import QueryNavigate from "../../../hooks/queryNavigate"
 
 const MaterialsDontFind = () => {
   const { t } = useTranslation()
+  const { language } = useContext(I18nextContext)
 
   const goToContact = () => {
-    const encodedSearchQuery = encodeURIComponent(
-      "Chcę zapytać o dostępność surowca"
-    )
-    navigate(`/contact?query=${encodedSearchQuery}`)
+    QueryNavigate("Chcę zapytać o dostępność surowca", "contact", language)
   }
   return (
     <>

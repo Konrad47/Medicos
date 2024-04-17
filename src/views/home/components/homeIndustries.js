@@ -1,10 +1,16 @@
-import React from "react"
-import { useTranslation, Link } from "gatsby-plugin-react-i18next"
+import React, { useContext } from "react"
+import {
+  useTranslation,
+  Link,
+  I18nextContext,
+} from "gatsby-plugin-react-i18next"
 import "../styles/homeIndustries.css"
 import { navigate } from "gatsby"
+import Navigate from "../../../hooks/navigate"
 
 const HomeIndustries = () => {
   const { t } = useTranslation()
+  const { language } = useContext(I18nextContext)
 
   return (
     <>
@@ -21,7 +27,7 @@ const HomeIndustries = () => {
             </div>
             <div className="down-con">
               <div
-                onClick={() => navigate("/household-chemicals")}
+                onClick={() => Navigate("household-chemicals", language)}
                 className="industry household-chemicals"
               >
                 <div className="industry-con">
@@ -36,7 +42,7 @@ const HomeIndustries = () => {
                 >{t`home-industries.material`}</Link>
               </div>
               <div
-                onClick={() => navigate("/cosmetology")}
+                onClick={() => Navigate("cosmetology", language)}
                 className="industry cosmetology"
               >
                 <div className="industry-con">
@@ -51,7 +57,7 @@ const HomeIndustries = () => {
                 >{t`home-industries.material`}</Link>
               </div>
               <div
-                onClick={() => navigate("/pharmacy")}
+                onClick={() => Navigate("pharmacy", language)}
                 className="industry pharmacy"
               >
                 <div className="industry-con">
@@ -66,7 +72,7 @@ const HomeIndustries = () => {
                 >{t`home-industries.material`}</Link>
               </div>
               <div
-                onClick={() => navigate("/food-and-supplements")}
+                onClick={() => Navigate("food-and-supplements", language)}
                 className="industry food"
               >
                 <div className="industry-con">
@@ -81,7 +87,7 @@ const HomeIndustries = () => {
                 >{t`home-industries.material`}</Link>
               </div>
               <div
-                onClick={() => navigate("/other-industries")}
+                onClick={() => Navigate("other-industries", language)}
                 className="industry other-industries"
               >
                 <div className="industry-con">

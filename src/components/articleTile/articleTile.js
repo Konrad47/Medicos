@@ -1,10 +1,14 @@
-import React, { useEffect } from "react"
+import React, { useContext, useEffect } from "react"
 import "./styles/articleTile.css"
 import { navigate } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import moment from "moment"
+import Navigate from "../../hooks/navigate"
+import { I18nextContext } from "gatsby-plugin-react-i18next"
 
 const ArticleTile = ({ article, t }) => {
+  const { language } = useContext(I18nextContext)
+
   const description = JSON.parse(article.node.description.raw).content.filter(
     node => node?.content[0]?.nodeType === "text"
   )[0].content[0].value
@@ -14,11 +18,12 @@ const ArticleTile = ({ article, t }) => {
       ? description.substring(0, 100) + "..."
       : description
 
+  const goToDetails = () => {
+    Navigate(`news/${article.node.slug}`, language)
+  }
+
   return (
-    <div
-      onClick={() => navigate(`/news/${article.node.slug}`)}
-      className="tile"
-    >
+    <div onClick={() => goToDetails()} className="tile">
       <GatsbyImage
         alt={article.node.title}
         placeholder={article.node.title}

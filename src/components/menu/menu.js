@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Dropdown from "react-bootstrap/Dropdown"
 import { StaticImage } from "gatsby-plugin-image"
 import { navigate } from "gatsby"
+import QueryNavigate from "../../hooks/queryNavigate"
 
 const Menu = () => {
   const { t } = useTranslation()
@@ -21,8 +22,7 @@ const Menu = () => {
   }
 
   const goToSearch = () => {
-    const encodedSearchQuery = encodeURIComponent(search)
-    navigate(`/search?query=${encodedSearchQuery}`)
+    QueryNavigate(search, "search", language)
     setIsSearch(!isSearch)
   }
 

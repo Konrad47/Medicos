@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import { Link } from "gatsby-plugin-react-i18next"
+import React, { useContext, useState } from "react"
+import { I18nextContext, Link } from "gatsby-plugin-react-i18next"
 import "../styles/materialDiscover.css"
 import MaterialTile from "../../../components/materialTile/materialTile"
 import MaterialModal from "../../../components/materialModal/materialModal"
-import { navigate } from "gatsby"
+import QueryNavigate from "../../../hooks/queryNavigate"
 
 const MaterialDiscover = ({
   materialDiscover,
@@ -12,6 +12,8 @@ const MaterialDiscover = ({
   t,
   materialQuery,
 }) => {
+  const { language } = useContext(I18nextContext)
+
   const renderMaterials = value => {
     return value.map((val, index) => (
       <MaterialTile
@@ -38,8 +40,7 @@ const MaterialDiscover = ({
   }
 
   const goToMaterials = () => {
-    const encodedSearchQuery = encodeURIComponent(materialQuery)
-    navigate(`/materials?query=${encodedSearchQuery}`)
+    QueryNavigate(materialQuery, "materials", language)
   }
 
   return (

@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./styles/materialModal.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Modal from "react-bootstrap/Modal"
-import { Link } from "gatsby-plugin-react-i18next"
+import { I18nextContext, Link } from "gatsby-plugin-react-i18next"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { richTextRenderOptions } from "../../utils/templateRenderOption"
 import { navigate } from "gatsby"
+import QueryNavigate from "../../hooks/queryNavigate"
 
 const MaterialModal = ({
   currentMaterial,
@@ -14,11 +15,10 @@ const MaterialModal = ({
   props,
   t,
 }) => {
+  const { language } = useContext(I18nextContext)
+
   const goToContact = () => {
-    const encodedSearchQuery = encodeURIComponent(
-      "Chcę zapytać o dostępność surowca"
-    )
-    navigate(`/contact?query=${encodedSearchQuery}`)
+    QueryNavigate("Chcę zapytać o dostępność surowca", "contact", language)
   }
   return (
     <Modal
