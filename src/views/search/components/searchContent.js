@@ -59,13 +59,19 @@ const SearchContent = ({ searchContent, searchData }) => {
           {searchContent && searchContent.length > 0 ? (
             <>
               <div className="content-con">
-                {searchContent.length > 1 ? (
-                  <p className="p-style">
-                    {searchContent.length} {t`search-content.results`}
-                  </p>
-                ) : (
+                {searchContent.length === 1 && (
                   <p className="p-style">
                     {searchContent.length} {t`search-content.result`}
+                  </p>
+                )}
+                {searchContent.length > 1 && searchContent.length <= 4 && (
+                  <p className="p-style">
+                    {searchContent.length} {t`search-content.result-2-4`}
+                  </p>
+                )}
+                {searchContent.length > 5 && (
+                  <p className="p-style">
+                    {searchContent.length} {t`search-content.results`}
                   </p>
                 )}
                 <div className="results-con">
