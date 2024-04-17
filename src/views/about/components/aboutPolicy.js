@@ -1,6 +1,7 @@
 import React from "react"
 import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/aboutPolicy.css"
+import { withPrefix } from "gatsby"
 
 const AboutPolicy = () => {
   const { t } = useTranslation()
@@ -50,7 +51,10 @@ const AboutPolicy = () => {
                 </svg>
                 <p className="h4-style">{t`about-policy.certificate-1`}</p>
               </div>
-              <a>{t`about-policy.see`}</a>
+              <a
+                href={withPrefix("Medicos - EudraGMDP.pdf")}
+                target="_blank"
+              >{t`about-policy.see`}</a>
             </div>
             <div className="policy">
               <div className="policy-up">
@@ -90,7 +94,10 @@ const AboutPolicy = () => {
                 </svg>
                 <p className="h4-style">{t`about-policy.certificate-2`}</p>
               </div>
-              <a>{t`about-policy.see`}</a>
+              <a
+                href={withPrefix("Certyfikat GDP - API 06092023 PL_EN.pdf")}
+                target="_blank"
+              >{t`about-policy.see`}</a>
             </div>
             <div className="policy">
               <div className="policy-up">
@@ -130,7 +137,12 @@ const AboutPolicy = () => {
                 </svg>
                 <p className="h4-style">{t`about-policy.certificate-3`}</p>
               </div>
-              <a>{t`about-policy.see`}</a>
+              <a
+                href={withPrefix(
+                  "Medicos_zaświadczenie o wpisie do KRWIDSC.pdf"
+                )}
+                target="_blank"
+              >{t`about-policy.see`}</a>
             </div>
           </div>
         </div>
