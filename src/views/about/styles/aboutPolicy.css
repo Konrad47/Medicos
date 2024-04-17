@@ -38,11 +38,12 @@
   background: #fff;
   box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
   transition: all 0.2s ease-out;
+  text-decoration: none;
 }
 
-/* .about-p-container .policy-con .policy:hover {
+.about-p-container .policy-con .policy:hover {
   background: var(--hover-bg, #e9f2fb);
-} */
+}
 
 .about-p-container .policy-con .policy .policy-up {
   display: flex;
@@ -85,7 +86,7 @@
   transition: all 0.2s ease-out;
 }
 
-.about-p-container .policy-con .policy a:hover {
+.about-p-container .policy-con .policy:hover a {
   text-decoration: underline;
   color: var(--Button-secondary-hover-txt, #4d8ce5);
 }

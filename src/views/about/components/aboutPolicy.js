@@ -13,7 +13,11 @@ const AboutPolicy = () => {
           <h2 className="h2-style">{t`about-policy.title`}</h2>
           <p className="p-style">{t`about-policy.description`}</p>
           <div className="policy-con">
-            <div className="policy">
+            <a
+              href={withPrefix("Medicos - EudraGMDP.pdf")}
+              target="_blank"
+              className="policy"
+            >
               <div className="policy-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -51,12 +55,13 @@ const AboutPolicy = () => {
                 </svg>
                 <p className="h4-style">{t`about-policy.certificate-1`}</p>
               </div>
-              <a
-                href={withPrefix("Medicos - EudraGMDP.pdf")}
-                target="_blank"
-              >{t`about-policy.see`}</a>
-            </div>
-            <div className="policy">
+              <a>{t`about-policy.see`}</a>
+            </a>
+            <a
+              href={withPrefix("Certyfikat GDP - API 06092023 PL_EN.pdf")}
+              target="_blank"
+              className="policy"
+            >
               <div className="policy-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -94,12 +99,13 @@ const AboutPolicy = () => {
                 </svg>
                 <p className="h4-style">{t`about-policy.certificate-2`}</p>
               </div>
-              <a
-                href={withPrefix("Certyfikat GDP - API 06092023 PL_EN.pdf")}
-                target="_blank"
-              >{t`about-policy.see`}</a>
-            </div>
-            <div className="policy">
+              <a>{t`about-policy.see`}</a>
+            </a>
+            <a
+              href={withPrefix("Medicos_zaświadczenie o wpisie do KRWIDSC.pdf")}
+              target="_blank"
+              className="policy"
+            >
               <div className="policy-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -137,13 +143,8 @@ const AboutPolicy = () => {
                 </svg>
                 <p className="h4-style">{t`about-policy.certificate-3`}</p>
               </div>
-              <a
-                href={withPrefix(
-                  "Medicos_zaświadczenie o wpisie do KRWIDSC.pdf"
-                )}
-                target="_blank"
-              >{t`about-policy.see`}</a>
-            </div>
+              <a>{t`about-policy.see`}</a>
+            </a>
           </div>
         </div>
       </div>
