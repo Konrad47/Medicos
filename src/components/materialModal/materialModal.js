@@ -7,6 +7,7 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { richTextRenderOptions } from "../../utils/templateRenderOption"
 import { navigate } from "gatsby"
 import QueryNavigate from "../../hooks/queryNavigate"
+import { articleTextRenderOptions } from "../../utils/articleRenderOption"
 
 const MaterialModal = ({
   currentMaterial,
@@ -151,7 +152,8 @@ const MaterialModal = ({
             <div>
               {renderRichText(
                 currentMaterial.node.generalInformation,
-                richTextRenderOptions
+                // richTextRenderOptions
+                articleTextRenderOptions
               )}
             </div>
           </div>
@@ -160,7 +162,8 @@ const MaterialModal = ({
             <div>
               {renderRichText(
                 currentMaterial.node.application,
-                richTextRenderOptions
+                // richTextRenderOptions
+                articleTextRenderOptions
               )}
             </div>
           </div>

@@ -200,9 +200,12 @@
 .material-modal .modal-body .right-body .con-right-body b,
 .material-modal .modal-body .right-body .con-right-body p {
   color: var(--main-text, #0a2243);
+  margin-bottom: 1rem;
 }
 
-.material-modal .modal-body .right-body .con-right-body a {
+.material-modal .modal-body .right-body .con-right-body a,
+.material-modal .modal-body .right-body .con-right-body a p,
+.material-modal .modal-body .right-body .con-right-body a b {
   color: var(--mid-blue, #4d8ce5);
   text-decoration: none;
   cursor: pointer;
