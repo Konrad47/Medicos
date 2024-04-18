@@ -7,6 +7,7 @@ import { useLocation } from "@reach/router"
 import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../components/contentful-translator"
 import SearchContent from "./components/searchContent"
+import moment from "moment"
 
 const Search = () => {
   const { t } = useTranslation()
@@ -24,6 +25,8 @@ const Search = () => {
           node {
             title
             slug
+            author
+            createdAt
             description {
               raw
               references {
@@ -70,6 +73,13 @@ const Search = () => {
                 article.node.title
                   .toLowerCase()
                   .includes(searchQuery.toLowerCase())) ||
+              article.node.author
+                .toLowerCase()
+                .includes(searchQuery.toLowerCase()) ||
+              moment(article.node.createdAt)
+                .format("DD/MM/YYYY HH:MM")
+                .toLowerCase()
+                .includes(searchQuery.toLowerCase()) ||
               descriptionText.toLowerCase().includes(searchQuery.toLowerCase())
             )
           })
@@ -101,6 +111,25 @@ const Search = () => {
               )
               firstSentenceContainingQuery =
                 "..." + descriptionText.slice(startIndex, endIndex)
+            }
+
+            if (
+              moment(article.node.createdAt)
+                .format("DD/MM/YYYY HH:MM")
+                .toLowerCase()
+                .includes(searchQuery.toLowerCase())
+            ) {
+              firstSentenceContainingQuery += `...${moment(
+                article.node.createdAt
+              ).format("DD/MM/YYYY HH:MM")}`
+            }
+
+            if (
+              article.node.author
+                .toLowerCase()
+                .includes(searchQuery.toLowerCase())
+            ) {
+              firstSentenceContainingQuery += `...${article.node.author}`
             }
 
             console.log(firstSentenceContainingQuery)
