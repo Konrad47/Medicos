@@ -50,9 +50,9 @@ const DocumentDocuments = ({ t }) => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`about-policy.certificate-1`}</p>
+                <p className="h4-style">{t`document-documents.certificate-1`}</p>
               </div>
-              <a>{t`about-policy.see`}</a>
+              <a>{t`document-documents.see`}</a>
             </a>
             <a
               href={withPrefix("Certyfikat GDP - API 06092023 PL_EN.pdf")}
@@ -94,9 +94,9 @@ const DocumentDocuments = ({ t }) => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`about-policy.certificate-2`}</p>
+                <p className="h4-style">{t`document-documents.certificate-2`}</p>
               </div>
-              <a>{t`about-policy.see`}</a>
+              <a>{t`document-documents.see`}</a>
             </a>
             <a
               href={withPrefix("Medicos_zaświadczenie o wpisie do KRWIDSC.pdf")}
@@ -138,9 +138,9 @@ const DocumentDocuments = ({ t }) => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`about-policy.certificate-3`}</p>
+                <p className="h4-style">{t`document-documents.certificate-3`}</p>
               </div>
-              <a>{t`about-policy.see`}</a>
+              <a>{t`document-documents.see`}</a>
             </a>
           </div>
         </div>

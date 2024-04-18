@@ -157,7 +157,7 @@ const Footer = () => {
               <Link
                 className="register-btn footer-button-link"
                 to="/contact"
-              >{t`menu.contact`}</Link>
+              >{t`footer.contact`}</Link>
               <a href={`mailto:${contact.email}`} target="_blank">
                 <p className="contact-a bottom">
                   <svg
