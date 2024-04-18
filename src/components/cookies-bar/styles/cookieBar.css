@@ -1,0 +1,96 @@
+.cookie-con {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid var(--Button-secondary-border, #d3e2f8);
+  background: var(--light-bg, #fbfcfe);
+  box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
+  position: fixed; /* Change position to fixed */
+  bottom: 0; /* Align to the bottom */
+  right: 0; /* Align to the right */
+  margin-right: 20px;
+}
+
+.cookie-con .header-con {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+  border-bottom: 1px solid var(--Button-secondary-border, #d3e2f8);
+}
+
+.cookie-con .header-con .p-head {
+  color: var(--main-text, #0a2243);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.32px;
+}
+
+.cookie-con .p-description {
+  color: var(--main-text, #0a2243);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 16.8px */
+}
+
+.cookie-con .agrees-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.cookie-con .agrees-con .agree-con {
+  display: flex;
+  padding: 8px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.cookie-con .agrees-con .agree-con .check-con {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.cookie-con .agrees-con .agree-con .check-con input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #003b6f;
+  border-radius: 3px;
+  cursor: pointer;
+  vertical-align: middle;
+  accent-color: #003b6f;
+}
+
+.cookie-con .agrees-con .agree-con .check-con input[type="checkbox"] {
+}
+
+.cookie-con .agrees-con .agree-con .check-con label {
+  color: var(--main-text, #0a2243);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.28px;
+}
+
+.cookie-con .footer-con {
+  display: flex;
+  padding: 16px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 8px;
+  border-top: 1px solid var(--Button-secondary-border, #d3e2f8);
+}
