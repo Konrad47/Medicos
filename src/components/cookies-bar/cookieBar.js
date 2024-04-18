@@ -102,7 +102,10 @@ const CookieBar = () => {
           </div>
         ) : null}
         <div className="footer-con">
-          <button className="bright-button" onClick={() => declineAll()}>
+          <button
+            className="bright-button decline"
+            onClick={() => declineAll()}
+          >
             {t("cookies.decline")}
           </button>
           <button
@@ -115,7 +118,7 @@ const CookieBar = () => {
           </button>
           <button
             id="accept-all"
-            className="bright-button"
+            className="bright-button accept-all"
             onClick={() => acceptAll()}
           >
             {t("cookies.accept-all")}
