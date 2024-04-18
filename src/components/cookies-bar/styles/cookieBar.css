@@ -123,4 +123,7 @@
   .cookie-con .footer-con {
     flex-direction: column;
   }
+  .cookie-con .footer-con button {
+    width: 100%;
+  }
 }
