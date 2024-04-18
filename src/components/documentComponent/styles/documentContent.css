@@ -26,3 +26,12 @@
   margin: 32px 100px 0px 100px;
   color: var(--main-text, #0a2243);
 }
+
+@media screen and (max-width: 992px) {
+  .document-c-container .title-con {
+    margin: 0;
+  }
+  .document-c-container .description-con {
+    margin: 32px 0px 0px 0px;
+  }
+}
