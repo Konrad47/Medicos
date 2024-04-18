@@ -35,11 +35,12 @@
   background: #fff;
   box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
   transition: all 0.2s ease-out;
+  text-decoration: none;
 }
 
-/* .about-r-container .rules-con .rules:hover {
-    background: var(--hover-bg, #e9f2fb);
-  } */
+.about-r-container .rules-con .rules:hover {
+  background: var(--hover-bg, #e9f2fb);
+}
 
 .about-r-container .rules-con .rules .rules-up {
   display: flex;
@@ -81,7 +82,7 @@
   transition: all 0.2s ease-out;
 }
 
-.about-r-container .rules-con .rules a:hover {
+.about-r-container .rules-con .rules:hover a {
   text-decoration: underline;
   color: var(--Button-secondary-hover-txt, #4d8ce5);
 }
