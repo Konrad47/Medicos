@@ -1,5 +1,6 @@
 import React from "react"
 import DocumentContent from "./components/documentContent"
+import DocumentDocuments from "./components/documentDocuments"
 
 const DocumentComponent = ({
   documentDate,
@@ -15,6 +16,7 @@ const DocumentComponent = ({
         documentDescription={documentDescription}
         t={t}
       />
+      <DocumentDocuments t={t} />
     </>
   )
 }
