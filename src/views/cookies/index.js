@@ -4,6 +4,7 @@ import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
 import Layout from "../../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../components/contentful-translator"
+import DocumentComponent from "../../components/documentComponent/documentComponent"
 
 const Cookies = () => {
   const { t } = useTranslation()
@@ -44,9 +45,17 @@ const Cookies = () => {
   return (
     <Layout>
       <Seo
-        title={t`seo.household-chemicals.title`}
-        description={t`seo.household-chemicals.description`}
+        title={t`seo.cookies.title`}
+        description={t`seo.cookies.description`}
       />
+      {cookies && (
+        <DocumentComponent
+          documentDate={cookies.node.updatedAt}
+          documentTitle={cookies.node.title}
+          documentDescription={cookies.node.description}
+          t={t}
+        />
+      )}
     </Layout>
   )
 }
