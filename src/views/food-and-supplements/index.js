@@ -11,8 +11,8 @@ const Food = () => {
   const { t } = useTranslation()
 
   const backgroundHeader = "hc-background"
-  const titleHeader = `${t`food.header.title`}`
-  const descriptionHeader = `${t`food.header.description`}`
+  const titleHeader = `${t`food-and-supplements.header.title`}`
+  const descriptionHeader = `${t`food-and-supplements.header.description`}`
   const imageApplication = () => (
     <StaticImage
       className="right-image"
@@ -23,8 +23,8 @@ const Food = () => {
     />
   )
 
-  const titleApplication = `${t`food.application.title`}`
-  const descriptionApplication = `${t`food.application.description`}`
+  const titleApplication = `${t`food-and-supplements.application.title`}`
+  const descriptionApplication = `${t`food-and-supplements.application.description`}`
 
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
@@ -72,13 +72,16 @@ const Food = () => {
     console.log(materials)
   }, [data.allContentfulMaterials, language])
 
-  const titleDiscover = `${t`food.discover.title`}`
-  const descriptionDiscover = `${t`food.discover.description`}`
+  const titleDiscover = `${t`food-and-supplements.discover.title`}`
+  const descriptionDiscover = `${t`food-and-supplements.discover.description`}`
   const materialQuery = "food-and-supplements"
 
   return (
     <Layout>
-      <Seo title={t`seo.food.title`} description={t`seo.food.description`} />
+      <Seo
+        title={t`seo.food-and-supplements.title`}
+        description={t`seo.food-and-supplements.description`}
+      />
       <MaterialComponent
         backgroundHeader={backgroundHeader}
         titleHeader={titleHeader}
