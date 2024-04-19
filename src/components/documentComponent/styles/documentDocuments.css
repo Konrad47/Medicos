@@ -1,0 +1,105 @@
+.document-d-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: left;
+  border-top: 1px solid var(--active-bg, #d4e5f7);
+  background: var(--hover-bg, #e9f2fb);
+}
+
+.document-d-container h4 {
+  color: var(--Button-primary-bg, #144487);
+  margin-bottom: 24px;
+}
+
+.document-d-container p {
+  color: var(--main-text, #0a2243);
+  margin-bottom: 40px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.document-d-container .policy-con {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.document-d-container .policy-con .policy {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+.document-d-container .policy-con .policy:hover {
+  background: var(--hover-bg, #e9f2fb);
+}
+
+.document-d-container .policy-con .policy .policy-up {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.document-d-container .policy-con .policy .policy-up svg {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--active-bg, #d4e5f7);
+}
+
+.document-d-container .policy-con .policy .policy-up p {
+  color: var(--Button-primary-bg, #144487);
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: 500;
+  line-height: 130%; /* 23.4px */
+  letter-spacing: 0.36px;
+  width: 80%;
+}
+
+.document-d-container .policy-con .policy a {
+  color: var(--Button-primary-bg, #144487);
+  text-align: left;
+  font-size: 16px;
+  margin-left: 84px;
+  margin-top: auto;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+}
+
+.document-d-container .policy-con .policy:hover a {
+  text-decoration: underline;
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
+}
+
+@media screen and (max-width: 1000px) {
+  .document-d-container .policy-con {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .document-d-container p {
+    width: 100%;
+  }
+  /* .document-d-container .policy-con .policy:hover {
+      background: #fff;
+    } */
+}

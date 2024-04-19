@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Dropdown from "react-bootstrap/Dropdown"
 import { StaticImage } from "gatsby-plugin-image"
 import { navigate } from "gatsby"
+import QueryNavigate from "../../hooks/queryNavigate"
 
 const Menu = () => {
   const { t } = useTranslation()
@@ -16,14 +17,29 @@ const Menu = () => {
   const [search, setSearch] = useState("")
   const [showMaterials, setShowMaterials] = useState(false)
 
+  const [isErrorSearch, setIsErrorSearch] = useState(false)
+
   const handleSearchChange = event => {
     setSearch(event.target.value)
   }
 
   const goToSearch = () => {
-    const encodedSearchQuery = encodeURIComponent(search)
-    navigate(`/search?query=${encodedSearchQuery}`)
-    setIsSearch(!isSearch)
+    setIsErrorSearch(false)
+    const specialCharsRegex = /[%"';]/
+
+    if (search !== "" && specialCharsRegex.test(search)) {
+      setIsErrorSearch(true)
+      return
+    }
+
+    if (search !== "") {
+      QueryNavigate(search, "search", language)
+      setIsSearch(!isSearch)
+      setSearch("")
+    } else {
+      setIsSearch(!isSearch)
+      setSearch("")
+    }
   }
 
   useEffect(() => {
@@ -306,6 +322,9 @@ const Menu = () => {
                         goToSearch()
                       }
                     }}
+                    style={{
+                      border: isErrorSearch ? "1px solid #B21A1A" : "",
+                    }}
                   ></input>
                   <svg
                     onClick={() => goToSearch()}
@@ -343,6 +362,9 @@ const Menu = () => {
                       </clipPath>
                     </defs>
                   </svg>
+                  {isErrorSearch && (
+                    <p className="p-style p-error">{t`error.menu.search`}</p>
+                  )}
                 </div>
               )}
               <Dropdown className="language-dropdown">
@@ -454,6 +476,9 @@ const Menu = () => {
                     type="text"
                     value={search}
                     onChange={handleSearchChange}
+                    style={{
+                      border: isErrorSearch ? "1px solid #B21A1A" : "",
+                    }}
                   ></input>
                   <svg
                     onClick={() => goToSearch()}
@@ -491,6 +516,9 @@ const Menu = () => {
                       </clipPath>
                     </defs>
                   </svg>
+                  {isErrorSearch && (
+                    <p className="p-style p-error">{t`error.menu.search`}</p>
+                  )}
                 </div>
               )}
 

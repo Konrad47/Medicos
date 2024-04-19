@@ -7,6 +7,14 @@
   align-items: center;
 }
 
+.footer-container p {
+  color: var(--Button-primary-bg, #144487);
+  font-size: 14px;
+  font-style: normal;
+  line-height: 160%; /* 22.4px */
+  margin-bottom: 4px;
+}
+
 .footer-container .footer-up {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -17,6 +25,15 @@
 
 .footer-container .footer-up a {
   text-decoration: none;
+}
+
+.footer-container .footer-up a p {
+  transition: all 0.2s ease-out;
+}
+
+.footer-container .footer-up a p:hover {
+  text-decoration: underline;
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
 }
 
 .footer-container .footer-down {
@@ -38,8 +55,18 @@
   gap: 24px;
 }
 
-.footer-container .footer-down .right-footer-down p {
+.footer-container .footer-down .right-footer-down a {
+  text-decoration: none;
+}
+
+.footer-container .footer-down .right-footer-down a p {
   color: var(--Button-primary-bg, #144487);
+  transition: all 0.2s ease-out;
+}
+
+.footer-container .footer-down .right-footer-down a p:hover {
+  text-decoration: underline;
+  color: var(--Button-secondary-hover-txt, #4d8ce5);
 }
 
 .footer-container h6 {
@@ -49,14 +76,6 @@
   font-weight: 700;
   line-height: 160%; /* 22.4px */
   margin-bottom: 8px;
-}
-
-.footer-container p {
-  color: var(--Button-primary-bg, #144487);
-  font-size: 14px;
-  font-style: normal;
-  line-height: 160%; /* 22.4px */
-  margin-bottom: 4px;
 }
 
 .footer-container .address {

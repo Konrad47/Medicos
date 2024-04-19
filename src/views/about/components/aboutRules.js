@@ -1,6 +1,7 @@
 import React from "react"
 import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/aboutRules.css"
+import { withPrefix } from "gatsby"
 
 const AboutRules = () => {
   const { t } = useTranslation()
@@ -12,7 +13,11 @@ const AboutRules = () => {
           <h2 className="h2-style">{t`about-rules.title`}</h2>
           <p className="p-style">{t`about-rules.description`}</p>
           <div className="rules-con">
-            <div className="rules">
+            <a
+              href={withPrefix("Medicos - EudraGMDP.pdf")}
+              target="_blank"
+              className="rules"
+            >
               <div className="rules-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -48,11 +53,15 @@ const AboutRules = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`about-rules.certificate-1`}</p>
+                <p className="h4-style">{t`about-policy.certificate-1`}</p>
               </div>
-              <a>{t`about-rules.see`}</a>
-            </div>
-            <div className="rules">
+              <a>{t`about-policy.see`}</a>
+            </a>
+            <a
+              href={withPrefix("Certyfikat GDP - API 06092023 PL_EN.pdf")}
+              target="_blank"
+              className="rules"
+            >
               <div className="rules-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -88,11 +97,15 @@ const AboutRules = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`about-rules.certificate-2`}</p>
+                <p className="h4-style">{t`about-policy.certificate-2`}</p>
               </div>
-              <a>{t`about-rules.see`}</a>
-            </div>
-            <div className="rules">
+              <a>{t`about-policy.see`}</a>
+            </a>
+            <a
+              href={withPrefix("Medicos_zaświadczenie o wpisie do KRWIDSC.pdf")}
+              target="_blank"
+              className="rules"
+            >
               <div className="rules-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -128,10 +141,10 @@ const AboutRules = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`about-rules.certificate-3`}</p>
+                <p className="h4-style">{t`about-policy.certificate-3`}</p>
               </div>
-              <a>{t`about-rules.see`}</a>
-            </div>
+              <a>{t`about-policy.see`}</a>
+            </a>
           </div>
         </div>
       </div>

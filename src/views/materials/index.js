@@ -60,6 +60,8 @@ const Materials = () => {
   const [selectedSort, setSelectedSort] = useState("name-up")
   const [searchedData, setSearchedData] = useState([])
 
+  const [dataFromSearch, setDataFromSearch] = useState("")
+
   useEffect(() => {
     if (searchQuery && searchQuery !== "" && searchQuery.trim() !== "") {
       if (searchQuery === "household-chemicals") {
@@ -76,6 +78,9 @@ const Materials = () => {
       }
       if (searchQuery === "other-industries") {
         setSelectedIndustry(["Pozostałe branże"])
+      } else {
+        console.log(searchQuery)
+        setDataFromSearch(searchQuery)
       }
     }
   }, [])
@@ -119,8 +124,6 @@ const Materials = () => {
       })
 
       setSearchedData(sortedMaterials)
-      console.log(sortedMaterials)
-      console.log(selectedIndustry)
     }
 
     getData()
@@ -178,6 +181,7 @@ const Materials = () => {
       <MaterialsContent
         materialsContent={searchedData}
         resetFilters={resetFilters}
+        dataFromSearch={dataFromSearch}
       />
       <MaterialsDontFind />
     </Layout>

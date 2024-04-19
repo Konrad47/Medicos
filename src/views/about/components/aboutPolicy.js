@@ -1,6 +1,7 @@
 import React from "react"
 import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/aboutPolicy.css"
+import { withPrefix } from "gatsby"
 
 const AboutPolicy = () => {
   const { t } = useTranslation()
@@ -12,7 +13,11 @@ const AboutPolicy = () => {
           <h2 className="h2-style">{t`about-policy.title`}</h2>
           <p className="p-style">{t`about-policy.description`}</p>
           <div className="policy-con">
-            <div className="policy">
+            <a
+              href={withPrefix("Medicos - EudraGMDP.pdf")}
+              target="_blank"
+              className="policy"
+            >
               <div className="policy-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -51,8 +56,12 @@ const AboutPolicy = () => {
                 <p className="h4-style">{t`about-policy.certificate-1`}</p>
               </div>
               <a>{t`about-policy.see`}</a>
-            </div>
-            <div className="policy">
+            </a>
+            <a
+              href={withPrefix("Certyfikat GDP - API 06092023 PL_EN.pdf")}
+              target="_blank"
+              className="policy"
+            >
               <div className="policy-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -91,8 +100,12 @@ const AboutPolicy = () => {
                 <p className="h4-style">{t`about-policy.certificate-2`}</p>
               </div>
               <a>{t`about-policy.see`}</a>
-            </div>
-            <div className="policy">
+            </a>
+            <a
+              href={withPrefix("Medicos_zaświadczenie o wpisie do KRWIDSC.pdf")}
+              target="_blank"
+              className="policy"
+            >
               <div className="policy-up">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +144,7 @@ const AboutPolicy = () => {
                 <p className="h4-style">{t`about-policy.certificate-3`}</p>
               </div>
               <a>{t`about-policy.see`}</a>
-            </div>
+            </a>
           </div>
         </div>
       </div>

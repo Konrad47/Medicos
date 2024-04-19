@@ -1,10 +1,14 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./styles/materialModal.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Modal from "react-bootstrap/Modal"
-import { Link } from "gatsby-plugin-react-i18next"
+import { I18nextContext, Link } from "gatsby-plugin-react-i18next"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { richTextRenderOptions } from "../../utils/templateRenderOption"
+import { navigate } from "gatsby"
+import QueryNavigate from "../../hooks/queryNavigate"
+import { articleTextRenderOptions } from "../../utils/articleRenderOption"
+
 const MaterialModal = ({
   currentMaterial,
   showModal,
@@ -12,7 +16,11 @@ const MaterialModal = ({
   props,
   t,
 }) => {
-  console.log(currentMaterial)
+  const { language } = useContext(I18nextContext)
+
+  const goToContact = () => {
+    QueryNavigate("Chcę zapytać o dostępność surowca", "contact", language)
+  }
   return (
     <Modal
       show={showModal}
@@ -97,10 +105,11 @@ const MaterialModal = ({
         <div className="left-body">
           <div className="left-body-up">
             <p className="p-style">{t`material-modal.form`}</p>
-            <Link
+            <button
+              onClick={goToContact}
               className="register-btn"
               to="/contact"
-            >{t`material-modal.ask`}</Link>
+            >{t`material-modal.ask`}</button>
           </div>
           <div className="left-body-down">
             <div>
@@ -143,7 +152,8 @@ const MaterialModal = ({
             <div>
               {renderRichText(
                 currentMaterial.node.generalInformation,
-                richTextRenderOptions
+                // richTextRenderOptions
+                articleTextRenderOptions
               )}
             </div>
           </div>
@@ -152,7 +162,8 @@ const MaterialModal = ({
             <div>
               {renderRichText(
                 currentMaterial.node.application,
-                richTextRenderOptions
+                // richTextRenderOptions
+                articleTextRenderOptions
               )}
             </div>
           </div>

@@ -1,18 +1,36 @@
-import React from "react"
-import { useTranslation, Link } from "gatsby-plugin-react-i18next"
+import React, { useContext } from "react"
+import {
+  useTranslation,
+  Link,
+  I18nextContext,
+} from "gatsby-plugin-react-i18next"
 import "../styles/servicesOurServices.css"
 import { StaticImage } from "gatsby-plugin-image"
 import { navigate } from "gatsby"
+import QueryNavigate from "../../../hooks/queryNavigate"
 
 const ServicesOurServices = () => {
   const { t } = useTranslation()
+  const { language } = useContext(I18nextContext)
+
+  const goToContactTech = () => {
+    QueryNavigate("Chcę zamówić doradztwo techniczne", "contact", language)
+  }
+
+  const goToContactSub = () => {
+    QueryNavigate("Chcę zamówić wyszukiwanie substancji", "contact", language)
+  }
+
+  const goToContactAn = () => {
+    QueryNavigate("Chcę zamówić analizę rynku dostawców", "contact", language)
+  }
 
   return (
     <>
       <div className="services-os-container">
         <div className="container">
           <div className="services-con">
-            <div onClick={() => navigate("/contact")} className="service">
+            <div onClick={goToContactTech} className="service">
               <StaticImage
                 className="service-image"
                 src="../../../images/services/our-services/service-image-1.png"
@@ -29,7 +47,7 @@ const ServicesOurServices = () => {
                 >{t`services-our-services.contact`}</Link>
               </div>
             </div>
-            <div onClick={() => navigate("/contact")} className="service">
+            <div onClick={goToContactSub} className="service">
               <StaticImage
                 className="service-image"
                 src="../../../images/services/our-services/service-image-2.png"
@@ -46,7 +64,7 @@ const ServicesOurServices = () => {
                 >{t`services-our-services.contact`}</Link>
               </div>
             </div>
-            <div onClick={() => navigate("/contact")} className="service">
+            <div onClick={goToContactAn} className="service">
               <StaticImage
                 className="service-image"
                 src="../../../images/services/our-services/service-image-3.png"

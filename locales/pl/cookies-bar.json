@@ -1,0 +1,14 @@
+{
+    "cookie-bar.header": "Niniejsza strona korzysta z plików cookie",
+    "cookie-bar.description": "Wykorzystujemy pliki cookie do spersonalizowania treści i reklam, aby  oferować funkcje społecznościowe i analizować ruch w naszej witrynie.  Informacje o tym, jak korzystasz z naszej witryny, udostępniamy  partnerom społecznościowym, reklamowym i analitycznym. Partnerzy mogą  połączyć te informacje z innymi danymi otrzymanymi od Ciebie lub  uzyskanymi podczas korzystania z ich usług.",
+    "cookie-bar.decline": "Odrzuć",
+    "cookie-bar.edit-cookies": "Akceptuj wybrane",
+    "cookie-bar.accept-all": "Akceptuj wszystkie",
+    "cookie-bar.save": "Zapisz wybór",
+    "cookie-bar.necessary": "Niezbędne",
+    "cookie-bar.necessary-description": "Niezbędne pliki cookie przyczyniają się do użyteczności strony poprzez umożliwianie podstawowych funkcji takich jak nawigacja na stronie internetowej i dostęp do baz danych.",
+    "cookie-bar.preferences": "Preferencje",
+    "cookie-bar.preferences-description": "Preferencyjne pliki cookie umożliwiają witrynie zapamiętanie informacji, które zmieniają sposób zachowania lub wygląd witryny, takie jak Twoje preferencje językowe lub region.",
+    "cookie-bar.statistics": "Analityczne",
+    "cookie-bar.statistics-description": "Pliki cookie analityczne pomagają właścicielom witryn zrozumieć, w jaki sposób odwiedzający komunikują się z witrynami, zbierając i raportując informacje."
+}

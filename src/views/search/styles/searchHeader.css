@@ -1,5 +1,28 @@
 .search-h-container {
-  padding-top: 120px;
+  padding-top: 125px;
   padding-bottom: 45px;
-  background: #d9d9d9;
+  background: url(../../../images/header-background.png) no-repeat fixed 50% 0;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.search-h-container {
+  background-attachment: scroll !important;
+}
+
+.search-h-container h1 {
+  color: var(--color-basics-white, #fff);
+  margin-bottom: 16px;
+}
+
+.search-h-container h3 {
+  color: var(--color-basics-white, #fff);
+  width: 60%;
+}
+
+@media screen and (max-width: 1000px) {
+  .search-h-container p {
+    width: 100%;
+  }
 }

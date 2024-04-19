@@ -38,7 +38,5 @@
     "contact-component.personalData-d": "Wiem, że zgodę tę mogę w każdej chwili cofnąć.",
     "contact-component.send-message": "Wyślij wiadomość",
     "contact-component.sending-message": "Wysyłanie...",
-    "contact-component.required-fields": "Uzupełnij wymagane pola",
-    "contact-component.email-error": "Nieprawidłowy format e-mail",
-    "contact-component.phoneNumber-error": "Nieprawidłowy format numeru telefonu"
+    "contact-component.sent-message": "Wysłano"
 }

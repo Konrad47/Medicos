@@ -10,7 +10,7 @@ import getCurrentTranslations from "../../../components/contentful-translator"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Dropdown from "react-bootstrap/Dropdown"
 
-const ContactComponent = () => {
+const ContactComponent = ({ searchQuery }) => {
   const { t } = useTranslation()
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
@@ -49,6 +49,15 @@ const ContactComponent = () => {
     }
     getData()
   }, [data.allContentfulContact, language])
+
+  useEffect(() => {
+    if (searchQuery && searchQuery !== "" && searchQuery.trim() !== "") {
+      setMessage(prevMessage => ({
+        ...prevMessage,
+        subject: searchQuery,
+      }))
+    }
+  }, [searchQuery])
 
   const [message, setMessage] = useState({
     subject: "",
@@ -119,11 +128,13 @@ const ContactComponent = () => {
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
 
-  const [emialError, setEmailError] = useState(false)
+  const [emailError, setEmailError] = useState(false)
 
   const [phoneNumberError, setPhoneNumberError] = useState(false)
 
   const [isRequiredFields, setIsRequiredFieldsError] = useState(false)
+
+  const [someError, setSomeError] = useState(false)
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -140,6 +151,7 @@ const ContactComponent = () => {
     setIsRequiredFieldsError(false)
     setPhoneNumberError(false)
     setEmailError(false)
+    setSomeError(false)
 
     console.log(!emailRegex.test(message.email))
     if (
@@ -177,6 +189,7 @@ const ContactComponent = () => {
       message: message.message,
     }
     //https://medicos-site.netlify.app/
+    //http://localhost:8888/
     try {
       const response = await fetch(
         "https://medicos-site.netlify.app/.netlify/functions/sendmail",
@@ -189,15 +202,27 @@ const ContactComponent = () => {
       if (response.ok) {
         setSending(false)
         setSent(true)
+        setMessage({
+          subject: "",
+          name: "",
+          surname: "",
+          email: "",
+          firmName: "",
+          phoneNumber: "",
+          message: "",
+          personalData: false,
+        })
         return
       }
 
       if (!response.ok) {
         setSending(false)
+        setSomeError(true)
         return
       }
     } catch (e) {
       setSending(false)
+      setSomeError(true)
       console.log(e)
     }
   }
@@ -246,7 +271,13 @@ const ContactComponent = () => {
                     </svg>
                     <div className="info-text">
                       <p className="p-style title">{t`contact-component.contact-email`}</p>
-                      <p className="p-style info">{contact.email}</p>
+                      <a
+                        href={`mailto:${contact.email}`}
+                        target="_blank"
+                        className="p-style info"
+                      >
+                        {contact.email}
+                      </a>
                     </div>
                   </div>
                   <div className="info">
@@ -274,7 +305,13 @@ const ContactComponent = () => {
                     </svg>
                     <div className="info-text">
                       <p className="p-style title">{t`contact-component.sales-number`}</p>
-                      <p className="p-style info">{contact.salesNumber}</p>
+                      <a
+                        href={`tel:${contact.salesNumber}`}
+                        target="_blank"
+                        className="p-style info"
+                      >
+                        {contact.salesNumber}
+                      </a>
                     </div>
                   </div>
                   <div className="info">
@@ -302,7 +339,13 @@ const ContactComponent = () => {
                     </svg>
                     <div className="info-text">
                       <p className="p-style title">{t`contact-component.purchase-number`}</p>
-                      <p className="p-style info">{contact.purchaseNumber}</p>
+                      <a
+                        href={`tel:${contact.purchaseNumber}`}
+                        target="_blank"
+                        className="p-style info"
+                      >
+                        {contact.purchaseNumber}
+                      </a>
                     </div>
                   </div>
                   <div className="info">
@@ -580,13 +623,13 @@ const ContactComponent = () => {
                     onChange={handleChange}
                     style={{
                       border:
-                        (message.email === "" && isRequiredFields) || emialError
+                        (message.email === "" && isRequiredFields) || emailError
                           ? "1px solid #B21A1A"
                           : "",
                     }}
                   />
-                  {emialError && (
-                    <p className="p-style p-error">{t`contact-component.email-error`}</p>
+                  {emailError && (
+                    <p className="p-style p-error">{t`error.contact.email-error`}</p>
                   )}
                 </div>
                 <div className="subject-div">
@@ -622,11 +665,9 @@ const ContactComponent = () => {
                           : "",
                     }}
                   />
-                  {phoneNumberError &&
-                    message.phoneNumber !==
-                      ""(
-                        <p className="p-style p-error">{t`contact-component.phoneNumber-error`}</p>
-                      )}
+                  {phoneNumberError && message.phoneNumber !== "" && (
+                    <p className="p-style p-error">{t`error.contact.phoneNumber-error`}</p>
+                  )}
                 </div>
                 <div className="subject-div">
                   <label htmlFor="message">
@@ -675,7 +716,7 @@ const ContactComponent = () => {
                     </label>
                   </div>
                 </div>
-                <div>
+                <div className="button-container">
                   {!sending && !sent && (
                     <button type="submit" className="bright-button">
                       {t`contact-component.send-message`}{" "}
@@ -718,7 +759,7 @@ const ContactComponent = () => {
                     </button>
                   )}
                   {sending && !sent && (
-                    <button className="bright-button">
+                    <button className="bright-button sent">
                       {t`contact-component.sending-message`}{" "}
                       <svg
                         className="rotating"
@@ -800,8 +841,8 @@ const ContactComponent = () => {
                     </button>
                   )}
                   {!sending && sent && (
-                    <button className="bright-button">
-                      {t`contact-component.sending-message`}{" "}
+                    <button className="bright-button sent">
+                      {t`contact-component.sent-message`}{" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -827,7 +868,10 @@ const ContactComponent = () => {
                     </button>
                   )}
                   {isRequiredFields && (
-                    <p className="p-style p-error">{t`contact-component.required-fields`}</p>
+                    <p className="p-style p-error">{t`error.contact.required-fields`}</p>
+                  )}
+                  {someError && (
+                    <p className="p-style p-error">{t`error.contact.someError`}</p>
                   )}
                 </div>
               </form>

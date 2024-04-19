@@ -157,8 +157,8 @@ const Footer = () => {
               <Link
                 className="register-btn footer-button-link"
                 to="/contact"
-              >{t`menu.contact`}</Link>
-              <a href="#" target="_blank">
+              >{t`footer.contact`}</Link>
+              <a href={`mailto:${contact.email}`} target="_blank">
                 <p className="contact-a bottom">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -197,7 +197,7 @@ const Footer = () => {
                   {contact.email}
                 </p>
               </a>
-              <a href="#" target="_blank">
+              <a href={`tel: ${contact.salesNumber}`} target="_blank">
                 <p className="bottom">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -245,9 +245,15 @@ const Footer = () => {
               <p>{t`footer.medicos`}</p>
             </div>
             <div className="right-footer-down">
-              <p>{t`footer.cookies`}</p>
-              <p>{t`footer.rodo`}</p>
-              <p>{t`footer.privacy-policy`}</p>
+              <Link to="/cookies">
+                <p>{t`footer.cookies`}</p>
+              </Link>
+              <Link to="/rodo">
+                <p>{t`footer.rodo`}</p>
+              </Link>
+              <Link to="/privacy-policy">
+                <p>{t`footer.privacy-policy`}</p>
+              </Link>
             </div>
           </div>
         </div>

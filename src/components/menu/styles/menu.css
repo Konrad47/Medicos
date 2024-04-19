@@ -13,6 +13,12 @@
   padding-bottom: 16px;
 }
 
+.menu-container .p-error {
+  color: var(--Functional-Error, #b21a1a);
+  font-size: 14px;
+  line-height: normal;
+}
+
 .hide-menu {
   background: rgba(251, 252, 254, 0.98);
   position: fixed;

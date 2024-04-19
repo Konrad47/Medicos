@@ -130,6 +130,7 @@
 .material-modal .modal-body .left-body-up .register-btn {
   background: var(--Button-primary-bg, #144487);
   color: var(--neutral-white, var(--color-basics-white, #fff));
+  border: none;
   transition: all 0.2s ease-out;
 }
 
@@ -200,9 +201,12 @@
 .material-modal .modal-body .right-body .con-right-body b,
 .material-modal .modal-body .right-body .con-right-body p {
   color: var(--main-text, #0a2243);
+  margin-bottom: 1rem;
 }
 
-.material-modal .modal-body .right-body .con-right-body a {
+.material-modal .modal-body .right-body .con-right-body a,
+.material-modal .modal-body .right-body .con-right-body a p,
+.material-modal .modal-body .right-body .con-right-body a b {
   color: var(--mid-blue, #4d8ce5);
   text-decoration: none;
   cursor: pointer;
