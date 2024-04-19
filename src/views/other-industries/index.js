@@ -16,7 +16,7 @@ const OtherIndustries = () => {
   const imageApplication = () => (
     <StaticImage
       className="right-image"
-      src="../../images/other-industries/application/material-oi-application.png"
+      src="../../images/other-industries/application/material-oi-application.webp"
       alt="Right image"
       placeholder="Right image"
       loading="lazy"
@@ -40,7 +40,6 @@ const OtherIndustries = () => {
             color
             node_locale
             pH
-            slug
             title
             inci
             cas

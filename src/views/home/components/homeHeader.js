@@ -32,13 +32,6 @@ const HomeHeader = () => {
                 className="register-btn header-button"
               >{t`home-header.ask`}</button>
             </div>
-            {/* <StaticImage
-              className="header-image"
-              src="../../../images/home/header/home-header-person.png"
-              alt="Header image"
-              placeholder="Header image"
-              loading="lazy"
-            /> */}
           </div>
         </div>
       </div>

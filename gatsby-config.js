@@ -56,22 +56,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-omni-font-loader`,
-      options: {
-        enableListener: true,
-        preconnect: [
-          `https://fonts.googleapis.com`,
-          `https://fonts.gstatic.com`,
-        ],
-        web: [
-          {
-            name: `REM`,
-            file: `https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap`,
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [

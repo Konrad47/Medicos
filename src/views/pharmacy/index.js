@@ -16,7 +16,7 @@ const Pharmacy = () => {
   const imageApplication = () => (
     <StaticImage
       className="right-image"
-      src="../../images/pharmacy/application/material-p-application.png"
+      src="../../images/pharmacy/application/material-p-application.webp"
       alt="Right image"
       placeholder="Right image"
       loading="lazy"
@@ -40,7 +40,6 @@ const Pharmacy = () => {
             color
             node_locale
             pH
-            slug
             title
             inci
             cas
