@@ -7,10 +7,11 @@
   border: 1px solid var(--Button-secondary-border, #d3e2f8);
   background: var(--light-bg, #fbfcfe);
   box-shadow: 4px 4px 25px 0px rgba(13, 45, 89, 0.2);
-  position: fixed; /* Change position to fixed */
-  bottom: 0; /* Align to the bottom */
-  right: 0; /* Align to the right */
+  position: fixed;
+  bottom: 0;
+  right: 0;
   margin-right: 20px;
+  z-index: 10;
 }
 
 .cookie-con .header-con {
