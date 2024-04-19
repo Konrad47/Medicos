@@ -16,7 +16,7 @@ const Food = () => {
   const imageApplication = () => (
     <StaticImage
       className="right-image"
-      src="../../images/food/application/material-f-application.png"
+      src="../../images/food/application/material-f-application.webp"
       alt="Right image"
       placeholder="Right image"
       loading="lazy"

@@ -18,21 +18,21 @@ const AboutFirm = () => {
               <div className="images">
                 <StaticImage
                   className="image"
-                  src="../../../images/about/firm/pspkd.png"
+                  src="../../../images/about/firm/pspkd.webp"
                   alt="PSPKD"
                   placeholder="PSPKD"
                   loading="lazy"
                 />
                 <StaticImage
                   className="image"
-                  src="../../../images/about/firm/ptck.png"
+                  src="../../../images/about/firm/ptck.webp"
                   alt="PTCK"
                   placeholder="PTCK"
                   loading="lazy"
                 />
                 <StaticImage
                   className="image"
-                  src="../../../images/about/firm/ifscc.png"
+                  src="../../../images/about/firm/ifscc.webp"
                   alt="IFSCC"
                   placeholder="IFSCC"
                   loading="lazy"
@@ -42,7 +42,7 @@ const AboutFirm = () => {
             <div className="image-con">
               <StaticImage
                 className="right-image"
-                src="../../../images/about/firm/right-image.png"
+                src="../../../images/about/firm/right-image.webp"
                 alt="Right image"
                 placeholder="Right image"
                 loading="lazy"

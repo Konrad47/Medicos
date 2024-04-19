@@ -3,7 +3,7 @@
   padding-bottom: 80px;
   /* text-align: center; */
   background-color: #fbfcfe;
-  background: url(../../../images/about/people/people-background.png) no-repeat
+  background: url(../../../images/about/people/people-background.webp) no-repeat
     fixed;
   overflow: hidden;
   background-position: center top;
@@ -102,7 +102,7 @@
 @media screen and (max-width: 800px) {
   .about-pe-container {
     /* background-size: 100% 25%; */
-    background: url(../../../images/about/people/people-background-small.png)
+    background: url(../../../images/about/people/people-background-small.webp)
       no-repeat fixed;
     overflow: hidden;
     /* background-position: center; */

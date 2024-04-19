@@ -33,7 +33,7 @@ const ServicesOurServices = () => {
             <div onClick={goToContactTech} className="service">
               <StaticImage
                 className="service-image"
-                src="../../../images/services/our-services/service-image-1.png"
+                src="../../../images/services/our-services/service-image-1.webp"
                 alt="Service image"
                 placeholder="Service image"
                 loading="lazy"
@@ -50,7 +50,7 @@ const ServicesOurServices = () => {
             <div onClick={goToContactSub} className="service">
               <StaticImage
                 className="service-image"
-                src="../../../images/services/our-services/service-image-2.png"
+                src="../../../images/services/our-services/service-image-2.webp"
                 alt="Service image"
                 placeholder="Service image"
                 loading="lazy"
@@ -67,7 +67,7 @@ const ServicesOurServices = () => {
             <div onClick={goToContactAn} className="service">
               <StaticImage
                 className="service-image"
-                src="../../../images/services/our-services/service-image-3.png"
+                src="../../../images/services/our-services/service-image-3.webp"
                 alt="Service image"
                 placeholder="Service image"
                 loading="lazy"

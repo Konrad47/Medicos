@@ -16,7 +16,7 @@ const HouseholdChemicals = () => {
   const imageApplication = () => (
     <StaticImage
       className="right-image"
-      src="../../images/household-chemicals/application/material-hc-application.png"
+      src="../../images/household-chemicals/application/material-hc-application.webp"
       alt="Right image"
       placeholder="Right image"
       loading="lazy"

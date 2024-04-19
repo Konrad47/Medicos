@@ -16,7 +16,7 @@ const Cosmetology = () => {
   const imageApplication = () => (
     <StaticImage
       className="right-image"
-      src="../../images/cosmetology/application/material-c-application.png"
+      src="../../images/cosmetology/application/material-c-application.webp"
       alt="Right image"
       placeholder="Right image"
       loading="lazy"

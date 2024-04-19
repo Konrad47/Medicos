@@ -1,7 +1,7 @@
 .news-h-container {
   padding-top: 125px;
   padding-bottom: 45px;
-  background: url(../../../images/header-background.png) no-repeat fixed 50% 0;
+  background: url(../../../images/header-background.webp) no-repeat fixed 50% 0;
   overflow: hidden;
   background-size: cover !important;
   background-position: center;

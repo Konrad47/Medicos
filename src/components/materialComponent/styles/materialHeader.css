@@ -7,27 +7,27 @@
 }
 
 .hc-background {
-  background: url(../../../images/household-chemicals/header/material-hc-header-background.png)
+  background: url(../../../images/household-chemicals/header/material-hc-header-background.webp)
     no-repeat fixed 50% 0;
 }
 
 .c-background {
-  background: url(../../../images/cosmetology/header/material-c-header-background.png)
+  background: url(../../../images/cosmetology/header/material-c-header-background.webp)
     no-repeat fixed 50% 0;
 }
 
 .p-background {
-  background: url(../../../images/pharmacy/header/material-p-header-background.png)
+  background: url(../../../images/pharmacy/header/material-p-header-background.webp)
     no-repeat fixed 50% 0;
 }
 
 .f-background {
-  background: url(../../../images/food/header/material-f-header-background.png)
+  background: url(../../../images/food/header/material-f-header-background.webp)
     no-repeat fixed 50% 0;
 }
 
 .oi-background {
-  background: url(../../../images/other-industries/header/material-oi-header-background.png)
+  background: url(../../../images/other-industries/header/material-oi-header-background.webp)
     no-repeat fixed 50% 0;
 }
 

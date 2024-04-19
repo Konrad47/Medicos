@@ -21,7 +21,7 @@ const HomeAbout = () => {
             </div>
             <StaticImage
               className="about-image"
-              src="../../../images/home/about/home-about-image.png"
+              src="../../../images/home/about/home-about-image.webp"
               alt="About image"
               placeholder="About image"
               loading="lazy"
