@@ -37,7 +37,7 @@ const ArticleTile = ({ article, t }) => {
           <p className="p-style date">
             {moment(article.node.createdAt).format("DD/MM/YYYY HH:MM")}
           </p>
-          <p className="p-style read-more">{t`article-tile.read-more`}</p>
+          <p className="p-style read-more">{t`news-read-more.title`}</p>
         </div>
       </div>
     </div>

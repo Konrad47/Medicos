@@ -120,6 +120,15 @@ const Search = () => {
           }
         }
       }
+      allLocale {
+        edges {
+          node {
+            ns
+            language
+            data
+          }
+        }
+      }
     }
   `)
 
