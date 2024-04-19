@@ -39,7 +39,6 @@ const Search = () => {
           node {
             title
             node_locale
-            slug
             category
             color
             pH

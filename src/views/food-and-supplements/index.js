@@ -40,7 +40,6 @@ const Food = () => {
             color
             node_locale
             pH
-            slug
             title
             inci
             cas
