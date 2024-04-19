@@ -614,7 +614,7 @@ const Search = () => {
     for (const key in content) {
       if (content.hasOwnProperty(key)) {
         text += content[key]
-        text += "; "
+        text += "... "
       }
     }
     console.log(text)
