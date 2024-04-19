@@ -3,12 +3,18 @@ import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/documentDocuments.css"
 import { withPrefix } from "gatsby"
 
-const DocumentDocuments = ({ t }) => {
+const DocumentDocuments = ({
+  texttitle,
+  textCertificate1,
+  textCertificate2,
+  textCertificate3,
+  textSee,
+}) => {
   return (
     <>
       <div className="document-d-container">
         <div className="container">
-          <h4 className="h4-style">{t`document-documents.title`}</h4>
+          <h4 className="h4-style">{texttitle}</h4>
           <div className="policy-con">
             <a
               href={withPrefix("Medicos - EudraGMDP.pdf")}
@@ -50,9 +56,9 @@ const DocumentDocuments = ({ t }) => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`document-documents.certificate-1`}</p>
+                <p className="h4-style">{textCertificate1}</p>
               </div>
-              <a>{t`document-documents.see`}</a>
+              <a>{textSee}</a>
             </a>
             <a
               href={withPrefix("Certyfikat GDP - API 06092023 PL_EN.pdf")}
@@ -94,9 +100,9 @@ const DocumentDocuments = ({ t }) => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`document-documents.certificate-2`}</p>
+                <p className="h4-style">{textCertificate2}</p>
               </div>
-              <a>{t`document-documents.see`}</a>
+              <a>{textSee}</a>
             </a>
             <a
               href={withPrefix("Medicos_zaświadczenie o wpisie do KRWIDSC.pdf")}
@@ -138,9 +144,9 @@ const DocumentDocuments = ({ t }) => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`document-documents.certificate-3`}</p>
+                <p className="h4-style">{textCertificate3}</p>
               </div>
-              <a>{t`document-documents.see`}</a>
+              <a>{textSee}</a>
             </a>
           </div>
         </div>

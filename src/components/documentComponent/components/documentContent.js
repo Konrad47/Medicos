@@ -8,7 +8,7 @@ const DocumentContent = ({
   documentDate,
   documentTitle,
   documentDescription,
-  t,
+  textLastUpdate,
 }) => {
   return (
     <>
@@ -16,8 +16,7 @@ const DocumentContent = ({
         <div className="container">
           <div className="title-con">
             <p className="p-style">
-              {t`document-content.last-update`}{" "}
-              {moment(documentDate).format("DD/MM/YYYY HH:MM")}
+              {textLastUpdate} {moment(documentDate).format("DD/MM/YYYY HH:MM")}
             </p>
             <h2 className="h2-style">{documentTitle}</h2>
           </div>

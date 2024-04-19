@@ -42,6 +42,13 @@ const Cookies = () => {
     console.log(cookies)
   }, [data.allContentfulCookies, language])
 
+  const textLastUpdate = `${t`cookies.last-update`}`
+  const texttitle = `${t`cookies.title`}`
+  const textCertificate1 = `${t`cookies.certificate-1`}`
+  const textCertificate2 = `${t`cookies.certificate-2`}`
+  const textCertificate3 = `${t`cookies.certificate-3`}`
+  const textSee = `${t`cookies.see`}`
+
   return (
     <Layout>
       <Seo
@@ -53,7 +60,12 @@ const Cookies = () => {
           documentDate={cookies.node.updatedAt}
           documentTitle={cookies.node.title}
           documentDescription={cookies.node.description}
-          t={t}
+          textLastUpdate={textLastUpdate}
+          texttitle={texttitle}
+          textCertificate1={textCertificate1}
+          textCertificate2={textCertificate2}
+          textCertificate3={textCertificate3}
+          textSee={textSee}
         />
       )}
     </Layout>

@@ -6,7 +6,12 @@ const DocumentComponent = ({
   documentDate,
   documentTitle,
   documentDescription,
-  t,
+  textLastUpdate,
+  texttitle,
+  textCertificate1,
+  textCertificate2,
+  textCertificate3,
+  textSee,
 }) => {
   return (
     <>
@@ -14,9 +19,15 @@ const DocumentComponent = ({
         documentDate={documentDate}
         documentTitle={documentTitle}
         documentDescription={documentDescription}
-        t={t}
+        textLastUpdate={textLastUpdate}
       />
-      <DocumentDocuments t={t} />
+      <DocumentDocuments
+        texttitle={texttitle}
+        textCertificate1={textCertificate1}
+        textCertificate2={textCertificate2}
+        textCertificate3={textCertificate3}
+        textSee={textSee}
+      />
     </>
   )
 }

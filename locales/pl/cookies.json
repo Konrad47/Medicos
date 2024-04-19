@@ -1,14 +1,8 @@
 {
-    "cookies.header": "Niniejsza strona korzysta z plików cookie",
-    "cookies.description": "Wykorzystujemy pliki cookie do spersonalizowania treści i reklam, aby  oferować funkcje społecznościowe i analizować ruch w naszej witrynie.  Informacje o tym, jak korzystasz z naszej witryny, udostępniamy  partnerom społecznościowym, reklamowym i analitycznym. Partnerzy mogą  połączyć te informacje z innymi danymi otrzymanymi od Ciebie lub  uzyskanymi podczas korzystania z ich usług.",
-    "cookies.decline": "Odrzuć",
-    "cookies.edit-cookies": "Akceptuj wybrane",
-    "cookies.accept-all": "Akceptuj wszystkie",
-    "cookies.save": "Zapisz wybór",
-    "cookies.necessary": "Niezbędne",
-    "cookies.necessary-description": "Niezbędne pliki cookie przyczyniają się do użyteczności strony poprzez umożliwianie podstawowych funkcji takich jak nawigacja na stronie internetowej i dostęp do baz danych.",
-    "cookies.preferences": "Preferencje",
-    "cookies.preferences-description": "Preferencyjne pliki cookie umożliwiają witrynie zapamiętanie informacji, które zmieniają sposób zachowania lub wygląd witryny, takie jak Twoje preferencje językowe lub region.",
-    "cookies.statistics": "Analityczne",
-    "cookies.statistics-description": "Pliki cookie analityczne pomagają właścicielom witryn zrozumieć, w jaki sposób odwiedzający komunikują się z witrynami, zbierając i raportując informacje."
+    "cookies.last-update": "Ostatnia aktualizacja:",
+    "cookies.title": "Pozostałe dokumenty",
+    "cookies.certificate-1": "Zaświadczenie o wpisie do EUDRAGMDP",
+    "cookies.certificate-2": "Certyfikat GDP dla API",
+    "cookies.certificate-3": "Zaświadczenie o wpisie do Krajowego Rejestru GIF z 14.10.2021r.",
+    "cookies.see": "Zobacz"
 }

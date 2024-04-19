@@ -42,6 +42,13 @@ const Rodo = () => {
     console.log(rodo)
   }, [data.allContentfulRodo, language])
 
+  const textLastUpdate = `${t`rodo.last-update`}`
+  const texttitle = `${t`rodo.title`}`
+  const textCertificate1 = `${t`rodo.certificate-1`}`
+  const textCertificate2 = `${t`rodo.certificate-2`}`
+  const textCertificate3 = `${t`rodo.certificate-3`}`
+  const textSee = `${t`rodo.see`}`
+
   return (
     <Layout>
       <Seo title={t`seo.rodo.title`} description={t`seo.rodo.description`} />
@@ -50,7 +57,12 @@ const Rodo = () => {
           documentDate={rodo.node.updatedAt}
           documentTitle={rodo.node.title}
           documentDescription={rodo.node.description}
-          t={t}
+          textLastUpdate={textLastUpdate}
+          texttitle={texttitle}
+          textCertificate1={textCertificate1}
+          textCertificate2={textCertificate2}
+          textCertificate3={textCertificate3}
+          textSee={textSee}
         />
       )}
     </Layout>

@@ -74,8 +74,8 @@ const CookieBar = () => {
     <>
       <div className="cookie-con">
         <div className="header-con">
-          <p className="p-style p-head">{t`cookies.header`}</p>
-          <p className="p-style p-description">{t`cookies.description`}</p>
+          <p className="p-style p-head">{t`cookie-bar.header`}</p>
+          <p className="p-style p-description">{t`cookie-bar.description`}</p>
         </div>
         {editCookies ? (
           <div className="agrees-con">
@@ -90,11 +90,11 @@ const CookieBar = () => {
                       type="checkbox"
                     />
                     <label htmlFor={type.name}>
-                      {t(String("cookies." + type.name))}
+                      {t(String("cookie-bar." + type.name))}
                     </label>
                   </div>
                   <p className="p-style p-description">
-                    {t(String("cookies." + type.name + "-description"))}
+                    {t(String("cookie-bar." + type.name + "-description"))}
                   </p>
                 </div>
               )
@@ -106,7 +106,7 @@ const CookieBar = () => {
             className="bright-button decline"
             onClick={() => declineAll()}
           >
-            {t("cookies.decline")}
+            {t("cookie-bar.decline")}
           </button>
           <button
             className="bright-button"
@@ -114,14 +114,14 @@ const CookieBar = () => {
               !editCookies ? () => setEditCookies(true) : () => acceptSome()
             }
           >
-            {editCookies ? t("cookies.save") : t("cookies.edit-cookies")}
+            {editCookies ? t("cookie-bar.save") : t("cookie-bar.edit-cookies")}
           </button>
           <button
             id="accept-all"
             className="bright-button accept-all"
             onClick={() => acceptAll()}
           >
-            {t("cookies.accept-all")}
+            {t("cookie-bar.accept-all")}
           </button>
         </div>
       </div>
