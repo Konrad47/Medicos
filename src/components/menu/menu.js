@@ -17,16 +17,28 @@ const Menu = () => {
   const [search, setSearch] = useState("")
   const [showMaterials, setShowMaterials] = useState(false)
 
+  const [isErrorSearch, setIsErrorSearch] = useState(false)
+
   const handleSearchChange = event => {
     setSearch(event.target.value)
   }
 
   const goToSearch = () => {
+    setIsErrorSearch(false)
+    const specialCharsRegex = /[%"';]/
+
+    if (search !== "" && specialCharsRegex.test(search)) {
+      setIsErrorSearch(true)
+      return
+    }
+
     if (search !== "") {
       QueryNavigate(search, "search", language)
       setIsSearch(!isSearch)
+      setSearch("")
     } else {
       setIsSearch(!isSearch)
+      setSearch("")
     }
   }
 
@@ -310,6 +322,9 @@ const Menu = () => {
                         goToSearch()
                       }
                     }}
+                    style={{
+                      border: isErrorSearch ? "1px solid #B21A1A" : "",
+                    }}
                   ></input>
                   <svg
                     onClick={() => goToSearch()}
@@ -347,6 +362,9 @@ const Menu = () => {
                       </clipPath>
                     </defs>
                   </svg>
+                  {isErrorSearch && (
+                    <p className="p-style p-error">{t`error.menu.search`}</p>
+                  )}
                 </div>
               )}
               <Dropdown className="language-dropdown">
@@ -458,6 +476,9 @@ const Menu = () => {
                     type="text"
                     value={search}
                     onChange={handleSearchChange}
+                    style={{
+                      border: isErrorSearch ? "1px solid #B21A1A" : "",
+                    }}
                   ></input>
                   <svg
                     onClick={() => goToSearch()}
@@ -495,6 +516,9 @@ const Menu = () => {
                       </clipPath>
                     </defs>
                   </svg>
+                  {isErrorSearch && (
+                    <p className="p-style p-error">{t`error.menu.search`}</p>
+                  )}
                 </div>
               )}
 

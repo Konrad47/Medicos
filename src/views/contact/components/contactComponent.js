@@ -128,7 +128,7 @@ const ContactComponent = ({ searchQuery }) => {
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
 
-  const [emialError, setEmailError] = useState(false)
+  const [emailError, setEmailError] = useState(false)
 
   const [phoneNumberError, setPhoneNumberError] = useState(false)
 
@@ -623,13 +623,13 @@ const ContactComponent = ({ searchQuery }) => {
                     onChange={handleChange}
                     style={{
                       border:
-                        (message.email === "" && isRequiredFields) || emialError
+                        (message.email === "" && isRequiredFields) || emailError
                           ? "1px solid #B21A1A"
                           : "",
                     }}
                   />
-                  {emialError && (
-                    <p className="p-style p-error">{t`contact-component.email-error`}</p>
+                  {emailError && (
+                    <p className="p-style p-error">{t`error.contact.email-error`}</p>
                   )}
                 </div>
                 <div className="subject-div">
@@ -665,11 +665,9 @@ const ContactComponent = ({ searchQuery }) => {
                           : "",
                     }}
                   />
-                  {phoneNumberError &&
-                    message.phoneNumber !==
-                      ""(
-                        <p className="p-style p-error">{t`contact-component.phoneNumber-error`}</p>
-                      )}
+                  {phoneNumberError && message.phoneNumber !== "" && (
+                    <p className="p-style p-error">{t`error.contact.phoneNumber-error`}</p>
+                  )}
                 </div>
                 <div className="subject-div">
                   <label htmlFor="message">
@@ -870,10 +868,10 @@ const ContactComponent = ({ searchQuery }) => {
                     </button>
                   )}
                   {isRequiredFields && (
-                    <p className="p-style p-error">{t`contact-component.required-fields`}</p>
+                    <p className="p-style p-error">{t`error.contact.required-fields`}</p>
                   )}
                   {someError && (
-                    <p className="p-style p-error">{t`contact-component.someError`}</p>
+                    <p className="p-style p-error">{t`error.contact.someError`}</p>
                   )}
                 </div>
               </form>

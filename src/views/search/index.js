@@ -614,7 +614,8 @@ const Search = () => {
     let text = ""
     for (const key in content) {
       if (content.hasOwnProperty(key)) {
-        text += "; " + content[key]
+        text += content[key]
+        text += "; "
       }
     }
     console.log(text)
@@ -625,7 +626,8 @@ const Search = () => {
     return (
       locale.node.data.toLowerCase().includes(searchQuery.toLowerCase()) &&
       locale.node.ns !== "search" &&
-      locale.node.ns !== "seo"
+      locale.node.ns !== "seo" &&
+      locale.node.ns !== "error"
     )
   }
 
@@ -648,13 +650,19 @@ const Search = () => {
     if (
       locale.node.ns === "cookie-bar" ||
       locale.node.ns === "footer" ||
-      locale.node.ns === "menu" ||
-      locale.node.ns === "home"
+      locale.node.ns === "menu"
     ) {
       return {
         title: firstSentenceContainingQuery.slice(0, 50),
         description: firstSentenceContainingQuery + "...",
         category: t("search.others"),
+        slug: `/`,
+      }
+    } else if (locale.node.ns === "home") {
+      return {
+        title: firstSentenceContainingQuery.slice(0, 50),
+        description: firstSentenceContainingQuery + "...",
+        category: t("search.page"),
         slug: `/`,
       }
     } else {

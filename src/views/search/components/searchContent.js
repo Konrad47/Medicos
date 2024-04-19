@@ -22,12 +22,24 @@ const SearchContent = ({ searchContent, searchData }) => {
 
   const renderContent = content => {
     const highlightText = (text, query) => {
-      const regex = new RegExp(`(${query})`, "gi")
+      // Ensure query is not empty
+      if (!query.trim()) return text
+
+      // Escape special characters in query
+      const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+
+      const regex = new RegExp(`(${escapedQuery})`, "gi")
       return text.replace(regex, '<span class="highlighted">$1</span>')
     }
 
     const highlightDesc = (text, query) => {
-      const regex = new RegExp(`(${query})`, "gi")
+      // Ensure query is not empty
+      if (!query.trim()) return text
+
+      // Escape special characters in query
+      const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+
+      const regex = new RegExp(`(${escapedQuery})`, "gi")
       return text.replace(regex, '<span class="highlightedDesc">$1</span>')
     }
 
