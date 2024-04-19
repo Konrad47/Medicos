@@ -26,8 +26,13 @@ const SearchContent = ({ searchContent, searchData }) => {
       return text.replace(regex, '<span class="highlighted">$1</span>')
     }
 
+    const highlightDesc = (text, query) => {
+      const regex = new RegExp(`(${query})`, "gi")
+      return text.replace(regex, '<span class="highlightedDesc">$1</span>')
+    }
+
     return content.map((con, index) => (
-      <div className="result" key={index}>
+      <Link to={`${con.slug}`} className="result" key={index}>
         <h4
           className="h4-style"
           dangerouslySetInnerHTML={{
@@ -37,18 +42,16 @@ const SearchContent = ({ searchContent, searchData }) => {
         <p
           className="p-style top-p"
           dangerouslySetInnerHTML={{
-            __html: highlightText(con.description, searchData),
+            __html: highlightDesc(con.description, searchData),
           }}
         />
         <div className="bottom-result">
           <div className="category">
             <p className="p-style">{con.category}</p>
           </div>
-          {(con.category === "Artykuł" || con.category === "Article") && (
-            <Link to={`/news/${con.slug}`}>{t`search-content.go-to-page`}</Link>
-          )}
+          <Link to={`${con.slug}`}>{t`search-content.go-to-page`}</Link>
         </div>
-      </div>
+      </Link>
     ))
   }
 

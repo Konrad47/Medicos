@@ -130,6 +130,7 @@
 .material-modal .modal-body .left-body-up .register-btn {
   background: var(--Button-primary-bg, #144487);
   color: var(--neutral-white, var(--color-basics-white, #fff));
+  border: none;
   transition: all 0.2s ease-out;
 }
 

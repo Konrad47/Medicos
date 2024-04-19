@@ -55,6 +55,7 @@
   flex: 1;
   transition: all 0.2s ease-out;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .search-c-container .content-con .results-con .result:hover {
@@ -125,6 +126,10 @@
 .search-c-container .highlighted {
   color: #4d8ce5;
   font-weight: bold;
+}
+
+.search-c-container .highlightedDesc {
+  font-weight: 800;
 }
 
 @media screen and (max-width: 1000px) {

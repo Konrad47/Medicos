@@ -5,14 +5,26 @@ import CustomPagination from "../../../components/pagination/pagination"
 import MaterialTile from "../../../components/materialTile/materialTile"
 import MaterialModal from "../../../components/materialModal/materialModal"
 
-const MaterialsContent = ({ materialsContent, resetFilters }) => {
+const MaterialsContent = ({
+  materialsContent,
+  resetFilters,
+  dataFromSearch,
+}) => {
   const { t } = useTranslation()
   const [currentPage, setCurrentPage] = useState(1)
   const pageSize = 9
 
   useEffect(() => {
     setCurrentPage(1)
-  }, [])
+    if (dataFromSearch !== "") {
+      const openModalWithData = materialsContent.filter(material => {
+        return material.node.title === dataFromSearch
+      })
+      console.log("DATA" + dataFromSearch)
+      console.log(openModalWithData[0])
+      openModal(openModalWithData[0])
+    }
+  }, [dataFromSearch])
 
   const paginatedData = materialsContent.slice(
     (currentPage - 1) * pageSize,

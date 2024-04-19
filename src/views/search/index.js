@@ -16,7 +16,6 @@ const Search = () => {
   const searchQuery = searchParams.get("query")
     ? decodeURIComponent(searchParams.get("query"))
     : ""
-
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
     query {
@@ -24,23 +23,34 @@ const Search = () => {
         edges {
           node {
             title
+            node_locale
             slug
             author
             createdAt
             description {
               raw
-              references {
-                ... on ContentfulAsset {
-                  __typename
-                  contentful_id
-                  file {
-                    url
-                  }
-                }
-                title
-              }
             }
+          }
+        }
+      }
+      allContentfulMaterials {
+        edges {
+          node {
+            title
             node_locale
+            slug
+            category
+            color
+            pH
+            inci
+            cas
+            form
+            generalInformation {
+              raw
+            }
+            application {
+              raw
+            }
           }
         }
       }
@@ -50,102 +60,181 @@ const Search = () => {
   const [searchedData, setSearchedData] = useState([])
 
   useEffect(() => {
-    const getData = () => {
-      const getArticles = getCurrentTranslations(
+    setSearchedData([])
+
+    const processArticles = () => {
+      const articles = getCurrentTranslations(
         data.allContentfulArticle.edges,
         language
       )
-      if (searchQuery && searchQuery !== "" && searchQuery.trim() !== "") {
-        const mappedArticles = getArticles
+      if (searchQuery && searchQuery.trim() !== "") {
+        const filteredArticles = articles
           .filter(article => {
             const descriptionContent = JSON.parse(
               article.node.description.raw
             ).content
-            const descriptionText = descriptionContent
-              .filter(node => node?.content[0]?.nodeType === "text")
-              .map(paragraph =>
-                paragraph.content.map(({ value }) => value).join("")
-              )
-              .join(" ")
-            return (
-              (searchQuery &&
-                searchQuery.trim() !== "" &&
-                article.node.title
-                  .toLowerCase()
-                  .includes(searchQuery.toLowerCase())) ||
-              article.node.author
-                .toLowerCase()
-                .includes(searchQuery.toLowerCase()) ||
-              moment(article.node.createdAt)
-                .format("DD/MM/YYYY HH:MM")
-                .toLowerCase()
-                .includes(searchQuery.toLowerCase()) ||
-              descriptionText.toLowerCase().includes(searchQuery.toLowerCase())
-            )
+            const descriptionText = getDescriptionText(descriptionContent)
+            return articleMatchesQuery(article, descriptionText)
           })
-          .map(article => {
-            const descriptionContent = JSON.parse(
-              article.node.description.raw
-            ).content
-            const descriptionText = descriptionContent
-              .filter(node => node?.content[0]?.nodeType === "text")
-              .map(paragraph =>
-                paragraph.content.map(({ value }) => value).join("")
-              )
-              .join(" ")
+          .map(article => mapArticleData(article))
 
-            let firstSentenceContainingQuery = descriptionText.slice(0, 100)
-
-            let startIndex = 0
-            let endIndex = descriptionText.length - 1
-
-            const queryIndex = descriptionText
-              .toLowerCase()
-              .indexOf(searchQuery.toLowerCase())
-            if (queryIndex !== -1) {
-              const queryLength = searchQuery.length
-              startIndex = Math.max(0, queryIndex - 50)
-              endIndex = Math.min(
-                descriptionText.length - 1,
-                queryIndex + queryLength + 50
-              )
-              firstSentenceContainingQuery =
-                "..." + descriptionText.slice(startIndex, endIndex)
-            }
-
-            if (
-              moment(article.node.createdAt)
-                .format("DD/MM/YYYY HH:MM")
-                .toLowerCase()
-                .includes(searchQuery.toLowerCase())
-            ) {
-              firstSentenceContainingQuery += `...${moment(
-                article.node.createdAt
-              ).format("DD/MM/YYYY HH:MM")}`
-            }
-
-            if (
-              article.node.author
-                .toLowerCase()
-                .includes(searchQuery.toLowerCase())
-            ) {
-              firstSentenceContainingQuery += `...${article.node.author}`
-            }
-
-            console.log(firstSentenceContainingQuery)
-            return {
-              title: article.node.title,
-              description: firstSentenceContainingQuery + "...",
-              category: `${t`search.article`}`,
-              slug: article.node.slug,
-            }
-          })
-
-        setSearchedData(mappedArticles)
+        setSearchedData(prevData => [...prevData, ...filteredArticles])
       }
     }
-    getData()
-  }, [data.allContentfulArticle, language, searchQuery])
+
+    const processMaterials = () => {
+      const materials = getCurrentTranslations(
+        data.allContentfulMaterials.edges,
+        language
+      )
+      if (searchQuery && searchQuery.trim() !== "") {
+        const filteredMaterials = materials
+          .filter(material => {
+            const generalInformationContent = JSON.parse(
+              material.node.generalInformation.raw
+            ).content
+            const generalInformationText = getDescriptionText(
+              generalInformationContent
+            )
+            const applicationContent = JSON.parse(
+              material.node.application.raw
+            ).content
+            const applicationText = getDescriptionText(applicationContent)
+            return materialMatchesQuery(
+              material,
+              generalInformationText,
+              applicationText
+            )
+          })
+          .map(material => mapMaterialData(material))
+
+        setSearchedData(prevData => [...prevData, ...filteredMaterials])
+      }
+    }
+
+    processArticles()
+    processMaterials()
+  }, [data, language, searchQuery])
+
+  const getDescriptionText = content => {
+    return content
+      .filter(node => node?.content[0]?.nodeType === "text")
+      .map(paragraph => paragraph.content.map(({ value }) => value).join(""))
+      .join(" ")
+  }
+
+  const articleMatchesQuery = (article, descriptionText) => {
+    return (
+      article.node.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      article.node.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      moment(article.node.createdAt)
+        .format("DD/MM/YYYY HH:MM")
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) ||
+      descriptionText.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  }
+
+  const mapArticleData = article => {
+    const descriptionContent = JSON.parse(article.node.description.raw).content
+    const descriptionText = getDescriptionText(descriptionContent)
+    let firstSentenceContainingQuery = descriptionText.slice(0, 100)
+    let startIndex = 0
+    let endIndex = descriptionText.length - 1
+
+    const queryIndex = descriptionText
+      .toLowerCase()
+      .indexOf(searchQuery.toLowerCase())
+    if (queryIndex !== -1) {
+      const queryLength = searchQuery.length
+      startIndex = Math.max(0, queryIndex - 50)
+      endIndex = Math.min(
+        descriptionText.length - 1,
+        queryIndex + queryLength + 50
+      )
+      firstSentenceContainingQuery =
+        "..." + descriptionText.slice(startIndex, endIndex)
+    }
+
+    if (
+      moment(article.node.createdAt)
+        .format("DD/MM/YYYY HH:MM")
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
+    ) {
+      firstSentenceContainingQuery += `...${moment(
+        article.node.createdAt
+      ).format("DD/MM/YYYY HH:MM")}`
+    }
+
+    if (article.node.author.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${article.node.author}`
+    }
+
+    return {
+      title: article.node.title,
+      description: firstSentenceContainingQuery + "...",
+      category: t("search.article"),
+      slug: `/news/${article.node.slug}`,
+    }
+  }
+
+  const materialMatchesQuery = (
+    material,
+    generalInformationText,
+    applicationText
+  ) => {
+    return (
+      material.node.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      material.node.color.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      material.node.pH.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      material.node.inci.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      material.node.cas.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      material.node.form.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      generalInformationText
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) ||
+      applicationText.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  }
+
+  const mapMaterialData = material => {
+    const generalInformationContent = JSON.parse(
+      material.node.generalInformation.raw
+    ).content
+    const generalInformationText = getDescriptionText(generalInformationContent)
+
+    const applicationContent = JSON.parse(material.node.application.raw).content
+    const applicationText = getDescriptionText(applicationContent)
+
+    let firstSentenceContainingQuery =
+      generalInformationText.slice(0, 50) + "..." + applicationText.slice(0, 50)
+
+    if (material.node.color.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${material.node.color}`
+    }
+    if (material.node.pH.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${material.node.pH}`
+    }
+    if (material.node.inci.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${material.node.inci}`
+    }
+    if (material.node.cas.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${material.node.cas}`
+    }
+    if (material.node.form.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${material.node.form}`
+    }
+
+    const encodedSearchQuery = encodeURIComponent(material.node.title)
+
+    return {
+      title: material.node.title,
+      description: firstSentenceContainingQuery + "...",
+      category: t("search.material"),
+      slug: `/materials?query=${encodedSearchQuery}`,
+    }
+  }
 
   return (
     <Layout>
@@ -160,4 +249,5 @@ const Search = () => {
     </Layout>
   )
 }
+
 export default Search
