@@ -8,6 +8,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../components/contentful-translator"
 import SearchContent from "./components/searchContent"
 import moment from "moment"
+import getLocaleTranslations from "../../components/locale-translator"
 
 const Search = () => {
   const { t } = useTranslation()
@@ -281,6 +282,23 @@ const Search = () => {
       }
     }
 
+    const processLocales = () => {
+      const locales = getLocaleTranslations(data.allLocale.edges, language)
+      console.log(locales)
+
+      if (searchQuery && searchQuery.trim() !== "") {
+        const filteredLocales = locales
+          .filter(locale => {
+            const dataContent = JSON.parse(locale.node.data)
+            const dataText = getDataText(dataContent)
+            return localeMatchesQuery(locale, dataText)
+          })
+          .map(locale => mapLocaleData(locale))
+
+        setSearchedData(prevData => [...prevData, ...filteredLocales])
+      }
+    }
+
     processArticles()
     processMaterials()
     processContact()
@@ -288,6 +306,7 @@ const Search = () => {
     processPrivacyPolicy()
     processRodo()
     processTeam()
+    processLocales()
   }, [data, language, searchQuery])
 
   const getDescriptionText = content => {
@@ -588,6 +607,63 @@ const Search = () => {
       description: firstSentenceContainingQuery + "...",
       category: t("search.page"),
       slug: `/about`,
+    }
+  }
+
+  const getDataText = content => {
+    let text = ""
+    for (const key in content) {
+      if (content.hasOwnProperty(key)) {
+        text += "; " + content[key]
+      }
+    }
+    console.log(text)
+    return text
+  }
+
+  const localeMatchesQuery = locale => {
+    return (
+      locale.node.data.toLowerCase().includes(searchQuery.toLowerCase()) &&
+      locale.node.ns !== "search" &&
+      locale.node.ns !== "seo"
+    )
+  }
+
+  const mapLocaleData = locale => {
+    const dataContent = JSON.parse(locale.node.data)
+    const dataText = getDataText(dataContent)
+    let firstSentenceContainingQuery = dataText.slice(0, 150)
+    let startIndex = 0
+    let endIndex = dataText.length - 1
+
+    const queryIndex = dataText.toLowerCase().indexOf(searchQuery.toLowerCase())
+    if (queryIndex !== -1) {
+      const queryLength = searchQuery.length
+      startIndex = Math.max(0, queryIndex - 75)
+      endIndex = Math.min(dataText.length - 1, queryIndex + queryLength + 75)
+      firstSentenceContainingQuery =
+        "..." + dataText.slice(startIndex, endIndex)
+    }
+
+    if (
+      locale.node.ns === "cookie-bar" ||
+      locale.node.ns === "footer" ||
+      locale.node.ns === "menu" ||
+      locale.node.ns === "home"
+    ) {
+      return {
+        title: firstSentenceContainingQuery.slice(0, 50),
+        description: firstSentenceContainingQuery + "...",
+        category: t("search.others"),
+        slug: `/`,
+      }
+    } else {
+      return {
+        title: firstSentenceContainingQuery.slice(0, 50),
+        description: firstSentenceContainingQuery + "...",
+        category: t("search.page"),
+        slug: `/${locale.node.ns}`,
+      }
     }
   }
 
