@@ -54,8 +54,76 @@ const Search = () => {
           }
         }
       }
+      allContentfulContact {
+        edges {
+          node {
+            email
+            krs
+            name
+            nip
+            node_locale
+            purchaseNumber
+            registration
+            regon
+            salesNumber
+            street
+            zipCode
+          }
+        }
+      }
+      allContentfulCookies {
+        edges {
+          node {
+            title
+            node_locale
+            description {
+              raw
+            }
+            updatedAt
+          }
+        }
+      }
+      allContentfulPrivacyPolicy {
+        edges {
+          node {
+            title
+            node_locale
+            description {
+              raw
+            }
+            updatedAt
+          }
+        }
+      }
+      allContentfulRodo {
+        edges {
+          node {
+            title
+            node_locale
+            description {
+              raw
+            }
+            updatedAt
+          }
+        }
+      }
+      allContentfulTeam {
+        edges {
+          node {
+            node_locale
+            name
+            education
+            role
+            description {
+              description
+            }
+          }
+        }
+      }
     }
   `)
+
+  console.log(data)
 
   const [searchedData, setSearchedData] = useState([])
 
@@ -112,8 +180,105 @@ const Search = () => {
       }
     }
 
+    const processContact = () => {
+      const contact = getCurrentTranslations(
+        data.allContentfulContact.edges,
+        language
+      )
+      if (searchQuery && searchQuery.trim() !== "") {
+        const filteredContact = contact
+          .filter(con => {
+            return contactMatchesQuery(con)
+          })
+          .map(con => mapContactData(con))
+
+        setSearchedData(prevData => [...prevData, ...filteredContact])
+      }
+    }
+
+    const processCookies = () => {
+      const cookies = getCurrentTranslations(
+        data.allContentfulCookies.edges,
+        language
+      )
+      if (searchQuery && searchQuery.trim() !== "") {
+        const filteredCookies = cookies
+          .filter(cookie => {
+            const descriptionContent = JSON.parse(
+              cookie.node.description.raw
+            ).content
+            const descriptionText = getDescriptionText(descriptionContent)
+            return documentMatchesQuery(cookie, descriptionText)
+          })
+          .map(cookie => mapDocumentData(cookie, "/cookies"))
+
+        setSearchedData(prevData => [...prevData, ...filteredCookies])
+      }
+    }
+
+    const processPrivacyPolicy = () => {
+      const privacyPolicy = getCurrentTranslations(
+        data.allContentfulPrivacyPolicy.edges,
+        language
+      )
+      if (searchQuery && searchQuery.trim() !== "") {
+        const filteredPrivacyPolicy = privacyPolicy
+          .filter(pp => {
+            const descriptionContent = JSON.parse(
+              pp.node.description.raw
+            ).content
+            const descriptionText = getDescriptionText(descriptionContent)
+            return documentMatchesQuery(pp, descriptionText)
+          })
+          .map(pp => mapDocumentData(pp, "/privacy-policy"))
+
+        setSearchedData(prevData => [...prevData, ...filteredPrivacyPolicy])
+      }
+    }
+
+    const processRodo = () => {
+      const rodo = getCurrentTranslations(
+        data.allContentfulRodo.edges,
+        language
+      )
+      if (searchQuery && searchQuery.trim() !== "") {
+        const filteredRodo = rodo
+          .filter(rodo => {
+            const descriptionContent = JSON.parse(
+              rodo.node.description.raw
+            ).content
+            const descriptionText = getDescriptionText(descriptionContent)
+            return documentMatchesQuery(rodo, descriptionText)
+          })
+          .map(rodo => mapDocumentData(rodo, "/rodo"))
+
+        setSearchedData(prevData => [...prevData, ...filteredRodo])
+      }
+    }
+
+    const processTeam = () => {
+      const team = getCurrentTranslations(
+        data.allContentfulTeam.edges,
+        language
+      )
+      if (searchQuery && searchQuery.trim() !== "") {
+        const filteredTeam = team
+          .filter(team => {
+            return teamMatchesQuery(team)
+          })
+          .map(team => mapTeamData(team))
+
+        setSearchedData(prevData => [...prevData, ...filteredTeam])
+      }
+    }
+
     processArticles()
     processMaterials()
+    processContact()
+    processCookies()
+    processPrivacyPolicy()
+    processRodo()
+    processTeam()
   }, [data, language, searchQuery])
 
   const getDescriptionText = content => {
@@ -233,6 +398,187 @@ const Search = () => {
       description: firstSentenceContainingQuery + "...",
       category: t("search.material"),
       slug: `/materials?query=${encodedSearchQuery}`,
+    }
+  }
+
+  const contactMatchesQuery = contact => {
+    return (
+      contact.node.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      contact.node.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      contact.node.krs.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      contact.node.nip.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      contact.node.purchaseNumber
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) ||
+      contact.node.registration
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) ||
+      contact.node.regon.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      contact.node.salesNumber
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) ||
+      contact.node.street.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      contact.node.zipCode.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  }
+
+  const mapContactData = contact => {
+    let firstSentenceContainingQuery = ""
+
+    if (contact.node.email.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${contact.node.email}`
+    }
+    if (contact.node.krs.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${contact.node.krs}`
+    }
+    if (contact.node.nip.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${contact.node.nip}`
+    }
+    if (
+      contact.node.purchaseNumber
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
+    ) {
+      firstSentenceContainingQuery += `...${contact.node.purchaseNumber}`
+    }
+    if (
+      contact.node.registration
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
+    ) {
+      firstSentenceContainingQuery += `...${contact.node.registration}`
+    }
+    if (contact.node.regon.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${contact.node.regon}`
+    }
+    if (
+      contact.node.salesNumber.toLowerCase().includes(searchQuery.toLowerCase())
+    ) {
+      firstSentenceContainingQuery += `...${contact.node.salesNumber}`
+    }
+    if (contact.node.street.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${contact.node.street}`
+    }
+    if (
+      contact.node.zipCode.toLowerCase().includes(searchQuery.toLowerCase())
+    ) {
+      firstSentenceContainingQuery += `...${contact.node.zipCode}`
+    }
+    if (firstSentenceContainingQuery === "") {
+      firstSentenceContainingQuery += `...${contact.node.email}`
+      firstSentenceContainingQuery += `...${contact.node.krs}`
+      firstSentenceContainingQuery += `...${contact.node.nip}`
+      firstSentenceContainingQuery += `...${contact.node.purchaseNumber}`
+      firstSentenceContainingQuery += `...${contact.node.registration}`
+      firstSentenceContainingQuery += `...${contact.node.regon}`
+      firstSentenceContainingQuery += `...${contact.node.salesNumber}`
+      firstSentenceContainingQuery += `...${contact.node.street}`
+      firstSentenceContainingQuery += `...${contact.node.zipCode}`
+    }
+
+    return {
+      title: contact.node.name,
+      description: firstSentenceContainingQuery + "...",
+      category: t("search.contact"),
+      slug: `/contact`,
+    }
+  }
+
+  const documentMatchesQuery = (document, descriptionText) => {
+    return (
+      document.node.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      moment(document.node.updatedAt)
+        .format("DD/MM/YYYY HH:MM")
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) ||
+      descriptionText.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  }
+
+  const mapDocumentData = (document, slug) => {
+    const descriptionContent = JSON.parse(document.node.description.raw).content
+    const descriptionText = getDescriptionText(descriptionContent)
+    let firstSentenceContainingQuery = descriptionText.slice(0, 100)
+    let startIndex = 0
+    let endIndex = descriptionText.length - 1
+
+    const queryIndex = descriptionText
+      .toLowerCase()
+      .indexOf(searchQuery.toLowerCase())
+    if (queryIndex !== -1) {
+      const queryLength = searchQuery.length
+      startIndex = Math.max(0, queryIndex - 50)
+      endIndex = Math.min(
+        descriptionText.length - 1,
+        queryIndex + queryLength + 50
+      )
+      firstSentenceContainingQuery =
+        "..." + descriptionText.slice(startIndex, endIndex)
+    }
+
+    if (
+      moment(document.node.updatedAt)
+        .format("DD/MM/YYYY HH:MM")
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
+    ) {
+      firstSentenceContainingQuery += `...${moment(
+        document.node.updatedAt
+      ).format("DD/MM/YYYY HH:MM")}`
+    }
+
+    return {
+      title: document.node.title,
+      description: firstSentenceContainingQuery + "...",
+      category: t("search.page"),
+      slug: `${slug}`,
+    }
+  }
+
+  const teamMatchesQuery = team => {
+    return (
+      team.node.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      team.node.education.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      team.node.role.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      team.node.description.description
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
+    )
+  }
+
+  const mapTeamData = team => {
+    const descriptionText = team.node.description.description
+    let firstSentenceContainingQuery = descriptionText.slice(0, 100)
+    let startIndex = 0
+    let endIndex = descriptionText.length - 1
+
+    const queryIndex = descriptionText
+      .toLowerCase()
+      .indexOf(searchQuery.toLowerCase())
+    if (queryIndex !== -1) {
+      const queryLength = searchQuery.length
+      startIndex = Math.max(0, queryIndex - 50)
+      endIndex = Math.min(
+        descriptionText.length - 1,
+        queryIndex + queryLength + 50
+      )
+      firstSentenceContainingQuery =
+        "..." + descriptionText.slice(startIndex, endIndex)
+    }
+
+    if (team.node.education.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${team.node.education}`
+    }
+
+    if (team.node.role.toLowerCase().includes(searchQuery.toLowerCase())) {
+      firstSentenceContainingQuery += `...${team.node.role}`
+    }
+
+    return {
+      title: team.node.name,
+      description: firstSentenceContainingQuery + "...",
+      category: t("search.page"),
+      slug: `/about`,
     }
   }
 
