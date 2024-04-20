@@ -372,7 +372,7 @@ const Menu = () => {
                   {language === "pl" ? (
                     <StaticImage
                       className="flag-image"
-                      src="../../images/menu/polish.png"
+                      src="../../images/menu/polish.webp"
                       alt="Flag"
                       placeholder="Flag"
                       loading="lazy"
@@ -380,7 +380,7 @@ const Menu = () => {
                   ) : (
                     <StaticImage
                       className="flag-image"
-                      src="../../images/menu/english.png"
+                      src="../../images/menu/english.webp"
                       alt="Flag"
                       placeholder="Flag"
                       loading="lazy"
@@ -417,7 +417,7 @@ const Menu = () => {
               <a href="#" target="_blank" className="linkedIn-a">
                 <StaticImage
                   className="linkedIn-image"
-                  src="../../images/menu/linkedIn.png"
+                  src="../../images/menu/linkedIn.webp"
                   alt="LinkedIn"
                   placeholder="LinkedIn"
                   loading="lazy"
@@ -616,7 +616,7 @@ const Menu = () => {
                     {lang === "pl" ? (
                       <StaticImage
                         className="flag-image"
-                        src="../../images/menu/polish.png"
+                        src="../../images/menu/polish.webp"
                         alt="Flag"
                         placeholder="Flag"
                         loading="lazy"
@@ -624,7 +624,7 @@ const Menu = () => {
                     ) : (
                       <StaticImage
                         className="flag-image"
-                        src="../../images/menu/english.png"
+                        src="../../images/menu/english.webp"
                         alt="Flag"
                         placeholder="Flag"
                         loading="lazy"
@@ -638,7 +638,7 @@ const Menu = () => {
             <a href="#" target="_blank" className="linkedIn-a">
               <StaticImage
                 className="linkedIn-image"
-                src="../../images/menu/linkedIn.png"
+                src="../../images/menu/linkedIn.webp"
                 alt="LinkedIn"
                 placeholder="LinkedIn"
                 loading="lazy"

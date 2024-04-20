@@ -232,7 +232,7 @@ const Footer = () => {
               <a className="linkedIn-a" href="#" target="_blank">
                 <StaticImage
                   className="linkedIn-image"
-                  src="../../images/menu/linkedIn.png"
+                  src="../../images/menu/linkedIn.webp"
                   alt="LinkedIn"
                   placeholder="LinkedIn"
                   loading="lazy"
