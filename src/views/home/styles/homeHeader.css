@@ -14,6 +14,10 @@
   background-attachment: scroll !important;
 }
 
+.home-h-container .header-button {
+  border: 1px solid var(--light-bg, #fbfcfe);
+}
+
 .home-h-container .h-con {
   width: 80%;
 }
