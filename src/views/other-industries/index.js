@@ -10,7 +10,7 @@ import getCurrentTranslations from "../../components/contentful-translator"
 const OtherIndustries = () => {
   const { t } = useTranslation()
 
-  const backgroundHeader = "hc-background"
+  const backgroundHeader = "oi-background"
   const titleHeader = `${t`other-industries.header.title`}`
   const descriptionHeader = `${t`other-industries.header.description`}`
   const imageApplication = () => (

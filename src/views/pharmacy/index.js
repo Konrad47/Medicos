@@ -10,7 +10,7 @@ import getCurrentTranslations from "../../components/contentful-translator"
 const Pharmacy = () => {
   const { t } = useTranslation()
 
-  const backgroundHeader = "hc-background"
+  const backgroundHeader = "p-background"
   const titleHeader = `${t`pharmacy.header.title`}`
   const descriptionHeader = `${t`pharmacy.header.description`}`
   const imageApplication = () => (

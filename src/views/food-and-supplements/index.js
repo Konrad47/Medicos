@@ -10,7 +10,7 @@ import getCurrentTranslations from "../../components/contentful-translator"
 const Food = () => {
   const { t } = useTranslation()
 
-  const backgroundHeader = "hc-background"
+  const backgroundHeader = "f-background"
   const titleHeader = `${t`food-and-supplements.header.title`}`
   const descriptionHeader = `${t`food-and-supplements.header.description`}`
   const imageApplication = () => (
