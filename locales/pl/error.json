@@ -1,7 +1,7 @@
 {
     "error.menu.search": "Niedozwolone znaki: % ' ; \"",
 
-    "error.contact.required-fields": "Uzupełnij wymagane pola",
+    "error.contact.required-fields": "* - pola wymagane",
     "error.contact.email-error": "Nieprawidłowy format e-mail",
     "error.contact.phoneNumber-error": "Nieprawidłowy format numeru telefonu",
     "error.contact.someError": "Coś poszło nie tak. Spróbuj ponownie później!"

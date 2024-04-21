@@ -483,8 +483,7 @@ const ContactComponent = ({ searchQuery }) => {
                 <input type="hidden" name="form-name" value="contact" />
                 <div className="subject-div">
                   <label htmlFor="subject">
-                    {t`contact-component.subject`}{" "}
-                    {t`contact-component.required`}
+                    {t`contact-component.subject`}
                   </label>
                   <Dropdown id="subject">
                     <Dropdown.Toggle
@@ -570,10 +569,7 @@ const ContactComponent = ({ searchQuery }) => {
                 </div>
                 <div className="name-div">
                   <div className="subject-div">
-                    <label htmlFor="name">
-                      {t`contact-component.name`}{" "}
-                      {t`contact-component.required`}
-                    </label>
+                    <label htmlFor="name">{t`contact-component.name`}</label>
                     <input
                       className="message-input"
                       id="name"
@@ -591,8 +587,7 @@ const ContactComponent = ({ searchQuery }) => {
                   </div>
                   <div className="subject-div">
                     <label htmlFor="surname">
-                      {t`contact-component.surname`}{" "}
-                      {t`contact-component.required`}
+                      {t`contact-component.surname`}
                     </label>
                     <input
                       className="message-input"
@@ -611,9 +606,7 @@ const ContactComponent = ({ searchQuery }) => {
                   </div>
                 </div>
                 <div className="subject-div">
-                  <label htmlFor="email">
-                    {t`contact-component.email`} {t`contact-component.required`}
-                  </label>
+                  <label htmlFor="email">{t`contact-component.email`}</label>
                   <input
                     className="message-input"
                     id="email"
@@ -634,8 +627,7 @@ const ContactComponent = ({ searchQuery }) => {
                 </div>
                 <div className="subject-div">
                   <label htmlFor="firmName">
-                    {t`contact-component.firmName`}{" "}
-                    {t`contact-component.optional`}
+                    {t`contact-component.firmName`}
                   </label>
                   <input
                     className="message-input"
@@ -648,8 +640,7 @@ const ContactComponent = ({ searchQuery }) => {
                 </div>
                 <div className="subject-div">
                   <label htmlFor="phoneNumber">
-                    {t`contact-component.phoneNumber`}{" "}
-                    {t`contact-component.optional`}
+                    {t`contact-component.phoneNumber`}
                   </label>
                   <input
                     className="message-input"
@@ -671,8 +662,7 @@ const ContactComponent = ({ searchQuery }) => {
                 </div>
                 <div className="subject-div">
                   <label htmlFor="message">
-                    {t`contact-component.message`}{" "}
-                    {t`contact-component.required`}
+                    {t`contact-component.message`}
                   </label>
                   <textarea
                     className="message-input message-textarea"
@@ -711,8 +701,7 @@ const ContactComponent = ({ searchQuery }) => {
                       {t`contact-component.personalData-a`}{" "}
                       <Link to="/privacy-policy">{t`contact-component.personalData-b`}</Link>{" "}
                       <Link to="/website-regulations">{t`contact-component.personalData-c`}</Link>{" "}
-                      {t`contact-component.personalData-c`}{" "}
-                      {t`contact-component.required`}
+                      {t`contact-component.personalData-c`}
                     </label>
                   </div>
                 </div>
