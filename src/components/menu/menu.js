@@ -646,7 +646,7 @@ const Menu = () => {
             </a>
           </div>
           <Link className="menu-link" to="/about">{t`menu.about`}</Link>
-          <Link className="menu-link" to="services">{t`menu.services`}</Link>
+          <Link className="menu-link" to="/services">{t`menu.services`}</Link>
           <span
             onClick={() => setShowMaterials(!showMaterials)}
             className="menu-link showMaterials"

@@ -165,4 +165,12 @@
     display: flex;
     width: 100%;
   }
+
+  .home-i-container .i-con .down-con .industry:hover .register-btn {
+    opacity: 0;
+  }
+  .home-i-container .i-con .down-con .industry:hover .industry-con {
+    height: 115px;
+    background: none;
+  }
 }
