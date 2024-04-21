@@ -149,7 +149,7 @@ const Footer = () => {
               <Link to="/services">
                 <p>{t`footer.services`}</p>
               </Link>
-              <Link to="/blog">
+              <Link to="/news">
                 <p>{t`footer.blog`}</p>
               </Link>
             </div>

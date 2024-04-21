@@ -10,7 +10,7 @@ import getCurrentTranslations from "../../components/contentful-translator"
 const Cosmetology = () => {
   const { t } = useTranslation()
 
-  const backgroundHeader = "hc-background"
+  const backgroundHeader = "c-background"
   const titleHeader = `${t`cosmetology.header.title`}`
   const descriptionHeader = `${t`cosmetology.header.description`}`
   const imageApplication = () => (
