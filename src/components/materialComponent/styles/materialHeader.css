@@ -1,7 +1,7 @@
 .material-h-container {
   padding-top: 125px;
   padding-bottom: 45px;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-size: cover !important;
   background-position: center;
 }

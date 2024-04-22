@@ -16,13 +16,28 @@
   margin-bottom: 16px;
 }
 
-.search-h-container h3 {
+.search-h-container p {
   color: var(--color-basics-white, #fff);
   width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 36px */
+  letter-spacing: 0.48px;
 }
 
 @media screen and (max-width: 1000px) {
   .search-h-container p {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .search-h-container p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 170%; /* 27.2px */
   }
 }

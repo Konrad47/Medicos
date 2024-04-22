@@ -68,7 +68,6 @@ const HouseholdChemicals = () => {
       setMaterials(getMaterials)
     }
     getData()
-    console.log(materials)
   }, [data.allContentfulMaterials, language])
 
   const titleDiscover = `${t`household-chemicals.discover.title`}`

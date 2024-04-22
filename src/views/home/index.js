@@ -15,55 +15,10 @@ import HomeBlog from "./components/homeBlog"
 
 const Home = () => {
   const { t } = useTranslation()
-  const { language } = useContext(I18nextContext)
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulExampleModel {
-        edges {
-          node {
-            node_locale
-            title
-            description {
-              raw
-              references {
-                ... on ContentfulAsset {
-                  __typename
-                  contentful_id
-                  file {
-                    url
-                  }
-                }
-                title
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const [example, setExample] = useState()
-
-  useEffect(() => {
-    const getData = () => {
-      const getExample = getCurrentTranslations(
-        data.allContentfulExampleModel.edges,
-        language
-      )
-      setExample(getExample)
-    }
-    getData()
-  }, [data.allContentfulExampleModel, language])
 
   return (
     <Layout>
       <Seo title={t`seo.home.title`} description={t`seo.home.description`} />
-      {/* <div className="home-con">
-        <h1 className="h1-style">Home Page</h1>
-        {example &&
-          renderRichText(example[0].node.description, richTextRenderOptions)}
-        <h1 className="h1-style">Home Page</h1>
-      </div> */}
       <HomeHeader />
       <HomeIndustries />
       <HomeAbout />

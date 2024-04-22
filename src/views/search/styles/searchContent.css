@@ -108,6 +108,10 @@
   text-decoration: underline;
 }
 
+.search-c-container .content-con .results-con .result:hover .arrow-icon path {
+  stroke: #4d8ce5;
+}
+
 .search-c-container .content-con .results-con .result .category p {
   color: var(--main-text, #0a2243);
   font-size: 14px;

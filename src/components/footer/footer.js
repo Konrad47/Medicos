@@ -43,7 +43,6 @@ const Footer = () => {
         language
       )
 
-      console.log(getContact[0])
       setContact(getContact[0].node)
     }
     getData()

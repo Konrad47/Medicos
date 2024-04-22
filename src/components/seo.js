@@ -2,7 +2,7 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { useI18next } from "gatsby-plugin-react-i18next"
-import defaultOgImage from "../images/medicos-icon.png"
+import defaultOgImage from "../images/seo/medicos-seo.png"
 
 function Seo({ description, meta = [], title, ogImage }) {
   const { site } = useStaticQuery(

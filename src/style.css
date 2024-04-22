@@ -137,10 +137,12 @@ textarea {
   }
   .h1-style {
     font-size: 40px;
+    font-weight: 600;
   }
   .h2-style,
   .h3-style {
     font-size: 24px;
+    font-weight: 600;
   }
   .h4-style {
     font-size: 20px;
