@@ -13,6 +13,7 @@
 
 .home-i-container .i-con h2 {
   color: var(--Button-primary-bg, #144487);
+  margin-bottom: 16px;
 }
 
 .home-i-container .i-con .up-con p {

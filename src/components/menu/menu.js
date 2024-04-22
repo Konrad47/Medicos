@@ -413,7 +413,11 @@ const Menu = () => {
                   ))}
                 </Dropdown.Menu>
               </Dropdown>
-              <a href="#" target="_blank" className="linkedIn-a">
+              <a
+                href="https://www.linkedin.com/company/medicos-chemical-distributor/"
+                target="_blank"
+                className="linkedIn-a"
+              >
                 <StaticImage
                   className="linkedIn-image"
                   src="../../images/menu/linkedIn.webp"
@@ -634,7 +638,11 @@ const Menu = () => {
                 </div>
               ))}
             </div>
-            <a href="#" target="_blank" className="linkedIn-a">
+            <a
+              href="https://www.linkedin.com/company/medicos-chemical-distributor/"
+              target="_blank"
+              className="linkedIn-a"
+            >
               <StaticImage
                 className="linkedIn-image"
                 src="../../images/menu/linkedIn.webp"
