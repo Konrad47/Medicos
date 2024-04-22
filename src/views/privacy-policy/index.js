@@ -35,11 +35,9 @@ const PrivacyPolicy = () => {
         language
       )
 
-      console.log(getPrivacyPolicy)
       setPrivacyPolicy(getPrivacyPolicy[0])
     }
     getData()
-    console.log(privacyPolicy)
   }, [data.allContentfulPrivacyPolicy, language])
 
   const textLastUpdate = `${t`privacy-policy.last-update`}`

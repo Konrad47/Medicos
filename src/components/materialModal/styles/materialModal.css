@@ -96,9 +96,6 @@
 }
 
 .material-modal .modal-body {
-  /* display: flex;
-  align-items: flex-start;
-  align-self: stretch; */
   display: grid;
   grid-template-columns: 300px auto;
   padding: 0;
@@ -167,7 +164,6 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
-  /* flex: 1 0 0; */
 }
 
 .material-modal .modal-body .right-body .title-right-body {

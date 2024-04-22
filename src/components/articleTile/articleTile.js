@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext } from "react"
 import "./styles/articleTile.css"
-import { navigate } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import moment from "moment"
 import Navigate from "../../hooks/navigate"

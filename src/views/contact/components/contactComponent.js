@@ -44,7 +44,6 @@ const ContactComponent = ({ searchQuery }) => {
         language
       )
 
-      console.log(getContact[0])
       setContact(getContact[0].node)
     }
     getData()
@@ -153,7 +152,6 @@ const ContactComponent = ({ searchQuery }) => {
     setEmailError(false)
     setSomeError(false)
 
-    console.log(!emailRegex.test(message.email))
     if (
       message.name === "" ||
       message.surname === "" ||

@@ -36,7 +36,6 @@ const HomeBlog = () => {
       }
     }
   `)
-  console.log(data)
 
   const [articles, setArticles] = useState()
 
@@ -50,11 +49,9 @@ const HomeBlog = () => {
       setArticles(getArticles)
     }
     getData()
-    console.log(articles)
   }, [data.allContentfulArticle, language])
 
   const renderArticles = value => {
-    console.log(value)
     return value.map((val, index) => (
       <ArticleTile key={index} article={val} t={t} />
     ))

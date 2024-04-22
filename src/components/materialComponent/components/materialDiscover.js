@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react"
-import { I18nextContext, Link } from "gatsby-plugin-react-i18next"
+import { I18nextContext } from "gatsby-plugin-react-i18next"
 import "../styles/materialDiscover.css"
 import MaterialTile from "../../../components/materialTile/materialTile"
 import MaterialModal from "../../../components/materialModal/materialModal"
@@ -29,13 +29,11 @@ const MaterialDiscover = ({
   const [currentMaterial, setCurrentMaterial] = useState()
 
   const openModal = material => {
-    console.log(material)
     setCurrentMaterial(material)
     setShowModal(true)
   }
 
   const closeModal = () => {
-    console.log(showModal)
     setShowModal(false)
   }
 

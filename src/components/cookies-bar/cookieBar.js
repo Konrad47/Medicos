@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import "./styles/cookieBar.css"
 
 const CookieTypes = [

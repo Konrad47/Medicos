@@ -64,7 +64,6 @@ const HouseholdChemicals = () => {
         language
       )
 
-      console.log(getMaterials)
       setMaterials(getMaterials)
     }
     getData()

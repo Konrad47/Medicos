@@ -1,9 +1,5 @@
 import React, { useEffect, useState, useContext } from "react"
-import {
-  useTranslation,
-  I18nextContext,
-  Link,
-} from "gatsby-plugin-react-i18next"
+import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
 import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../components/contentful-translator"
 import Seo from "../../components/seo"
@@ -45,7 +41,6 @@ const News = () => {
       }
     }
   `)
-  console.log(data)
 
   const [articles, setArticles] = useState()
 
@@ -59,7 +54,6 @@ const News = () => {
       setArticles(getArticles)
     }
     getData()
-    console.log(articles)
   }, [data.allContentfulArticle, language])
 
   return (

@@ -4,7 +4,6 @@ import { useTranslation, useI18next, Link } from "gatsby-plugin-react-i18next"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Dropdown from "react-bootstrap/Dropdown"
 import { StaticImage } from "gatsby-plugin-image"
-import { navigate } from "gatsby"
 import QueryNavigate from "../../hooks/queryNavigate"
 
 const Menu = () => {

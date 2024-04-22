@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useTranslation, Link } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import "../styles/newsContent.css"
 import CustomPagination from "../../../components/pagination/pagination"
 import ArticleTile from "../../../components/articleTile/articleTile"
@@ -19,7 +19,6 @@ const NewsContent = ({ newsContent }) => {
   )
 
   const renderArticles = value => {
-    console.log(value)
     return value.map((val, index) => (
       <ArticleTile key={index} article={val} t={t} />
     ))

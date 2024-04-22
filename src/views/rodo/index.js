@@ -35,11 +35,9 @@ const Rodo = () => {
         language
       )
 
-      console.log(getRodo)
       setRodo(getRodo[0])
     }
     getData()
-    console.log(rodo)
   }, [data.allContentfulRodo, language])
 
   const textLastUpdate = `${t`rodo.last-update`}`

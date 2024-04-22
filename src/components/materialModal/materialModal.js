@@ -2,20 +2,12 @@ import React, { useContext } from "react"
 import "./styles/materialModal.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Modal from "react-bootstrap/Modal"
-import { I18nextContext, Link } from "gatsby-plugin-react-i18next"
+import { I18nextContext } from "gatsby-plugin-react-i18next"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { richTextRenderOptions } from "../../utils/templateRenderOption"
-import { navigate } from "gatsby"
 import QueryNavigate from "../../hooks/queryNavigate"
 import { articleTextRenderOptions } from "../../utils/articleRenderOption"
 
-const MaterialModal = ({
-  currentMaterial,
-  showModal,
-  closeModal,
-  props,
-  t,
-}) => {
+const MaterialModal = ({ currentMaterial, showModal, closeModal, t }) => {
   const { language } = useContext(I18nextContext)
 
   const goToContact = () => {
@@ -152,7 +144,6 @@ const MaterialModal = ({
             <div>
               {renderRichText(
                 currentMaterial.node.generalInformation,
-                // richTextRenderOptions
                 articleTextRenderOptions
               )}
             </div>
@@ -162,7 +153,6 @@ const MaterialModal = ({
             <div>
               {renderRichText(
                 currentMaterial.node.application,
-                // richTextRenderOptions
                 articleTextRenderOptions
               )}
             </div>

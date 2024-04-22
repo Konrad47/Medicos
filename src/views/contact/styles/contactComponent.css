@@ -142,7 +142,6 @@
 }
 
 .contact-c-container .contact-con .right-con .form-con .subject-div {
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
   gap: 8px;
