@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
       if (window.scrollY > 0) {
         window.scrollTo(0, 0)
       }
-    }, 1)
+    }, 100)
 
     return () => {
       clearTimeout(timeoutId)
