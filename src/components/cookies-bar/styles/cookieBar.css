@@ -75,9 +75,6 @@
   accent-color: #003b6f;
 }
 
-.cookie-con .agrees-con .agree-con .check-con input[type="checkbox"] {
-}
-
 .cookie-con .agrees-con .agree-con .check-con label {
   color: var(--main-text, #0a2243);
   font-size: 14px;

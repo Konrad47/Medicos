@@ -5,7 +5,6 @@ import {
   I18nextContext,
 } from "gatsby-plugin-react-i18next"
 import "../styles/homeIndustries.css"
-import { navigate } from "gatsby"
 import Navigate from "../../../hooks/navigate"
 
 const HomeIndustries = () => {

@@ -9,7 +9,7 @@ const SearchHeader = ({ searchData }) => {
       <div className="search-h-container">
         <div className="container">
           <h1 className="h1-style">{t`search-header.title`}</h1>
-          <h3 className="h3-style">{searchData}</h3>
+          <p className="p-style">{searchData}</p>
         </div>
       </div>
     </>

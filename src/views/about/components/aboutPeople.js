@@ -1,9 +1,5 @@
 import React, { useEffect, useState, useContext } from "react"
-import {
-  useTranslation,
-  I18nextContext,
-  Link,
-} from "gatsby-plugin-react-i18next"
+import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
 import "../styles/aboutPeople.css"
 import { graphql, useStaticQuery } from "gatsby"
 import getCurrentTranslations from "../../../components/contentful-translator"

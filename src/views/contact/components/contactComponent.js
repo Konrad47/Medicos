@@ -44,7 +44,6 @@ const ContactComponent = ({ searchQuery }) => {
         language
       )
 
-      console.log(getContact[0])
       setContact(getContact[0].node)
     }
     getData()
@@ -153,7 +152,6 @@ const ContactComponent = ({ searchQuery }) => {
     setEmailError(false)
     setSomeError(false)
 
-    console.log(!emailRegex.test(message.email))
     if (
       message.name === "" ||
       message.surname === "" ||
@@ -232,7 +230,7 @@ const ContactComponent = ({ searchQuery }) => {
       <div className="contact-c-container">
         {/* <div className="container"> */}
         <div className="contact-con">
-          <h2 className="h2-style white-h">{t`contact-component.contact-title`}</h2>
+          <h1 className="h1-style white-h">{t`contact-component.contact-title`}</h1>
           <div className="left-con">
             <div className="title-con">
               <h1 className="h1-style">{t`contact-component.contact-title`}</h1>

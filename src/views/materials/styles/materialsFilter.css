@@ -8,7 +8,7 @@
   padding: 16px;
   border-radius: 16px;
   background: var(--hover-bg, #e9f2fb);
-  display: flex; /* Use flexbox */
+  display: flex;
   flex-direction: column;
 }
 
@@ -45,21 +45,6 @@
 .materials-f-container .filter-con .filters .material-input::placeholder {
   color: var(--Input-Placeholder, #b0c7e8);
 }
-
-/* .materials-f-container .filter-con .filters .material-select {
-  height: 44px;
-  padding: 10px 16px;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"%3E%3Cg clip-path="url(%23clip0_550_5966)"%3E%3Cpath d="M6 9L12 15L18 9" stroke="%234D8CE5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /%3E%3C/g%3E%3Cdefs%3E%3CclipPath id="clip0_550_5966"%3E%3Crect width="24" height="24" fill="white" /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E');
-  background-repeat: no-repeat;
-  background-position-x: 95.5%;
-  background-position-y: 50%;
-  border-radius: 12px;
-  color: var(--main-text, #0a2243);
-  border: 1px solid var(--Input-Border, #d3e2f8);
-} */
 
 .materials-f-container .filter-con .filters .dropdown {
   height: 44px;
@@ -178,10 +163,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
-  /* .materials-f-container .filter-con .filters .material-select {
-    background-position-x: 98.5%;
-  } */
 }
 
 @media screen and (max-width: 568px) {

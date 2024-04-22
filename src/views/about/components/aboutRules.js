@@ -1,5 +1,5 @@
 import React from "react"
-import { useTranslation, Link } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import "../styles/aboutRules.css"
 import { withPrefix } from "gatsby"
 

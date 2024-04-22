@@ -1,12 +1,7 @@
 import React, { useContext } from "react"
-import {
-  useTranslation,
-  Link,
-  I18nextContext,
-} from "gatsby-plugin-react-i18next"
+import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../styles/homeHeader.css"
-import { StaticImage } from "gatsby-plugin-image"
 import QueryNavigate from "../../../hooks/queryNavigate"
 
 const HomeHeader = () => {

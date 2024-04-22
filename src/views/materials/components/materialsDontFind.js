@@ -1,9 +1,5 @@
 import React, { useContext } from "react"
-import {
-  useTranslation,
-  Link,
-  I18nextContext,
-} from "gatsby-plugin-react-i18next"
+import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
 import "../styles/materialsDontFind.css"
 import QueryNavigate from "../../../hooks/queryNavigate"
 

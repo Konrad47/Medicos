@@ -1,10 +1,6 @@
 import React, { useEffect, useState, useContext } from "react"
 import Seo from "../../components/seo"
-import {
-  useTranslation,
-  I18nextContext,
-  Link,
-} from "gatsby-plugin-react-i18next"
+import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
 import MaterialsHeader from "./components/materialsHeader"
 import Layout from "../../components/layout"
 import MaterialsFilter from "./components/materialsFilter"
@@ -78,7 +74,6 @@ const Materials = () => {
       if (searchQuery === "other-industries") {
         setSelectedIndustry(["Pozostałe branże"])
       } else {
-        console.log(searchQuery)
         setDataFromSearch(searchQuery)
       }
     }
@@ -136,17 +131,14 @@ const Materials = () => {
 
   const handleSearchMaterialChange = value => {
     setSearchMaterial(value)
-    console.log(searchMaterial)
   }
 
   const handleSelectedIndustryChange = value => {
     setSelectedIndustry(value)
-    console.log(selectedIndustry)
   }
 
   const handleSelectedSortChange = value => {
     setSelectedSort(value)
-    console.log(selectedSort)
   }
 
   const resetFilters = () => {

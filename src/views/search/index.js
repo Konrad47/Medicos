@@ -132,8 +132,6 @@ const Search = () => {
     }
   `)
 
-  console.log(data)
-
   const [searchedData, setSearchedData] = useState([])
 
   useEffect(() => {
@@ -283,7 +281,6 @@ const Search = () => {
 
     const processLocales = () => {
       const locales = getLocaleTranslations(data.allLocale.edges, language)
-      console.log(locales)
 
       if (searchQuery && searchQuery.trim() !== "") {
         const filteredLocales = locales
@@ -617,7 +614,6 @@ const Search = () => {
         text += "... "
       }
     }
-    console.log(text)
     return text
   }
 

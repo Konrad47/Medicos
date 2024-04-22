@@ -86,7 +86,24 @@
 }
 
 @media screen and (max-width: 568px) {
+  .article {
+    padding-top: 80px;
+  }
+  .article .container {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .article .article-content {
+    padding: 0 24px;
+  }
   .article .article-content .article-img {
     width: 300px;
+  }
+  .article .article-header .left-text .down-left-text {
+    padding: 24px 0px;
+  }
+  .article .article-header .left-text .down-left-text .date-and-name {
+    flex-direction: column;
+    gap: 4px;
   }
 }

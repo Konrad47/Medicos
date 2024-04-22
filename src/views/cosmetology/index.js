@@ -64,11 +64,9 @@ const Cosmetology = () => {
         language
       )
 
-      console.log(getMaterials)
       setMaterials(getMaterials)
     }
     getData()
-    console.log(materials)
   }, [data.allContentfulMaterials, language])
 
   const titleDiscover = `${t`cosmetology.discover.title`}`

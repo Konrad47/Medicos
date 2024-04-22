@@ -27,6 +27,9 @@ const MaterialComponent = ({
         imageApplication={imageApplication}
         titleApplication={titleApplication}
         descriptionApplication={descriptionApplication}
+        backgroundHeader={backgroundHeader}
+        titleHeader={titleHeader}
+        descriptionHeader={descriptionHeader}
       />
       {materialDiscover && (
         <MaterialDiscover

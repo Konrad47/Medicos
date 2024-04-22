@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useTranslation, Link } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import "../styles/materialsContent.css"
 import CustomPagination from "../../../components/pagination/pagination"
 import MaterialTile from "../../../components/materialTile/materialTile"
@@ -20,8 +20,6 @@ const MaterialsContent = ({
       const openModalWithData = materialsContent.filter(material => {
         return material.node.title === dataFromSearch
       })
-      console.log("DATA" + dataFromSearch)
-      console.log(openModalWithData[0])
       openModal(openModalWithData[0])
     }
   }, [dataFromSearch])
@@ -46,13 +44,11 @@ const MaterialsContent = ({
   const [currentMaterial, setCurrentMaterial] = useState()
 
   const openModal = material => {
-    console.log(material)
     setCurrentMaterial(material)
     setShowModal(true)
   }
 
   const closeModal = () => {
-    console.log(showModal)
     setShowModal(false)
   }
 

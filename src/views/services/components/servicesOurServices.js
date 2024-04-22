@@ -6,7 +6,6 @@ import {
 } from "gatsby-plugin-react-i18next"
 import "../styles/servicesOurServices.css"
 import { StaticImage } from "gatsby-plugin-image"
-import { navigate } from "gatsby"
 import QueryNavigate from "../../../hooks/queryNavigate"
 
 const ServicesOurServices = () => {

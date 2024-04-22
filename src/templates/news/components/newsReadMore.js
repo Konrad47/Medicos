@@ -1,9 +1,5 @@
-import React, { useEffect, useState, useContext } from "react"
-import {
-  useTranslation,
-  I18nextContext,
-  Link,
-} from "gatsby-plugin-react-i18next"
+import React from "react"
+import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/newsReadMore.css"
 import ArticleTile from "../../../components/articleTile/articleTile"
 

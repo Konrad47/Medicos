@@ -90,7 +90,6 @@
   font-weight: 400;
   line-height: 160%; /* 22.4px */
   text-decoration: none;
-  /* padding: 0px 16px; */
   transition: all 0.2s ease-out;
 }
 .search-c-container .content-con .results-con .result .bottom-result {
@@ -106,6 +105,10 @@
 .search-c-container .content-con .results-con .result:hover a {
   color: var(--Button-secondary-hover-txt, #4d8ce5);
   text-decoration: underline;
+}
+
+.search-c-container .content-con .results-con .result:hover .arrow-icon path {
+  stroke: #4d8ce5;
 }
 
 .search-c-container .content-con .results-con .result .category p {

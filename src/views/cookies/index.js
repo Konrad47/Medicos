@@ -35,11 +35,9 @@ const Cookies = () => {
         language
       )
 
-      console.log(getCookies)
       setCookies(getCookies[0])
     }
     getData()
-    console.log(cookies)
   }, [data.allContentfulCookies, language])
 
   const textLastUpdate = `${t`cookies.last-update`}`

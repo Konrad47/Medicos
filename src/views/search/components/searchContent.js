@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useTranslation, Link } from "gatsby-plugin-react-i18next"
 import "../styles/searchContent.css"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { richTextRenderOptions } from "../../../utils/templateRenderOption"
 import CustomPagination from "../../../components/pagination/pagination"
 
 const SearchContent = ({ searchContent, searchData }) => {
@@ -22,10 +20,8 @@ const SearchContent = ({ searchContent, searchData }) => {
 
   const renderContent = content => {
     const highlightText = (text, query) => {
-      // Ensure query is not empty
       if (!query.trim()) return text
 
-      // Escape special characters in query
       const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 
       const regex = new RegExp(`(${escapedQuery})`, "gi")
@@ -33,10 +29,8 @@ const SearchContent = ({ searchContent, searchData }) => {
     }
 
     const highlightDesc = (text, query) => {
-      // Ensure query is not empty
       if (!query.trim()) return text
 
-      // Escape special characters in query
       const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 
       const regex = new RegExp(`(${escapedQuery})`, "gi")
@@ -61,7 +55,46 @@ const SearchContent = ({ searchContent, searchData }) => {
           <div className="category">
             <p className="p-style">{con.category}</p>
           </div>
-          <Link to={`${con.slug}`}>{t`search-content.go-to-page`}</Link>
+          <Link to={`${con.slug}`}>
+            {t`search-content.go-to-page`}{" "}
+            <svg
+              className="arrow-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_889_994)">
+                <path
+                  d="M12.666 8L3.33268 8"
+                  stroke="#144487"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12.666 8L8.66602 4"
+                  stroke="#144487"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12.666 8L8.66602 12"
+                  stroke="#144487"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_889_994">
+                  <rect width="16" height="16" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </Link>
         </div>
       </Link>
     ))

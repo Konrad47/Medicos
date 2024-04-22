@@ -95,7 +95,6 @@
 
 .hide-menu .up-hide-menu .languages .language {
   padding: 9.2px 16px;
-  /* background: var(--Button-primary-bg, #144487); */
 }
 
 .hide-menu .up-hide-menu .languages .language a {
@@ -205,19 +204,9 @@
 }
 
 .menu-container .menu-inside-container .menu-button {
-  /* margin-right: 16px;
-  border-radius: 8px;
-  border: 1px solid var(--navy-light, #f7d4f3);
-  background: var(--navy-dark, #56104f);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  flex-shrink: 0; */
   min-width: 35px;
   min-height: 35px;
   padding: 4px;
-  /* margin-top: auto; */
-  /* margin-bottom: auto; */
   cursor: pointer;
   margin-right: 16px;
   border-radius: 12px;
@@ -250,16 +239,11 @@
 .menu-container .language-dropdown {
   padding: 6px 16px 3px 16px;
   transition: all 0.2s ease-out;
-  /* min-width: 104px; */
 }
 
 .menu-container .language-dropdown:hover {
   border-radius: 8px;
   background: var(--hover-bg, #e9f2fb);
-}
-
-.margin {
-  /* margin-right: 0.5%; */
 }
 
 .menu-container .btn-primary,
