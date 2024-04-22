@@ -399,11 +399,8 @@
   .menu-container a.medicos-icon {
     margin-left: 16px;
   }
-}
-
-@media screen and (max-width: 568px) {
   .hide-menu .menu-link:hover {
-    background: rgba(251, 252, 254, 0.98);
+    background: none;
   }
   .hide-menu .menu-button-link:hover {
     background: var(--Button-primary-bg, #144487);
@@ -411,4 +408,7 @@
   .hide-menu .up-hide-menu .linkedIn-a:hover {
     background: var(--light-bg, #fbfcfe);
   }
+}
+
+@media screen and (max-width: 568px) {
 }
