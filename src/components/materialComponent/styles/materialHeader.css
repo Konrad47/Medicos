@@ -50,3 +50,32 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 568px) {
+  .hc-background {
+    background: url(../../../images/household-chemicals/header/material-hc-header-background_mobile.webp)
+      no-repeat fixed 100% 0;
+  }
+  .c-background {
+    background: url(../../../images/cosmetology/header/material-c-header-background_mobile.webp)
+      no-repeat fixed 100% 0;
+  }
+
+  .p-background {
+    background: url(../../../images/pharmacy/header/material-p-header-background_mobile.webp)
+      no-repeat fixed 100% 0;
+  }
+
+  .f-background {
+    background: url(../../../images/food/header/material-f-header-background_mobile.webp)
+      no-repeat fixed 100% 0;
+  }
+
+  .oi-background {
+    background: url(../../../images/other-industries/header/material-oi-header-background_mobile.webp)
+      no-repeat fixed 100% 0;
+  }
+  .material-h-container p {
+    margin-bottom: 300px;
+  }
+}
