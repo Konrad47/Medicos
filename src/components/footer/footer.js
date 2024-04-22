@@ -228,7 +228,11 @@ const Footer = () => {
                   {contact.salesNumber}
                 </p>
               </a>
-              <a className="linkedIn-a" href="#" target="_blank">
+              <a
+                className="linkedIn-a"
+                href="https://www.linkedin.com/company/medicos-chemical-distributor/"
+                target="_blank"
+              >
                 <StaticImage
                   className="linkedIn-image"
                   src="../../images/menu/linkedIn.webp"
