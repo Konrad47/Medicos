@@ -409,6 +409,3 @@
     background: var(--light-bg, #fbfcfe);
   }
 }
-
-@media screen and (max-width: 568px) {
-}
