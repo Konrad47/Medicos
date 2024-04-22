@@ -425,7 +425,7 @@
 @media screen and (max-width: 1000px) {
   .white-h {
     display: flex;
-    padding: 70px 5% 20px 5%;
+    padding: 100px 5% 20px 5%;
   }
   .contact-c-container .contact-con .left-con .title-con h1 {
     display: none;
