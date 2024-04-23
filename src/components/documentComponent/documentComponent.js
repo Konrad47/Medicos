@@ -8,9 +8,6 @@ const DocumentComponent = ({
   documentDescription,
   textLastUpdate,
   texttitle,
-  textCertificate1,
-  textCertificate2,
-  textCertificate3,
   textSee,
 }) => {
   return (
@@ -21,13 +18,7 @@ const DocumentComponent = ({
         documentDescription={documentDescription}
         textLastUpdate={textLastUpdate}
       />
-      <DocumentDocuments
-        texttitle={texttitle}
-        textCertificate1={textCertificate1}
-        textCertificate2={textCertificate2}
-        textCertificate3={textCertificate3}
-        textSee={textSee}
-      />
+      <DocumentDocuments texttitle={texttitle} textSee={textSee} />
     </>
   )
 }

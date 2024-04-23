@@ -248,14 +248,11 @@ const Footer = () => {
               <p>{t`footer.medicos`}</p>
             </div>
             <div className="right-footer-down">
-              <Link to="/cookies">
-                <p>{t`footer.cookies`}</p>
-              </Link>
-              <Link to="/rodo">
-                <p>{t`footer.rodo`}</p>
-              </Link>
               <Link to="/privacy-policy">
                 <p>{t`footer.privacy-policy`}</p>
+              </Link>
+              <Link to="#">
+                <p>{t`footer.website-regulations`}</p>
               </Link>
             </div>
           </div>
