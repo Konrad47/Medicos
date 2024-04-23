@@ -1,10 +1,33 @@
-import React from "react"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import React, { useContext, useEffect, useState } from "react"
+import { I18nextContext, useTranslation } from "gatsby-plugin-react-i18next"
 import "../styles/aboutRules.css"
 import { withPrefix } from "gatsby"
 
 const AboutRules = () => {
   const { t } = useTranslation()
+  const { language } = useContext(I18nextContext)
+
+  const [certificate1, setCertificate1] = useState()
+  const [certificate2, setCertificate2] = useState()
+  const [certificate3, setCertificate3] = useState()
+
+  useEffect(() => {
+    if (language === "pl") {
+      setCertificate1("Ogólne Warunki Zamówienia_Medicos.pdf")
+      setCertificate2("Ogólne Warunki Sprzedaży_Medicos.pdf")
+      setCertificate3(
+        "Ogólne Warunki Obrotu Opakowaniami Zwrotnymi_Medicos.pdf"
+      )
+    } else {
+      setCertificate1("General Terms and Conditions of Orders_Medicos.pdf")
+      setCertificate2(
+        "General Terms And Conditions Of Sale And Delivery Of Commercial Goods_Medicos.pdf"
+      )
+      setCertificate3(
+        "General Terms and Conditions of Returnable Packaging Management_Medicos.pdf"
+      )
+    }
+  }, [language])
 
   return (
     <>
@@ -14,7 +37,7 @@ const AboutRules = () => {
           <p className="p-style">{t`about-rules.description`}</p>
           <div className="rules-con">
             <a
-              href={withPrefix("Medicos - EudraGMDP.pdf")}
+              href={withPrefix(`${certificate1}`)}
               target="_blank"
               className="rules"
             >
@@ -53,12 +76,12 @@ const AboutRules = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`about-policy.certificate-1`}</p>
+                <p className="h4-style">{t`about-rules.certificate-1`}</p>
               </div>
               <a>{t`about-policy.see`}</a>
             </a>
             <a
-              href={withPrefix("Certyfikat GDP - API 06092023 PL_EN.pdf")}
+              href={withPrefix(`${certificate2}`)}
               target="_blank"
               className="rules"
             >
@@ -97,12 +120,12 @@ const AboutRules = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`about-policy.certificate-2`}</p>
+                <p className="h4-style">{t`about-rules.certificate-2`}</p>
               </div>
               <a>{t`about-policy.see`}</a>
             </a>
             <a
-              href={withPrefix("Medicos_zaświadczenie o wpisie do KRWIDSC.pdf")}
+              href={withPrefix(`${certificate3}`)}
               target="_blank"
               className="rules"
             >
@@ -141,7 +164,7 @@ const AboutRules = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <p className="h4-style">{t`about-policy.certificate-3`}</p>
+                <p className="h4-style">{t`about-rules.certificate-3`}</p>
               </div>
               <a>{t`about-policy.see`}</a>
             </a>
