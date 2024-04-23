@@ -126,6 +126,11 @@ const Search = () => {
 
   const [searchedData, setSearchedData] = useState([])
 
+  const isOnlyDots = str => {
+    const dotPattern = /^[\s.]+$/
+    return dotPattern.test(str)
+  }
+
   useEffect(() => {
     setSearchedData([])
 
@@ -134,7 +139,11 @@ const Search = () => {
         data.allContentfulArticle.edges,
         language
       )
-      if (searchQuery && searchQuery.trim() !== "") {
+      if (
+        searchQuery &&
+        searchQuery.trim() !== "" &&
+        !isOnlyDots(searchQuery)
+      ) {
         const filteredArticles = articles
           .filter(article => {
             const descriptionContent = JSON.parse(
@@ -154,7 +163,11 @@ const Search = () => {
         data.allContentfulMaterials.edges,
         language
       )
-      if (searchQuery && searchQuery.trim() !== "") {
+      if (
+        searchQuery &&
+        searchQuery.trim() !== "" &&
+        !isOnlyDots(searchQuery)
+      ) {
         const filteredMaterials = materials
           .filter(material => {
             const generalInformationContent = JSON.parse(
@@ -184,7 +197,11 @@ const Search = () => {
         data.allContentfulContact.edges,
         language
       )
-      if (searchQuery && searchQuery.trim() !== "") {
+      if (
+        searchQuery &&
+        searchQuery.trim() !== "" &&
+        !isOnlyDots(searchQuery)
+      ) {
         const filteredContact = contact
           .filter(con => {
             return contactMatchesQuery(con)
@@ -199,7 +216,11 @@ const Search = () => {
         data.allContentfulPrivacyPolicy.edges,
         language
       )
-      if (searchQuery && searchQuery.trim() !== "") {
+      if (
+        searchQuery &&
+        searchQuery.trim() !== "" &&
+        !isOnlyDots(searchQuery)
+      ) {
         const filteredPrivacyPolicy = privacyPolicy
           .filter(pp => {
             const descriptionContent = JSON.parse(
@@ -219,7 +240,11 @@ const Search = () => {
         data.allContentfulTeam.edges,
         language
       )
-      if (searchQuery && searchQuery.trim() !== "") {
+      if (
+        searchQuery &&
+        searchQuery.trim() !== "" &&
+        !isOnlyDots(searchQuery)
+      ) {
         const filteredTeam = team
           .filter(team => {
             return teamMatchesQuery(team)
@@ -235,7 +260,11 @@ const Search = () => {
         data.allContentfulCooperationRulesFiles.edges,
         language
       )
-      if (searchQuery && searchQuery.trim() !== "") {
+      if (
+        searchQuery &&
+        searchQuery.trim() !== "" &&
+        !isOnlyDots(searchQuery)
+      ) {
         const filteredRulesFiles = rulesFiles
           .filter(con => {
             return filesMatchesQuery(con)
@@ -251,7 +280,11 @@ const Search = () => {
         data.allContentfulQualityPolicyFiles.edges,
         language
       )
-      if (searchQuery && searchQuery.trim() !== "") {
+      if (
+        searchQuery &&
+        searchQuery.trim() !== "" &&
+        !isOnlyDots(searchQuery)
+      ) {
         const filteredPolicyFiles = policyFiles
           .filter(con => {
             return filesMatchesQuery(con)
@@ -265,7 +298,11 @@ const Search = () => {
     const processLocales = () => {
       const locales = getLocaleTranslations(data.allLocale.edges, language)
 
-      if (searchQuery && searchQuery.trim() !== "") {
+      if (
+        searchQuery &&
+        searchQuery.trim() !== "" &&
+        !isOnlyDots(searchQuery)
+      ) {
         const filteredLocales = locales
           .filter(locale => {
             const dataContent = JSON.parse(locale.node.data)
@@ -297,23 +334,13 @@ const Search = () => {
 
   const articleMatchesQuery = (article, descriptionText) => {
     return (
-      article.node.title
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      article.node.author
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
+      article.node.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      article.node.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
       moment(article.node.createdAt)
         .format("DD/MM/YYYY HH:MM")
         .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      descriptionText
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
+        .includes(searchQuery.toLowerCase()) ||
+      descriptionText.toLowerCase().includes(searchQuery.toLowerCase())
     )
   }
 
@@ -326,8 +353,7 @@ const Search = () => {
 
     const queryIndex = descriptionText
       .toLowerCase()
-      .normalize("NFC")
-      .indexOf(searchQuery.toLowerCase().normalize("NFC"))
+      .indexOf(searchQuery.toLowerCase())
     if (queryIndex !== -1) {
       const queryLength = searchQuery.length
       startIndex = Math.max(0, queryIndex - 50)
@@ -343,20 +369,14 @@ const Search = () => {
       moment(article.node.createdAt)
         .format("DD/MM/YYYY HH:MM")
         .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
+        .includes(searchQuery.toLowerCase())
     ) {
       firstSentenceContainingQuery += `...${moment(
         article.node.createdAt
       ).format("DD/MM/YYYY HH:MM")}`
     }
 
-    if (
-      article.node.author
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (article.node.author.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${article.node.author}`
     }
 
@@ -374,38 +394,16 @@ const Search = () => {
     applicationText
   ) => {
     return (
-      material.node.title
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      material.node.color
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      material.node.pH
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      material.node.inci
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      material.node.cas
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      material.node.form
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
+      material.node.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      material.node.color.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      material.node.pH.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      material.node.inci.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      material.node.cas.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      material.node.form.toLowerCase().includes(searchQuery.toLowerCase()) ||
       generalInformationText
         .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      applicationText
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
+        .includes(searchQuery.toLowerCase()) ||
+      applicationText.toLowerCase().includes(searchQuery.toLowerCase())
     )
   }
 
@@ -415,50 +413,61 @@ const Search = () => {
     ).content
     const generalInformationText = getDescriptionText(generalInformationContent)
 
+    let firstSentenceContainingQuery1 = generalInformationText.slice(0, 100)
+    let startIndex1 = 0
+    let endIndex1 = generalInformationText.length - 1
+
+    const queryIndex1 = generalInformationText
+      .toLowerCase()
+      .indexOf(searchQuery.toLowerCase())
+    if (queryIndex1 !== -1) {
+      const queryLength = searchQuery.length
+      startIndex1 = Math.max(0, queryIndex1 - 50)
+      endIndex1 = Math.min(
+        generalInformationText.length - 1,
+        queryIndex1 + queryLength + 50
+      )
+      firstSentenceContainingQuery1 =
+        "..." + generalInformationText.slice(startIndex1, endIndex1)
+    }
+
     const applicationContent = JSON.parse(material.node.application.raw).content
     const applicationText = getDescriptionText(applicationContent)
 
-    let firstSentenceContainingQuery =
-      generalInformationText.slice(0, 50) + "..." + applicationText.slice(0, 50)
+    let firstSentenceContainingQuery2 = applicationText.slice(0, 100)
+    let startIndex2 = 0
+    let endIndex2 = applicationText.length - 1
 
-    if (
-      material.node.color
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    const queryIndex2 = applicationText
+      .toLowerCase()
+      .indexOf(searchQuery.toLowerCase())
+    if (queryIndex2 !== -1) {
+      const queryLength = searchQuery.length
+      startIndex2 = Math.max(0, queryIndex2 - 50)
+      endIndex2 = Math.min(
+        applicationText.length - 1,
+        queryIndex2 + queryLength + 50
+      )
+      firstSentenceContainingQuery2 =
+        "..." + applicationText.slice(startIndex2, endIndex2)
+    }
+
+    let firstSentenceContainingQuery =
+      firstSentenceContainingQuery1 + "..." + firstSentenceContainingQuery2
+
+    if (material.node.color.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${material.node.color}`
     }
-    if (
-      material.node.pH
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (material.node.pH.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${material.node.pH}`
     }
-    if (
-      material.node.inci
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (material.node.inci.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${material.node.inci}`
     }
-    if (
-      material.node.cas
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (material.node.cas.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${material.node.cas}`
     }
-    if (
-      material.node.form
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (material.node.form.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${material.node.form}`
     }
 
@@ -474,121 +483,64 @@ const Search = () => {
 
   const contactMatchesQuery = contact => {
     return (
-      contact.node.name
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      contact.node.email
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      contact.node.krs
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      contact.node.nip
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
+      contact.node.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      contact.node.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      contact.node.krs.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      contact.node.nip.toLowerCase().includes(searchQuery.toLowerCase()) ||
       contact.node.purchaseNumber
         .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
+        .includes(searchQuery.toLowerCase()) ||
       contact.node.registration
         .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      contact.node.regon
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
+        .includes(searchQuery.toLowerCase()) ||
+      contact.node.regon.toLowerCase().includes(searchQuery.toLowerCase()) ||
       contact.node.salesNumber
         .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      contact.node.street
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      contact.node.zipCode
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
+        .includes(searchQuery.toLowerCase()) ||
+      contact.node.street.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      contact.node.zipCode.toLowerCase().includes(searchQuery.toLowerCase())
     )
   }
 
   const mapContactData = contact => {
     let firstSentenceContainingQuery = ""
 
-    if (
-      contact.node.email
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (contact.node.email.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${contact.node.email}`
     }
-    if (
-      contact.node.krs
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (contact.node.krs.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${contact.node.krs}`
     }
-    if (
-      contact.node.nip
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (contact.node.nip.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${contact.node.nip}`
     }
     if (
       contact.node.purchaseNumber
         .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
+        .includes(searchQuery.toLowerCase())
     ) {
       firstSentenceContainingQuery += `...${contact.node.purchaseNumber}`
     }
     if (
       contact.node.registration
         .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
+        .includes(searchQuery.toLowerCase())
     ) {
       firstSentenceContainingQuery += `...${contact.node.registration}`
     }
-    if (
-      contact.node.regon
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (contact.node.regon.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${contact.node.regon}`
     }
     if (
-      contact.node.salesNumber
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
+      contact.node.salesNumber.toLowerCase().includes(searchQuery.toLowerCase())
     ) {
       firstSentenceContainingQuery += `...${contact.node.salesNumber}`
     }
-    if (
-      contact.node.street
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (contact.node.street.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${contact.node.street}`
     }
     if (
-      contact.node.zipCode
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
+      contact.node.zipCode.toLowerCase().includes(searchQuery.toLowerCase())
     ) {
       firstSentenceContainingQuery += `...${contact.node.zipCode}`
     }
@@ -614,19 +566,12 @@ const Search = () => {
 
   const documentMatchesQuery = (document, descriptionText) => {
     return (
-      document.node.title
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
+      document.node.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       moment(document.node.updatedAt)
         .format("DD/MM/YYYY HH:MM")
         .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      descriptionText
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
+        .includes(searchQuery.toLowerCase()) ||
+      descriptionText.toLowerCase().includes(searchQuery.toLowerCase())
     )
   }
 
@@ -639,8 +584,7 @@ const Search = () => {
 
     const queryIndex = descriptionText
       .toLowerCase()
-      .normalize("NFC")
-      .indexOf(searchQuery.toLowerCase().normalize("NFC"))
+      .indexOf(searchQuery.toLowerCase())
     if (queryIndex !== -1) {
       const queryLength = searchQuery.length
       startIndex = Math.max(0, queryIndex - 50)
@@ -656,8 +600,7 @@ const Search = () => {
       moment(document.node.updatedAt)
         .format("DD/MM/YYYY HH:MM")
         .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
+        .includes(searchQuery.toLowerCase())
     ) {
       firstSentenceContainingQuery += `...${moment(
         document.node.updatedAt
@@ -674,22 +617,12 @@ const Search = () => {
 
   const teamMatchesQuery = team => {
     return (
-      team.node.name
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      team.node.education
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
-      team.node.role
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) ||
+      team.node.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      team.node.education.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      team.node.role.toLowerCase().includes(searchQuery.toLowerCase()) ||
       team.node.description.description
         .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
+        .includes(searchQuery.toLowerCase())
     )
   }
 
@@ -701,8 +634,7 @@ const Search = () => {
 
     const queryIndex = descriptionText
       .toLowerCase()
-      .normalize("NFC")
-      .indexOf(searchQuery.toLowerCase().normalize("NFC"))
+      .indexOf(searchQuery.toLowerCase())
     if (queryIndex !== -1) {
       const queryLength = searchQuery.length
       startIndex = Math.max(0, queryIndex - 50)
@@ -714,21 +646,11 @@ const Search = () => {
         "..." + descriptionText.slice(startIndex, endIndex)
     }
 
-    if (
-      team.node.education
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (team.node.education.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${team.node.education}`
     }
 
-    if (
-      team.node.role
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC"))
-    ) {
+    if (team.node.role.toLowerCase().includes(searchQuery.toLowerCase())) {
       firstSentenceContainingQuery += `...${team.node.role}`
     }
 
@@ -760,8 +682,8 @@ const Search = () => {
     }
 
     return {
-      title: file.node.title,
-      description: firstSentenceContainingQuery + "...",
+      title: file.node.title.normalize("NFC"),
+      description: firstSentenceContainingQuery.normalize("NFC") + "...",
       category: t("search.page"),
       slug: `/about`,
     }
@@ -779,11 +701,12 @@ const Search = () => {
   }
 
   const localeMatchesQuery = locale => {
+    const dataContent = JSON.parse(locale.node.data)
+    const dataText = getDataText(dataContent)
+    console.log(dataText)
+
     return (
-      locale.node.data
-        .toLowerCase()
-        .normalize("NFC")
-        .includes(searchQuery.toLowerCase().normalize("NFC")) &&
+      dataText.toLowerCase().includes(searchQuery.toLowerCase()) &&
       locale.node.ns !== "search" &&
       locale.node.ns !== "seo" &&
       locale.node.ns !== "error"
@@ -797,10 +720,7 @@ const Search = () => {
     let startIndex = 0
     let endIndex = dataText.length - 1
 
-    const queryIndex = dataText
-      .toLowerCase()
-      .normalize("NFC")
-      .indexOf(searchQuery.toLowerCase().normalize("NFC"))
+    const queryIndex = dataText.toLowerCase().indexOf(searchQuery.toLowerCase())
     if (queryIndex !== -1) {
       const queryLength = searchQuery.length
       startIndex = Math.max(0, queryIndex - 75)
