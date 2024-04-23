@@ -93,6 +93,9 @@
     margin: 0 !important;
     padding: 0 !important;
   }
+  .article .article-header {
+    border-radius: 0;
+  }
   .article .article-content {
     padding: 0 24px;
   }
