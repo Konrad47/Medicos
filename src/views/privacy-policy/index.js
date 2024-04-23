@@ -42,9 +42,9 @@ const PrivacyPolicy = () => {
 
   const textLastUpdate = `${t`privacy-policy.last-update`}`
   const texttitle = `${t`privacy-policy.title`}`
-  const textCertificate1 = `${t`privacy-policy.certificate-1`}`
-  const textCertificate2 = `${t`privacy-policy.certificate-2`}`
-  const textCertificate3 = `${t`privacy-policy.certificate-3`}`
+  // const textCertificate1 = `${t`privacy-policy.certificate-1`}`
+  // const textCertificate2 = `${t`privacy-policy.certificate-2`}`
+  // const textCertificate3 = `${t`privacy-policy.certificate-3`}`
   const textSee = `${t`privacy-policy.see`}`
 
   return (
@@ -60,9 +60,6 @@ const PrivacyPolicy = () => {
           documentDescription={privacyPolicy.node.description}
           textLastUpdate={textLastUpdate}
           texttitle={texttitle}
-          textCertificate1={textCertificate1}
-          textCertificate2={textCertificate2}
-          textCertificate3={textCertificate3}
           textSee={textSee}
         />
       )}
