@@ -14,7 +14,6 @@ export const richTextRenderOptions = {
       )
     },
     [BLOCKS.PARAGRAPH]: (node, children) => {
-      // Function to render a single paragraph
       const renderParagraph = content => {
         return (
           <p>
