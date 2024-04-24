@@ -117,6 +117,28 @@ textarea {
   outline: none;
 }
 
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid #d4e5f7 !important;
+  padding: 8px 16px;
+}
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #144487;
+  color: white;
+}
+
 @media only screen and (max-width: 568px) {
   .container {
     margin: 0 1rem;
