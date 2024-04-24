@@ -1,0 +1,26 @@
+.not-found-con {
+  padding-top: 125px;
+  padding-bottom: 45px;
+}
+
+.not-found-con .nf-con {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 60px 24px;
+  border-radius: 16px;
+  background: var(--hover-bg, #e9f2fb);
+}
+
+.not-found-con .nf-con h3 {
+  color: var(--Button-primary-bg, #144487);
+  margin-bottom: 24px;
+}
+
+.not-found-con .nf-con p {
+  color: var(--main-text, #0a2243);
+  margin-bottom: 32px;
+  max-width: 712px;
+  margin-left: auto;
+  margin-right: auto;
+}

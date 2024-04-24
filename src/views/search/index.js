@@ -944,6 +944,7 @@ const Search = () => {
         .includes(searchQuery.toLowerCase().normalize("NFC")) &&
       locale.node.ns !== "search" &&
       locale.node.ns !== "seo" &&
+      locale.node.ns !== "not-found" &&
       locale.node.ns !== "error"
     )
   }
