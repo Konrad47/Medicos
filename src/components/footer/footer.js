@@ -251,7 +251,7 @@ const Footer = () => {
               <Link to="/privacy-policy">
                 <p>{t`footer.privacy-policy`}</p>
               </Link>
-              <Link to="#">
+              <Link to="/website-regulations">
                 <p>{t`footer.website-regulations`}</p>
               </Link>
             </div>

@@ -1,7 +1,7 @@
-import NotFound from "../views/notFound"
+import WebsiteRegulations from "../views/website-regulations"
 import { graphql } from "gatsby"
 
-export default NotFound
+export default WebsiteRegulations
 
 export const query = graphql`
   query ($language: String!) {

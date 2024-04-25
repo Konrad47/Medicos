@@ -83,6 +83,18 @@ const Search = () => {
           }
         }
       }
+      allContentfulWebsiteRegulations {
+        edges {
+          node {
+            title
+            node_locale
+            description {
+              raw
+            }
+            updatedAt
+          }
+        }
+      }
       allContentfulTeam {
         edges {
           node {
@@ -235,6 +247,33 @@ const Search = () => {
       }
     }
 
+    const processWebsiteRegulations = () => {
+      const websiteRegulations = getCurrentTranslations(
+        data.allContentfulWebsiteRegulations.edges,
+        language
+      )
+      if (
+        searchQuery &&
+        searchQuery.trim() !== "" &&
+        !isOnlyDots(searchQuery)
+      ) {
+        const filteredWebsiteRegulations = websiteRegulations
+          .filter(pp => {
+            const descriptionContent = JSON.parse(
+              pp.node.description.raw
+            ).content
+            const descriptionText = getDescriptionText(descriptionContent)
+            return documentMatchesQuery(pp, descriptionText)
+          })
+          .map(pp => mapDocumentData(pp, "/website-regulations"))
+
+        setSearchedData(prevData => [
+          ...prevData,
+          ...filteredWebsiteRegulations,
+        ])
+      }
+    }
+
     const processTeam = () => {
       const team = getCurrentTranslations(
         data.allContentfulTeam.edges,
@@ -319,6 +358,7 @@ const Search = () => {
     processMaterials()
     processContact()
     processPrivacyPolicy()
+    processWebsiteRegulations()
     processTeam()
     processRulesFiles()
     processPolicyFiles()
@@ -327,8 +367,48 @@ const Search = () => {
 
   const getDescriptionText = content => {
     return content
-      .filter(node => node?.content[0]?.nodeType === "text")
-      .map(paragraph => paragraph.content.map(({ value }) => value).join(""))
+      .filter(node => {
+        const firstContent = node?.content[0]
+        return (
+          firstContent?.nodeType === "paragraph" ||
+          firstContent?.nodeType === "heading-1" ||
+          firstContent?.nodeType === "heading-2" ||
+          firstContent?.nodeType === "heading-3" ||
+          firstContent?.nodeType === "heading-4" ||
+          firstContent?.nodeType === "heading-5" ||
+          firstContent?.nodeType === "heading-6" ||
+          firstContent?.nodeType === "list-item" ||
+          firstContent?.nodeType === "table-row"
+        )
+      })
+      .map(paragraph => {
+        return paragraph.content
+          .map(item => {
+            if (item.nodeType === "text") {
+              return item.value
+            } else if (item.nodeType === "list-item") {
+              return item.content
+                .map(inner => {
+                  return inner.content.map(({ value }) => value).join("")
+                })
+                .join(" ")
+            } else if (item.nodeType === "table-row") {
+              return item.content
+                .map(tableCell => {
+                  return tableCell.content
+                    .map(paragraph => {
+                      return paragraph.content
+                        .map(({ value }) => value)
+                        .join("")
+                    })
+                    .join(" ")
+                })
+                .join(" ")
+            }
+            return ""
+          })
+          .join("")
+      })
       .join(" ")
   }
 
@@ -856,7 +936,6 @@ const Search = () => {
   const localeMatchesQuery = locale => {
     const dataContent = JSON.parse(locale.node.data)
     const dataText = getDataText(dataContent)
-    console.log(dataText)
 
     return (
       dataText
@@ -865,6 +944,7 @@ const Search = () => {
         .includes(searchQuery.toLowerCase().normalize("NFC")) &&
       locale.node.ns !== "search" &&
       locale.node.ns !== "seo" &&
+      locale.node.ns !== "not-found" &&
       locale.node.ns !== "error"
     )
   }
