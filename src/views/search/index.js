@@ -366,49 +366,43 @@ const Search = () => {
   }, [data, language, searchQuery])
 
   const getDescriptionText = content => {
-    return content
-      .filter(node => {
-        const firstContent = node?.content[0]
-        return (
-          firstContent?.nodeType === "paragraph" ||
-          firstContent?.nodeType === "heading-1" ||
-          firstContent?.nodeType === "heading-2" ||
-          firstContent?.nodeType === "heading-3" ||
-          firstContent?.nodeType === "heading-4" ||
-          firstContent?.nodeType === "heading-5" ||
-          firstContent?.nodeType === "heading-6" ||
-          firstContent?.nodeType === "list-item" ||
-          firstContent?.nodeType === "table-row"
-        )
-      })
-      .map(paragraph => {
-        return paragraph.content
-          .map(item => {
-            if (item.nodeType === "text") {
-              return item.value
-            } else if (item.nodeType === "list-item") {
-              return item.content
-                .map(inner => {
-                  return inner.content.map(({ value }) => value).join("")
-                })
-                .join(" ")
-            } else if (item.nodeType === "table-row") {
-              return item.content
-                .map(tableCell => {
-                  return tableCell.content
-                    .map(paragraph => {
-                      return paragraph.content
-                        .map(({ value }) => value)
-                        .join("")
-                    })
-                    .join(" ")
-                })
-                .join(" ")
-            }
-            return ""
-          })
-          .join("")
-      })
+    const extractText = nodes => {
+      return nodes
+        .map(node => {
+          if (node.nodeType === "text") {
+            return node.value
+          } else if (
+            ["paragraph", "list-item", "unordered-list"].includes(node.nodeType)
+          ) {
+            return extractText(node.content).join(" ")
+          } else if (node.nodeType === "table-row") {
+            return node.content
+              .map(tableCell => extractText(tableCell.content))
+              .join(" ")
+          }
+          return ""
+        })
+        .flat()
+    }
+
+    const filteredNodes = content.filter(node => {
+      const firstContent = node?.content?.[0]
+      return [
+        "paragraph",
+        "heading-1",
+        "heading-2",
+        "heading-3",
+        "heading-4",
+        "heading-5",
+        "heading-6",
+        "list-item",
+        "unordered-list",
+        "table-row",
+      ].includes(firstContent?.nodeType)
+    })
+
+    return filteredNodes
+      .map(node => extractText(node.content).join(" "))
       .join(" ")
   }
 

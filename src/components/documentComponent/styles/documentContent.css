@@ -27,6 +27,14 @@
   color: var(--main-text, #0a2243);
 }
 
+.document-c-container .description-con h1,
+.document-c-container .description-con h2,
+.document-c-container .description-con h3,
+.document-c-container .description-con h4,
+.document-c-container .description-con h5 {
+  text-align: center;
+}
+
 @media screen and (max-width: 992px) {
   .document-c-container .title-con {
     margin: 0;
