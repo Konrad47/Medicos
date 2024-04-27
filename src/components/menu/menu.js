@@ -26,6 +26,11 @@ const Menu = () => {
     setIsErrorSearch(false)
     const specialCharsRegex = /[%"';]/
 
+    if (search.length > 40) {
+      setIsErrorSearch(true)
+      return
+    }
+
     if (search !== "" && specialCharsRegex.test(search)) {
       setIsErrorSearch(true)
       return
