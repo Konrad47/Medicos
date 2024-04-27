@@ -1,5 +1,5 @@
 {
-    "error.menu.search": "Niedozwolone znaki: % ' ; \"",
+    "error.menu.search": "Wyszukiwanie ma za dużo znaków (maks: 40) lub posiada niedozwolone znaki: % ' ; \"",
 
     "error.contact.required-fields": "* - pola wymagane",
     "error.contact.email-error": "Nieprawidłowy format e-mail",
