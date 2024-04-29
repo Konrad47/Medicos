@@ -1,6 +1,6 @@
 {
-    "materials-header.title": "Oferta surowców",
-    "materials-header.description": "Bez względu na to, czy szukasz kolejnej doskonałej koncepcji, czy też  sposobu na poprawę wydajności produktu, jesteśmy w stanie Ci pomóc.  Każdego dnia wspieramy klientów, dostarczając im wyjątkową wiedzę  techniczną i logistyczną.",
+    "materials-header.title": "Oferta surowców chemicznych ",
+    "materials-header.description": "Kompetencje i ekspertyza zespołu Medicos pozwala dostarczyć każdemu klientowi wysokiej jakości, dopasowane do potrzeb surowce chemiczne, które są fundamentem dla innowacji i efektywności produktów przemysłowych. Specjalizujemy się w zapewnieniu surowców optymalnych dla każdego procesu technologicznego, gwarantując wsparcie na każdym etapie – od projektu po finalną realizację.",
 
     "materials-filter.search-material": "Wyszukaj surowiec",
     "materials-filter.search": "Wyszukaj surowiec po nazwie, INCI lub numerze CAS...",
@@ -26,8 +26,8 @@
     "materials-tile.cas": "Numer CAS:",
     "materials-tile.details": "Szczegóły",
 
-    "materials-dont-find.title": "Nie znalazłeś surowca?",
-    "materials-dont-find.description": "Jeśli nie możesz znaleźć produktu, który Cię interesuje prosimy o kontakt przez formularz kontaktowy.",
+    "materials-dont-find.title": "Nie znalazłeś surowca, którego potrzebujesz?",
+    "materials-dont-find.description": "Jeśli nie mogłeś znaleźć produktu, który Cię interesuje, prosimy o kontakt poprzez formularz kontaktowy.",
     "materials-dont-find.contact": "Skontaktuj się",
 
     "material-modal.form": "Skorzystaj z formularza kontaktowego, aby zapytać o surowiec",

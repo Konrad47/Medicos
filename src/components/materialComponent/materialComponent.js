@@ -10,6 +10,8 @@ const MaterialComponent = ({
   imageApplication,
   titleApplication,
   descriptionApplication,
+  descriptionApplication2,
+  descriptionApplication3,
   materialDiscover,
   titleDiscover,
   descriptionDiscover,
@@ -27,6 +29,8 @@ const MaterialComponent = ({
         imageApplication={imageApplication}
         titleApplication={titleApplication}
         descriptionApplication={descriptionApplication}
+        descriptionApplication2={descriptionApplication2}
+        descriptionApplication3={descriptionApplication3}
         backgroundHeader={backgroundHeader}
         titleHeader={titleHeader}
         descriptionHeader={descriptionHeader}

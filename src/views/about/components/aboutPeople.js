@@ -9,7 +9,7 @@ const AboutPeople = () => {
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
     query {
-      allContentfulTeam {
+      allContentfulTeam(sort: { createdAt: ASC }) {
         edges {
           node {
             node_locale

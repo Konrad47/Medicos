@@ -1,6 +1,6 @@
 {
     "contact-component.contact-title": "Kontakt",
-    "contact-component.contact-description": "Współpraca z nami w zakresie zaopatrzenia w surowce chemiczne nie może być prostsza. Skontaktuj się z naszym zespołem, a my z przyjemnością podejmiemy współpracę z Tobą w celu zaspokojenia Twoich potrzeb w zakresie dostaw surowców, niezależnie od tego, czy jest to zaplanowane partnerstwo, czy jednorazowa dostawa.",
+    "contact-component.contact-description": "Skontaktuj się z nami, aby rozpocząć współpracę dotyczącą doradztwa i dostaw surowców chemicznych na potrzeby stałych partnerstw, jak i jednorazowych projektów.",
     "contact-component.contact-email": "Mail kontaktowy",
     "contact-component.sales-number": "Dział sprzedaży",
     "contact-component.purchase-number": "Dział zakupów",
@@ -9,7 +9,7 @@
 
     "contact-component.message-title": "Wyślij wiadomość",
     "contact-component.message-description": "Skontaktuj się z nami jeszcze wygodniej, wyślij zapytanie poprzez formularz",
-    "contact-component.subject": "Temat *",
+    "contact-component.subject": "Wybierz temat *",
     "contact-component.name": "Imię *",
     "contact-component.surname": "Nazwisko *",
     "contact-component.email": "Mail kontaktowy *",
