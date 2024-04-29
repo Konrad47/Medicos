@@ -694,7 +694,7 @@ const ContactComponent = ({ searchQuery }) => {
                     {t`contact-component.personalData-a`}{" "}
                     <Link to="/privacy-policy">{t`contact-component.personalData-b`}</Link>{" "}
                     <Link to="/website-regulations">{t`contact-component.personalData-c`}</Link>{" "}
-                    {t`contact-component.personalData-c`}
+                    {t`contact-component.personalData-d`}
                   </label>
                 </div>
               </div>

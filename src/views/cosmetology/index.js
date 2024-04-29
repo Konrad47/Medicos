@@ -25,6 +25,8 @@ const Cosmetology = () => {
 
   const titleApplication = `${t`cosmetology.application.title`}`
   const descriptionApplication = `${t`cosmetology.application.description`}`
+  const descriptionApplication2 = `${t`cosmetology.application.description2`}`
+  const descriptionApplication3 = `${t`cosmetology.application.description3`}`
 
   const { language } = useContext(I18nextContext)
   const data = useStaticQuery(graphql`
@@ -86,6 +88,8 @@ const Cosmetology = () => {
         imageApplication={imageApplication}
         titleApplication={titleApplication}
         descriptionApplication={descriptionApplication}
+        descriptionApplication2={descriptionApplication2}
+        descriptionApplication3={descriptionApplication3}
         materialDiscover={materials}
         titleDiscover={titleDiscover}
         descriptionDiscover={descriptionDiscover}
