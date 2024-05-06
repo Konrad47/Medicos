@@ -458,8 +458,12 @@ const ContactComponent = ({ searchQuery }) => {
                   </svg>
                   <div className="info-text">
                     <p className="p-style title">{t`contact-component.firm-data`}</p>
-                    <p className="p-style info">NIP: {contact.nip}</p>
-                    <p className="p-style info">REGON: {contact.regon}</p>
+                    <p className="p-style info">
+                      {t`contact-component.nip`} {contact.nip}
+                    </p>
+                    <p className="p-style info">
+                      {t`contact-component.regon`} {contact.regon}
+                    </p>
                     <p className="p-style info">{contact.registration}</p>
                   </div>
                 </div>
@@ -673,30 +677,34 @@ const ContactComponent = ({ searchQuery }) => {
                 />
               </div>
               <div>
-                <div className="personal-data-div">
-                  <input
-                    type="checkbox"
-                    id="personalData"
-                    name="personalData"
-                    value={message.personalData}
-                    checked={message.personalData === true}
-                    onChange={handlePersonalDataChange}
-                  />
-                  <label
-                    htmlFor="personalData"
-                    style={{
-                      color:
-                        message.personalData === false && isRequiredFields
-                          ? "#B21A1A"
-                          : "",
-                    }}
-                  >
-                    {t`contact-component.personalData-a`}{" "}
-                    <Link to="/privacy-policy">{t`contact-component.personalData-b`}</Link>{" "}
-                    <Link to="/website-regulations">{t`contact-component.personalData-c`}</Link>{" "}
-                    {t`contact-component.personalData-d`}
-                  </label>
-                </div>
+                {contact && (
+                  <div className="personal-data-div">
+                    <input
+                      type="checkbox"
+                      id="personalData"
+                      name="personalData"
+                      value={message.personalData}
+                      checked={message.personalData === true}
+                      onChange={handlePersonalDataChange}
+                    />
+                    <label
+                      htmlFor="personalData"
+                      style={{
+                        color:
+                          message.personalData === false && isRequiredFields
+                            ? "#B21A1A"
+                            : "",
+                      }}
+                    >
+                      {t`contact-component.personalData-a`} {contact.nip}
+                      {", "}
+                      {t`contact-component.personalData-b`}
+                      <Link to="/privacy-policy">{t`contact-component.personalData-c`}</Link>{" "}
+                      <Link to="/website-regulations">{t`contact-component.personalData-d`}</Link>{" "}
+                      {t`contact-component.personalData-e`}
+                    </label>
+                  </div>
+                )}
               </div>
               <div className="button-container">
                 {!sending && !sent && (

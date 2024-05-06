@@ -1,7 +1,43 @@
 {
-    "seo.home.title": "Medicos",
-    "seo.home.description": "Medicos",
+    "home-header.title-a": "We connect industry with",
+    "home-header.title-b": " chemical raw material producers",
+    "home-header.description": "We have been supplying manufacturers with raw chemical materials and active ingredients for many years, which form the foundation for our customers' innovative solutions. Our priority is to offer professional product advice, secure favourable purchasing conditions and organise safe delivery within a supply chain carefully secured by our specialists.",
+    "home-header.ask": "Ask for raw materials",
 
-    "seo.news.title": "Medicos",
-    "seo.news.description": "Medicos"
+    "home-industries.title": "Chemical raw materials for every industry",
+    "home-industries.description": "Our wide range of world-class chemicals, formulations, and speciality chemicals enables our customers to reduce costs, increase revenues, and achieve modern and sustainable solutions. Contact us to discuss your requirements or view our chemical raw material catalogue.",
+    "home-industries.all-materials": "All raw materials",
+    "home-industries.material": "View raw materials",
+    "home-industries.household-chemicals": "Household chemicals",
+    "home-industries.hc-description": "Are you looking for specialist chemicals or effective washing, laundry and dishwashing ingredients? We offer support in the field of household chemicals tailored to your needs.",
+    "home-industries.cosmetology": "Cosmetology",
+    "home-industries.c-description": "We specialise in supplying quality raw materials for the cosmetics industry, including active and auxiliary ingredients that meet the highest standards.",
+    "home-industries.pharmacy": "Pharamacology",
+    "home-industries.p-description": "We supply raw chemical materials for the pharmacy, meeting the highest pharmacopoeia standards. Our team provides active substances and excipients, guaranteeing safety and efficacy.",
+    "home-industries.food": "Foodstuffs & supplements",
+    "home-industries.f-description": "We offer various chemical raw materials to produce dietary supplements tailored to our customers' needs. Our range includes active and auxiliary ingredients to create a variety of formulations.",
+    "home-industries.other-industries": "Other sectors",
+    "home-industries.oi-description": "Our chemical products are used in many other areas, such as chemical processing, textiles and leather, automotive, construction, coatings, printing, plastics, wastewater tre atment and water treatment.",
+
+    "home-about.title": "About Medicos",
+    "home-about.description": "Medicos is a Polish company that imports and distributes chemical raw materials for various industries, including active and auxiliary substances. Thanks to our cooperation with many well-known and respected manufacturers, we are rapidly expanding our assortment, adapting it to our customers' and the market's requirements.",
+    "home-about.more": "More about Medicos",
+
+    "home-services.title": "Our services",
+    "home-services.description": "Find out more about the scope of our activities",
+    "home-services.service-consulting-title": "Technical consulting",
+    "home-services.service-consulting-description": "Technical consulting is an integral part of our customer service. We support your product development regarding the choice and use of raw materials and work with you to find the best solutions for your targeted task.",
+    "home-services.service-search-title": "Searching for substances",
+    "home-services.service-search-description": "At your request, we scout for project-specific substances around the world. We actively assist not only in finding substances for new projects at the R&D level, but also support you in finding alternative suppliers for your existing projects.",
+    "home-services.service-analysis-title": "Vendor market analysis",
+    "home-services.service-analysis-description": "We regularly analyze the supplier market, the quality of the offered substances, availability, manufacturing conditions, quality control systems in place, and price levels.",
+    "home-services.more": "Find out more",
+
+    "home-needs.title-a": "We link your needs with ",
+    "home-needs.title-b": "our experience ",
+    "home-needs.title-c": "in chemistry",
+    "home-needs.contact": "Contact us",
+
+    "home-blog.title": "Blog",
+    "home-blog.news": "All articles"
 }
