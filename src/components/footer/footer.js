@@ -119,8 +119,12 @@ const Footer = () => {
               <h6>{contact.name}</h6>
               <p>{contact.street}</p>
               <p>{contact.zipCode}</p>
-              <p>NIP: {contact.nip}</p>
-              <p>KRS: {contact.krs}</p>
+              <p>
+                {t`footer.nip`} {contact.nip}
+              </p>
+              <p>
+                {t`footer.krs`} {contact.krs}
+              </p>
             </div>
             <div>
               <h6>{t`footer.industries`}</h6>

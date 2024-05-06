@@ -1,0 +1,14 @@
+{
+    "cookie-bar.header": "This website uses cookies",
+    "cookie-bar.description": "We use cookies to personalize content and ads, to provide social media features and to analyze traffic on our site. We share information about how you use our site with social media, advertising and analytics partners. Partners may link this information with other data received from you or obtained when using their services.",
+    "cookie-bar.decline": "Decline",
+    "cookie-bar.edit-cookies": "Accept selected",
+    "cookie-bar.accept-all": "Accept all",
+    "cookie-bar.save": "Save selection",
+    "cookie-bar.necessary": "Necessary",
+    "cookie-bar.necessary-description": "Necessary cookies contribute to the usability of a website by enabling basic functions such as website navigation and access to databases.",
+    "cookie-bar.preferences": "Preferences",
+    "cookie-bar.preferences-description": "Preference cookies allow a website to remember information that changes the way the website behaves or looks, such as your language preferences or region.",
+    "cookie-bar.statistics": "Analytical",
+    "cookie-bar.statistics-description": "Analytical cookies help website owners understand how visitors interact with websites by collecting and reporting information."
+}

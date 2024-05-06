@@ -1,0 +1,16 @@
+{
+    "search.article": "Article",
+    "search.material": "Raw material",
+    "search.page": "Page",
+    "search.others": "Other",
+
+    "search-header.title": "Search",
+
+    "search-content.title": "No results for the specified phrase",
+    "search-content.description": "There are currently no texts on our website containing the phrase you entered. Please make sure the phrase was entered correctly or return to the home page.",
+    "search-content.home": "Home",
+    "search-content.results": "results",
+    "search-content.result": "result",
+    "search-content.result-2-4": "results",
+    "search-content.go-to-page": "Go to page"
+}

@@ -1,0 +1,8 @@
+{
+    "error.menu.search": "The search has too many characters (max: 40) or has illegal characters: % ' ; \"",
+
+    "error.contact.required-fields": "* - required fields",
+    "error.contact.email-error": "Invalid email format",
+    "error.contact.phoneNumber-error": "Invalid phone number format",
+    "error.contact.someError": "Something went wrong. Please try again later!"
+}

@@ -1,10 +1,10 @@
 {
-    "materials-header.title": "Oferta surowców chemicznych ",
+    "materials-header.title": "Oferta surowców chemicznych",
     "materials-header.description": "Kompetencje i ekspertyza zespołu Medicos pozwala dostarczyć każdemu klientowi wysokiej jakości, dopasowane do potrzeb surowce chemiczne, które są fundamentem dla innowacji i efektywności produktów przemysłowych. Specjalizujemy się w zapewnieniu surowców optymalnych dla każdego procesu technologicznego, gwarantując wsparcie na każdym etapie – od projektu po finalną realizację.",
 
     "materials-filter.search-material": "Wyszukaj surowiec",
     "materials-filter.search": "Wyszukaj surowiec po nazwie, INCI lub numerze CAS...",
-    "materials-filter.industry": "Branża",
+    "materials-filter.industry": "Branże",
     "materials-filter.all-industries": "Wszystkie branże",
     "materials-filter.household-chemicals": "Chemia gospodarcza",
     "materials-filter.cosmetology": "Kosmetyka",
@@ -32,7 +32,7 @@
 
     "material-modal.form": "Skorzystaj z formularza kontaktowego, aby zapytać o surowiec",
     "material-modal.ask": "Zapytaj o dostępność",
-    "material-modal.inci": "INCI",
+    "material-modal.inci": "Nazwa INCI",
     "material-modal.cas": "Numer CAS",
     "material-modal.form2": "Forma",
     "material-modal.color": "Kolor",
@@ -42,7 +42,5 @@
     "material-modal.application": "Zastosowanie",
     "material-modal.more-info": "Więcej informacji",
     "material-modal.more-info-description": "Więcej informacji dostępnych w specyfikacji techniczej produktu oraz w karcie charakterystyki dostępnej pod tym adresem (e-mail):",
-    "material-modal.more-info-email": "adresemail@mail.com",
-
-    "materials.more-materials": "Więcej surowców"
+    "material-modal.more-info-email": "kontakt@medicos.com.pl"
 }
