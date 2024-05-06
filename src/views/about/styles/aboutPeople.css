@@ -51,10 +51,6 @@
   transition: all 0.2s ease-out;
 }
 
-.about-pe-container .team-con .team:hover {
-  background: var(--hover-bg, #e9f2fb);
-}
-
 .about-pe-container .team-con .team .text-up h4 {
   color: var(--Button-primary-bg, #144487);
   width: 100%;
@@ -92,9 +88,6 @@
   }
   .about-pe-container .team-con {
     grid-template-columns: repeat(1, 1fr);
-  }
-  .about-pe-container .team-con .team:hover {
-    background: #fff;
   }
 }
 

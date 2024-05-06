@@ -94,7 +94,7 @@
   left: 0;
   padding: 32px 16px 16px 16px;
   height: 115px;
-  transition: height 0.5s ease-out;
+  transition: height 0.3s ease-in-out;
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
