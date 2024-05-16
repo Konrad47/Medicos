@@ -192,7 +192,6 @@ const Search = () => {
               material.node.application.raw
             ).content
             const applicationText = getDescriptionText(applicationContent)
-            console.log(applicationText)
             return materialMatchesQuery(
               material,
               generalInformationText,
