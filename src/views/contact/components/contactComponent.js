@@ -186,11 +186,11 @@ const ContactComponent = ({ searchQuery }) => {
       subject: message.subject,
       message: message.message,
     }
-    //https://medicos-site.netlify.app/
+    //https://medicos-site-inhub.netlify.app/
     //http://localhost:8888/
     try {
       const response = await fetch(
-        "https://medicos-site.netlify.app/.netlify/functions/sendmail",
+        "https://medicos-site-inhub.netlify.app/.netlify/functions/sendmail",
         {
           method: "POST",
           body: JSON.stringify(to_send),

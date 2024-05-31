@@ -2,4 +2,6 @@
 
 ### Connecting with Contentful CMS and hosting on Netlify
 
-#### LINK: https://medicos-site-inhub.netlify.app
+#### DEVELOPMENT: https://medicos-site-inhub.netlify.app
+
+#### PRODUCTION: https://medicos.com.pl/
